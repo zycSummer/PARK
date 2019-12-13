@@ -31,7 +31,6 @@ import static com.jet.cloud.deepmind.common.Constants.*;
  */
 @Service
 public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingService {
-
     @Autowired
     private BenchmarkingObjDataRepo benchmarkingObjDataRepo;
     @Autowired
@@ -69,38 +68,38 @@ public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingServic
             List<GdpMonthly> gdpMonthlyList = gdpMonthlyRepo.findByObjTypeAndObjIdAndYear(objType, objId, year);
             if (benchmarkingType.equals("addValueStdCoal")) {
                 if (month != 0) {
-                    if (gdpMonthly != null){
+                    if (gdpMonthly != null) {
                         dataSum = gdpMonthly.getAddValue();
-                    }else {
+                    } else {
                         dataSum = null;
                     }
                 } else {
-                    if (StringUtils.isNotNullAndEmpty(gdpMonthlyList)){
+                    if (StringUtils.isNotNullAndEmpty(gdpMonthlyList)) {
                         dataSum = 0d;
                         for (GdpMonthly monthly : gdpMonthlyList) {
                             Double addValue = monthly.getAddValue();
                             dataSum += addValue;
                         }
-                    }else {
+                    } else {
                         dataSum = null;
                     }
                 }
 
             } else {
                 if (month != 0) {
-                    if (gdpMonthly != null){
+                    if (gdpMonthly != null) {
                         dataSum = gdpMonthly.getGdp();
-                    }else {
+                    } else {
                         dataSum = null;
                     }
                 } else {
-                    if (StringUtils.isNotNullAndEmpty(gdpMonthlyList)){
+                    if (StringUtils.isNotNullAndEmpty(gdpMonthlyList)) {
                         dataSum = 0d;
                         for (GdpMonthly monthly : gdpMonthlyList) {
                             Double gdp = monthly.getGdp();
                             dataSum += gdp;
                         }
-                    }else {
+                    } else {
                         dataSum = null;
                     }
                 }
@@ -120,14 +119,18 @@ public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingServic
             List<BenchmarkingObjData> benchmarkingObjDataList = benchmarkingObjDataRepo.findAllByObjTypeAndObjIdAndYear(objType, objId, year);
             if (benchmarkingType.equals("gdpElectricity")) {
                 DataSource dataSource = dataSourceRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndEnergyParaId(objType, objId, ENERGY_TYPE_ELECTRICITY, "Ep_imp");
-                pointId = dataSource.getDataSource();
+                if (dataSource != null) {
+                    pointId = dataSource.getDataSource();
+                }
                 for (BenchmarkingObjData benchmarkingObjData : benchmarkingObjDataList) {
                     map.put(benchmarkingObjData.getBenchmarkingObjId(), benchmarkingObjData.getGdpElectricity());
                 }
                 getData(map, domesticList, internationalList);
             } else if (benchmarkingType.equals("gdpWater")) {
                 DataSource dataSource = dataSourceRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndEnergyParaId(objType, objId, ENERGY_TYPE_WATER, "Totalflow");
-                pointId = dataSource.getDataSource();
+                if (dataSource != null) {
+                    pointId = dataSource.getDataSource();
+                }
                 for (BenchmarkingObjData benchmarkingObjData : benchmarkingObjDataList) {
                     map.put(benchmarkingObjData.getBenchmarkingObjId(), benchmarkingObjData.getGdpWater());
                 }
@@ -135,7 +138,9 @@ public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingServic
 
             } else if (benchmarkingType.equals("gdpStdCoal")) {
                 DataSource dataSource = dataSourceRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndEnergyParaId(objType, objId, ENERGY_TYPE_STD_COAL, "Usage");
-                pointId = dataSource.getDataSource();
+                if (dataSource != null) {
+                    pointId = dataSource.getDataSource();
+                }
                 for (BenchmarkingObjData benchmarkingObjData : benchmarkingObjDataList) {
                     map.put(benchmarkingObjData.getBenchmarkingObjId(), benchmarkingObjData.getGdpStdCoal());
                 }
@@ -143,35 +148,27 @@ public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingServic
 
             } else {
                 DataSource dataSource = dataSourceRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndEnergyParaId(objType, objId, ENERGY_TYPE_STD_COAL, "Usage");
-                pointId = dataSource.getDataSource();
+                if (dataSource != null) {
+                    pointId = dataSource.getDataSource();
+                }
                 for (BenchmarkingObjData benchmarkingObjData : benchmarkingObjDataList) {
                     map.put(benchmarkingObjData.getBenchmarkingObjId(), benchmarkingObjData.getAddValueStdCoal());
                 }
                 getData(map, domesticList, internationalList);
             }
-            SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryDiff(pointId, start, end, 1, unit);
             ArrayList<BenchmarkingVO> list1 = new ArrayList<>();
             ArrayList<BenchmarkingVO> list2 = new ArrayList<>();
-            for (BenchmarkingObj benchmarkingObj : domesticList) {
-                BenchmarkingVO benchmarkingVO = new BenchmarkingVO();
-                benchmarkingVO.setName(benchmarkingObj.getBenchmarkingObjName());
-                benchmarkingVO.setType(benchmarkingObj.getBenchmarkingObjType());
-                benchmarkingVO.setData(benchmarkingObj.getData());
-                list1.add(benchmarkingVO);
-            }
-            for (BenchmarkingObj benchmarkingObj : internationalList) {
-                BenchmarkingVO benchmarkingVO = new BenchmarkingVO();
-                benchmarkingVO.setData(benchmarkingObj.getData());
-                benchmarkingVO.setName(benchmarkingObj.getBenchmarkingObjName());
-                benchmarkingVO.setType(benchmarkingObj.getBenchmarkingObjType());
-                list2.add(benchmarkingVO);
-            }
             BenchmarkingVO benchmarkingVO = new BenchmarkingVO();
-            if (sampleData4KairosResp.getValues().get(0) != null) {
-                if (dataSum == null || dataSum == 0d) {
-                    benchmarkingVO.setData(null);
+            if (pointId != null) {
+                SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryDiff(pointId, start, end, 1, unit);
+                if (sampleData4KairosResp.getValues().get(0) != null) {
+                    if (dataSum == null || dataSum == 0d) {
+                        benchmarkingVO.setData(null);
+                    } else {
+                        benchmarkingVO.setData(sampleData4KairosResp.getValues().get(0) / dataSum);
+                    }
                 } else {
-                    benchmarkingVO.setData(sampleData4KairosResp.getValues().get(0) / dataSum);
+                    benchmarkingVO.setData(null);
                 }
             } else {
                 benchmarkingVO.setData(null);
@@ -179,8 +176,22 @@ public class BenchmarkingRankingServiceImpl implements BenchmarkingRankingServic
             String name = parkRepo.findByParkId(objId).getParkName();
             benchmarkingVO.setName(name);
             benchmarkingVO.setType(objType);
-            list1.add(0, benchmarkingVO);
-            list2.add(0, benchmarkingVO);
+            list1.add(benchmarkingVO);
+            list2.add(benchmarkingVO);
+            for (BenchmarkingObj benchmarkingObj : domesticList) {
+                BenchmarkingVO benchmarkingVO1 = new BenchmarkingVO();
+                benchmarkingVO1.setName(benchmarkingObj.getBenchmarkingObjName());
+                benchmarkingVO1.setType(benchmarkingObj.getBenchmarkingObjType());
+                benchmarkingVO1.setData(benchmarkingObj.getData());
+                list1.add(benchmarkingVO1);
+            }
+            for (BenchmarkingObj benchmarkingObj : internationalList) {
+                BenchmarkingVO benchmarkingVO1 = new BenchmarkingVO();
+                benchmarkingVO1.setData(benchmarkingObj.getData());
+                benchmarkingVO1.setName(benchmarkingObj.getBenchmarkingObjName());
+                benchmarkingVO1.setType(benchmarkingObj.getBenchmarkingObjType());
+                list2.add(benchmarkingVO1);
+            }
             BenchmarkingRankingVO benchmarkingRankingVO = new BenchmarkingRankingVO();
             benchmarkingRankingVO.setDomesticList(list1);
             benchmarkingRankingVO.setInternationalList(list2);

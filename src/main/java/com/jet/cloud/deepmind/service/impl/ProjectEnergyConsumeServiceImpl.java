@@ -192,22 +192,15 @@ public class ProjectEnergyConsumeServiceImpl implements ProjectEnergyConsumeServ
 
             }
             //从大到小排序
-            List<JSONObject> list = dataList.stream().sorted((o1, o2) -> {
-                Object val1 = o1.get("val");
-                Object val2 = o2.get("val");
-                if (val1 == null || val2 == null) return 0;
-                double v1 = Double.parseDouble(val1.toString());
-                double v2 = Double.parseDouble(val2.toString());
-                if (v1 >= v2) {
-                    return -1;
-                }
-
-                if (v1 < v2) {
-                    return 1;
-                }
-                return 0;
-            }).collect(Collectors.toList());
-            object.put("list", list);
+            dataList.sort(Comparator.comparing(key -> key.getDouble("val")
+                    , Comparator.nullsFirst(Double::compareTo).reversed()));
+           /* List<JSONObject> list = dataList.stream().sorted((o1, o2) -> {
+                Double val1 = o1.getDouble("val");
+                Double val2 = o2.getDouble("val");
+                if (val1 == null || val2 == null) return 1;
+                return -val1.compareTo(val2);
+            }).collect(Collectors.toList());*/
+            object.put("list", dataList);
             SysEnergyPara energyPara = sysEnergyParaRepo.findByEnergyTypeIdAndEnergyParaId(energyTypeId, energyType.getEnergyLoadParaId());
             object.put("name", energyPara.getEnergyParaName());
             object.put("unit", energyPara.getUnit());

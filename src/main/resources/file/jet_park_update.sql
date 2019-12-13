@@ -58,6 +58,9 @@ INSERT INTO `tb_sys_menu` ( `menu_id`, `menu_name`, `parent_id`, `icon`, `sort_i
 VALUES
   ( 'MENU0902', '指标数据', 'MENU0900', 'fa fa-window-restore', '10021', 'GET', '/admin/indexData', NULL, 'chuzhenbin', '2019-12-11 09:35:23', NULL, NULL );
 
+--  删除表（tb_sys_menu_function）menu_id[菜单标识]为MENU0900的记录
+delete FROM `tb_sys_menu_function` where menu_id='MENU0900';
+
 -- 新增指标排名[menu_id=MENU0901]页面菜单方法
 INSERT INTO `tb_sys_menu_function` ( `menu_id`, `function_id`, `function_name`, `function_desc`, `method`, `url`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
@@ -94,6 +97,9 @@ VALUES
 INSERT INTO `tb_sys_role_mapping_menu`(`role_id`, `menu_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ( 'ROLE1', 'MENU0901', '指标排名', 'chuzhenbin', '2019-11-28 13:15:42', NULL, NULL);
 
 INSERT INTO `tb_sys_role_mapping_menu`(`role_id`, `menu_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ( 'ROLE1', 'MENU0902', '指标数据', 'chuzhenbin', '2019-11-28 13:15:42', NULL, NULL);
+
+--  删除表（tb_sys_role_mapping_menu_function）menu_id[菜单标识]为MENU0900的记录
+delete FROM `tb_sys_role_mapping_menu_function` where menu_id='MENU0900';
 
 -- 新增role_id='ROLE1' and menu_id='MENU0901'对应的菜单方法
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )

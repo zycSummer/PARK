@@ -74,7 +74,7 @@ public class LogServiceImpl implements LogService {
         JSONObject key = vo.getKey();
         Predicate pre = obj.isNotNull();
         if (key != null) {
-            String userId = key.getString("userId");
+            String userId = key.getString("useId");
             if (isNotNullAndEmpty(userId)) {
                 pre = ExpressionUtils.and(pre, obj.userId.containsIgnoreCase(userId));
             }

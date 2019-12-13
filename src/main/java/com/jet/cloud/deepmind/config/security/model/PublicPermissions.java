@@ -34,7 +34,7 @@ public class PublicPermissions {
                 PERMISSION_GET("/null"),
                 PERMISSION_GET("/system/**"),
                 PERMISSION_GET("/public/**"),
-                
+
                 //sockjs xhr_streaming
                 PERMISSION_POST("/jet-stomp-websocket/**"),
 
@@ -92,8 +92,10 @@ public class PublicPermissions {
                 PERMISSION_GET("/benchmarkingObjData/queryById/*"), //对象指标数据
                 PERMISSION_GET("/alarm/queryLeftAlarmById/*"),//获取单个报警信息
                 PERMISSION_POST("/user/updatePwd"), //修改密码
-                PERMISSION_POST("/alarmCondition/getByIndex") //获取单条报警条件
-                
+                PERMISSION_POST("/alarmCondition/getByIndex"), //获取单条报警条件
+                PERMISSION_GET("/role/getMenuAndButtons/*"), //根据id查询角色按钮权限
+                PERMISSION_GET("/equip/queryEquipSysById/*") //根据id查询左侧设备系统列表
+
         );
     }
 

@@ -61,12 +61,19 @@ public class ApiServiceImpl implements ApiService {
          */
         try {
             if (meterId != null && !Objects.equals("", meterId)) {
-                Meter meter = commonRepo.queryMeterByMeterId(meterId);
+                Meter meter = null;
+                try {
+                    meter = commonRepo.queryMeterByMeterId(meterId);
+                } catch (Exception e) {
+                    ;
+                }
                 MeterVO meterVO = new MeterVO();
-                meterVO.setMeterId(meter.getMeterId());
-                meterVO.setMeterName(meter.getMeterName());
-                meterVO.setEnergyTypeId(meter.getEnergyTypeId());
-                meterVO.setMemo(meter.getMemo());
+                if (meter != null) {
+                    meterVO.setMeterId(meter.getMeterId());
+                    meterVO.setMeterName(meter.getMeterName());
+                    meterVO.setEnergyTypeId(meter.getEnergyTypeId());
+                    meterVO.setMemo(meter.getMemo());
+                }
                 return new VResult<>("0", null, meterVO);
             } else {
                 /**
@@ -77,15 +84,22 @@ public class ApiServiceImpl implements ApiService {
                  *
                  *正常返回结果中返回码为0，返回消息为NULL
                  */
-                List<Meter> meters = commonRepo.queryMeter();
+                List<Meter> meters = null;
+                try {
+                    meters = commonRepo.queryMeter();
+                } catch (Exception e) {
+                    ;
+                }
                 List<MeterVO> meterVOS = new ArrayList<>();
-                for (Meter meter : meters) {
-                    MeterVO meterVO = new MeterVO();
-                    meterVO.setMeterId(meter.getMeterId());
-                    meterVO.setMeterName(meter.getMeterName());
-                    meterVO.setEnergyTypeId(meter.getEnergyTypeId());
-                    meterVO.setMemo(meter.getMemo());
-                    meterVOS.add(meterVO);
+                if (StringUtils.isNotNullAndEmpty(meters)) {
+                    for (Meter meter : meters) {
+                        MeterVO meterVO = new MeterVO();
+                        meterVO.setMeterId(meter.getMeterId());
+                        meterVO.setMeterName(meter.getMeterName());
+                        meterVO.setEnergyTypeId(meter.getEnergyTypeId());
+                        meterVO.setMemo(meter.getMemo());
+                        meterVOS.add(meterVO);
+                    }
                 }
                 return new VResult<>("0", null, meterVOS);
             }
@@ -121,7 +135,12 @@ public class ApiServiceImpl implements ApiService {
                  * 3. 根据以下SQL并结合传来的仪表标识查询仪表信息
                  * SELECT energy_type_id FROM `tb_obj_meter` WHERE obj_type = 'SITE' AND CONCAT(obj_id,'.',meter_id) = ?;
                  */
-                Meter meter = commonRepo.queryMeterTypeByMeterId(meterId);
+                Meter meter = null;
+                try {
+                    meter = commonRepo.queryMeterTypeByMeterId(meterId);
+                } catch (Exception e) {
+                    ;
+                }
                 if (meter != null) {
                     String energyTypeId = meter.getEnergyTypeId();
                     String metId = meter.getMeterId();
@@ -214,13 +233,20 @@ public class ApiServiceImpl implements ApiService {
                  * 3. 取传入的仪表标识按点号分割的后半部分
                  */
                 Meter meter = meterRepo.findByObjTypeAndObjIdAndMeterIdOrderBySortId("SITE", siteId, metId);
-                String energyTypeId = meter.getEnergyTypeId();
-                String meterName = meter.getMeterName();
+                if (meter != null) {
+                    String energyTypeId = meter.getEnergyTypeId();
+                    String meterName = meter.getMeterName();
 
-                meterHisValueVO.setMeterId(meterId);
-                meterHisValueVO.setMeterName(meterName);
-                meterHisValueVO.setEnergyTypeId(energyTypeId);
-                meterHisValueVO.setParaId(paraId);
+                    meterHisValueVO.setMeterId(meterId);
+                    meterHisValueVO.setMeterName(meterName);
+                    meterHisValueVO.setEnergyTypeId(energyTypeId);
+                    meterHisValueVO.setParaId(paraId);
+                } else {
+                    meterHisValueVO.setMeterId(meterId);
+                    meterHisValueVO.setMeterName(null);
+                    meterHisValueVO.setEnergyTypeId(null);
+                    meterHisValueVO.setParaId(paraId);
+                }
                 /**
                  * 4. 取传入的参数标识
                  */
@@ -270,32 +296,46 @@ public class ApiServiceImpl implements ApiService {
                  * 3. 取传入的仪表标识按点号分割的后半部分
                  */
                 Meter meter = meterRepo.findByObjTypeAndObjIdAndMeterIdOrderBySortId("SITE", siteId, metId);
-                String energyTypeId = meter.getEnergyTypeId();
-                String meterName = meter.getMeterName();
                 meterUsageValueVO.setMeterId(meterId);
-                meterUsageValueVO.setMeterName(meterName);
-                meterUsageValueVO.setEnergyTypeId(energyTypeId);
+                if (meter != null) {
+                    String energyTypeId = meter.getEnergyTypeId();
+                    String meterName = meter.getMeterName();
+                    meterUsageValueVO.setMeterName(meterName);
+                    meterUsageValueVO.setEnergyTypeId(energyTypeId);
+                } else {
+                    meterUsageValueVO.setMeterName(null);
+                    meterUsageValueVO.setEnergyTypeId(null);
+                }
 
                 /**
                  * 4. 根据以下SQL并结合传入的仪表参数 获取参数标识
                  * SELECT energy_usage_para_id FROM tb_sys_energy_type WHERE energy_type_id = (SELECT energy_type_id FROM tb_obj_meter WHERE obj_type = 'SITE' AND CONCAT(obj_id,'.',meter_id) = ? )
                  */
-                String energyUsageParaId = commonRepo.queryEnergyUsageParaIdByMeterId(meterId);
+                String energyUsageParaId = null;
+                try {
+                    energyUsageParaId = commonRepo.queryEnergyUsageParaIdByMeterId(meterId);
+                } catch (Exception e) {
+                    ;
+                }
 
                 /**
                  * 以上4步骤结果 用点号连接，构成需要去实时库查询的测点，并按照传入的日期去实时库查询此日期每1小时的差值数据，然后按照返回结果格式要求进行返回。
                  */
                 StringJoiner joiner = new StringJoiner(".");
-                String pointId = joiner.add(rtdbTenantParkId).add(rtdbProjectSiteId).add(metId).add(energyUsageParaId).toString();
-                LocalDateTime startTime = DateUtil.longToLocalTime(DateUtil.stringToLong(date + " 00:00:00"));
-                LocalDateTime endTime = startTime.plusDays(1);
-                SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryHis(pointId, startTime, endTime, 1, TimeUnit.HOURS);
-                List<Double> values = sampleData4KairosResp.getValues();
-                String msg = sampleData4KairosResp.getMsg();
-                if (Objects.equals(msg, "此测点不存在") && !StringUtils.isNotNullAndEmpty(values)) {
-                    return new VResult<>("102", "此仪表无用量参数!", meterUsageValueVO);
+                if (energyUsageParaId != null) {
+                    String pointId = joiner.add(rtdbTenantParkId).add(rtdbProjectSiteId).add(metId).add(energyUsageParaId).toString();
+                    LocalDateTime startTime = DateUtil.longToLocalTime(DateUtil.stringToLong(date + " 00:00:00"));
+                    LocalDateTime endTime = startTime.plusDays(1);
+                    SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryHis(pointId, startTime, endTime, 1, TimeUnit.HOURS);
+                    List<Double> values = sampleData4KairosResp.getValues();
+                    String msg = sampleData4KairosResp.getMsg();
+                    if (Objects.equals(msg, "此测点不存在") && !StringUtils.isNotNullAndEmpty(values)) {
+                        return new VResult<>("102", "此仪表无用量参数!", meterUsageValueVO);
+                    }
+                    meterUsageValueVO.setUsageHourly(sampleData4KairosResp.getValues());
+                } else {
+                    meterUsageValueVO.setUsageHourly(null);
                 }
-                meterUsageValueVO.setUsageHourly(sampleData4KairosResp.getValues());
                 return new VResult<>("0", null, meterUsageValueVO);
             } else {
                 return new VResult<>("104", "无此仪表", meterUsageValueVO);
@@ -331,38 +371,52 @@ public class ApiServiceImpl implements ApiService {
                 String rtdbProjectSiteId = site.getRtdbProjectId();
 
                 Meter meter = meterRepo.findByObjTypeAndObjIdAndMeterIdOrderBySortId("SITE", siteId, metId);
-                String energyTypeId = meter.getEnergyTypeId();
-                String meterName = meter.getMeterName();
-                meterNextMaxLoadValueVO.setMeterId(meterId);
-                meterNextMaxLoadValueVO.setMeterName(meterName);
-                meterNextMaxLoadValueVO.setEnergyTypeId(energyTypeId);
-
+                if (meter != null) {
+                    String energyTypeId = meter.getEnergyTypeId();
+                    String meterName = meter.getMeterName();
+                    meterNextMaxLoadValueVO.setMeterId(meterId);
+                    meterNextMaxLoadValueVO.setMeterName(meterName);
+                    meterNextMaxLoadValueVO.setEnergyTypeId(energyTypeId);
+                } else {
+                    meterNextMaxLoadValueVO.setMeterId(meterId);
+                    meterNextMaxLoadValueVO.setMeterName(null);
+                    meterNextMaxLoadValueVO.setEnergyTypeId(null);
+                }
                 /**
                  * 4. 根据以下SQL并结合传入的仪表参数 获取参数标识
                  * select energy_load_para_id from tb_sys_energy_type WHERE energy_type_id =
                  * (SELECT energy_type_id FROM tb_obj_meter WHERE obj_type = 'SITE' AND CONCAT(obj_id,'.',meter_id) = ? )
                  */
-                String energyLoadParaId = commonRepo.queryMeterNextMaxLoadValueByMeterId(meterId);
+                String energyLoadParaId = null;
+                try {
+                    energyLoadParaId = commonRepo.queryMeterNextMaxLoadValueByMeterId(meterId);
+                } catch (Exception e) {
+                    ;
+                }
                 /**
                  * 以上4步骤结果 用点号连接，去实时库查询此测点往前1年的历史数据，5分钟
                  */
                 StringJoiner joiner = new StringJoiner(".");
-                String pointId = joiner.add(rtdbTenantParkId).add(rtdbProjectSiteId).add(metId).add(energyLoadParaId).toString();
-                LocalDateTime endTime = LocalDateTime.now();
-                LocalDateTime startTime = endTime.minusYears(1);
-                SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryHis(pointId, startTime, endTime, 5, TimeUnit.MINUTES);
-                List<Double> values = sampleData4KairosResp.getValues();
-                List<Long> timestamps = sampleData4KairosResp.getTimestamps();
-                /**
-                 * 传入刚查询的历史数据，接口返回明天最大负荷预测值。
-                 */
-                Map<String, Object> map = new HashMap<>();
-                map.put("timestamps", timestamps);
-                map.put("values", values);
-                HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<>(map);
-                JSONObject jsonObject = restTemplate.postForEntity(apiUrl, httpEntity, JSONObject.class).getBody();
-                Double maxValue = jsonObject.getDouble("max_value");
-                meterNextMaxLoadValueVO.setMaxLoadValue(maxValue);
+                if (energyLoadParaId != null) {
+                    String pointId = joiner.add(rtdbTenantParkId).add(rtdbProjectSiteId).add(metId).add(energyLoadParaId).toString();
+                    LocalDateTime endTime = LocalDateTime.now();
+                    LocalDateTime startTime = endTime.minusYears(1);
+                    SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryHis(pointId, startTime, endTime, 5, TimeUnit.MINUTES);
+                    List<Double> values = sampleData4KairosResp.getValues();
+                    List<Long> timestamps = sampleData4KairosResp.getTimestamps();
+                    /**
+                     * 传入刚查询的历史数据，接口返回明天最大负荷预测值。
+                     */
+                    Map<String, Object> map = new HashMap<>();
+                    map.put("timestamps", timestamps);
+                    map.put("values", values);
+                    HttpEntity<Map<String, Object>> httpEntity = new HttpEntity<>(map);
+                    JSONObject jsonObject = restTemplate.postForEntity(apiUrl, httpEntity, JSONObject.class).getBody();
+                    Double maxValue = jsonObject.getDouble("max_value");
+                    meterNextMaxLoadValueVO.setMaxLoadValue(maxValue);
+                } else {
+                    meterNextMaxLoadValueVO.setMaxLoadValue(null);
+                }
                 return new VResult<>("0", null, meterNextMaxLoadValueVO);
             } else {
                 return new VResult<>("104", "无此仪表", meterNextMaxLoadValueVO);
