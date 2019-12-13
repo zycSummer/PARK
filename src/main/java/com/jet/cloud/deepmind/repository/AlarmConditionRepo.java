@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 /**
  * @author zhuyicheng
  * @create 2019/11/11 14:01
- * @desc 对象报警条件设置111
+ * @desc 对象报警条件设置
  */
 @Repository
 public interface AlarmConditionRepo extends JpaRepository<AlarmCondition, Integer> {
