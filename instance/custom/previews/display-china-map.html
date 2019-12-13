@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="custom/images/favicon.ico?v=2" />
+    <style>
+        html,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+
+    <script src='custom/configs/htconfig.js'></script>
+    <script src='libs/ht.js'></script>
+    <script src='libs/ht-edgetype.js'></script>
+    <script src='libs/ht-ui.js'></script>
+    <script src="libs/ht-flow.js"></script>
+    <script src="libs/ht-vector.js"></script>
+
+</head>
+
+<body>
+    <script>
+        ht.Default.setImage('address.point', {
+            "width": 10,
+            "height": 10,
+            "comps": [
+                {
+                    "type": "oval",
+                    "background": "rgb(108,230,190)",
+                    "borderWidth": 0,
+                    "border3d": true,
+                    "border3dColor": "#FEB64D",
+                    "rect": [
+                        0.4973,
+                        0.52122,
+                        8.9468,
+                        8.96722
+                    ]
+                }
+            ]
+        });
+        ht.Default.setImage('flowElement', './symbols/demo/map/流动.json');
+        var hover, layer, dialog, mapGraphView, mainGraphView, xm,
+            addMode = false,
+            index = 1;
+        function init() {
+            var dataModel = new ht.DataModel();
+            mapGraphView = new ht.graph.GraphView(dataModel);
+            mapGraphView.addToDOM();
+            mapGraphView.enableFlow(60);
+
+            mainGraphView = new ht.graph.GraphView();
+            mainGraphView.handleScroll = function() {};
+            mainGraphView.setPannable(false);
+            mainGraphView.getSelectWidth = function () {return 0};
+
+            var style = mainGraphView.getView().style;
+            style.position = 'absolute';
+            style.top = 0; 
+            style.right = 0; 
+            style.bottom = 0; 
+            style.left = 0; 
+            mapGraphView.getView().appendChild(mainGraphView.getView());
+
+            ht.Default.xhrLoad('displays/industry/china map.json', function (text) {
+                var json = ht.Default.parse(text);
+                dataModel.deserialize(json);
+                mapGraphView.fitContent(true, 0);
+                onMapLoad();
+            });
+            ht.Default.xhrLoad('displays/industry/frame.json', function (text) {
+                var json = ht.Default.parse(text);
+                if (json.title) document.title = json.title;
+                mainGraphView.dm().deserialize(json);
+                mainGraphView.fitContent(false, 0);
+                window.addEventListener('resize', function() {
+                    mainGraphView.fitContent(false, 0);
+                    mapGraphView.fitContent(true, 0);
+                })
+                onMainLoad();
+            });
+        }
+
+        var address = [
+            '成都,103.907844,30.619237',
+            '北京,116.447810,39.844814',
+            '深圳,114.062068,22.558722',
+            '潍坊,119.139599,36.617964',
+            '温州,120.686763,27.932789',
+            '昆明,102.810281,24.964384',
+            '石家庄,114.377086,38.059006',
+            '泉州,118.533152,24.924729',
+            '广州,113.535003,23.101718',
+            '嘉兴,120.907889,30.717093',
+            '天津, 117.323462,39.324217',
+            '上海,121.262638,31.244370',
+            '连云港,119.209519,34.616979',
+            '哈尔滨,126.579944,45.896921'
+        ]
+        var CHINA_CENTER_WM = { x: 11131949.077777777, y: 3503549.843016676 };
+        var MAX_P = 20037508.34;
+        // 24.562362, 118.052442
+        var lonLatToLogical = (function () {
+            return function (lon, lat) {
+                var p = { x: 0, y: 0 };
+                p.x = lon * MAX_P / 180.0;
+                var y = Math.log(Math.tan((90.0 + lat) * Math.PI / 360.0)) / (Math.PI / 180.0);
+                p.y = y * MAX_P / 180.0;
+                p.x = p.x - CHINA_CENTER_WM.x;
+                p.y = p.y - CHINA_CENTER_WM.y;
+                p.x = p.x / 3000.0;
+                p.y = p.y / 3000.0;
+                p.y = 0 - p.y;
+                return p;
+            }
+        })();
+        var logicalToLonLat = function(p) {
+            p.y = 0 - p.y;
+            p.y *= 3000.0;
+            p.x *= 3000.0;
+            p.x = p.x + CHINA_CENTER_WM.x;
+            p.y = p.y + CHINA_CENTER_WM.y;
+            var y = p.y * 180.0 / MAX_P;
+            var lon = p.x * 180.0 / MAX_P;
+            var lat = Math.atan(Math.pow(Math.E, y * (Math.PI / 180.0))) * 360.0 / Math.PI - 90;
+            return {
+                lon: lon.toFixed(6) * 1,
+                lat: lat.toFixed(6) * 1
+            }
+        }
+        var toScreenPosition= function(gv, p) {
+            var tx = gv.tx();
+            var ty = gv.ty();
+            var scale = gv._zoom;
+        
+            return {
+                x: p.x * scale + tx,
+                y: p.y * scale + ty
+            };
+        }
+        function onMapLoad() {
+            xm = createPoint('厦门', 118.091860, 24.503495);
+            // add point by lon lat
+            address.forEach(function (addr) {
+                var a = addr.split(','),
+                    name = a[0],
+                    lon = parseFloat(a[1]),
+                    lat = parseFloat(a[2]);
+                var node = createPoint(name, lon, lat);
+                createEdge(node);
+            });
+            mapGraphView.getView().addEventListener('mousemove', function(e) {
+                if (!hover) return;
+                var node = mapGraphView.getDataAt(e, function(data) {return !!data.a('addressName')});
+                if (node) {
+                    var screenPoint = toScreenPosition(mapGraphView, node.p());
+                    hover.p(mainGraphView.lp(screenPoint));
+                    hover.a({
+                        'addressName': node.a('addressName'),
+                        'lon': node.a('lon'),
+                        'lat': node.a('lat')
+                    });
+                    mapGraphView.dm().sendToBottom(hover)
+                    hover.s('2d.visible', true);
+                }
+                else {
+                    hover.s('2d.visible', false);
+                }
+                if (addMode) {
+                    localIcon.p(mainGraphView.lp(e));
+                }
+            });
+            mapGraphView.mi(function(e) {// 点击地点显示弹窗
+                if (e.kind === 'clickData' && (e.data.a('addressName') || e.data instanceof ht.Edge)) {
+                    dialog.s('2d.visible', true);
+                    layer.s('2d.visible', true);
+                }
+            });
+            mainGraphView.mi(function(e) {// 点击蒙层隐藏弹窗
+                if (layer.s('2d.visible') || addMode) {// 弹窗展示时，阻止事件冒泡，这样地图层就不能交互
+                    e.event.stopPropagation();
+                }
+                if (e.kind === 'clickData' && e.data === layer) {
+                    dialog.s('2d.visible', false);
+                    layer.s('2d.visible', false);
+                }
+                else if (e.kind === 'clickData' && e.data === localIcon) {
+                    var lonLat = logicalToLonLat(mapGraphView.lp(e.event));
+                    var node = createPoint('New ' + index++, lonLat.lon, lonLat.lat);
+                    createEdge(node);
+                    disableAddMode();
+                }
+            })
+        }
+        function onMainLoad(){
+            hover = mainGraphView.dm().getDataByTag('hoverInfo');
+            dialog = mainGraphView.dm().getDataByTag('dialog');
+            layer = mainGraphView.dm().getDataByTag('layer');
+            add = mainGraphView.dm().getDataByTag('add');
+            localIcon = mainGraphView.dm().getDataByTag('localIcon');
+
+            var date = mainGraphView.dm().getDataByTag('date'),
+                day = mainGraphView.dm().getDataByTag('day'),
+                time = mainGraphView.dm().getDataByTag('time');
+
+            setInterval(function() {
+                var d = new Date();
+                date.s('text', formatDate(d, 'YYYY-MM-DD'));
+                day.s('text', '星期' + formatDate(d, 'w'));
+                time.s('text', formatDate(d, 'hh:mm:ss'));
+            }, 500);
+        }
+        function createPoint(name, lon, lat) {
+            var lp = lonLatToLogical(lon, lat),
+                node = new ht.Node();
+            console.log()
+            node.p(lp);
+            node.setImage('address.point');
+            node.a({
+                'addressName': name,
+                lon: lon,
+                lat: lat
+            });
+            node.s({
+                '2d.movable': false,
+                'select.width': 0,
+                'opacity': 1
+            })
+            mapGraphView.dm().add(node);
+            return node;
+        }
+        function createEdge(target) {
+            var edge = new ht.Edge(xm, target);
+            edge.s({
+                'flow': true,
+                'flow.element.image': 'flowElement',
+                'flow.element.shadow.visible': false,
+                'flow.element.autorotate': true,
+                'flow.element.count': 1,
+                'flow.element.max': 68,
+                'edge.color': 'rgba(95,170,250,0.70)',
+                'edge.offset': 5,
+                'edge.width.absolute': true
+            })
+            mapGraphView.dm().add(edge);
+        }
+        function enableAddMode (e) {
+            addMode = true;
+            localIcon.p(mainGraphView.lp(e));
+            localIcon.s('2d.visible', true);
+        }
+        function disableAddMode (e) {
+            addMode = false;
+            localIcon.s('2d.visible', false);
+        }
+        function formatDate (date, formatStr) {
+            var str = formatStr;
+            var Week = ['日','一','二','三','四','五','六'];
+
+            str=str.replace(/yyyy|YYYY/, date.getFullYear());
+            str=str.replace(/yy|YY/, (date.getYear() % 100)>9?(date.getYear() % 100).toString():'0' + (date.getYear() % 100));   
+
+            str=str.replace(/MM/, date.getMonth()>9?date.getMonth().toString():'0' + date.getMonth());   
+            str=str.replace(/M/g, date.getMonth());
+
+            str=str.replace(/w|W/g, Week[date.getDay()]);
+
+            str=str.replace(/dd|DD/, date.getDate()>9?date.getDate().toString():'0' + date.getDate());   
+            str=str.replace(/d|D/g, date.getDate());
+
+            str=str.replace(/hh|HH/, date.getHours()>9?date.getHours().toString():'0' + date.getHours());   
+            str=str.replace(/h|H/g, date.getHours());
+            str=str.replace(/mm/, date.getMinutes()>9?date.getMinutes().toString():'0' + date.getMinutes());   
+            str=str.replace(/m/g, date.getMinutes());
+            str=str.replace(/ss|SS/, date.getSeconds()>9?date.getSeconds().toString():'0' + date.getSeconds());   
+            str=str.replace(/s|S/g, date.getSeconds());
+
+            return str;
+        }
+        init();
+    </script>
+</body>
+
+</html>

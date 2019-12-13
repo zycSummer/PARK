@@ -1,0 +1,50 @@
+{
+  "dataBindings": [
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "value",
+      "valueType": "Number"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    data.a('value', valueObj.value);\r\n}"
+    }
+  ],
+  "width": 200,
+  "height": 20,
+  "comps": [
+    {
+      "type": "rect",
+      "background": "rgb(30,30,30)",
+      "rect": [
+        0,
+        0,
+        200,
+        20
+      ]
+    },
+    {
+      "type": "components/textBox/numberPane.json",
+      "displayName": "numberPane",
+      "rect": [
+        0,
+        0,
+        200,
+        20
+      ],
+      "value": {
+        "func": "attr@value",
+        "value": "0000000000"
+      },
+      "textAlign": "right",
+      "color": {
+        "func": "__ht__function(data, view) {\nif (data.a('value') != null) {\r\n    return '#00FF00';\r\n}\r\nelse {\r\n    return '#A9A9A9';\r\n}\n}",
+        "value": "rgb(124,145,155)"
+      }
+    }
+  ]
+}

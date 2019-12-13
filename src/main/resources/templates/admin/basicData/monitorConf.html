@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>对象组态画面配置</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" th:href="@{/public/lib/layui/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{/public/css/public.css}" media="all">
+    <link rel="stylesheet" th:href="@{/public/lib/font-awesome-4.7.0/css/font-awesome.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/lib/ztree/css/zTreeStyle/zTreeStyle.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/monitorConf.css}" media="all" />
+</head>
+<body class="childrenBody">
+<div class="container">
+    <blockquote class="layui-elem-quote tabBreacrumb">
+		<span class="layui-breadcrumb" lay-separator=">">
+			<a class="park_select">园区</a>
+			<a>基础数据</a>
+            <a><cite>对象组态画面配置</cite></a>
+        </span>
+    </blockquote>
+    <div id="complex_content">
+        <div class="chart-title">
+            <div class="complex_tree">
+                <ul class="ztree" id="tree"></ul>
+            </div>
+            <div class="title">
+                <button class="layui-btn layui-btn-sm add" th:if="${MENU1406Add.visible}">新增</button>
+                <button class="layui-btn layui-btn-sm edit" th:if="${MENU1406Modify.visible}">修改</button>
+                <button class="layui-btn layui-btn-sm delete" th:if="${MENU1406Delete.visible}">删除</button>
+            </div>
+        </div>
+        <div id="conf_contain">
+            <div class="editorMain" id="editor1"></div>
+        </div>
+    </div>
+</div>
+<!--新增/修改-->
+<form class="layui-form layui-hide" id="addForm">
+    <div class="layui-form-item add_htImgId">
+        <label class="layui-form-label"><span class="red">* </span>组态画面标识：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="htImgId" id="htImgId" value="" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input"/>
+        </div>
+        <i class="fa fa-exclamation-circle tip_icon" id="htImgId_tip"></i>
+    </div>
+    <div class="layui-form-item edit_htImgId layui-hide">
+        <label class="layui-form-label">组态画面标识：</label>
+        <div class="layui-input-inline">
+            <div id="edit_htImgId"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="red">* </span>父级组态画面：</label>
+        <div class="layui-input-inline">
+            <div id="parentHtImgId"></div>
+        </div>
+        <i class="fa fa-exclamation-circle tip_icon" id="parentHtImgId_tip"></i>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="red">* </span>组态画面名称：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="htImgName" id="htImgName" value="" maxlength='30' class="layui-input"/>
+        </div>
+        <i class="fa fa-exclamation-circle tip_icon" id="htImgName_tip"></i>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序标识：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="sortId" id="sortId" value="" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10' class="layui-input"/>
+        </div>
+        <i class="fa fa-exclamation-circle tip_icon" id="sortId_tip"></i>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注：</label>
+        <div class="layui-input-inline">
+            <textarea name="memo" id="memo" value="" class="layui-textarea"></textarea>
+        </div>
+    </div>
+</form>
+<!--删除-->
+<form class="layui-form layui-hide" id="deleteForm">
+    <div class="layui-form-item">
+        <label class="layui-form-label">组态画面标识：</label>
+        <div class="layui-input-inline">
+            <div id="de_htImgId"></div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">组态画面名称：</label>
+        <div class="layui-input-inline">
+            <div id="de_htImgName"></div>
+        </div>
+    </div>
+    <div class="layui-form-item problem">
+        确定要删除此组态画面吗？
+    </div>
+</form>
+
+<script type="text/javascript" th:src="@{/public/lib/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/public/lib/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/public/lib/form-select/xm-select.js}"></script>
+<script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.core.js}"></script>
+<!-- ht config -->
+<script src='custom/configs/htconfig.js'></script>
+
+<!-- configuration for editor -->
+<script src='custom/configs/config.js'></script>
+
+<!-- ht core -->
+<script src='libs/ht.js'></script>
+<!-- ht plugins -->
+<script src="libs/ht-cssanimation.js"></script>
+<script src='libs/ht-contextmenu.js'></script>
+<script src='libs/ht-dialog.js'></script>
+<script src='libs/ht-edgetype.js'></script>
+<script src='libs/ht-form.js'></script>
+<script src='libs/ht-overview.js'></script>
+<script src="libs/ht-autolayout.js"></script>
+<script src="libs/ht-obj.js"></script>
+<script src="libs/ht-historymanager.js"></script>
+<script src="libs/ht-ui.js"></script>
+<script src="libs/ht-vector.js"></script>
+
+<!-- socket.io -->
+<script src="socket.io/socket.io.js"></script>
+
+<script type="text/javascript" th:src="@{/public/js/admin/public.js}"></script>
+<script type="text/javascript" th:src="@{/public/js/admin/basicData/monitorConf.js}"></script>
+</body>
+</html>

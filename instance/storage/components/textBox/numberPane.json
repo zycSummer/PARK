@@ -1,0 +1,59 @@
+{
+  "width": 200,
+  "height": 20,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\nvar imgMap = comp.getValue('imgMap'),\r\n    textAlign = comp.getValue('textAlign'),\r\n    value = comp.getValue('value'),\r\n    gap = comp.getValue('gap'),\r\n    color = comp.getValue('color'),\r\n    iconWidth = comp.getValue('iconWidth'),\r\n    iconHeight = comp.getValue('iconHeight'),\r\n    digitCount = comp.getValue('digitCount'),\r\n    fixed = comp.getValue('fixed');\r\nvar x = rect.x,\r\n    y = rect.y,\r\n    width = rect.width,\r\n    height = rect.height;\r\n\r\nvar drawStretchImage = ht.Default.drawStretchImage;\r\n\r\n// format\r\nvar str = value + '';\r\nif (str.indexOf('.') > 0 && parseFloat(value)) {\r\n    str = parseFloat(value).toFixed(fixed);\r\n}\r\nif (digitCount && digitCount > str.length) {\r\n    var diff = digitCount - str.length;\r\n    var pre = '';\r\n    for (var i = 0; i < diff; i++) {\r\n        pre += 0;\r\n    }\r\n    str = pre + str;\r\n}\r\nvar tx, ty = y + (height - iconHeight) / 2;\r\nvar strWidth = iconWidth * str.length + gap * (str.length - 1);\r\nif (textAlign === 'center') {\r\n    //居中需要判断宽度\r\n    tx = x + (width - strWidth) / 2;\r\n}\r\nelse if (textAlign === 'right') {\r\n    tx = x + width - strWidth;\r\n}\r\nelse {\r\n    tx = x;\r\n}\r\n\r\nfor (var i = 0; i < str.length; i++) {\r\n    var n = str.charCodeAt(i);\r\n    var img = imgMap[n];\r\nif (img) {\r\n    drawStretchImage(g, ht.Default.getImage(img), 'uniform', tx, ty, iconWidth, iconHeight, data, view, color);\r\n}\r\n    tx += iconWidth + gap;\r\n}\n}",
+  "properties": {
+    "imgMap": {
+      "valueType": "Object",
+      "defaultValue": {
+        "45": "symbols/demo/number/-.json",
+        "46": "symbols/demo/number/p.json",
+        "48": "symbols/demo/number/0.json",
+        "49": "symbols/demo/number/1.json",
+        "50": "symbols/demo/number/2.json",
+        "51": "symbols/demo/number/3.json",
+        "52": "symbols/demo/number/4.json",
+        "53": "symbols/demo/number/5.json",
+        "54": "symbols/demo/number/6.json",
+        "55": "symbols/demo/number/7.json",
+        "56": "symbols/demo/number/8.json",
+        "57": "symbols/demo/number/9.json",
+        "58": "symbols/demo/number/colon.json",
+        "8451": "symbols/demo/number/℃.json"
+      }
+    },
+    "value": {
+      "valueType": "String",
+      "defaultValue": "888.88"
+    },
+    "textAlign": {
+      "valueType": "Align",
+      "defaultValue": "center"
+    },
+    "gap": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 2
+    },
+    "color": {
+      "valueType": "Color",
+      "defaultValue": "rgb(0,255,0)"
+    },
+    "iconWidth": {
+      "valueType": "Int",
+      "defaultValue": 11
+    },
+    "iconHeight": {
+      "valueType": "String",
+      "defaultValue": "18"
+    },
+    "digitCount": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 0
+    },
+    "fixed": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 2
+    }
+  }
+}

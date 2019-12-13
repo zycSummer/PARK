@@ -1,0 +1,208 @@
+{
+  "dataBindings": [
+    {
+      "attr": "lineLength",
+      "valueType": "Number",
+      "defaultValue": 100
+    },
+    {
+      "attr": "offset",
+      "valueType": "Number",
+      "defaultValue": 0,
+      "description": "dash偏移"
+    },
+    {
+      "attr": "dashLength",
+      "valueType": "Number",
+      "defaultValue": 5
+    },
+    {
+      "attr": "dashColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(0,199,7)"
+    },
+    {
+      "attr": "lineColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(65,65,65)"
+    },
+    {
+      "attr": "lineWidth",
+      "valueType": "Number",
+      "defaultValue": 3
+    },
+    {
+      "attr": "dashWidthPercent",
+      "valueType": "Percentage",
+      "defaultValue": 0.9
+    },
+    {
+      "attr": "animation",
+      "valueType": "Function",
+      "defaultValue": "__ht__function(data) {\r\n\r\n    var drawFrame = function () {\r\n        var av = data.a('animationValue');\r\n        var value = data.a('value');\r\n        if (value > av) { //开启动画效果\r\n            var offset = data.a('offset');\r\n            offset = offset + 0.1;\r\n            var dashLength = data.a('dashLength');\r\n            if (offset > 2 * dashLength) {\r\n                offset = offset % (2 * dashLength);\r\n            }\r\n            data.a('offset', offset);\r\n        }\r\n        var request = window.requestAnimationFrame(drawFrame, data);\r\n        data.a('request', request);\r\n    };\r\n\r\n    drawFrame();\r\n}",
+      "description": "动画函数，通过调用data.a('animation')(data);"
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "animationValue",
+      "valueType": "Number",
+      "defaultValue": 0,
+      "description": "大于此值开启动画效果"
+    },
+    {
+      "attr": "request",
+      "valueType": "Number",
+      "description": "用户不需要使用"
+    },
+    {
+      "attr": "value",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "useManual",
+      "valueType": "Multiline",
+      "defaultValue": "用户程序\n\n第一步：查找图纸上所有包含自定义属性animation的对象列表，\n然后调用每个对象自定义属性animationStart里定义的函数，并传入data对象\ndata.a('animationStart')(data);\n此自定义函数实现了如果自定义属性value的值比自定义属性animationValue的值大，就开启动画效果，\n如果没有自定义属性value的值小于等于自定义属性animationValue的值，就停止动画效果。\n\n第二步：查找图纸上所有包含自定义属性opname的对象列表，然后将这些opname传给后台，\n（opname没有设置值的，无需传给后台），后台将这些opname对应的值和时间返回给前台，\n前台将值赋值给对应对象的value自定义属性（没有此属性，就忽略），\n将值赋值给time自定义属性（没有此属性，就忽略）\n",
+      "description": "使用说明"
+    },
+    {
+      "attr": "animationStart",
+      "valueType": "Function",
+      "defaultValue": "__ht__function(data) {\n    window.cancelAnimationFrame(data.a('request'));\n    data.a('animation')(data);\n}",
+      "description": "开启动画，内部调用data.a('animation')(data);"
+    },
+    {
+      "attr": "time",
+      "valueType": "Int"
+    }
+  ],
+  "width": {
+    "func": "attr@lineLength",
+    "value": 100
+  },
+  "height": {
+    "func": "attr@lineWidth",
+    "value": 3
+  },
+  "comps": [
+    {
+      "type": "components/JET/jet-dash-line.json",
+      "displayName": "jet-dash-line",
+      "rect": [
+        0,
+        0,
+        100,
+        3
+      ],
+      "lineLength": {
+        "func": "attr@lineLength",
+        "value": 100
+      },
+      "dashColor": {
+        "func": "attr@dashColor",
+        "value": "rgb(0,255,0)"
+      },
+      "lineColor": {
+        "func": "attr@lineColor",
+        "value": "rgb(61,61,61)"
+      },
+      "offset": {
+        "func": "attr@offset",
+        "value": 10
+      },
+      "dashLength": {
+        "func": "attr@dashLength",
+        "value": 5
+      },
+      "lineWidth": {
+        "func": "attr@lineWidth",
+        "value": 3
+      },
+      "dashWidthPercent": {
+        "func": "attr@dashWidthPercent",
+        "value": 0.9
+      }
+    },
+    {
+      "type": "rect",
+      "background": "#D8D8D8",
+      "borderColor": "#979797",
+      "visible": false,
+      "rect": [
+        15.98366,
+        0,
+        17,
+        3
+      ],
+      "onUp": "__ht__function(event, data, view, point, width, height) {\ndata.a('value',1);\n}"
+    },
+    {
+      "type": "rect",
+      "background": "#D8D8D8",
+      "borderColor": "#979797",
+      "visible": false,
+      "rect": [
+        43.9221,
+        0,
+        17,
+        3
+      ],
+      "onUp": "__ht__function(event, data, view, point, width, height) {\ndata.a('value',0);\n}"
+    },
+    {
+      "type": "rect",
+      "background": "#D8D8D8",
+      "borderColor": "#979797",
+      "visible": false,
+      "rect": [
+        66.39592,
+        0,
+        27,
+        3
+      ],
+      "onUp": "__ht__function(event, data, view, point, width, height) {\ndata.a('animationStart')(data);\n}"
+    },
+    {
+      "type": "text",
+      "text": "data.a('value',1);",
+      "align": "center",
+      "font": "2px arial, sans-serif",
+      "visible": false,
+      "rect": [
+        15.98366,
+        0,
+        17,
+        3
+      ]
+    },
+    {
+      "type": "text",
+      "text": "data.a('value',0);",
+      "align": "center",
+      "font": "2px arial, sans-serif",
+      "visible": false,
+      "rect": [
+        43.9221,
+        0,
+        17,
+        3
+      ]
+    },
+    {
+      "type": "text",
+      "text": "data.a('animationStart')(data);",
+      "align": "center",
+      "font": "2px arial, sans-serif",
+      "visible": false,
+      "rect": [
+        66.39592,
+        0,
+        27,
+        3
+      ]
+    }
+  ]
+}

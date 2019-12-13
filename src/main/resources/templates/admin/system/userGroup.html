@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/system/userGroup.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a>系统管理</a>
+                <a><cite>用户组管理</cite></a>
+            </span>
+        </blockquote>
+        <div class="control_div">
+            <div class="layui-inline">
+                <form class="layui-form">
+                    <div class="layui-inline">
+                        <label>用户组ID：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" value="" class="layui-input search_input" id="user_code">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label>用户组名：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" value="" class="layui-input search_input" id="user_name">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-inline" id="btnGroup">
+                <div class="layui-inline">
+                    <button class="layui-btn  layui-btn-sm " id="search_btn" th:if="${MENU1502Query.visible}">查询</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn  layui-btn-sm " id="add_btn" th:if="${MENU1502Add.visible}">新增</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn   layui-btn-sm " id="edit_btn" th:if="${MENU1502Modify.visible}">修改</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn   layui-btn-sm " id="del_btn" th:if="${MENU1502Delete.visible}">删除</button>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab_content">
+            <div class="tab_content_tab">
+                    <table class="layui-table  customize-table" id="role_table" lay-filter="role_table"></table>
+                    <div id="table_page" class="table_page"></div>
+
+            </div>
+            <div class="tab_content_tree">
+                <div class="tab_content_tree_main" id="roleTree"></div>
+            </div>
+        </div>
+
+    </div>
+    <!--新增修改用户组-->
+    <div id="role_add" class="layui-hide layui-row">
+        <div class="layui-row">
+             <div class="layui-col-md5">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item  addFrom_item">
+                    <label class="layui-form-label addFrom_label" >用户组ID:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="add_user_groupId"
+                            placeholder="请输入用户组ID"  onkeyup="value=value.replace(/[^0-9a-zA-z]/g,'')" maxlength="20">
+
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_userGroupId_tip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" >用户组名:</label>
+                    <div class="layui-input-inline " >
+                        <input class="layui-input" autocomplete="off" type="text" id="add_user_groupName"
+                            placeholder="请输入用户组名" maxlength="30">
+
+
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_userGroupName_tip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" >备注：</label>
+                    <div class="layui-input-inline " >
+                    
+                        <textarea  class="layui-textarea" id="memo"></textarea>
+                    </div>
+                </div>
+
+        
+        </form>
+    </div>
+ 
+    <div class="layui-col-md7  layui-row">
+        <div class="right_cotent">
+     <div class="layui-col-md2">关联对象：</div>   
+     <div  class="layui-col-md9"id="addRoleTree"></div></div> </div>  </div>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/js/admin/system/userGroup.js}"></script>
+</div>
+
+</html>

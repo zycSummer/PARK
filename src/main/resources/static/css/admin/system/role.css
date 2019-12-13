@@ -1,0 +1,102 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-17 14:04:23 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-02 10:35:39
+ */
+
+#page {
+    text-align: right;
+}
+
+#btnGroup {
+    margin-top: 7px;
+    float: right;
+}
+.control_div {
+    padding: 5px 5px  10px 10px !important;
+    border-radius: 0 2px 2px 0 !important;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+.tab_content{
+    margin: 0 10px;
+    height: 1px;
+    flex-grow: 1;
+}
+.layui-table, .layui-table-view {
+     margin: 0; 
+}
+
+#table_page .layui-laypage{
+    margin-bottom:0;
+}
+.layui-form-checkbox span{
+    padding-left: 20px !important;
+}
+#role_auth{
+    width: 100%;
+    height: 100%;
+   overflow: hidden; 
+
+}
+.treeTable_content{
+    width: 102%;
+    height: 100%;
+   overflow: auto; 
+}
+.tree_cell {
+    white-space:normal!important; 
+    min-height: 30px !important;
+    line-height: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px 15px 2px 15px;
+    height: auto !important;
+  
+}
+
+input.cbox{
+  
+    /*定义自己的样式*/
+    /* background: #359159;*/
+    border:1px solid #359159; 
+    height: 21px;
+    width: 35px;
+    outline: none;
+    transition: all ease-in-out 300ms;
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    position: relative;
+    top: 5px;
+    margin-bottom: 5px;
+
+}
+
+input.cbox::after{
+
+    display: block;
+    height: 15px;
+    width: 15px;
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 300ms;
+}
+
+input.cbox:checked{
+    /* background: #359159; */
+}
+input.cbox:checked::after{
+  
+    left:30px;
+     border: solid #359159; 
+     /*background: #359159;
+    color: #359159; */
+}

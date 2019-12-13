@@ -1,0 +1,218 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-12-11 10:24:09 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-11 15:02:33
+ */
+
+#tree_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#tree_content .layui-btn{
+    margin-left:0;
+    margin-top:5px;
+}
+
+#tree_left{
+    margin:0 10px 0 10px;
+    width:275px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftSearch{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5px;
+}
+.treeDetail_title_search{
+    float: left;
+}
+.treeDetail_title_btn{
+    float: right;
+}
+#tree_content .left_query{
+    margin-left:5px;
+}
+
+.tree_main{
+    height:1px;
+    flex-grow: 1;
+    width:100%;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+
+.tree_main .ztree{
+    overflow: auto;
+}
+
+.tree_main .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.tree_main .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.tree_main .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+#tree_content .left_btn{
+    margin-top:5px;
+}
+
+#tree_right{
+    margin:0 10px 10px 0;
+    width:1px;
+    flex-grow: 1;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px 1px #e0e0e0;
+}
+
+
+
+.treeDetail_title{
+
+    margin-bottom: 5px;
+}
+
+#edit_treeId,#edit_tree_energyTypeId{
+    line-height: 38px;
+}
+
+/*删除展示结构树 弹框*/
+#tree_delete .layui-form-label{
+    width:120px;
+}
+#delete_treeId,#delete_treeName,#delete_energyTypeId{
+    line-height: 38px;
+}
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}
+
+/*新增修改结构树明细 弹框*/
+#treeDetail_add{
+    height:100%;
+}
+#treeDetail_add .layui-form-label{
+    width:90px;
+}
+#treeDetail_add>.formContent{
+    height:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+#treeDetail_parentNode{
+    width:182px;
+}
+
+#isNot_std_coal,#is_std_coal{
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoTap{
+    color: #a3a2a2;
+    font-size: 12px;
+}
+
+#tableSelect_content .layui-form{
+    margin:10px;
+}
+.tableSelect{
+    margin:0 10px 0 0;
+    padding-left:10px;
+    border-left: 1px solid #bbb;
+}
+
+
+.red{
+    color:red;
+}
+.label_tip{
+    float:right;
+    font-size: 10px;
+    width: calc(50% - 200px);
+    color: #a3a2a2;
+    padding-top: 2px;
+    text-align: left;
+}
+
+.tab_content{
+    margin: 0 10px;
+    height: 1px;
+    flex-grow: 1;
+}
+.layui-table, .layui-table-view {
+     margin: 0; 
+}
+.layui-laypage{
+    margin-bottom:0;
+}
+.layui-form-checkbox span{
+    padding-left: 20px !important;
+}
+
+.addFrom_item  label{
+    min-width: 150px;
+}
+
+.addFrom_item  .layui-input-inline{
+    width: 60%;
+} 

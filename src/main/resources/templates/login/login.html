@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text='${@sysParameter.currentLangPlateTitle("PlatformName")}'></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" th:href="@{/public/css/public.css}" media="all">
+    <link rel="stylesheet" th:href="@{/public/lib/layui/css/layui.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/css/login/login.css}" media="all" />
+
+    <!--[if lt IE 9]>
+	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="layui-container">
+      <div class="logo-title">
+                    <h1 th:text='${@sysParameter.currentLangPlateTitle("PlatformName")}'></h1>
+                </div>
+         <div class="login_line">
+                <div  id="lineLogin">  </div>    
+         </div>       
+        <div class="admin-login-background">
+            <div class="login-img">
+              <img src="/public/images/header.png" id="headerImg">  
+            </div>
+            <div class="layui-form login-form">
+               
+               
+                <form class="layui-form " action="">
+                    
+               
+                                <div class="layui-form-item">
+                                
+                                    <div class="layui-input-block">
+                                        <input type="text" name="username" lay-verify="required|account"
+                                            placeholder="用户名" autocomplete="off" class="layui-input"
+                                            id="loginUserName">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    
+                                    <div class="layui-input-block">
+                                        <input type="password" name="password" lay-verify="required|password"
+                                            placeholder="密码" autocomplete="off" class="layui-input"
+                                            id="loginUserPwd">
+                                    </div>
+                         
+                        </div>
+                    
+
+
+    
+                </form>
+                <button class="layui-btn layui-btn-fluid" lay-submit="" id="loginBtn"> 登录</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/public/lib/axios/polyfill.min.js?features=es6}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/public/js/login/login.js}"></script>
+</body>
+
+</html>

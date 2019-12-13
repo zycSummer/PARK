@@ -1,0 +1,43 @@
+{
+  "dataBindings": [
+    {
+      "attr": "animation",
+      "valueType": "Function",
+      "defaultValue": "__ht__function animation(data) {\r\n    var drawFrame = function () {\r\n        var scale = data.a('scale');\r\n        var direction = data.a('direction');\r\n        if (isNaN(scale)) {\r\n            scale = 1;\r\n        }\r\n        if (isNaN(direction)) {\r\n            direction = -1;\r\n        }\r\n        if (direction < 0) {\r\n            scale = scale - 0.004;\r\n            if (scale <= 0.5) {\r\n                data.a('direction', 1);\r\n            }\r\n        }\r\n        else {\r\n            scale = scale + 0.004;\r\n            if (scale >= 1) {\r\n                data.a('direction', -1);\r\n            }\r\n        }\r\n        data.a('scale', scale);\r\n        window.requestAnimationFrame(drawFrame, data);\r\n    };\r\n    drawFrame();\r\n}"
+    },
+    {
+      "attr": "scale",
+      "valueType": "Number",
+      "defaultValue": 1
+    },
+    {
+      "attr": "direction",
+      "valueType": "Number",
+      "defaultValue": -1
+    }
+  ],
+  "onUp": "__ht__function(event, data, view, point, width, height) {\nvar xxx = data.a('animation');\r\nxxx(data);\n}",
+  "width": 65,
+  "height": 65,
+  "comps": [
+    {
+      "type": "image",
+      "name": "assets/JET/Park-Icon.png",
+      "displayName": "Park-Icon",
+      "scaleX": {
+        "func": "attr@scale",
+        "value": 1
+      },
+      "scaleY": {
+        "func": "attr@scale",
+        "value": 1
+      },
+      "rect": [
+        0.5,
+        0,
+        64,
+        65
+      ]
+    }
+  ]
+}

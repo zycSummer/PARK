@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+  <link rel='stylesheet' th:href="@{/public/css/admin/basicData/park.css}" media="all" />
+  <div class="container">
+    <blockquote class="layui-elem-quote  tabBreacrumb">
+      <span class="layui-breadcrumb" lay-separator=">">
+       <a >基础数据</a> 
+        <a><cite>对象管理（园区）</cite></a>
+      </span>
+    </blockquote>
+  
+    <div class="control_div">
+        <div class="layui-inline">
+            <form class="layui-form" >
+                <div class="layui-inline">
+                    <label class="search_label">园区标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" value=""  class="layui-input search_input" id="search_parkId">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="search_label">园区名称：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" value="" class="layui-input search_input" id="search_parkName">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="layui-inline" id="btnGroup">
+            <div class="layui-inline">
+                <button class="layui-btn  layui-btn-sm " id="search_btn" th:if="${MENU1401Query.visible}">查询</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn  layui-btn-sm " id="add_btn" th:if="${MENU1401Add.visible}">新增</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn   layui-btn-sm " id="edit_btn" th:if="${MENU1401Modify.visible}">修改</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn   layui-btn-sm " id="del_btn" th:if="${MENU1401Delete.visible}">删除</button>
+            </div>
+        </div>
+    </div>  
+    <div class="device_content">
+    <table class="layui-table" id="park_table" lay-filter="park_table"></table>
+  </div>
+  </div>
+  <!--新增修改园区-->
+<div id="park_add" class="layui-hide layui-row">
+        <div class="calculation_content layui-row">
+            <div class="calculationLeft layui-col-md12">
+                <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">园区标识:</label>
+                        <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addParkId"    onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20" >
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon  " id="addParkIdTip"></i>
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">园区名称:</label>
+                        <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addParkName"   maxlength="30">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon" id="addParkNameTip"></i>   
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">实时库租户标识:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="text" id="addRtdbTenantId">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon" id="addRtdbTenantIdTip" maxlength="30"></i> 
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                            <label class="layui-form-label addFrom_label">百度地图-中心经度:</label>
+                            <div class="layui-input-inline ">
+                                    <input class="layui-input" autocomplete="off" type="number" id="addLongitude" maxlength="30">
+                            </div>
+                            <i class="fa fa-exclamation-circle tip_icon" id="addParkMapTip"></i> 
+
+                        </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">百度地图-中心纬度:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="number" id="addLatitude" maxlength="30">
+                        </div>
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">百度地图-缩放级别:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="text" id="addScale" maxlength="30">
+                        </div>
+                    </div> 
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                        <div class="layui-input-inline ">
+                            <textarea class="layui-textarea" id="addMemo" maxlength="300"></textarea>
+                          
+                        </div>
+                    </div>
+    
+            </div>
+            </form>
+        </div>
+    
+    </div>
+  <script type="text/javascript" th:src="@{/public/js/admin/basicData/park.js}"></script>
+</div>
+
+</html>

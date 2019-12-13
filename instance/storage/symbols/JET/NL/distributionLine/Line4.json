@@ -1,0 +1,17 @@
+{
+  "width": 60,
+  "height": 60,
+  "comps": [
+    {
+      "type": "image",
+      "name": "assets/JET/NL/4.png",
+      "displayName": "4",
+      "rect": [
+        5,
+        5,
+        50,
+        50
+      ]
+    }
+  ]
+}

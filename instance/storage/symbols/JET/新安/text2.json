@@ -1,0 +1,47 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "Multiline",
+      "defaultValue": "热轧\n1#加热炉\n2#加热炉\n3#加热炉\n4#加热炉"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": "rgb(247,247,247)"
+    }
+  ],
+  "rotateAsClock": true,
+  "width": 100,
+  "height": 100,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": "rgb(217,217,217)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        0,
+        0,
+        100,
+        100
+      ]
+    },
+    {
+      "type": "image",
+      "name": "symbols/basic/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        0,
+        0,
+        100,
+        100
+      ]
+    }
+  ]
+}

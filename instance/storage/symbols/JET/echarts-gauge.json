@@ -1,0 +1,67 @@
+{
+  "dataBindings": [
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "dataY",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "name": "s1",
+          "data": [
+            {
+              "value": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "attr": "min",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "max",
+      "valueType": "Number",
+      "defaultValue": 100
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    }
+  ],
+  "snapshotURL": "symbols/JET/snapshot/snapshot_echarts-gauge.json",
+  "renderHTML": "__ht__function(data, gv, cache) {\r\n\r\n    var xxx = data.a('dataY');\r\n    var series = [];\r\n    if (xxx.length > 0) {\r\n        for (var i = 0; i < xxx.length; i++) {\r\n            var serie = {};\r\n            serie.name = xxx[i].name;\r\n            serie.type = 'gauge';\r\n            serie.min = data.a('min');\r\n            serie.max = data.a('max');\r\n            serie.data = xxx[i].data;\r\n            serie.detail = {\r\n                // 其余属性默认使用全局文本样式，详见TEXTSTYLE\r\n                formatter: function (value) {\r\n                    return value;\r\n                },\r\n                // fontWeight: 'bolder',\r\n                borderRadius: 2,\r\n                // backgroundColor: '#444',\r\n                borderColor: '#ccc',\r\n                // shadowBlur: 5,\r\n                // shadowColor: '#333',\r\n                // shadowOffsetX: 0,\r\n                // shadowOffsetY: 3,\r\n                borderWidth: 0.5,\r\n                // textBorderColor: '#000',\r\n                // textBorderWidth: 2,\r\n                // textShadowBlur: 2,\r\n                // textShadowColor: '#fff',\r\n                // textShadowOffsetX: 0,\r\n                // textShadowOffsetY: 0,\r\n                fontFamily: 'Arial',\r\n                // width: 80,\r\n                // color: '#eee',\r\n                // rich: {},\r\n                fontSize: 15,\r\n                offsetCenter:  [0, '80%']\r\n            };\r\n            series[i] = serie;\r\n        }\r\n    }\r\n\r\n    var option = {\r\n        backgroundColor: data.a('background'),\r\n        textStyle: {\r\n            color: data.a('textColor')\r\n        },\r\n        legend: {\r\n            show: false\r\n            //top: 'bottom',\r\n            // textStyle: {\r\n            //     color: data.a('textColor')\r\n            // }\r\n        },\r\n        tooltip: {\r\n            //formatter: \"{a} <br/>{b} : {c}%\"\r\n        },\r\n        series: series\r\n    };\r\n\r\n    if (!cache.htmlView) {\r\n        cache.htmlView = document.createElement('div');\r\n        cache.htmlView.style.position = 'absolute';\r\n        cache.htmlChart = echarts.init(cache.htmlView, data.a('theme'));\r\n\r\n        // layoutHTML will be called when the data needs to be drawing\r\n        cache.htmlView.layoutHTML = function () {\r\n            gv.layoutHTML(data, cache.htmlView, false);\r\n            cache.htmlChart.resize();\r\n        };\r\n    }\r\n\r\n    cache.htmlChart.setOption(option);\r\n\r\n    // html for showing\r\n    return cache.htmlView;\r\n}",
+  "width": 380,
+  "height": 380,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": []
+}

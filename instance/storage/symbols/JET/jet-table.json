@@ -1,0 +1,353 @@
+{
+  "dataBindings": [
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "columns",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "displayName": "Name",
+          "key": "username",
+          "align": "center",
+          "width": 120
+        },
+        {
+          "displayName": "Sex",
+          "align": "center",
+          "key": "sex",
+          "width": 100
+        },
+        {
+          "displayName": "Age",
+          "align": "center",
+          "key": "userAge",
+          "width": 70
+        },
+        {
+          "displayName": "Address",
+          "align": "center",
+          "key": "address"
+        }
+      ]
+    },
+    {
+      "attr": "dataSource",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "username": "Joe",
+          "userAge": "23",
+          "sex": "female",
+          "address": "New York No. 1 Lake Park"
+        },
+        {
+          "username": "Jim Green",
+          "userAge": "29",
+          "sex": "male",
+          "address": "London No. 1 Lake Park"
+        },
+        {
+          "username": "Conor",
+          "userAge": "29",
+          "sex": "male",
+          "address": "Sidney No. 1 Lake Park"
+        },
+        {
+          "username": "Evie Frye",
+          "userAge": "29",
+          "sex": "female",
+          "address": "London No. 2 Lake Park"
+        },
+        {
+          "username": "Jacob Frye",
+          "userAge": "29",
+          "sex": "male",
+          "address": "New York No. 3"
+        }
+      ]
+    },
+    {
+      "attr": "thBackground",
+      "valueType": "Color",
+      "defaultValue": "rgb(12,61,110)"
+    },
+    {
+      "attr": "tdBackgrounds",
+      "valueType": "ColorArray",
+      "defaultValue": [
+        "rgb(250,250,250)",
+        "rgb(240,240,240)"
+      ]
+    },
+    {
+      "attr": "borderWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    {
+      "attr": "borderColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    {
+      "attr": "columnLineColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    {
+      "attr": "columnLineWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    {
+      "attr": "rowLineColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    {
+      "attr": "rowLineWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    {
+      "attr": "thFontSize",
+      "valueType": "PositiveNumber",
+      "defaultValue": 19
+    },
+    {
+      "attr": "tdFontSize",
+      "valueType": "PositiveNumber",
+      "defaultValue": 14
+    },
+    {
+      "attr": "thHeight",
+      "valueType": "PositiveNumber",
+      "defaultValue": 30
+    },
+    {
+      "attr": "tdHeight",
+      "valueType": "PositiveNumber",
+      "defaultValue": 30
+    },
+    {
+      "attr": "showHeadRowLine",
+      "valueType": "Boolean"
+    },
+    {
+      "attr": "thColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(247,247,247)"
+    },
+    {
+      "attr": "tdColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    {
+      "attr": "cellPadding",
+      "valueType": "PositiveNumber",
+      "defaultValue": 0
+    },
+    {
+      "attr": "thFontFamily",
+      "valueType": "String",
+      "defaultValue": "sans-serif, arial"
+    },
+    {
+      "attr": "tdFontFamily",
+      "valueType": "String",
+      "defaultValue": "sans-serif, arial"
+    },
+    {
+      "attr": "showHead",
+      "valueType": "Boolean",
+      "defaultValue": true
+    },
+    {
+      "attr": "translateY",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "tdBackground",
+      "valueType": "Color",
+      "defaultValue": null
+    }
+  ],
+  "width": 500,
+  "height": 186,
+  "comps": [
+    {
+      "type": "components/JET/jet-table.json",
+      "displayName": "jet-table",
+      "rect": [
+        0,
+        0,
+        500,
+        186
+      ],
+      "columns": {
+        "func": "attr@columns",
+        "value": [
+          {
+            "displayName": "Name",
+            "key": "username",
+            "align": "center",
+            "width": 120
+          },
+          {
+            "displayName": "Sex",
+            "align": "center",
+            "key": "sex",
+            "width": 100
+          },
+          {
+            "displayName": "Age",
+            "align": "center",
+            "key": "userAge",
+            "width": 70
+          },
+          {
+            "displayName": "Address",
+            "align": "center",
+            "key": "address"
+          }
+        ]
+      },
+      "dataSource": {
+        "func": "attr@dataSource",
+        "value": [
+          {
+            "username": "Joe",
+            "userAge": "23",
+            "sex": "female",
+            "address": "New York No. 1 Lake Park"
+          },
+          {
+            "username": "Jim Green",
+            "userAge": "29",
+            "sex": "male",
+            "address": "London No. 1 Lake Park"
+          },
+          {
+            "username": "Conor",
+            "userAge": "29",
+            "sex": "male",
+            "address": "Sidney No. 1 Lake Park"
+          },
+          {
+            "username": "Evie Frye",
+            "userAge": "29",
+            "sex": "female",
+            "address": "London No. 2 Lake Park"
+          },
+          {
+            "username": "Jacob Frye",
+            "userAge": "29",
+            "sex": "male",
+            "address": "New York No. 3"
+          }
+        ]
+      },
+      "thBackground": {
+        "func": "attr@thBackground",
+        "value": "rgb(12,61,110)"
+      },
+      "tdBackgrounds": {
+        "func": "attr@tdBackgrounds",
+        "value": [
+          "rgb(250,250,250)",
+          "rgb(240,240,240)"
+        ]
+      },
+      "borderWidth": {
+        "func": "attr@borderWidth",
+        "value": 1
+      },
+      "borderColor": {
+        "func": "attr@borderColor",
+        "value": "rgb(212,212,212)"
+      },
+      "columnLineColor": {
+        "func": "attr@columnLineColor",
+        "value": "rgb(212,212,212)"
+      },
+      "columnLineWidth": {
+        "func": "attr@columnLineWidth",
+        "value": 1
+      },
+      "rowLineColor": {
+        "func": "attr@rowLineColor",
+        "value": "rgb(212,212,212)"
+      },
+      "rowLineWidth": {
+        "func": "attr@rowLineWidth",
+        "value": 1
+      },
+      "thFontSize": {
+        "func": "attr@thFontSize",
+        "value": 19
+      },
+      "tdFontSize": {
+        "func": "attr@tdFontSize",
+        "value": 14
+      },
+      "thHeight": {
+        "func": "attr@thHeight",
+        "value": 30
+      },
+      "tdHeight": {
+        "func": "attr@tdHeight",
+        "value": 30
+      },
+      "showHeadRowLine": {
+        "func": "attr@showHeadRowLine",
+        "value": false
+      },
+      "thColor": {
+        "func": "attr@thColor",
+        "value": "rgb(247,247,247)"
+      },
+      "tdColor": {
+        "func": "attr@tdColor",
+        "value": "rgb(61,61,61)"
+      },
+      "cellPadding": {
+        "func": "attr@cellPadding",
+        "value": 0
+      },
+      "thFontFamily": {
+        "func": "attr@thFontFamily",
+        "value": "sans-serif, arial"
+      },
+      "tdFontFamily": {
+        "func": "attr@tdFontFamily",
+        "value": "sans-serif, arial"
+      },
+      "showHead": {
+        "func": "attr@showHead",
+        "value": true
+      },
+      "translateY": {
+        "func": "attr@translateY",
+        "value": 0
+      },
+      "tdBackground": {
+        "func": "attr@tdBackground",
+        "value": null
+      }
+    }
+  ]
+}

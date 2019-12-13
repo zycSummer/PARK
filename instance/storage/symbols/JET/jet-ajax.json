@@ -1,0 +1,43 @@
+{
+  "dataBindings": [
+    {
+      "attr": "paras",
+      "valueType": "String",
+      "description": "设置向后台请求的参数"
+    },
+    {
+      "attr": "preaction",
+      "valueType": "Function"
+    },
+    {
+      "attr": "url",
+      "valueType": "String"
+    },
+    {
+      "attr": "interval",
+      "valueType": "Int",
+      "defaultValue": 300,
+      "description": "5分钟执行一次"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "description": "收到后台数据更新元素",
+      "defaultValue": "__ht__function(data){\r\n    var value = [{\"energyType\":\"电\",\"thisMonth\":123,\"thisMonthSchedule\":623,\"lastMonth\":523,\"lastMonthThis\":103,\"lastMonthSchedule\":663,\"ratio\":-52.3},{\"energyType\":\"水\",\"thisMonth\":123,\"thisMonthSchedule\":623,\"lastMonth\":523,\"lastMonthThis\":103,\"lastMonthSchedule\":663,\"ratio\":52.3},{\"energyType\":\"蒸汽\",\"thisMonth\":123,\"thisMonthSchedule\":623,\"lastMonth\":523,\"lastMonthThis\":103,\"lastMonthSchedule\":663,\"ratio\":-52.3},{\"energyType\":\"标煤\",\"thisMonth\":123,\"thisMonthSchedule\":623,\"lastMonth\":523,\"lastMonthThis\":103,\"lastMonthSchedule\":663,\"ratio\":-52.3}];\r\n    // data.a()\r\n}"
+    }
+  ],
+  "width": 100,
+  "height": 30,
+  "comps": [
+    {
+      "type": "components/JET/jet-ajax.json",
+      "displayName": "jet-ajax",
+      "rect": [
+        0,
+        0,
+        100,
+        30
+      ]
+    }
+  ]
+}

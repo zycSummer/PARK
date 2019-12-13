@@ -1,0 +1,1496 @@
+{
+  "v": "6.2.3",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "connectActionType": "copyStyle",
+    "height": 0
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 22165,
+      "p": {
+        "position": {
+          "x": 640,
+          "y": 371.95187
+        },
+        "width": 1218,
+        "height": 74
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "rgb(220,230,242)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(218,226,229)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22166,
+      "p": {
+        "position": {
+          "x": 69.4808,
+          "y": 26.07379
+        },
+        "width": 76.9616,
+        "height": 38.14758
+      },
+      "s": {
+        "text": "配液电磁伐：",
+        "text.color": "rgb(46,94,116)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22167,
+      "p": {
+        "displayName": "节点",
+        "position": {
+          "x": 117.7389,
+          "y": 23.65701
+        },
+        "anchor": {
+          "x": 0.54926,
+          "y": 0.46294
+        },
+        "width": 12,
+        "height": 12
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(6,250,5)",
+        "shape.border.color": "#979797",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22168,
+      "p": {
+        "position": {
+          "x": 184.09341,
+          "y": 24.10175
+        },
+        "width": 106,
+        "height": 49.5
+      },
+      "s": {
+        "text": "正常",
+        "text.color": "rgb(6,250,5)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22169,
+      "p": {
+        "position": {
+          "x": 81,
+          "y": 48
+        }
+      },
+      "s": {
+        "text": "配液电动机：",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22170,
+      "p": {
+        "displayName": "节点",
+        "position": {
+          "x": 117.14778,
+          "y": 48
+        },
+        "width": 12,
+        "height": 12
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(247,4,8)",
+        "shape.border.color": "#979797",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22171,
+      "p": {
+        "position": {
+          "x": 184.09341,
+          "y": 47.75
+        },
+        "width": 106,
+        "height": 49.5
+      },
+      "s": {
+        "text": "故障",
+        "text.color": "rgb(247,4,8)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22172,
+      "p": {
+        "position": {
+          "x": 92.09695,
+          "y": 349.95187
+        }
+      },
+      "s": {
+        "text": "乳化泵故障信息：",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22173,
+      "p": {
+        "position": {
+          "x": 136.64835,
+          "y": 118.65962
+        },
+        "width": 76.70834,
+        "height": 57.84024
+      },
+      "s": {
+        "text": "300",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22174,
+      "p": {
+        "position": {
+          "x": 123.88862,
+          "y": 151.66346
+        },
+        "width": 53.92846,
+        "height": 39.46432
+      },
+      "s": {
+        "text": "225",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22175,
+      "p": {
+        "position": {
+          "x": 118.53609,
+          "y": 185.56543
+        },
+        "width": 43.22339,
+        "height": 27.71402
+      },
+      "s": {
+        "text": "150",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22176,
+      "p": {
+        "position": {
+          "x": 166.78377,
+          "y": 217.81944
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "75",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22177,
+      "p": {
+        "position": {
+          "x": 167.15356,
+          "y": 251.60747
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22178,
+      "p": {
+        "position": {
+          "x": 272.05547,
+          "y": 120.78328
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "150",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22179,
+      "p": {
+        "position": {
+          "x": 271.95895,
+          "y": 154.78328
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "112.5",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22180,
+      "p": {
+        "position": {
+          "x": 272.43812,
+          "y": 187.30136
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "75",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22181,
+      "p": {
+        "position": {
+          "x": 269.69853,
+          "y": 217.85645
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "37.5",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22182,
+      "p": {
+        "position": {
+          "x": 271.80791,
+          "y": 252.60747
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22183,
+      "p": {
+        "position": {
+          "x": 383.94368,
+          "y": 253.60747
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22184,
+      "p": {
+        "position": {
+          "x": 380.8343,
+          "y": 219.85645
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "10",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22185,
+      "p": {
+        "position": {
+          "x": 382.90538,
+          "y": 187.30136
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "20",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22186,
+      "p": {
+        "position": {
+          "x": 382.8343,
+          "y": 152.78328
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "30",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22187,
+      "p": {
+        "position": {
+          "x": 384.09341,
+          "y": 121.65962
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "40",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22188,
+      "p": {
+        "position": {
+          "x": 213.14778,
+          "y": 86.23038
+        }
+      },
+      "s": {
+        "text": "31.5Mpa",
+        "text.color": "rgb(146,9,51)",
+        "text.font": "10px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22189,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng001",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 55.09695,
+          "y": 384.95187
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22190,
+      "p": {
+        "position": {
+          "x": 122.5,
+          "y": 383.95187
+        }
+      },
+      "s": {
+        "text": "1#乳化泵故障实况",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22191,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng002",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 306.41579,
+          "y": 384.95187
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22192,
+      "p": {
+        "position": {
+          "x": 373.82238,
+          "y": 384.95187
+        }
+      },
+      "s": {
+        "text": "油位报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22193,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng003",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 539.3787,
+          "y": 384.95187
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22194,
+      "p": {
+        "position": {
+          "x": 606.78529,
+          "y": 384.95187
+        }
+      },
+      "s": {
+        "text": "乳化系统爆管报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22195,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng004",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 798.4519,
+          "y": 383.95187
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22196,
+      "p": {
+        "position": {
+          "x": 866.85849,
+          "y": 383.95187
+        }
+      },
+      "s": {
+        "text": "液箱液位吸空报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22197,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng005",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 1058.52934,
+          "y": 381.95187
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22198,
+      "p": {
+        "position": {
+          "x": 1119.93593,
+          "y": 381.95187
+        }
+      },
+      "s": {
+        "text": "液箱油位吸空报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22199,
+      "p": {
+        "position": {
+          "x": 640,
+          "y": 489.42272
+        },
+        "width": 1218,
+        "height": 102
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "rgb(220,230,242)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(218,226,229)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22200,
+      "p": {
+        "position": {
+          "x": 92.09695,
+          "y": 462.42272
+        }
+      },
+      "s": {
+        "text": "乳化泵参数信息：",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22201,
+      "p": {
+        "position": {
+          "x": 112.14778,
+          "y": 488.42272
+        }
+      },
+      "s": {
+        "text": "设置压力下限",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22202,
+      "p": {
+        "position": {
+          "x": 111.14778,
+          "y": 519.42272
+        }
+      },
+      "s": {
+        "text": "液箱液位配液上限",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22203,
+      "p": {
+        "position": {
+          "x": 334.09341,
+          "y": 488.42272
+        }
+      },
+      "s": {
+        "text": "充置爆管压力",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22204,
+      "p": {
+        "position": {
+          "x": 333.09341,
+          "y": 519.42272
+        }
+      },
+      "s": {
+        "text": "液箱液位配液下限",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22205,
+      "p": {
+        "position": {
+          "x": 581.28529,
+          "y": 487.42272
+        }
+      },
+      "s": {
+        "text": "设置泵温度上限",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22206,
+      "p": {
+        "position": {
+          "x": 580.28529,
+          "y": 518.42272
+        }
+      },
+      "s": {
+        "text": "液箱液位配液吸空",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22207,
+      "p": {
+        "position": {
+          "x": 839.4519,
+          "y": 488.42272
+        }
+      },
+      "s": {
+        "text": "设置泵温度下限",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22208,
+      "p": {
+        "position": {
+          "x": 838.4519,
+          "y": 519.42272
+        }
+      },
+      "s": {
+        "text": "液箱油位吸空",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22209,
+      "p": {
+        "position": {
+          "x": 210.09341,
+          "y": 679.1905
+        },
+        "width": 359,
+        "height": 210
+      },
+      "s": {
+        "shape": "roundRect",
+        "shape.background": "rgb(220,230,242)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(218,226,229)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22210,
+      "p": {
+        "position": {
+          "x": 92.09695,
+          "y": 599.1905
+        }
+      },
+      "s": {
+        "text": "喷雾泵故障信息：",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22211,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng006",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 59.44626,
+          "y": 625.1905
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22212,
+      "p": {
+        "position": {
+          "x": 126.8493,
+          "y": 624.1905
+        }
+      },
+      "s": {
+        "text": "喷雾泵故障实况",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22213,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng007",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 59.44626,
+          "y": 656.1905
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22214,
+      "p": {
+        "position": {
+          "x": 126.85285,
+          "y": 656.1905
+        }
+      },
+      "s": {
+        "text": "油位报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22215,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng008",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 59.44271,
+          "y": 688.1905
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22216,
+      "p": {
+        "position": {
+          "x": 126.8493,
+          "y": 688.1905
+        }
+      },
+      "s": {
+        "text": "乳化系统爆管报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22217,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng009",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 59.44626,
+          "y": 724.1905
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22218,
+      "p": {
+        "position": {
+          "x": 127.85285,
+          "y": 724.1905
+        }
+      },
+      "s": {
+        "text": "液箱油位吸空报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22219,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng010",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 59.44626,
+          "y": 759.1905
+        },
+        "width": 20,
+        "height": 20
+      },
+      "s": {
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22220,
+      "p": {
+        "position": {
+          "x": 127.85285,
+          "y": 759.1905
+        }
+      },
+      "s": {
+        "text": "液箱液位吸空报警",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22221,
+      "p": {
+        "position": {
+          "x": 484.91407,
+          "y": 260.0446
+        },
+        "width": 76.9616,
+        "height": 38.14758
+      },
+      "s": {
+        "text": "乳化泵",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "20px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22222,
+      "p": {
+        "position": {
+          "x": 846.9327,
+          "y": 729.32868
+        },
+        "width": 76.9616,
+        "height": 38.14758
+      },
+      "s": {
+        "text": "喷雾泵",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "20px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22223,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu001",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 67.27927,
+          "y": 185.40908
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 99
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22224,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu002",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 175.97387,
+          "y": 185.88081
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 70
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22225,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu003",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 286.03968,
+          "y": 187.30136
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 70
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22226,
+      "p": {
+        "position": {
+          "x": 76.37883,
+          "y": 278.22444
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油位",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22227,
+      "p": {
+        "position": {
+          "x": 191.0839,
+          "y": 277.32595
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油温",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22228,
+      "p": {
+        "position": {
+          "x": 296.60356,
+          "y": 277.32595
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油压",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22229,
+      "p": {
+        "position": {
+          "x": 528.25251,
+          "y": 598.3175
+        },
+        "width": 76.70834,
+        "height": 57.84024
+      },
+      "s": {
+        "text": "300",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22230,
+      "p": {
+        "position": {
+          "x": 515.49277,
+          "y": 631.32134
+        },
+        "width": 53.92846,
+        "height": 39.46432
+      },
+      "s": {
+        "text": "225",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22231,
+      "p": {
+        "position": {
+          "x": 510.14024,
+          "y": 665.22331
+        },
+        "width": 43.22339,
+        "height": 27.71402
+      },
+      "s": {
+        "text": "150",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22232,
+      "p": {
+        "position": {
+          "x": 558.38792,
+          "y": 697.47732
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "75",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22233,
+      "p": {
+        "position": {
+          "x": 558.75772,
+          "y": 731.26535
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22234,
+      "p": {
+        "position": {
+          "x": 663.65962,
+          "y": 600.44115
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "150",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22235,
+      "p": {
+        "position": {
+          "x": 663.5631,
+          "y": 634.44115
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "112.5",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22236,
+      "p": {
+        "position": {
+          "x": 664.04227,
+          "y": 666.95923
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "75",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22237,
+      "p": {
+        "position": {
+          "x": 661.30269,
+          "y": 697.51433
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "37.5",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22238,
+      "p": {
+        "position": {
+          "x": 663.41206,
+          "y": 732.26535
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22239,
+      "p": {
+        "position": {
+          "x": 775.54783,
+          "y": 733.26535
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22240,
+      "p": {
+        "position": {
+          "x": 772.43846,
+          "y": 699.51433
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "10",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22241,
+      "p": {
+        "position": {
+          "x": 774.50953,
+          "y": 666.95923
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "20",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22242,
+      "p": {
+        "position": {
+          "x": 774.43846,
+          "y": 632.44115
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "30",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22243,
+      "p": {
+        "position": {
+          "x": 775.69756,
+          "y": 601.3175
+        },
+        "width": 136.97917,
+        "height": 101.8503
+      },
+      "s": {
+        "text": "40",
+        "text.color": "rgb(46,94,125)",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22244,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu004",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 458.88343,
+          "y": 665.06696
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 99
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22245,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu005",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 567.57803,
+          "y": 665.53869
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 70
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 22246,
+      "p": {
+        "displayName": "油位",
+        "tag": "kedu006",
+        "image": "symbols/demo/Oil tank/油位.json",
+        "position": {
+          "x": 677.64384,
+          "y": 666.95923
+        },
+        "width": 81,
+        "height": 137.28347
+      },
+      "s": {
+        "2d.movable": false
+      },
+      "a": {
+        "yValue": 70,
+        "yValue01": 70
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22247,
+      "p": {
+        "position": {
+          "x": 467.98298,
+          "y": 757.88232
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油位",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22248,
+      "p": {
+        "position": {
+          "x": 582.68805,
+          "y": 756.98382
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油温",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 22249,
+      "p": {
+        "position": {
+          "x": 688.20772,
+          "y": 756.98382
+        },
+        "width": 59.87224,
+        "height": 34.5627
+      },
+      "s": {
+        "text": "油压",
+        "text.color": "rgb(46,94,116)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false
+      }
+    }
+  ]
+}

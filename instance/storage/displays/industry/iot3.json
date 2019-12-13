@@ -1,0 +1,721 @@
+{
+  "v": "6.2.0",
+  "p": {
+    "background": "rgb(255,255,255)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {},
+  "d": [
+    {
+      "c": "ht.Edge",
+      "i": 5578,
+      "p": {
+        "source": {
+          "__i": 5588
+        },
+        "target": {
+          "__i": 5587
+        }
+      },
+      "s": {
+        "edge.color": "rgb(150,199,72)",
+        "edge.width": 6,
+        "edge.cap": "round"
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5579,
+      "p": {
+        "source": {
+          "__i": 5587
+        },
+        "target": {
+          "__i": 5584
+        }
+      },
+      "s": {
+        "edge.color": "rgb(150,199,72)",
+        "edge.width": 6,
+        "edge.cap": "round"
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5580,
+      "p": {
+        "source": {
+          "__i": 5584
+        },
+        "target": {
+          "__i": 5585
+        }
+      },
+      "s": {
+        "edge.color": "rgb(150,199,72)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.08148,
+        "edge.source.anchor.y": 0.89327,
+        "edge.target.anchor.x": 0.8962,
+        "edge.target.anchor.y": 0.16041
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5581,
+      "p": {
+        "source": {
+          "__i": 5584
+        },
+        "target": {
+          "__i": 5583
+        }
+      },
+      "s": {
+        "edge.color": "rgb(150,199,72)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.5,
+        "edge.source.anchor.y": 0.7,
+        "edge.target.anchor.x": 0.5,
+        "edge.target.anchor.y": -0.25
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5582,
+      "p": {
+        "source": {
+          "__i": 5584
+        },
+        "target": {
+          "__i": 5586
+        }
+      },
+      "s": {
+        "edge.color": "rgb(150,199,72)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.87413,
+        "edge.source.anchor.y": 0.83452,
+        "edge.target.anchor.x": 0.22829,
+        "edge.target.anchor.y": 0.25
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5583,
+      "p": {
+        "displayName": "智能仪表类",
+        "image": "symbols/demo/network/智能仪表类.json",
+        "position": {
+          "x": 602.94871,
+          "y": 329.26709
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5584,
+      "p": {
+        "displayName": "网关2",
+        "image": "symbols/demo/network/网关2.json",
+        "position": {
+          "x": 602.94871,
+          "y": 158.90446
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5585,
+      "p": {
+        "displayName": "负载均衡器-F5",
+        "image": "symbols/demo/network/XX分系统.json",
+        "position": {
+          "x": 379.52224,
+          "y": 326.26709
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5586,
+      "p": {
+        "displayName": "手机",
+        "image": "symbols/demo/network/平板.json",
+        "position": {
+          "x": 806.40867,
+          "y": 336.44108
+        },
+        "width": 122.40597,
+        "height": 122.40597
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5587,
+      "p": {
+        "displayName": "服务器",
+        "image": "symbols/demo/network/电脑.json",
+        "position": {
+          "x": 602.94871,
+          "y": 11.35741
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5588,
+      "p": {
+        "displayName": "云",
+        "image": "symbols/demo/network/云.json",
+        "position": {
+          "x": 602.94871,
+          "y": -125.90386
+        }
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5589,
+      "p": {
+        "position": {
+          "x": 674.44625,
+          "y": -102.79287
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "平台",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5590,
+      "p": {
+        "position": {
+          "x": 674.44625,
+          "y": 47.37986
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "站点",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5591,
+      "p": {
+        "position": {
+          "x": 674.44625,
+          "y": 182.07699
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "网关",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5592,
+      "p": {
+        "position": {
+          "x": 379.52224,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "PLC",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5593,
+      "p": {
+        "position": {
+          "x": 814.0799,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "智能设备",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5594,
+      "p": {
+        "position": {
+          "x": 608.44249,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "智能仪表",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(138,138,138)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5595,
+      "p": {
+        "position": {
+          "x": 1613.31565,
+          "y": -102.79287
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "平台",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5596,
+      "p": {
+        "position": {
+          "x": 1613.31565,
+          "y": 47.37986
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "站点",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5597,
+      "p": {
+        "position": {
+          "x": 1613.31565,
+          "y": 182.07699
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "网关",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5598,
+      "p": {
+        "position": {
+          "x": 1318.39164,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "PLC",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5599,
+      "p": {
+        "position": {
+          "x": 1752.94929,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "智能设备",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 5600,
+      "p": {
+        "position": {
+          "x": 1547.31188,
+          "y": 391.59371
+        },
+        "width": 41.29149,
+        "height": 20.60578
+      },
+      "s": {
+        "text": "智能仪表",
+        "text.font": "24px arial, sans-serif",
+        "text.color": "rgb(232,30,30)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5601,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1617.95763,
+          "y": -139.88141
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5602,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1617.95763,
+          "y": 11.35741
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5603,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1617.95763,
+          "y": 144.52964
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5604,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1371.39164,
+          "y": 386.44108
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5605,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1626.96139,
+          "y": 386.44108
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5606,
+      "p": {
+        "displayName": "离线",
+        "image": "symbols/demo/network/离线.json",
+        "position": {
+          "x": 1832.05663,
+          "y": 386.44108
+        }
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5607,
+      "p": {
+        "source": {
+          "__i": 5617
+        },
+        "target": {
+          "__i": 5616
+        }
+      },
+      "s": {
+        "edge.color": "rgb(232,30,30)",
+        "edge.width": 6,
+        "edge.cap": "round"
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5608,
+      "p": {
+        "source": {
+          "__i": 5616
+        },
+        "target": {
+          "__i": 5613
+        }
+      },
+      "s": {
+        "edge.color": "rgb(232,30,30)",
+        "edge.width": 6,
+        "edge.cap": "round"
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5609,
+      "p": {
+        "source": {
+          "__i": 5613
+        },
+        "target": {
+          "__i": 5614
+        }
+      },
+      "s": {
+        "edge.color": "rgb(232,30,30)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.09638,
+        "edge.source.anchor.y": 0.90199,
+        "edge.target.anchor.x": 0.94155,
+        "edge.target.anchor.y": 0.14516
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5610,
+      "p": {
+        "source": {
+          "__i": 5613
+        },
+        "target": {
+          "__i": 5612
+        }
+      },
+      "s": {
+        "edge.color": "rgb(232,30,30)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.5,
+        "edge.source.anchor.y": 0.7,
+        "edge.target.anchor.x": 0.5,
+        "edge.target.anchor.y": -0.25
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 5611,
+      "p": {
+        "source": {
+          "__i": 5613
+        },
+        "target": {
+          "__i": 5615
+        }
+      },
+      "s": {
+        "edge.color": "rgb(232,30,30)",
+        "edge.width": 6,
+        "edge.cap": "round",
+        "edge.type": "points",
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.x": 0.84649,
+        "edge.source.anchor.y": 0.89273,
+        "edge.target.anchor.x": 0.25,
+        "edge.target.anchor.y": 0.22535
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5612,
+      "p": {
+        "displayName": "智能仪表类",
+        "image": "symbols/demo/network/智能仪表类.json",
+        "position": {
+          "x": 1551.69365,
+          "y": 329.26709
+        }
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5613,
+      "p": {
+        "displayName": "网关2",
+        "image": "symbols/demo/network/网关2.json",
+        "position": {
+          "x": 1551.69365,
+          "y": 158.90446
+        }
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5614,
+      "p": {
+        "displayName": "负载均衡器-F5",
+        "image": "symbols/demo/network/XX分系统.json",
+        "position": {
+          "x": 1328.26717,
+          "y": 326.26709
+        }
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5615,
+      "p": {
+        "displayName": "手机",
+        "image": "symbols/demo/network/平板.json",
+        "position": {
+          "x": 1755.1536,
+          "y": 336.44108
+        },
+        "width": 122.40597,
+        "height": 122.40597
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5616,
+      "p": {
+        "displayName": "服务器",
+        "image": "symbols/demo/network/电脑.json",
+        "position": {
+          "x": 1551.69365,
+          "y": 11.35741
+        },
+        "scale": {
+          "x": -1,
+          "y": 1
+        }
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 5617,
+      "p": {
+        "displayName": "云",
+        "image": "symbols/demo/network/云.json",
+        "position": {
+          "x": 1551.69365,
+          "y": -125.90386
+        }
+      },
+      "s": {
+        "body.color": "rgb(255,99,99)"
+      }
+    }
+  ]
+}

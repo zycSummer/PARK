@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/statisticsReport/reportQuery.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>统计报表</a>
+                <a><cite>报表查询</cite></a>
+            </span>
+        </blockquote>
+        <div class="report_content">
+            <div class="table_title layui-form">
+                <div>
+                    <label>报表：</label>
+                    <div class="layui-input-inline">
+                        <select name="reportId" id="reportId"></select>
+                    </div>
+                </div>
+                <div class="timeSelect">
+                    <span class="title">时间：</span>
+                    <span class="layui-breadcrumb timeType" lay-separator="|">
+                        <a href="javascript:void(0)" data-id="year" class="breadcrumb">年</a>
+                        <a href="javascript:void(0)" data-id="month" class="breadcrumb">月</a>
+                        <a href="javascript:void(0)" data-id="day" class="breadcrumb layui-this">日</a>
+                    </span>
+                    <div class="layui-inline" id="timeDiv">
+                        <input type="text" class="layui-input" id="timeInput" value="">
+                    </div>
+                </div>
+                <div>
+                    <button class="layui-btn layui-btn-sm query"  th:if="${MENU1002Query.visible}">查询</button>
+                    <button class="layui-btn layui-btn-sm export"  th:if="${MENU1002Query.visible}">导出</button>
+                </div>
+            </div>
+            <div class="report_table">
+                <h3 id="table_title"></h3>
+                <div id="table1Content">
+                    <table id="table1" lay-filter="table1"></table>
+                </div>
+                <div id="table_page"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" th:src="@{/public/lib/layui_exts/treeGrid.js}"></script>
+
+    <script  type="text/javascript" th:src="@{/public/lib/layui_exts/excel.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/public/js/admin/statisticsReport/reportQuery.js}"></script>
+</div>
+</html>

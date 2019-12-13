@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/lib/ztree/css/zTreeStyle/zTreeStyle.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/displayTreeConf.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>基础数据</a>
+                <a><cite>对象展示结构树配置</cite></a>
+            </span>
+        </blockquote>
+        <div id="tree_content">
+            <div id="tree_left">
+                <div class="layui-form leftSearch" lay-filter="searchIf">
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" id="search_treeName" value="" placeholder="结构树名称">
+                    </div>
+                    <button class="layui-btn layui-btn-sm left_query" th:if="${MENU1405Query.visible}">查询</button>
+                </div>
+                <div class="tree_main">
+                    <div class="ztree" id="tree"></div>
+                </div>
+                <div class="left_btn">
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1405Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1405Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1405Delete.visible}">删除</button>
+                    <button class="layui-btn layui-btn-sm startOrStop" th:if="${MENU1405Enable_Disable.visible}">启/停用</button>
+                </div>
+            </div>
+            <div id="tree_right">
+                <div class="treeDetail_title">
+                    <div>
+                        <button class="layui-btn layui-btn-sm node_add" th:if="${MENU1405Node_Add.visible}">新增</button>
+                        <button class="layui-btn layui-btn-sm node_edit" th:if="${MENU1405Node_Modify.visible}">修改</button>
+                        <button class="layui-btn layui-btn-sm node_delete" th:if="${MENU1405Node_Delete.visible}">删除</button>
+                        <button class="layui-btn layui-btn-sm node_import" th:if="${MENU1405Node_Import.visible}">导入</button>
+                        <button class="layui-btn layui-btn-sm node_export" th:if="${MENU1405Node_Export.visible}">导出</button>
+                    </div>
+                </div>
+                <div class="treeDetail_table">
+                    <div id="treeDetail_table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增修改展示结构树-->
+    <div id="tree_add" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item edit_treeId layui-hide">
+                <label class="layui-form-label">展示结构树标识：</label>
+                <div class="layui-inline">
+                    <div id="edit_treeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_treeId">
+                <label class="layui-form-label"><span class="red">* </span>展示结构树标识：</label>
+                <div class="layui-inline">
+                    <input type="text" name="treeId" id="treeId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="treeId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>展示结构树名称：</label>
+                <div class="layui-inline">
+                    <input type="text" name="treeName" id="treeName" maxlength='30' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="treeName_tip"></i>
+            </div>
+            <div class="layui-form-item add_tree_energyTypeId">
+                <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
+                <div class="layui-input-inline">
+                    <select name="tree_energyTypeId" id="tree_energyTypeId"></select>
+                </div>
+            </div>
+            <div class="layui-form-item edit_tree_energyTypeId layui-hide">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-input-inline">
+                    <div id="edit_tree_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>是否启用：</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="tree_isUse" id="tree_isUse" value="true" lay-skin="switch">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序标识：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="tree_sortId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10'>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="tree_sortId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="tree_memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除展示结构树-->
+    <div id="tree_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">展示结构树标识：</label>
+                <div class="layui-inline">
+                    <div id="delete_treeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">展示结构树名称：</label>
+                <div class="layui-inline">
+                    <div id="delete_treeName"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-inline">
+                    <div id="delete_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此展示结构树吗？<br>此展示结构树的明细节点信息将一并删除!
+            </div>
+        </form>
+    </div>
+
+    <!--新增修改展示结构树明细节点-->
+    <div id="treeDetail_add" class="layui-hide">
+        <div class="formContent">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">展示结构树：</label>
+                    <div class="layui-inline">
+                        <div id="treeDetail_treeName"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item add_treeDetail_nodeId">
+                    <label class="layui-form-label"><span class="red">* </span>节点ID：</label>
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" id="treeDetail_nodeId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="treeDetail_nodeId_tip"></i>
+                </div>
+                <div class="layui-form-item edit_treeDetail_nodeId layui-hide">
+                    <label class="layui-form-label">节点ID：</label>
+                    <div class="layui-inline">
+                        <div id="edit_treeDetail_nodeId"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">父节点：</label>
+                    <div class="layui-inline">
+                        <div id="treeDetail_parentNode"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red">* </span>节点名称：</label>
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" maxlength="30" id="treeDetail_nodeName">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="treeDetail_nodeName_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">排序标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="treeDetail_sortId" onKeyUp="value=value.replace(/[\W]/g,'')" class="layui-input" maxlength="10">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="treeDetail_sortId_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">备注：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" maxlength="20" id="treeDetail_memo">
+                    </div>
+                </div>
+            </form>
+            <div id="isNot_std_coal">
+                <div style="margin-top:10px;">数据源：</div>
+                <div class="dataSource">
+                    <div class="ds_title">
+                        <span>仪表列表（从右侧选择）</span>
+                        <div>
+                            <a href="javascript:void(0)" id="removeSelected">删除所选</a>
+                            <a href="javascript:void(0)" id="clearSelected">清空</a>
+                        </div>
+                    </div>
+                    <div class="ds_list layui-form" lay-filter="ds_list">
+                        <table class="layui-table">
+                            <tbody id="ds_data"></tbody>
+                        </table>
+                    </div>
+                    <div class="ds_formula">
+                        <div class="ds_formula_btn">
+                            <span>公式</span>
+                            <div>
+                                <a href="javascript:void(0)" id="checkFormula">检查</a>
+                                <a href="javascript:void(0)" id="addAllMeter">所有仪表相加</a>
+                                <a href="javascript:void(0)" id="clearFormula">清空</a>
+                            </div>
+                        </div>
+                        <div class="formula_content">
+                            <textarea name="formula" id="formula" value="" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="infoTap">
+                            ◆公式中用?代替上面的仪表，公式中的第一个?代表上面的第一个仪表，以此类推，上面仪表的
+                            个数需要等于公式中?的个数（如果仪表列表中只有一个仪表，公式可以为空，但不能只有1个问号）。
+                        </div>
+                    </div>
+                </div>
+                <div class="tableSelect">
+                    <div id="tableSelect_title">仪表选择</div>
+                    <div id="tableSelect_content">
+                        <div id="obj_nav">
+                            <a href="javascript:void(0);" class="obj_nav-item obj_nav-this" data-id="park">企业</a>
+                            <a href="javascript:void(0);" class="obj_nav-item" data-id="site">仪表</a>
+                        </div>
+                        <div id="parkSiteTableContent">
+                            <div class="layui-form searchForm">
+                                <input type="text" id="obj_parkSiteName" class="layui-input" maxlength="30" placeholder="按企业标识或者名称查询">
+                                <button class="layui-btn layui-btn-sm obj_parkSiteQuery">查询</button>
+                            </div>
+                            <div class="parkSite">
+                                <table class="layui-table">
+                                    <tbody id="parkSiteTbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="meterTableContent" class="layui-hide">
+                            <div class="layui-form searchForm">
+                                <input type="text" id="obj_meterName" class="layui-input" maxlength="30" placeholder="按仪表标识或者名称查询">
+                                <button class="layui-btn layui-btn-sm obj_meterQuery">查询</button>
+                            </div>
+                            <div class="meter layui-form" lay-filter="meter_list">
+                                <table class="layui-table">
+                                    <tbody id="meterTbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meter_btnGroup layui-hide">
+                        <a href="javascript:void(0);" id="addSelectedBefore">添加至所选之前</a>
+                        <a href="javascript:void(0);" id="addSelectedAfter">添加至末尾</a>
+                        <a href="javascript:void(0);" id="allSelect">全选</a>
+                        <a href="javascript:void(0);" id="allUnSelect">反选</a>
+                        <a href="javascript:void(0);" id="cancel">取消</a>
+                    </div>
+                    <div class="infoTap meterTap layui-hide">
+                        ◆双击直接添加到末尾。
+                    </div>
+                </div>
+            </div>
+            <div id="is_std_coal" class="layui-hide">
+                <div class="std_dataSource">
+                    <div class="ds_title">
+                        <span>数据源（从右侧添加/更新）</span>
+                    </div>
+                    <div class="std_ds_list layui-form" lay-filter="std_ds_list">
+                        <div class="ds_left_list">
+                            <table class="layui-table">
+                                <tbody id="std_ds_data1"></tbody>
+                            </table>
+                        </div>
+                        <div class="ds_right_list">
+                            <div id="std_ds_data2"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)" id="ds_removeSelected">删除所选</a>
+                        <a href="javascript:void(0)" id="ds_clearSelected">清空</a>
+                    </div>
+                    <div class="infoTap">
+                        ◆双击一行可以在右侧重新编辑。
+                    </div>
+                </div>
+                <div class="std_paramSelect">
+                    <div class="ds_title">
+                        <span>仪表参数列表（从右侧选择）</span>
+                        <div>
+                            <a href="javascript:void(0)" id="pa_removeSelected">删除所选</a>
+                            <a href="javascript:void(0)" id="pa_clearSelected">清空</a>
+                        </div>
+                    </div>
+                    <div class="std_meterParam_list layui-form" lay-filter="std_meterParam_list">
+                        <table class="layui-table">
+                            <tbody id="std_meterParam_list"></tbody>
+                        </table>
+                    </div>
+                    <div class="param_formula">
+                        <div class="ds_formula_btn">
+                            <span>公式</span>
+                            <div>
+                                <a href="javascript:void(0)" id="pa_checkFormula">检查</a>
+                                <a href="javascript:void(0)" id="pa_addAllMeter">所有仪表相加</a>
+                                <a href="javascript:void(0)" id="pa_clearFormula">清空</a>
+                            </div>
+                        </div>
+                        <div class="formula_content">
+                            <textarea name="formula" id="pa_formula" value="" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="infoTap">
+                            ◆公式中用?代替上面的仪表参数，公式中的第一个?代表上面的第一个仪表参数，以此类推，上面仪表参数的个数需要等
+                            于公式中?的个数（如果上面只有一个仪表参数，公式可以为空，但不能只有1个问号）。
+                        </div>
+                        <div class="layui-form std_param">
+                            <p>标煤参数</p>
+                            <select id="std_coal_param" lay-verify="std_coal_param"></select>
+                            <button class="layui-btn layui-btn-sm" id="addOrUpdateDs"><<< 添加/更新到左侧数据源</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="std_tableSelect">
+                    <div id="std_tableSelect_title">仪表参数选择</div>
+                    <div id="std_tableSelect_content">
+                        <div id="std_nav">
+                            <a href="javascript:void(0);" class="std_nav-item std_nav-this" data-id="park">企业</a>
+                            <a href="javascript:void(0);" class="std_nav-item" data-id="site">仪表</a>
+                            <a href="javascript:void(0);" class="std_nav-item" data-id="param">参数</a>
+                        </div>
+                        <div id="std_parkSiteTableContent">
+                            <div class="layui-form searchForm">
+                                <input type="text" id="std_parkSiteName" class="layui-input" maxlength="30" placeholder="按企业标识或者名称查询">
+                                <button class="layui-btn layui-btn-sm std_parkSiteQuery">查询</button>
+                            </div>
+                            <div class="parkSite">
+                                <table class="layui-table">
+                                    <tbody id="std_parkSiteTbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="std_meterTableContent" class="layui-hide">
+                            <div class="layui-form searchForm">
+                                <input type="text" id="std_meterName" class="layui-input" maxlength="30" placeholder="按仪表标识或者名称查询">
+                                <button class="layui-btn layui-btn-sm std_meterQuery">查询</button>
+                            </div>
+                            <div class="meter">
+                                <table class="layui-table">
+                                    <tbody id="std_meterTbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="std_paramTableContent" class="layui-hide">
+                            <div class="layui-form searchForm">
+                                <input type="text" id="std_paramName" class="layui-input" maxlength="30" placeholder="按参数标识或者名称查询">
+                                <button class="layui-btn layui-btn-sm std_paramQuery">查询</button>
+                            </div>
+                            <div class="param layui-form" lay-filter="std_paramTbody">
+                                <table class="layui-table">
+                                    <tbody id="std_paramTbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="param_btnGroup layui-hide">
+                        <a href="javascript:void(0);" id="std_addSelectedBefore">添加至所选之前</a>
+                        <a href="javascript:void(0);" id="std_addSelectedAfter">添加至末尾</a>
+                    </div>
+                    <div class="infoTap paramTap layui-hide">
+                        ◆双击直接添加到末尾。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--删除展示结构树明细节点-->
+    <div id="treeDetail_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">展示结构树：</label>
+                <div class="layui-inline">
+                    <div id="treeDetail_delete_treeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">节点：</label>
+                <div class="layui-inline">
+                    <div id="treeDetail_delete_nodeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此展示结构树节点吗？
+                如果有子节点，则子节点将无法显示出来，建议先修改或删除子节点。
+            </div>
+        </form>
+    </div>
+
+    <!--导入展示结构树明细节点-->
+    <div id="treeDetail_import" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">展示结构树：</label>
+                <div class="layui-inline">
+                    <div id="treeDetail_import_report"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>结构树节点文件：</label>
+                <div class="layui-inline">
+                    <input type="file" name="file" id="upload_file2" multiple required autocomplete="off"/>
+                </div>
+                <a href="javascript:void(0)" id="node_download_demo" th:if="${MENU1405Download.visible}">模板文件下载</a>
+            </div>
+            <div class="layui-form-item problem">
+                说明：导入后原来配置的展示结构树节点将被清空。
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/lib/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/layui_exts/treeGrid.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/form-select/xm-select.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.core.js}"></script>
+    <script type="text/javascript" th:src="@{/public/js/admin/basicData/displayTreeConf.js}"></script>
+</div>
+</html>

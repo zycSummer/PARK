@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel='stylesheet' th:href="@{/public/css/admin/energyProjects/loadRanking.css}" media="all" />
+  <div class="container">
+      <blockquote class="layui-elem-quote  tabBreacrumb">
+        <span class="layui-breadcrumb" lay-separator=">">
+          <a class="park_select"></a>
+          <a>项目能耗</a>
+          <a><cite>负荷排名</cite></a>
+        </span>
+  
+      </blockquote>
+      <div class="chart_main">
+        <div class="title_div ">
+  
+          <h3 class="chart_head" id="chart_head_title">
+          </h3>
+        </div>
+  
+        <div class="tpyeSelect">
+          <span class="layui-breadcrumb" lay-separator="|" id="typeBreacrumb">
+  
+          </span>
+        </div>
+        <div class="date_div">
+          <h3 class="chart_head  head_date"></h3>
+  
+  
+        </div>
+        <div class="chart_main" id="chartMain"></div>
+  
+      </div>
+    </div>
+  <script type="text/javascript" th:src="@{/public/js/admin/energyProjects/loadRanking.js}"></script>
+</div>
+
+</html>

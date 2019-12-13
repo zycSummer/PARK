@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/alarm/configuration.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a>报警管理</a>
+                <a><cite>报警配置</cite></a>
+            </span>
+        </blockquote>
+        <div class="content_main  layui-row layui-col-space5">
+            <div class="content_left layui-col-md6">
+                <div class="control_div">
+                    <div class="layui-inline">
+                        <form class="layui-form">
+                            <div class="layui-inline">
+                                <label class="search_label">报警名称：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" value="" class="layui-input search_input" id="alarmName_search">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="layui-inline  btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm "  th:if="${MENU0601Query.visible}" id="search_btn_conf">查询</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm "  th:if="${MENU0601Add.visible}" id="add_btn_conf">新增</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " th:if="${MENU0601Modify.visible}"  id="edit_btn_conf">修改</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm "  th:if="${MENU0601Delete.visible}" id="del_btn_conf">删除</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab_content">
+                    <table class="layui-table  customize-table" id="alarm_table" lay-filter="alarm_table"></table>
+
+                </div>
+                <div class="table_page" id="alarm_page"></div>
+            </div>
+            <div class="content_right layui-col-md6">
+                <div class="control_div">
+                    <div class="layui-inline">
+                        <form class="layui-form">
+                            <div class="layui-inline">
+                                <label class="search_label">数据源：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" value="" class="layui-input search_input" id="data_source">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="layui-inline  btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm "  th:if="${MENU0601Conditions_Query.visible}" id="search_btn_data">查询</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " th:if="${MENU0601Conditions_Add.visible}" id="add_btn_data">新增</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " th:if="${MENU0601Conditions_Modify.visible}" id="edit_btn_data">修改</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " th:if="${MENU0601Conditions_Delete.visible}"  id="del_btn_data">删除</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab_content">
+                    <table class="layui-table customize-table " id="data_source_table" lay-filter="data_source_table">
+                    </table>
+
+                </div>
+                <div class="table_page" id="table_page_data"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 报警配置模态框 -->
+    <div id="conf_dialog" class="layui-hide layui-row">
+        <div class="calculation_content layui-row">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>报警标识：</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="text" id="alarmId_conf"
+                            onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10">
+
+                    </div>
+                    <label class="layui-form-label  label_tip">◆只能输入字母、数字，长度不超过10，在园区/当前企业内唯一。</label>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>报警名称：</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="text" id="alarmName_cof" maxlength="30">
+
+                    </div>
+                    <label class="layui-form-label  label_tip">◆长度不超过30。</label>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>报警类型：
+                    </label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="text" id="alarmType_conf" maxlength="30">
+
+                    </div>
+                    <label class="layui-form-label  label_tip">◆长度不超过30。</label>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>是否启用：
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="addIsUSe" placeholder="请选择是否启用">
+                            <option value=""></option>
+                            <option value="true">Y</option>
+                            <option value="false">N</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>多条件间关系：
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="addMultiConditionsLogic" placeholder="请选择多条件间关系">
+                            <option value=""></option>
+                            <option value="AND">AND</option>
+                            <option value="OR">OR</option>
+
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">短信接收人：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" maxlength="500" id="msgRecv_conf"></textarea>
+
+
+                    </div>
+                    <label class="layui-form-label  label_tip">◆多个接收人以英文分号分隔</label>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">邮件接收人：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" maxlength="500" id="mailRecv_conf"></textarea>
+
+                    </div>
+                    <label class="layui-form-label  label_tip">◆多个接收人以英文分号分隔 </label>
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline">
+                            <textarea class="layui-textarea" maxlength="500" id="conf_memo"></textarea>
+                        <!-- <input class="layui-input" autocomplete="off" type="text" id="" maxlength="130"> -->
+
+                    </div>
+                    <div class="layui-input-inline">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 数据源配置 模态框 -->
+    <div id="data_source_dialog" class="layui-hide layui-row">
+        <div class="layui-col-md4">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>报警条件标识： </label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="text" id="add_alarmConditionId"
+                            onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_alarmConditionId_tip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>数值类型：</label>
+                    <div class="layui-input-inline">
+                        <select id="add_valueType">
+                            <option></option>
+                            <option value="LAST_VALUE">最新值</option>
+                            <option value="LAST_VALUE_TIMESTAMP">最新值时间</option>
+                            <option value="TODAY_DIFF">当日差值</option>
+                            <option value="THIS_MONTH_DIFF">当月差值</option>
+                            <option value="THIS_YEAR_DIFF">当年差值</option>
+                            <option value="NOW_MINUS_LAST_VALUE_TIMESTAMP">当前时间减去最新值时间</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>条件1操作符：
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="add_condition1Op">
+                            <option></option>
+                            <option value=">">></option>
+                            <option value=">=">>=</option>
+                            <option value="<">
+                                <</option> <option value="<=">
+                                    <=</option> <option value="=">=
+                            </option>
+                            <option value="!=">!=</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>条件1值：
+                    </label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="number" id="add_condition1Value"
+                            maxlength="100">
+
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"> 条件间关系：
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="add_conditionsLogic">
+                            <option></option>
+                            <option value="AND"> AND</option>
+                            <option value="OR">OR</option>
+                        </select>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_conditionsLogic_tip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">条件2操作符：
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="add_condition2Op">
+                            <option></option>
+                            <option value=">">></option>
+                            <option value=">=">>=</option>
+                            <option value="<">
+                                <</option> <option value="<=">
+                                    <=</option> <option value="=">=
+                            </option>
+                            <option value="!=">!=</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">条件2值：
+                    </label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="number" id="add_condition2Value"
+                            maxlength="100">
+
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">报警信息：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" maxlength="500" id="add_alarmMsg"></textarea>
+
+                        <label class="alarmInfoTip">◆可以使用{this}占位符,其指的是根据前面数据源和数值类型计算出的结果。
+
+                        </label>
+                    </div>
+
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">排序标识：</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" autocomplete="off" type="number" id="add_sortId"
+                            onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20">
+                    </div>
+
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline">
+                            <textarea class="layui-textarea" maxlength="500" id="add_memo"></textarea>
+
+                        <!-- <input class="layui-input" autocomplete="off" type="text" id="add_memo" maxlength="100"> -->
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="layui-col-md4" id="data_source_select">
+            <div class="data_source_left">
+                <p>数据源：</p>
+            </div>
+            <div class="data_source_right">
+                <div class="data_source_right_title">仪表参数列表（从右侧选择） <div class="data_source_right_title_btn"><a id="deleteDataSocureSelect">删除所选</a>
+                        <a id="delAllDataSocure">清空</a> </div>
+                </div>
+
+                <div class="data_source_right_table">
+                  <table class="layui-table">
+                      <tbody id="data_source_tbody"></tbody>
+                  </table>
+                </div>
+                <div class="data_source_right_footer">
+                    <div class="data_source_right_title">公式 <div class="data_source_right_title_btn">
+                            <a id="formula_check">检查</a><a  id="formula_addVal">所有仪表参数相加</a> <a id="formula_delAll">清空</a> </div>
+                    </div>
+
+
+                    <div class="data_source_right_footer_content"> <textarea class="layui-textarea"
+                            maxlength="500"  id="alarm_formulaVal"></textarea></div>
+                    <label class="alarmInfoTip">◆公式中用?代替上面的仪表参数，公式中的第一个?代表上面的第一个仪表参数，以此类推，上面仪表参数的个数需要等于公式中?的个数。
+
+
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4" id="data_source_parameter_select">
+            <div class="data_source_parameter_select_content">
+                <div class="data_source_parameter_select_content_title">仪表参数选择</div>
+                <div class="data_source_parameter_select_content_tab">
+                    <div class="layui-tab layui-tab-card" lay-filter="modelSelect">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this" lay-id="company">企业</li>
+                            <li lay-id="meter">仪表</li>
+                            <li lay-id="parameter">参数</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_company" placeholder="按企业标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn "
+                                                    id="add_btn_company">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table">
+                                            <tbody id="company_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_meter" placeholder="按仪表标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn " id="add_btn_meter">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table tab_item_content_tab">
+                                            <tbody id="meter_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_parameter" placeholder="按参数标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn "
+                                                    id="add_btn_parameter">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table tab_item_content_tab">
+                                            <tbody id="parameter_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+         <div class="parameter_btns">
+             <p><a class="parameter_btn_type" data-type="top">添加至所选之前</a></p>
+             <p class="parameter_btns_tip">◆双击直接添加到末尾。</p>
+         </div>
+
+        </div>
+    </div>
+    </div>
+        <script type="text/javascript" th:src="@{/public/js/admin/alarm/configuration.js}"></script>
+    </div>
+
+</html>

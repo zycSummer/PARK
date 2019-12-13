@@ -1,0 +1,101 @@
+.report_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.table_title{
+    padding:0 10px 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*时间*/
+.timeSelect{
+    margin-left:20px;
+    flex-basis:400px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.timeType{
+    margin-left:5px;
+}
+#timeInput{
+    display:inline-block;
+    width:130px;
+    margin-left:10px;
+}
+
+.layui-breadcrumb .layui-this{
+    color:#6fbf86!important;
+    font-weight: bold;
+}
+
+.table_title .layui-btn{
+    margin-left:0;
+}
+
+.report_table{
+    position: relative;
+    height:1px;
+    flex-grow: 1;
+    margin:0 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#table_title{
+    text-align: center;
+    font-weight: bold;
+}
+#subTitle{
+    font-weight: normal;
+}
+
+#table1Content{
+    position: relative;
+    height:1px;
+    flex-grow: 1;
+}
+
+#table1{
+    width:100%;
+}
+
+.table_content .layui-table-view{
+    margin-bottom:0;
+}
+
+#table_page .layui-laypage{
+    margin-bottom:0;
+}

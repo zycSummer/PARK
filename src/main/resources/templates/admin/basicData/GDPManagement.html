@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/GDPManagement.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>基础数据</a>
+                <a><cite>对象GDP管理</cite></a>
+            </span>
+        </blockquote>
+        <div id="GDP_content">
+            <div class="table_title layui-form">
+                <div class="timeSelect">
+                    <span class="title">时间：</span>
+                    <div class="layui-inline" id="timeDiv">
+                        <input type="text" class="layui-input" id="timeInput1" value=""> ~
+                        <input type="text" class="layui-input" id="timeInput2" value="">
+                    </div>
+                </div>
+                <div>
+                    <button class="layui-btn layui-btn-sm query" th:if="${MENU1409Query.visible}">查询</button>
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1409Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1409Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1409Delete.visible}">删除</button>
+                </div>
+            </div>
+            <div class="GDP_table">
+                <table id="table1" lay-filter="table1"></table>
+                <div id="table_page"></div>
+            </div>
+        </div>
+    </div>
+    <!--新增修改-->
+    <div id="GDP_add" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item edit_yearMonth layui-hide">
+                <label class="layui-form-label">年月：</label>
+                <div class="layui-inline">
+                    <div id="edit_yearMonth"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_yearMonth">
+                <label class="layui-form-label"><span class="red">* </span>年月：</label>
+                <div class="layui-inline">
+                    <input type="text" name="yearMonth" id="yearMonth" class="layui-input" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>GDP：</label>
+                <div class="layui-inline">
+                    <input type="text" name="GDP" id="GDP" maxlength='30' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="GDP_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>工业增加值：</label>
+                <div class="layui-inline">
+                    <input type="text" name="GDP" id="addValue" maxlength='30' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="addValue_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除-->
+    <div id="GDP_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">年月：</label>
+                <div class="layui-inline">
+                    <div id="delete_yearMonth"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">GDP：</label>
+                <div class="layui-inline">
+                    <div id="delete_GDP"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">工业增加值：</label>
+                <div class="layui-inline">
+                    <div id="delete_addValue"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此GDP吗？
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/js/admin/basicData/GDPManagement.js}"></script>
+</div>
+</html>

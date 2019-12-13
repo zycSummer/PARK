@@ -1,0 +1,27 @@
+{
+  "width": 100,
+  "height": 30,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\n\n}",
+  "properties": {
+    "jet-type": {
+      "valueType": "String",
+      "defaultValue": "jet-ajax"
+    },
+    "paras": {
+      "valueType": "String"
+    },
+    "preaction": {
+      "valueType": "Function"
+    },
+    "url": {
+      "valueType": "String"
+    },
+    "interval": {
+      "valueType": "Int"
+    },
+    "update": {
+      "valueType": "Function"
+    }
+  }
+}

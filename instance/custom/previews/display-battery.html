@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HT Material Comp Battery</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="custom/images/favicon.ico?v=2" />
+    <style>
+        html,
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+
+    <script src='custom/configs/htconfig.js'></script>
+    <script src='libs/ht.js'></script>
+    <script src='libs/ht-edgetype.js'></script>
+    <script src='libs/ht-obj.js'></script>
+    <script src='libs/ht-ui.js'></script>
+    <script src='libs/ht-vector.js'></script>
+    <script src='libs/ht-animation.js'></script>
+
+    <script>
+        function recharging(data, textData) {
+            var rp = 1
+            var isRecharging = false
+            textData.setAttr('isRecharging', isRecharging)
+            var interval = setInterval(function () {
+                if (isRecharging) {
+                    // * 充电中
+                    console.log(rp)
+                    data.setAttr('remainingPower', rp)
+                    rp = parseFloat((rp += 0.01).toFixed(2))
+                    // * 切换状态
+                    if (rp === 1) {
+                        isRecharging = false
+                        textData.setAttr('isRecharging', isRecharging)
+                    }
+                } else {
+                    // * 使用中
+                    console.log(rp)
+                    data.setAttr('remainingPower', rp)
+                    rp = parseFloat((rp -= 0.01).toFixed(2))
+                    // * 切换状态
+                    if (rp === 0) {
+                        isRecharging = true
+                        textData.setAttr('isRecharging', isRecharging)
+                    }
+                }
+            }, 50)
+
+        }
+        // * 加载数据
+        function loadData(dataModel, graphView) {
+            ht.Default.xhrLoad('previews/display.json', function (text) {
+                var json = ht.Default.parse(text);
+                if (json.title) document.title = json.title;
+                dataModel.deserialize(json);
+                graphView.fitContent(true);
+                var b1 = dataModel.getDataByTag('b1')
+                var r1 = dataModel.getDataByTag('r1')
+
+                recharging(b1, r1)
+            });
+        }
+        // * 初始化
+        function init() {
+            dataModel = new ht.DataModel();
+            graphView = new ht.graph.GraphView(dataModel);
+            graphView.addToDOM();
+            loadData(dataModel, graphView);
+        }
+    </script>
+</head>
+
+<body onload="init()">
+</body>
+
+</html>

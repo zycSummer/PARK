@@ -1,0 +1,44 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "String"
+    },
+    {
+      "attr": "font",
+      "valueType": "String",
+      "defaultValue": "14px arial, sans-serif"
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    }
+  ],
+  "width": 100,
+  "height": 70,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "文本"
+      },
+      "align": "center",
+      "color": "rgb(255,255,255)",
+      "font": {
+        "func": "attr@font",
+        "value": "14px arial, sans-serif"
+      },
+      "pixelPerfect": true,
+      "rect": [
+        0,
+        2,
+        100,
+        40
+      ]
+    }
+  ]
+}

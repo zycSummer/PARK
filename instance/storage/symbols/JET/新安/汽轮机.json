@@ -1,0 +1,47 @@
+{
+  "width": 140,
+  "height": 100,
+  "comps": [
+    {
+      "type": "trapezoid",
+      "background": "rgb(3,127,252)",
+      "borderColor": "#979797",
+      "gradient": "spread.horizontal",
+      "gradientColor": "rgb(200,225,250)",
+      "rotation": 4.71239,
+      "rect": [
+        -12.38687,
+        35.4983,
+        53.77715,
+        29.0034
+      ]
+    },
+    {
+      "type": "trapezoid",
+      "background": "rgb(3,127,252)",
+      "borderColor": "#979797",
+      "gradient": "spread.horizontal",
+      "gradientColor": "rgb(200,225,250)",
+      "rotation": 4.71239,
+      "rect": [
+        63.79875,
+        24.47822,
+        94.64328,
+        51.04357
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(3,127,252)",
+      "borderColor": "#979797",
+      "gradient": "spread.vertical",
+      "gradientColor": "rgb(200,225,250)",
+      "rect": [
+        29.0034,
+        31.30795,
+        57.5952,
+        37.3841
+      ]
+    }
+  ]
+}

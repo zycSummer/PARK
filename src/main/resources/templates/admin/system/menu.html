@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/system/menu.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+
+                <a>系统管理</a>
+                <a><cite>菜单管理</cite></a>
+            </span>
+        </blockquote>
+
+        <div class="tab_content">
+
+            <div class="tab_content_tab">
+                <div class="control_div">
+                    <div class="layui-inline">
+
+                    </div>
+                    <div class="layui-inline" id="btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="search_btn"  th:if="${MENU1504Query_menu.visible}">查询</button>
+                        </div>
+
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " id="edit_menu"  th:if="${MENU1504Modify.visible}">修改</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content_tab_menu">
+                    <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+                </div>
+
+            </div>
+            <div class="tab_content_tree">
+                <div class="control_div">
+                    <div class="layui-inline">
+
+                    </div>
+                    <div class="layui-inline" id="btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="search_btn_fun"  th:if="${MENU1504Fun_query.visible}">查询</button>
+                        </div>
+                       
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " id="edit_btn"  th:if="${MENU1504Func_Modify.visible}">修改</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content_tree_main">
+                    <table class="layui-table  customize-table" id="role_table" lay-filter="role_table"></table>
+                    <div id="table_page" class="table_page"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--新增修改-->
+    <div id="menu_add" class="layui-hide layui-row">
+        <div class=" layui-row">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">菜单标识ID:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addMenuId" disabled>
+
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">菜单名称:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addMenuName" maxlength="20">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon  addMenuNameTip"></i>
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">父级菜单:</label>
+                    <div class="layui-input-inline ">
+                        <select xm-select="addParentMenuSelect" xm-select-radio=""></select>
+                    </div>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">图标:</label>
+                    <div class="layui-input-inline " id="selectIcon">
+                    
+                        
+                        
+                    </div>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">请求方式:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addMethod"  disabled>
+                    </div>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">接口地址:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addUrl" disabled>
+                    </div>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">排序标识:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text"
+                            onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10" id="addsortId">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="addSortIdTip"></i>
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addMemo">
+                    </div>
+                </div>
+
+        </div>
+        </form>
+
+
+    </div>
+       <!--修改功能-->
+       <div id="fun_add" class="layui-hide layui-row">
+            <div class=" layui-row">
+                <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">菜单:</label>
+                        <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="text" id="funMenuId" disabled>
+    
+                        </div>
+    
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">功能标识:</label>
+                        <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="text" id="functionId" maxlength="20">
+                        </div>
+                     
+                    </div>
+    
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">功能名称:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="text" id="addFunctionName" maxlength="20">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon" id ="addFunctionNameTip"></i>
+
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">功能说明:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="text" id="addFunctionDsc">
+                        </div>
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">请求方式:</label>
+                        <div class="layui-input-inline ">
+                            <!-- <input class="layui-input" autocomplete="off" type="text" > -->
+                             <select id="addBtnMethod"  disabled>
+                             <option value="GET">GET</option>   
+                             <option value="POST">POST</option>   
+                             <option value="PUT">PUT</option>   
+                             <option value="DELETE">DELETE</option>   
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">接口地址:</label>
+                        <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="text" id="addBtnUrl" disabled >
+                        </div>
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                        <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="text" id="addBtnMemo">
+                        </div>
+                    </div>
+    
+            </div>
+            </form>
+    
+    
+        </div>
+    <script type="text/javascript" th:src="@{/public/lib/lay-module/formSelects/formSelects-v4.js}"> </script>
+    <script type="text/javascript" th:src="@{/public/js/admin/system/menu.js}"></script>
+</div>
+
+</html>

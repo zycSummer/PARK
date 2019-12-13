@@ -1,0 +1,177 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-31 17:12:40 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-09 17:18:04
+ */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+body {
+ overflow: hidden;
+ background-image: url('/public/images/login_bg.jpg'); 
+
+}
+body:after {
+    content: '';
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.layui-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.login_line{
+    width: 570px;  
+    height: 20px; 
+    margin: auto;
+}
+#lineLogin{
+    width: 570px;  
+    height: 10px;  
+    background: url('/public/images/login_line.png') center center no-repeat; 
+    
+}
+
+.admin-login-background {
+    height:480px;
+    width: 570px;
+    margin: auto;
+    border: 1px solid #2af270;
+    margin-top: -15px;
+    background: rgba(8, 18, 31, 0.4);
+}
+
+.logo-title {
+    text-align: center;
+    letter-spacing: 2px;
+    padding: 20px 0;
+    margin-top:140px;
+    margin-bottom: 60px;
+}
+
+.logo-title h1 {
+    color: #2af270;
+    font-size: 45px;
+    line-height: 45px;
+    text-shadow: #2af270 1px  0  0;
+}
+
+.login-form {
+    border-radius: 3px;
+    padding: 14px 20px;
+     margin: auto;
+     width: 450px;
+}
+
+.login-form .layui-form-item {
+    position: relative;
+    border-radius: 15px;
+    background-color: rgba(8, 18, 31, 0.4);
+    color: #999999;
+  
+    border-right: none;
+}
+
+.login-form .layui-form-item label {
+    
+     text-align:left; 
+}
+.login-form .layui-input-block {
+    width: 100%;
+    min-height: 45px;
+    margin-left: 0 !important;
+    
+}
+.layui-form-label {
+    float: left;
+    display: block;
+    padding:15px 15px;
+    width: 50px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: right;
+}
+
+.layui-input, .layui-textarea {
+    color: #ffffff;
+    height: 50px!important;
+    border-radius:20px;
+    background-color: rgba(8, 18, 31, 0.4)!important;
+    border-color: #094947;
+    padding-left: 60px;
+}
+.layui-input:hover, .layui-textarea:hover {
+    border-color: #094947!important;
+}
+.layui-input:focus, .layui-textarea:focus {
+    border-color: #094947!important;
+}
+#loginBtn{
+    border-radius: 15px;
+    height: 45px;
+    margin-top: 30px;
+    background: linear-gradient( #24C9F6, #2af270) !important;  
+    background: -webkit-linear-gradient( #24C9F6, #2af270) !important;
+    background: linear-gradient( #24C9F6, #2af270)!important;
+}
+/* 解决浏览器自动填充 样式发生改变的问题 */
+input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {  
+    -webkit-box-shadow: 0 0 0px 1000px transparent  inset !important;  
+    background-color:transparent;  
+    background-image: none;  
+     transition: background-color 50000s ease-in-out 0s; 
+     text-fill-color: white;
+     -webkit-text-fill-color: white; 
+}  
+
+
+ input::-webkit-input-placeholder {
+    text-fill-color: white;
+	-webkit-text-fill-color: white; 
+    }
+     
+     input:-moz-placeholder {
+        text-fill-color: white;
+        -webkit-text-fill-color: white; 
+    }
+     
+     input::-moz-placeholder {
+        text-fill-color: white;
+        -webkit-text-fill-color: white; 
+    }
+     
+     input:-ms-input-placeholder {
+        text-fill-color: white;
+        -webkit-text-fill-color: white; 
+     }
+    
+input {  
+     background-color:transparent;  
+   
+}
+.login-img{
+    width: 280px;
+    margin: auto;
+}
+#headerImg{
+    margin-top: 50px;
+    margin-bottom:30px;
+}

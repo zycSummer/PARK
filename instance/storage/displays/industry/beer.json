@@ -1,0 +1,710 @@
+{
+  "v": "6.1.0",
+  "p": {
+    "background": "#2A4E68",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {},
+  "d": [
+    {
+      "c": "ht.Data",
+      "i": 680,
+      "p": {
+        "displayName": "线"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 681,
+      "p": {
+        "displayName": "1线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 692
+        },
+        "target": {
+          "__i": 693
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "ortho",
+        "edge.source.offset.x": 52,
+        "edge.source.offset.y": 127,
+        "edge.source.anchor.x": 0,
+        "edge.target.offset.x": 10,
+        "edge.source.anchor.y": 0,
+        "edge.target.offset.y": -12,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 682,
+      "p": {
+        "displayName": "2线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 693
+        },
+        "target": {
+          "__i": 694
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "ortho",
+        "edge.source.offset.x": 9,
+        "edge.source.offset.y": 32,
+        "edge.target.offset.y": -13,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 683,
+      "p": {
+        "displayName": "3线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 694
+        },
+        "target": {
+          "__i": 695
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "v.h",
+        "edge.source.offset.y": 61,
+        "edge.target.offset.x": -24,
+        "edge.target.offset.y": -11,
+        "edge.corner.radius": 12,
+        "edge.extend": -29,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 684,
+      "p": {
+        "displayName": "4线",
+        "parent": {
+          "__i": 680
+        },
+        "layer": "0",
+        "source": {
+          "__i": 695
+        },
+        "target": {
+          "__i": 697
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "ortho",
+        "edge.source.offset.y": 81,
+        "edge.target.offset.y": -19,
+        "edge.target.offset.x": 28,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.dash.pattern": [
+          16,
+          16
+        ],
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 685,
+      "p": {
+        "displayName": "5线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 697
+        },
+        "target": {
+          "__i": 696
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "h.v",
+        "edge.source.offset.x": -18,
+        "edge.source.anchor.x": 0.4,
+        "edge.source.offset.y": 13,
+        "edge.target.offset.x": 7,
+        "edge.target.offset.y": -15,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 686,
+      "p": {
+        "displayName": "6线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 696
+        },
+        "target": {
+          "__i": 698
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "v.h",
+        "edge.source.offset.x": 8,
+        "edge.source.offset.y": 49,
+        "edge.target.offset.y": 19,
+        "edge.target.offset.x": -22,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 687,
+      "p": {
+        "displayName": "7线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 698
+        },
+        "target": {
+          "__i": 699
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "ortho",
+        "edge.source.offset.x": 32,
+        "edge.source.offset.y": -9,
+        "edge.target.offset.y": 30,
+        "edge.target.offset.x": -33,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 688,
+      "p": {
+        "displayName": "8线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 699
+        },
+        "target": {
+          "__i": 700
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "h.v",
+        "edge.source.offset.x": -6,
+        "edge.source.offset.y": 29,
+        "edge.target.offset.y": -55,
+        "edge.target.offset.x": -5,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 689,
+      "p": {
+        "displayName": "9线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 700
+        },
+        "target": {
+          "__i": 701
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.type": "v.h",
+        "edge.source.offset.y": 39,
+        "edge.source.anchor.x": -0.07,
+        "edge.target.offset.y": 77,
+        "edge.target.offset.x": 27,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.source.offset.x": 67,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 690,
+      "p": {
+        "displayName": "10线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 699
+        },
+        "target": {
+          "__i": 701
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.source.anchor.x": 0.39176,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.y": 0.87834,
+        "edge.target.anchor.x": 0.62889,
+        "edge.target.anchor.y": 0.75,
+        "edge.ortho": 0.39,
+        "select.color": "rgba(0,255,204,0.9)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.gap": 0,
+        "edge.corner.radius": 58,
+        "edge.pattern": [
+          16,
+          16
+        ],
+        "edge.ripple.length": 27,
+        "edge.ripple.size": 44,
+        "edge.ripple.elevation": -45,
+        "edge.flex": 83,
+        "edge.type": "points"
+      }
+    },
+    {
+      "c": "ht.Edge",
+      "i": 691,
+      "p": {
+        "displayName": "11线",
+        "parent": {
+          "__i": 680
+        },
+        "source": {
+          "__i": 698
+        },
+        "target": {
+          "__i": 701
+        }
+      },
+      "s": {
+        "edge.color": "rgb(255,255,255)",
+        "edge.width": 4,
+        "edge.cap": "round",
+        "edge.center": true,
+        "edge.source.anchor.x": 0.37244,
+        "edge.target.offset.y": -18,
+        "edge.dash.color": "rgb(255,255,255)",
+        "edge.dash.width": 2,
+        "edge.segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "edge.points": {
+          "__a": []
+        },
+        "edge.source.anchor.y": 0.68,
+        "edge.target.anchor.x": 0.46089,
+        "edge.target.anchor.y": -0.14,
+        "select.color": "rgba(0,255,204,0.90)",
+        "select.type": "shadow",
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "shadow.blur": 16,
+        "edge.offset": 0,
+        "edge.target.offset.x": -8,
+        "edge.gap": 0,
+        "edge.corner.radius": 12,
+        "edge.source.offset.y": -4,
+        "edge.pattern": [
+          16,
+          16
+        ],
+        "edge.type": "ortho2",
+        "edge.source.offset.x": -25
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 692,
+      "p": {
+        "displayName": "1",
+        "image": "symbols/demo/beer/1.json",
+        "position": {
+          "x": 264.44295,
+          "y": 27.82543
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 693,
+      "p": {
+        "displayName": "2",
+        "image": "symbols/demo/beer/2.json",
+        "position": {
+          "x": 460,
+          "y": 24.32543
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 694,
+      "p": {
+        "displayName": "3",
+        "image": "symbols/demo/beer/3.json",
+        "position": {
+          "x": 625.82409,
+          "y": 16.39487
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 695,
+      "p": {
+        "displayName": "4",
+        "image": "symbols/demo/beer/4.json",
+        "position": {
+          "x": 791.43252,
+          "y": 106.10437
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 696,
+      "p": {
+        "displayName": "6",
+        "image": "symbols/demo/beer/6.json",
+        "position": {
+          "x": 261.94295,
+          "y": 298.1796
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 697,
+      "p": {
+        "displayName": "5",
+        "image": "symbols/demo/beer/5.json",
+        "position": {
+          "x": 482.94295,
+          "y": 286.10437
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 698,
+      "p": {
+        "displayName": "7",
+        "image": "symbols/demo/beer/7.json",
+        "position": {
+          "x": 468.5,
+          "y": 367.98156
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 699,
+      "p": {
+        "displayName": "8",
+        "image": "symbols/demo/beer/8.json",
+        "position": {
+          "x": 805.43252,
+          "y": 484.28352
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 700,
+      "p": {
+        "displayName": "9",
+        "image": "symbols/demo/beer/9.json",
+        "position": {
+          "x": 805.43252,
+          "y": 694.14523
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 701,
+      "p": {
+        "displayName": "10",
+        "image": "symbols/demo/beer/10.json",
+        "position": {
+          "x": 304.44295,
+          "y": 655.14523
+        }
+      },
+      "s": {
+        "select.type": "shadow",
+        "select.padding": 0,
+        "shadow.blur": 16,
+        "shadow.offset.x": 0,
+        "shadow.offset.y": 0,
+        "select.color": "rgba(255,145,0,0.90)"
+      }
+    }
+  ]
+}

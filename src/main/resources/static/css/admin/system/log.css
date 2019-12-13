@@ -1,0 +1,49 @@
+
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-17 14:04:23 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-10-31 15:00:53
+ */
+
+ #page {
+    text-align: right;
+}
+
+#btnGroup {
+    margin-top: 7px;
+    float: right;
+}
+.control_div {
+    padding: 0px 5px  10px 10px !important;
+    border-radius: 0 2px 2px 0 !important;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+.tab_content{
+    margin: 0 10px;
+    height: 1px;
+    flex-grow: 1;
+}
+.layui-table, .layui-table-view {
+     margin: 0; 
+}
+.layui-laypage{
+    margin-bottom:0;
+}
+.layui-form-checkbox span{
+    padding-left: 20px !important;
+}
+.calculationLeft{
+    width: 350px;
+    margin-top: 10px;
+    margin-left:50px;
+    border: 1px solid #f2f2f2;
+}

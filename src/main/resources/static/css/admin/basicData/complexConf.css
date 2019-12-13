@@ -1,0 +1,123 @@
+#complex_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-title{
+    width:200px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title{
+    margin:5px 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.setup{
+    margin-top:5px;
+}
+
+.complex_tree{
+    width:200px;
+    height:1px;
+    flex-grow: 1;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+.complex_tree .ztree{
+    overflow: auto;
+}
+
+.complex_tree .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.complex_tree .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.complex_tree .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+/*图形*/
+#conf_contain{
+    width:1px;
+    flex-grow: 1;
+    height:100%;
+    overflow:auto;
+    position: relative;
+}
+#editor1{
+    width:100%;
+    height:100%;
+}
+
+/*新增修改弹框*/
+#addForm{
+    margin-top:10px;
+}
+#addForm .layui-layer-content{
+    padding:10px 10px 10px 0;
+}
+#addForm .layui-form-label{
+    width:150px;
+}
+#addForm .layui-form-item .layui-input-inline{
+    width:300px;
+}
+#edit_htImgId{
+    line-height: 38px;
+}
+/*删除展示参数 弹框*/
+#deleteForm .layui-form-label{
+    width:150px;
+}
+#de_htImgId,#de_isMainPage{
+    line-height: 38px;
+}
+/*设定主页 弹框*/
+#setupForm .layui-form-label{
+    width:150px;
+}
+#set_htImgId{
+    line-height: 38px;
+}
+
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}
+.red{
+    color:red;
+}
+

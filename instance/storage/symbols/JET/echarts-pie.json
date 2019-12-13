@@ -1,0 +1,74 @@
+{
+  "dataBindings": [
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "textColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "data",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "value": 335,
+          "name": "p1"
+        },
+        {
+          "value": 310,
+          "name": "p2"
+        },
+        {
+          "value": 234,
+          "name": "p3"
+        },
+        {
+          "value": 135,
+          "name": "p4"
+        },
+        {
+          "value": 1548,
+          "name": "p5"
+        }
+      ]
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    }
+  ],
+  "snapshotURL": "symbols/JET/snapshot/snapshot_echarts-pie.json",
+  "renderHTML": "__ht__function(data, gv, cache) {\r\n\r\n    var option = {\r\n        backgroundColor: data.a('background'),\r\n        textStyle: {\r\n            color: data.a('textColor')\r\n        },\r\n        tooltip: {\r\n            trigger: 'item',\r\n            formatter: \"{b} : {c} ({d}%)\"\r\n        },\r\n        legend: {\r\n            type: 'scroll',\r\n            orient: 'vertical',\r\n            left: 'left',\r\n            textStyle: {\r\n                color: data.a('textColor')\r\n            }\r\n        },\r\n        series: [\r\n            {\r\n                name: '',\r\n                type: 'pie',\r\n                data: data.a('data'),\r\n                label: {\r\n                    formatter: \"{b} : {c} ({d}%)\"\r\n                }\r\n            }\r\n        ]\r\n    };\r\n\r\n    if (!cache.htmlView) {\r\n        cache.htmlView = document.createElement('div');\r\n        cache.htmlView.style.position = 'absolute';\r\n        cache.htmlChart = echarts.init(cache.htmlView, data.a('theme'));\r\n\r\n        // layoutHTML will be called when the data needs to be drawing\r\n        cache.htmlView.layoutHTML = function () {\r\n            gv.layoutHTML(data, cache.htmlView, false);\r\n            cache.htmlChart.resize();\r\n        };\r\n    }\r\n\r\n    cache.htmlChart.setOption(option);\r\n\r\n    // html for showing\r\n    return cache.htmlView;\r\n}",
+  "width": 350,
+  "height": 200,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": []
+}

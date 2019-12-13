@@ -1,0 +1,36 @@
+{
+  "width": 100,
+  "height": 10,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\n//只要定时改变offset的值就可以实现动画效果，offset的取值范围为0 ~ 2倍的dashLength\r\n\r\nvar lineColor = comp.getValue('lineColor');\r\nvar dashColor = comp.getValue('dashColor');\r\nvar lineLength = comp.getValue('lineLength');\r\nvar offset = comp.getValue('offset');\r\nvar lineWidth = comp.getValue('lineWidth');;\r\nvar dashLength = comp.getValue('dashLength');\r\nvar dashWidthPercent = comp.getValue('dashWidthPercent');\r\n\r\nif (offset >= 2 * dashLength) {\r\n    offset = offset % (2 * dashLength);\r\n}\r\n\r\ng.beginPath();\r\ng.moveTo(0, 0);\r\ng.fillStyle = lineColor;\r\ng.fillRect(0, 0, lineLength, lineWidth);\r\ng.stroke();\r\n\r\ng.setLineDash([dashLength, dashLength]);\r\ng.lineWidth = lineWidth * dashWidthPercent;\r\nvar my_gradient = g.createLinearGradient(0, 0, 0, lineWidth * dashWidthPercent);\r\nmy_gradient.addColorStop(0, dashColor);\r\nmy_gradient.addColorStop(0.49, \"#d5f6d6\");\r\nmy_gradient.addColorStop(0.51, \"#d5f6d6\");\r\nmy_gradient.addColorStop(1, dashColor);\r\ng.strokeStyle = my_gradient;\r\n\r\ng.beginPath();\r\ng.moveTo(offset, lineWidth / 2);\r\ng.lineTo(lineLength, lineWidth / 2);\r\ng.stroke();\r\n\r\nif (offset > dashLength) {\r\n    g.setLineDash([offset - dashLength, dashLength]);\r\n    g.beginPath();\r\n    g.moveTo(0, lineWidth / 2);\r\n    g.lineTo(offset, lineWidth / 2);\r\n    g.stroke();\r\n}\n}",
+  "properties": {
+    "lineLength": {
+      "valueType": "Number",
+      "defaultValue": 100
+    },
+    "dashColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(0,255,0)"
+    },
+    "lineColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    "offset": {
+      "valueType": "Number",
+      "defaultValue": 10
+    },
+    "dashLength": {
+      "valueType": "Number",
+      "defaultValue": 5
+    },
+    "lineWidth": {
+      "valueType": "Number",
+      "defaultValue": 3
+    },
+    "dashWidthPercent": {
+      "valueType": "Percentage",
+      "defaultValue": 0.9
+    }
+  }
+}

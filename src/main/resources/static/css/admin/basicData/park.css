@@ -1,0 +1,37 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-11-21 16:41:59 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-11-21 16:44:30
+ */
+ #btnGroup {
+    margin-top: 7px;
+    float: right;
+}
+.control_div {
+    padding: 5px 5px  10px 10px !important;
+    border-radius: 0 2px 2px 0 !important;
+}
+.device_content{
+    flex: 1;
+    height: 1px;
+    display:flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    margin:0 5px 0 5px;
+}
+.layui-table, .layui-table-view {
+    margin: 0; 
+}
+
+#table_page .layui-laypage{
+   margin-bottom:0;
+}
+
+.addFrom_item  label{
+    min-width: 150px;
+}
+
+.addFrom_item  .layui-input-inline{
+    width: 60%;
+} 

@@ -1,0 +1,159 @@
+{
+  "width": 100,
+  "height": 100,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\nht.vector.comp.table.apply(null, arguments);\n}",
+  "properties": {
+    "columns": {
+      "valueType": "Object",
+      "defaultValue": [],
+      "name": "TableColumnDef"
+    },
+    "dataSource": {
+      "valueType": "Object",
+      "defaultValue": [],
+      "name": "TableDataSource"
+    },
+    "thBackground": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)",
+      "name": "TableHeadBackground"
+    },
+    "tdBackground": {
+      "valueType": "Color",
+      "name": "TableBodyBackground"
+    },
+    "borderWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1,
+      "name": "TableBorderWidth"
+    },
+    "borderColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)",
+      "name": "TableBorderColor"
+    },
+    "columnLineColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)",
+      "name": "TableColumnLineColor"
+    },
+    "columnLineWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1,
+      "name": "TableColumnLineWidth"
+    },
+    "rowLineColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)",
+      "name": "TableRowLineColor"
+    },
+    "rowLineWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1,
+      "name": "TableRowLineWidth"
+    },
+    "thHeight": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 24,
+      "name": "TableHeadHeight"
+    },
+    "tdHeight": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 18,
+      "name": "TableBodyHeight"
+    },
+    "showHeadRowLine": {
+      "valueType": "Boolean",
+      "defaultValue": false,
+      "name": "TableIsShowHeadLine"
+    },
+    "thColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(33,33,33)",
+      "name": "TableHeadColor"
+    },
+    "tdColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(33,33,33)",
+      "name": "TableBodyColor"
+    },
+    "cellPadding": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 0,
+      "name": "TableCellPadding"
+    },
+    "thFont": {
+      "valueType": "Font",
+      "defaultValue": "12px sans-serif, arial",
+      "name": "TableHeadFontFamily"
+    },
+    "tdFont": {
+      "valueType": "Font",
+      "defaultValue": "12px sans-serif, arial",
+      "name": "TableBodyFontFamily"
+    },
+    "showHead": {
+      "valueType": "Boolean",
+      "defaultValue": true,
+      "name": "TableShowHead"
+    },
+    "translateX": {
+      "valueType": "Number",
+      "defaultValue": 0,
+      "name": "TableTranslateX"
+    },
+    "translateY": {
+      "valueType": "Number",
+      "defaultValue": 0,
+      "name": "TableTranslateY"
+    },
+    "hoverBackground": {
+      "valueType": "Color",
+      "defaultValue": "rgba(255,255,255,0.30)",
+      "name": "TableHoverBackground"
+    },
+    "hoverColor": {
+      "valueType": "Color",
+      "name": "TableHoverColor"
+    },
+    "selectBackground": {
+      "valueType": "Color",
+      "defaultValue": "rgba(255,255,255,0.30)",
+      "name": "TableSelectBackground"
+    },
+    "selectColor": {
+      "valueType": "Color",
+      "name": "TableSelectColor"
+    },
+    "scrollable": {
+      "valueType": "Boolean",
+      "defaultValue": true,
+      "name": "UIScrollable"
+    },
+    "autoHideScrollBar": {
+      "valueType": "Boolean",
+      "defaultValue": false,
+      "name": "UIAutoHideScrollBar"
+    },
+    "scrollBarColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(51,153,255)",
+      "name": "TableScrollBarColor"
+    },
+    "scrollBarWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 8,
+      "name": "TableScrollBarWidth"
+    },
+    "scrollBarWidthAbsolute": {
+      "valueType": "Boolean",
+      "defaultValue": false,
+      "name": "TableScrollBarWidthAbsolute"
+    },
+    "drawRow": {
+      "valueType": "Function",
+      "name": "TableDrawRow"
+    }
+  }
+}

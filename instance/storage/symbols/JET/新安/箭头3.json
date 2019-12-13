@@ -1,0 +1,57 @@
+{
+  "dataBindings": [
+    {
+      "attr": "up",
+      "valueType": "Number",
+      "defaultValue": 1
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n\r\n    if(valueObj >= 0){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n    }\r\n}"
+    },
+    {
+      "attr": "down",
+      "valueType": "Number",
+      "defaultValue": 0
+    }
+  ],
+  "width": 15,
+  "height": 30,
+  "comps": [
+    {
+      "type": "image",
+      "color": null,
+      "name": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAASCAYAAACNdSR1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAw0lEQVQoz+3SIU4FMRSF4W8GLIS3ABwNaiybgE0gmRAUBCRINHnVWDYAGkWCwBQ3bAKHAgRt0lfCrICjes/503t7006laRhPcY0+W8uQ4nHJe6s6aLz9Omzhtabu5+BZ/cO1umkYn7Cb6w2sV/kn3vN56nGBTSwasHReYAtXfUjx0c9/mNMypHhfZr7E8x/gK86gK840jDt4yXMXfWAvpJhWthFSfMNJc+t5AX+tLqR4i7tcPuCmztvXwxG2cRhS/KqDb53UJ8WjIzY5AAAAAElFTkSuQmCC",
+      "clipPercentage": {
+        "func": "attr@down",
+        "value": 1
+      },
+      "displayName": "微信图片_20191205151933",
+      "rect": [
+        1.99998,
+        9.88874,
+        11,
+        18
+      ]
+    },
+    {
+      "type": "image",
+      "color": null,
+      "name": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAASCAYAAACNdSR1AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAw0lEQVQoz+3SIU4FMRSF4W8GLIS3ABwNaiybgE0gmRAUBCRINHnVWDYAGkWCwBQ3bAKHAgRt0lfCrICjes/503t7006laRhPcY0+W8uQ4nHJe6s6aLz9Omzhtabu5+BZ/cO1umkYn7Cb6w2sV/kn3vN56nGBTSwasHReYAtXfUjx0c9/mNMypHhfZr7E8x/gK86gK840jDt4yXMXfWAvpJhWthFSfMNJc+t5AX+tLqR4i7tcPuCmztvXwxG2cRhS/KqDb53UJ8WjIzY5AAAAAElFTkSuQmCC",
+      "clipPercentage": {
+        "func": "attr@up",
+        "value": 0.5
+      },
+      "clipDirection": "bottom",
+      "displayName": "微信图片_20191205151933",
+      "rotation": 3.14159,
+      "rect": [
+        2,
+        2.11127,
+        11,
+        18
+      ]
+    }
+  ]
+}

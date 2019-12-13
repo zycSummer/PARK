@@ -1,0 +1,126 @@
+{
+  "dataBindings": [
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    {
+      "attr": "lineSmooth",
+      "valueType": "Boolean",
+      "defaultValue": true
+    },
+    {
+      "attr": "textColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    {
+      "attr": "dataX",
+      "valueType": "StringArray",
+      "defaultValue": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "attr": "dataY",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "name": "s1",
+          "data": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            1
+          ]
+        },
+        {
+          "name": "s2",
+          "data": [
+            12,
+            31,
+            14,
+            15,
+            26,
+            17,
+            18,
+            19,
+            11
+          ]
+        },
+        {
+          "name": "s3",
+          "data": [
+            112,
+            311,
+            114,
+            115,
+            216,
+            117,
+            118,
+            119,
+            111
+          ]
+        }
+      ]
+    },
+    {
+      "attr": "area",
+      "valueType": "Boolean",
+      "defaultValue": false
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    },
+    {
+      "attr": "yAxisName",
+      "valueType": "String"
+    }
+  ],
+  "snapshotURL": "symbols/JET/snapshot/snapshot_echarts-line.json",
+  "renderHTML": "__ht__function(data, gv, cache) {\r\n\r\n    var xxx = data.a('dataY');\r\n    var series = [];\r\n    if (xxx.length > 0) {\r\n        for (var i = 0; i < xxx.length; i++) {\r\n            var serie = {};\r\n            serie.name = xxx[i].name;\r\n            serie.type = 'line';\r\n            serie.data = xxx[i].data;\r\n            serie.areaStyle = data.a('area') ? {} : null;\r\n            serie.smooth = data.a('lineSmooth');\r\n            series[i] = serie;\r\n        }\r\n    }\r\n\r\n    var option = {\r\n        backgroundColor: data.a('background'),\r\n        textStyle: {\r\n            color: data.a('textColor')\r\n        },\r\n        legend: {\r\n            top: 'bottom',\r\n            textStyle: {\r\n                color: data.a('textColor')\r\n            }\r\n        },\r\n        tooltip: {\r\n            trigger: 'axis',\r\n            axisPointer: {\r\n                type: 'line'\r\n            }\r\n        },\r\n        grid: {\r\n            // left: '3%',\r\n            right: '3%',\r\n            bottom: '10%',\r\n            top: '10%'\r\n            // containLabel: true\r\n        },\r\n        xAxis: [\r\n            {\r\n                type: 'category',\r\n                data: data.a('dataX')\r\n            }\r\n        ],\r\n        yAxis: [\r\n            {\r\n                type: 'value',\r\n                scale: true,\r\n                name : data.a('yAxisName'),\r\n                splitLine:{show: false}//去除网格线\r\n            }\r\n        ],\r\n        series: series\r\n    };\r\n\r\n    if (!cache.htmlView) {\r\n        cache.htmlView = document.createElement('div');\r\n        cache.htmlView.style.position = 'absolute';\r\n        cache.htmlChart = echarts.init(cache.htmlView, data.a('theme'));\r\n\r\n        // layoutHTML will be called when the data needs to be drawing\r\n        cache.htmlView.layoutHTML = function () {\r\n            gv.layoutHTML(data, cache.htmlView, false);\r\n            cache.htmlChart.resize();\r\n        };\r\n    }\r\n\r\n    cache.htmlChart.setOption(option);\r\n\r\n    // html for showing\r\n    return cache.htmlView;\r\n}",
+  "width": 200,
+  "height": 120,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": []
+}

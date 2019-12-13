@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+  <link rel='stylesheet' th:href="@{/public/css/admin/basicData/company.css}" media="all" />
+  <div class="container">
+    <blockquote class="layui-elem-quote  tabBreacrumb">
+      <span class="layui-breadcrumb" lay-separator=">">
+          <a class="park_select">园区</a>
+        <a >基础数据</a> 
+        <a><cite>对象管理（企业）</cite></a>
+      </span>
+    </blockquote>
+  
+    <div class="control_div">
+        <div class="layui-inline">
+            <form class="layui-form" >
+                <div class="layui-inline">
+                    <label>企业标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" value=""  class="layui-input search_input" id="site_id">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label>企业名称：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" value="" class="layui-input search_input" id="site_name">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label>是否上线：</label>
+                    <div class="layui-input-inline">
+                        <select id="isOnline">
+                            <option value="">--</option>
+                            <option value="Y">是</option>
+                            <option value="N">否</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="layui-inline" id="btnGroup">
+            <div class="layui-inline">
+                <button class="layui-btn layui-btn-sm" id="search_btn" th:if="${MENU1402Query.visible}">查询</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn layui-btn-sm" id="add_btn" th:if="${MENU1402Add.visible}">新增</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn layui-btn-sm" id="edit_btn" th:if="${MENU1402Modify.visible}">修改</button>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn layui-btn-sm" id="del_btn" th:if="${MENU1402Delete.visible}">删除</button>
+            </div>
+        </div>
+    </div>  
+    <div class="company_content">
+        <table class="layui-table" id="company_table"></table>
+        <div id="table_page" class="table_page"></div>
+    </div>
+  </div>
+
+    <!--新增修改企业-->
+    <div id="site_add" class="layui-hide">
+        <div class="formContent">
+            <form class="layui-form" lay-filter="site_add" enctype="multipart/form-data" method="post">
+                <div class="layui-form-item edit_siteId layui-hide">
+                    <label class="layui-form-label">企业标识：</label>
+                    <div class="layui-inline">
+                        <div id="edit_siteId"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item add_siteId">
+                    <label class="layui-form-label"><span class="red">* </span>企业标识：</label>
+                    <div class="layui-inline">
+                        <input type="text" name="siteId" id="siteId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input" autocomplete="off"/>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="siteId_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red">* </span>企业名称：</label>
+                    <div class="layui-inline">
+                        <input type="text" name="siteName" id="siteName" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="siteName_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">企业简称：</label>
+                    <div class="layui-inline">
+                        <input type="text" name="siteShortName" id="siteShortName" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">企业地址：</label>
+                    <div class="layui-inline">
+                        <input type="text" name="siteAddress" id="siteAddress" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">百度地图-经度：</label>
+                    <div class="layui-inline">
+                        <input name="longitude" id="longitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="longitude_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">百度地图-纬度：</label>
+                    <div class="layui-inline">
+                        <input name="latitude" id="latitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red">* </span>是否上线：</label>
+                    <div class="layui-input-inline">
+                        <input type="checkbox" name="isOnline" id="add_isOnline" value="true" lay-skin="switch">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">排序标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="sortId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10'>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="sortId_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">实时库项目标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="rtdbProjectId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10'>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="rtdbProjectId_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">备注：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="memo" maxlength="200">
+                    </div>
+                </div>
+            </form>
+            <form class="layui-form" id="siteImage">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">企业图片：</label>
+                    <div class="layui-inline">
+                        <!--<button type="button" class="layui-btn" id="upload_image">-->
+                            <!--<i class="layui-icon">&#xe67c;</i>上传图片-->
+                        <!--</button>-->
+                        <input type="file" accept="image/*" name="file" id="file"/>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="upload_tip"></i>
+                </div>
+                <div class="layui-form-item imageContent">
+                    <image id="imagePreview" src="" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--删除企业-->
+    <div id="site_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">企业标识：</label>
+                <div class="layui-inline">
+                    <div id="delete_siteId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">企业名称：</label>
+                <div class="layui-inline">
+                    <div id="delete_siteName"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此企业吗？
+                <i class="fa fa-exclamation-circle tip_icon" id="delete_tip"></i>
+            </div>
+        </form>
+    </div>
+
+  <script type="text/javascript" th:src="@{/public/js/admin/basicData/company.js}"></script>
+</div>
+
+</html>

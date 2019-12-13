@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/energyPlan.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>基础数据</a>
+                <a><cite>对象用能计划管理</cite></a>
+            </span>
+        </blockquote>
+        <div class="plan_content">
+            <div class="table_title layui-form">
+                <div>
+                    <label>能源种类：</label>
+                    <div class="layui-input-inline">
+                        <div id="searchEnergyTypeId"></div>
+                    </div>
+                </div>
+                <div class="timeSelect">
+                    <span class="title">时间：</span>
+                    <div class="layui-inline" id="timeDiv">
+                        <input type="text" class="layui-input" id="timeInput1" value=""> ~
+                        <input type="text" class="layui-input" id="timeInput2" value="">
+                    </div>
+                </div>
+                <div>
+                    <button class="layui-btn layui-btn-sm query" th:if="${MENU1408Query.visible}">查询</button>
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1408Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1408Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1408Delete.visible}">删除</button>
+                </div>
+            </div>
+            <div class="plan_table">
+                <table id="table1" lay-filter="table1"></table>
+                <div id="table_page"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--新增修改-->
+    <div id="plan_add" class="layui-hide">
+        <form class="layui-form" lay-filter="plan_add">
+            <div class="layui-form-item edit_energyTypeId layui-hide">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-inline">
+                    <div id="edit_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_energyTypeId">
+                <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
+                <div class="layui-inline">
+                    <select name="energyTypeId" id="energyTypeId"></select>
+                </div>
+            </div>
+            <div class="layui-form-item edit_yearMonth layui-hide">
+                <label class="layui-form-label">年月：</label>
+                <div class="layui-inline">
+                    <div id="edit_yearMonth"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_yearMonth">
+                <label class="layui-form-label"><span class="red">* </span>年月：</label>
+                <div class="layui-inline">
+                    <input type="text" name="yearMonth" id="yearMonth" class="layui-input" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>计划用量：</label>
+                <div class="layui-inline">
+                    <input type="text" name="usage" id="usage" maxlength='30' class="layui-input" autocomplete="off"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除-->
+    <div id="plan_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-inline">
+                    <div id="delete_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">年月：</label>
+                <div class="layui-inline">
+                    <div id="delete_yearMonth"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">计划用量：</label>
+                <div class="layui-inline">
+                    <div id="delete_usage"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此用能计划吗？
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/lib/form-select/xm-select.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/moment/moment.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/js/admin/basicData/energyPlan.js}"></script>
+</div>
+</html>

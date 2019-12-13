@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/meterConf.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>基础数据</a>
+                <a><cite>对象仪表配置</cite></a>
+            </span>
+        </blockquote>
+        <div class="meter_content">
+            <div class="table_title">
+                <form class="layui-form">
+                    <div class="layui-inline">
+                        <label>仪表标识：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" value=""  class="layui-input search_input" id="search_meterId">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label>仪表名称：</label>
+                        <div class="layui-input-inline">
+                            <input type="text" value="" class="layui-input search_input" id="search_meterName">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label>能源种类：</label>
+                        <div class="layui-input-inline">
+                            <div id="searchEnergyTypeId"></div>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <button class="layui-btn layui-btn-sm query" th:if="${MENU1403Query.visible}">查询</button>
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1403Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1403Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1403Delete.visible}">删除</button>
+                    <button class="layui-btn layui-btn-sm import" th:if="${MENU1403Import.visible}">导入</button>
+                    <button class="layui-btn layui-btn-sm export" th:if="${MENU1403Export.visible}">导出</button>
+                </div>
+            </div>
+            <div class="meter_table">
+                <table id="table1" lay-filter="table1"></table>
+                <div id="table_page"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--新增修改-->
+    <div id="meter_add" class="layui-hide">
+        <form class="layui-form" lay-filter="meter_add">
+            <div class="layui-form-item edit_meterId layui-hide">
+                <label class="layui-form-label">仪表标识：</label>
+                <div class="layui-inline">
+                    <div id="edit_meterId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_meterId">
+                <label class="layui-form-label"><span class="red">* </span>仪表标识：</label>
+                <div class="layui-inline">
+                    <input type="text" class="layui-input" id="meterId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20'>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="meterId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>仪表名称：</label>
+                <div class="layui-inline">
+                    <input type="text" class="layui-input" id="meterName" maxlength='30'>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="meterName_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
+                <div class="layui-inline">
+                    <select name="energyTypeId" id="energyTypeId"></select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序标识：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="sortId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10'>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="sortId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>参与负荷排名：</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="isRanking" id="isRanking" value="true" lay-skin="switch">
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="isRanking_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除-->
+    <div id="meter_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item problem">
+                确定要删除所选的 X 个仪表吗？
+                <i class="fa fa-exclamation-circle tip_icon" id="delete_tip"></i>
+            </div>
+        </form>
+    </div>
+
+    <!--导入-->
+    <div id="meter_import" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">对象：</label>
+                <div class="layui-inline">
+                    <div id="import_object"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>仪表文件：</label>
+                <div class="layui-inline">
+                    <input type="file" name="file" id="upload_meter" multiple required autocomplete="off"/>
+                </div>
+                <a href="javascript:void(0)" id="meter_download_demo" th:if="${MENU1403Download.visible}">模板文件下载</a>
+            </div>
+            <div class="layui-form-item problem">
+                说明：导入后原来配置的仪表信息将被清空。
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/lib/form-select/xm-select.js}"></script>
+    <script type="text/javascript" th:src="@{/public/js/admin/basicData/meterConf.js}"></script>
+</div>
+</html>

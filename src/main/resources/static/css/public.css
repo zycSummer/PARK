@@ -1,0 +1,111 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-22 16:17:33 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-05 15:33:11
+ */
+/*
+ * 公共样式
+ */
+
+.tabBreacrumb {
+    margin-bottom: 10px !important;
+    padding: 5px 0 0 10px !important;
+    line-height: 36px !important;
+   border-left: none !important; 
+    background-color: #08121f !important;
+    border-bottom: 1px solid  #094947;
+}
+.layui-breadcrumb a {
+    color: #77d3ec !important;
+}
+.layui-breadcrumb span {
+    color: ##4fd26b !important;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+
+.park_select{
+    cursor: pointer;
+}
+
+#header_title {
+    padding-top: 13px;
+    font-size: 22px;
+    text-align: center;
+     margin: auto;
+   
+ 
+}
+#header_title span{
+    font-family: 微软雅黑 bold;
+  background-image: linear-gradient(top, #24C9F6, #2af270) !important;  
+   background-image: -webkit-linear-gradient(top, #24C9F6, #2af270) !important;
+   background-image: linear-gradient(top, #24C9F6, #2af270)!important;
+    -webkit-background-clip:text; 
+    -webkit-text-fill-color:transparent; 
+    font-weight: 700;
+}
+
+/* 自定义表格布局 */
+.customize-table{
+    margin-top: 0;
+}
+
+/* 分页自定义 */
+
+/* 按钮布局颜色处理 */
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+    background-color: #359159!important;
+}
+.layui-btn {
+ 
+    background-color:#359159!important;
+ 
+}
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #359159!important;
+    background-color: #359159!important;
+  
+}
+/* 表格滚动条 */
+.layui-table-body::-webkit-scrollbar,.layui-table-header::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.layui-table-body::-webkit-scrollbar-track ,.layui-table-header::-webkit-scrollbar-track   {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.layui-table-body::-webkit-scrollbar-thumb  ,.layui-table-header::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+.tip_icon{
+    padding-top: 10px;
+    cursor: pointer;
+}
+.search_label{
+    font-weight: 700;
+}
+.settingText{
+    color: #000!important;
+}

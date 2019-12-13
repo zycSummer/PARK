@@ -1,0 +1,214 @@
+{
+  "background": "rgb(0,0,0)",
+  "dataBindings": [
+    {
+      "attr": "ht.startAngle",
+      "valueType": "Angle",
+      "name": "ChartStartAngle"
+    },
+    {
+      "attr": "ht.endAngle",
+      "valueType": "Angle",
+      "name": "ChartEndAngle"
+    },
+    {
+      "attr": "ht.PoinertRadius",
+      "valueType": "PositiveNumber",
+      "name": "ChartPointerRadius"
+    },
+    {
+      "attr": "ht.pointerColor",
+      "valueType": "Color",
+      "name": "ChartPointerColor"
+    },
+    {
+      "attr": "ht.value",
+      "valueType": "Number",
+      "name": "ChartValue"
+    },
+    {
+      "attr": "ht.min",
+      "valueType": "Number",
+      "name": "ChartMinValue"
+    },
+    {
+      "attr": "ht.max",
+      "valueType": "Number",
+      "name": "ChartMaxValue"
+    },
+    {
+      "attr": "ht.clockwise",
+      "valueType": "Boolean",
+      "name": "ChartClockwise"
+    },
+    {
+      "attr": "ht.showLabel",
+      "valueType": "Boolean",
+      "name": "ChartShowLabel"
+    },
+    {
+      "attr": "ht.labelEvery",
+      "valueType": "PositiveNumber",
+      "name": "ChartLabelEvery"
+    },
+    {
+      "attr": "ht.labelColor",
+      "valueType": "Color",
+      "name": "ChartLabelColor"
+    },
+    {
+      "attr": "ht.showTick",
+      "valueType": "Boolean",
+      "name": "ChartShowTick"
+    },
+    {
+      "attr": "ht.tickEvery",
+      "valueType": "PositiveNumber",
+      "name": "ChartTickEvery"
+    },
+    {
+      "attr": "ht.tickColor",
+      "valueType": "Color",
+      "name": "ChartTickColor"
+    },
+    {
+      "attr": "ht.bigTickEvery",
+      "valueType": "PositiveNumber",
+      "name": "ChartBigTickEvery"
+    },
+    {
+      "attr": "ht.bigTickColor",
+      "valueType": "Color",
+      "name": "ChartBigTickColor"
+    },
+    {
+      "attr": "query",
+      "valueType": "String"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    data.a(\"ht.value\",valueObj);\r\n}"
+    },
+    {
+      "attr": "font",
+      "valueType": "String",
+      "defaultValue": "15px Arial"
+    }
+  ],
+  "width": 200,
+  "height": 200,
+  "comps": [
+    {
+      "type": "components/ht/gauge/gauge.json",
+      "shadowColor": "rgb(176,215,255)",
+      "shadowBlur": 15,
+      "displayName": "gauge",
+      "rect": [
+        0,
+        0,
+        200,
+        200
+      ],
+      "startAngle": {
+        "func": "attr@ht.startAngle",
+        "value": -3.66519
+      },
+      "endAngle": {
+        "func": "attr@ht.endAngle",
+        "value": 0.5236
+      },
+      "pointerRadius": {
+        "func": "attr@ht.PoinertRadius",
+        "value": 0.8
+      },
+      "pointerColor": {
+        "func": "attr@ht.pointerColor",
+        "value": "rgb(242,83,75)"
+      },
+      "value": {
+        "func": "attr@ht.value",
+        "value": 0
+      },
+      "min": {
+        "func": "attr@ht.min",
+        "value": 0
+      },
+      "max": {
+        "func": "attr@ht.max",
+        "value": 100
+      },
+      "clockwise": {
+        "func": "attr@ht.clockwise",
+        "value": true
+      },
+      "showLabel": {
+        "func": "attr@ht.showLabel",
+        "value": true
+      },
+      "labelEvery": {
+        "func": "attr@ht.labelEvery",
+        "value": 10
+      },
+      "labelColor": {
+        "func": "attr@ht.labelColor",
+        "value": "#FEB64D"
+      },
+      "showTick": {
+        "func": "attr@ht.showTick",
+        "value": true
+      },
+      "tickEvery": {
+        "func": "attr@ht.tickEvery",
+        "value": 2
+      },
+      "tickColor": {
+        "func": "attr@ht.tickColor",
+        "value": "#32D3EB"
+      },
+      "bigTickEvery": {
+        "func": "attr@ht.bigTickEvery",
+        "value": 20
+      },
+      "bigTickColor": {
+        "func": "attr@ht.bigTickColor",
+        "value": "#60ACFC"
+      },
+      "showShadow": true
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@ht.value",
+        "value": "0"
+      },
+      "align": "right",
+      "color": "rgb(255,255,255)",
+      "font": {
+        "func": "attr@font",
+        "value": "15px Arial"
+      },
+      "rect": [
+        41.68001,
+        79.48295,
+        62.63998,
+        16.58117
+      ]
+    },
+    {
+      "type": "text",
+      "text": "%",
+      "color": "rgb(255,255,255)",
+      "font": {
+        "func": "attr@font",
+        "value": "15px Arial"
+      },
+      "rect": [
+        102.06659,
+        79.41883,
+        14.02766,
+        16.70942
+      ]
+    }
+  ]
+}

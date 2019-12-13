@@ -1,0 +1,202 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-29 09:23:04 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-02 13:59:28
+ */
+
+ body{
+     background-color: #f2f2f2;
+ }
+ .content_main{
+     flex: 1;
+   
+      margin:-10px 5px 5px 5px;
+      background-color: #ffffff;
+ }
+
+    .content_left{
+       height: 100%;
+        border-right: 5px solid #f2f2f2;
+     
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+    }
+    .content_right{
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+    }
+    .control_div {
+        margin: 10px 5px  0px 5px !important;
+        border-radius: 0 2px 2px 0 !important;
+    }
+    .btnGroup {
+        margin-top: 5px;
+        float: right;
+    }
+    .tab_content{
+        flex: 1;
+        width: calc(100% - 5px);  
+    }
+    .table_page{
+        margin-left: 10px;
+    }
+.alarmInfoTip{
+    color: #a3a2a2;
+    font-size: 12spx;
+}
+.addFrom_item > .layui-input-inline{
+    width: 50%!important;
+}
+.configuration_item> .layui-input-inline:first-child{
+    width: 80%!important;
+}
+.configuration_item> .layui-input-inline:last-child{
+    width: 12%!important;
+}
+.label_tip{
+    font-size: 10px;
+    width: calc(50% - 200px);
+    color: #a3a2a2;
+    padding-top: 2px;
+    text-align: left;
+}
+#data_source_select{
+   display: flex;
+   display: -webkit-flex;
+   flex-direction: row; 
+   height: 100%;
+}
+.data_source_left{
+    width: 60px;
+    margin-top: 29px;
+    height: calc(100% - 29px);
+}
+.data_source_right{
+    margin-top: 29px;
+    flex: 1;
+    height: calc(100% - 29px);
+}
+.data_source_right_title{
+    width: 100%;
+}
+.data_source_right_title_btn{
+    float: right;
+}
+.data_source_right_title_btn a{
+    cursor: pointer;
+    padding-left: 10px;
+}
+.data_source_right_table{
+    width: 100%;
+     height: calc(100% - 202px);
+    border: 1px solid #a3a2a2; 
+    overflow: auto;
+}
+.data_source_right_footer{
+    width: 100%;
+    height: 180px;
+}
+#data_source_dialog{
+  height: 100%;
+}
+.data_source_right_footer_content{
+    width: 100%; 
+    border: 1px solid #a3a2a2;
+
+}
+
+#data_source_parameter_select{
+  
+    height: 100%;   
+}
+.data_source_parameter_select_content{
+    margin-left: 10px;
+    margin-right: 5px;
+    width:calc(100% - 15px);
+    height: calc(100% - 60px);
+   
+}
+.data_source_parameter_select_content_title{
+   width: 100%;
+   margin-top: 29px;
+}
+.data_source_parameter_select_content_tab{
+    height: calc(100% - 50px);
+    border: 1px solid #a3a2a2;  
+   
+}
+.layui-tab-title{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+}
+.layui-tab-title li{
+    flex: 1;
+}
+.layui-tab-card{
+    height: 100%;
+}
+.layui-tab-content{
+    height: calc(100% - 41px);
+}
+.layui-tab-item  tr{
+    cursor: pointer;
+}
+
+.company_tr_focus,.meter_tr_focus{
+    background-color: #f2f2f2;
+}
+.tab_item_content{
+  height: calc(100% - 10px);
+   
+}
+.tab_item_content_table{
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: auto;
+}
+.tab_item_content_table::-webkit-scrollbar ,.data_source_right_table::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.tab_item_content_table::-webkit-scrollbar-track ,.data_source_right_table::-webkit-scrollbar-track  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.tab_item_content_table::-webkit-scrollbar-thumb ,.data_source_right_table::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+.parameter_btns{
+    display: none;
+}
+.parameter_btns a{
+    cursor: pointer;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.parameter_btns_tip{
+    color: #a3a2a2;
+    font-size: 12px;
+}
+
+.parameter_btn_status,.datasoucre_tr_status{
+    background-color:  #e2e0e0;
+}.parameter_btn_status:hover,.datasoucre_tr_status:hover{
+    background-color:   #e2e0e0!important;
+}
+
+.datasoucre_tr{
+    cursor: pointer;
+}
+.addFrom_item .layui-textarea {
+min-height: 70px!important;
+}

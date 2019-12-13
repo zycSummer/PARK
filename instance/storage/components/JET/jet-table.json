@@ -1,0 +1,158 @@
+{
+  "width": 500,
+  "height": 186,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\nvar columns = ht.Default.parse(comp.getValue('columns')),\r\n\tdataSource = ht.Default.parse(comp.getValue('dataSource')),\r\n\tthBackground = comp.getValue('thBackground'),\r\n\ttdBackground = comp.getValue('tdBackground'),\r\n    tdBackgrounds = comp.getValue('tdBackgrounds'),\r\n\tthHeight = comp.getValue('thHeight'),\r\n\ttdHeight = comp.getValue('tdHeight'),\r\n\tthColor = comp.getValue('thColor'),\r\n\ttdColor = comp.getValue('tdColor'),\r\n\tthFontSize = comp.getValue('thFontSize'),\r\n\ttdFontSize = comp.getValue('tdFontSize'),\r\n\tthFontFamily = comp.getValue('thFontFamily'),\r\n\ttdFontFamily = comp.getValue('tdFontFamily'),\r\n\tborderWidth = comp.getValue('borderWidth'),\r\n\tborderColor = comp.getValue('borderColor'),\r\n\tcolumnLineColor = comp.getValue('columnLineColor'),\r\n\tcolumnLineWidth = comp.getValue('columnLineWidth'),\r\n\trowLineColor = comp.getValue('rowLineColor'),\r\n\trowLineWidth = comp.getValue('rowLineWidth'),\r\n\tshowHeadRowLine = comp.getValue('showHeadRowLine'),\r\n\tcellPadding = comp.getValue('cellPadding'),\r\n\tshowHead = comp.getValue('showHead'),\r\n\ttranslateY = comp.getValue('translateY') || 0;\r\n\r\nvar width = rect.width,\r\n\theight = rect.height,\r\n\tx = rect.x,\r\n\ty = rect.y;\r\n\r\nif (!columns || columns.length === 0) {\r\n\treturn;\r\n}\r\n\r\nvar mathMax = Math.max,\r\n\tcolumnCount = columns.length,\r\n\trowCount = dataSource.length;\r\n\r\nvar calculateColumnsWidth = function (columns){\r\n\r\n\tvar contentWidth = width - borderWidth * 2 - columnLineWidth * (columnCount - 1),\r\n\t\twidths = [],\r\n\t\trc = 0, ac = 0,\r\n\t\tcol, colWidth;\r\n\tfor (var i = 0, size = columns.length; i < size; i++) {\r\n\t\tcol = columns[i];\r\n\t\tcolWidth = col.width || 0.1;\r\n\t\tif (isNaN(colWidth)) {\r\n\t\t\tvar values = colWidth.split('\\+'),\r\n\t\t\t\tvalue = parseFloat(values[0]),\r\n\t\t\t\tcl = [];\r\n            if (value > 1) {\r\n                ac += value;\r\n                cl.push(value);\r\n            }\r\n            else {\r\n                rc += value;\r\n                cl.push(value);\r\n            }\r\n            value = parseFloat(values[1]);\r\n            if (value > 1) {\r\n                ac += value;\r\n                cl.unshift(value);\r\n            }\r\n            else {\r\n                rc += value;\r\n                cl.push(value);\r\n            }\r\n            widths.push(cl);\r\n\r\n\t\t} else {\r\n\t\t\tcolWidth = parseFloat(colWidth);\r\n\t\t\tif (colWidth >= 1) {\r\n\t\t\t\tcolWidth = mathMax(12, colWidth);\r\n\t\t\t\tac += colWidth;\r\n\t\t\t}\r\n\t\t\telse {\r\n\t\t\t\trc += colWidth;\r\n\t\t\t}\r\n\t\t\twidths.push(colWidth);\r\n\t\t}\r\n\t}\r\n\tfor (var i = 0, size = widths.length; i < size; i++) {\r\n\t\tcolWidth = widths[i];\r\n\t\tif (colWidth < 1) {\r\n\t\t\twidths[i] = Math.max(0, (colWidth / (rc)) * (contentWidth - ac));\r\n\t\t} else if (colWidth instanceof Array) {\r\n\t\t\twidths[i] = colWidth[0] + Math.max(0, (colWidth[1] / (rc)) * (contentWidth - ac));\r\n\t\t}\r\n\t}\r\n\treturn widths;\r\n}\r\n\r\nvar colWidths = calculateColumnsWidth(columns);\r\n// draw background\r\nif (thBackground && showHead) {\r\n\tg.save();\r\n\tg.fillStyle = thBackground;\r\n\tg.fillRect(x, y + borderWidth, width , thHeight);\r\n\tg.restore();\r\n}\r\nif (tdBackground) {\r\n    g.save();\r\n    g.fillStyle = tdBackground;\r\n    g.fillRect(\r\n        x,\r\n        y + thHeight * showHead + borderWidth,\r\n        width,\r\n        height - thHeight * showHead - borderWidth * 2);\r\n    g.restore();\r\n}\r\n\r\n// draw column lines\r\nif (columnLineWidth) {\r\n\tvar offsetX = borderWidth;\r\n    g.beginPath();\r\n    for (var i = 0; i < columnCount - 1 ; i++) {\r\n    \toffsetX += colWidths[i] + columnLineWidth * 0.5;\r\n        g.moveTo(offsetX, y);\r\n        g.lineTo(offsetX, y + height);\r\n        offsetX += columnLineWidth * 0.5;\r\n    }\r\n    g.strokeStyle = columnLineColor;\r\n    g.lineWidth = columnLineWidth;\r\n    g.stroke();\r\n}\r\n\r\n// draw row lines\r\nif (rowLineWidth) {\r\n\tvar offsetY = borderWidth + thHeight * showHead + translateY;\r\n    g.beginPath();\r\n    // draw table head bottom line\r\n    if (showHeadRowLine && showHead) {\r\n    \toffsetY += rowLineWidth * 0.5;\r\n\t    g.moveTo(x, offsetY);\r\n    \tg.lineTo(x + width, offsetY);\r\n    \toffsetY += rowLineWidth * 0.5;\r\n    }\r\n    for (var i = 0; i < dataSource.length ; i++) {\r\n    \toffsetY += tdHeight + rowLineWidth * 0.5;\r\n    \tg.moveTo(x, offsetY);\r\n\t    g.lineTo(x + width, offsetY);\r\n\t    offsetY += rowLineWidth * 0.5;\r\n    }\r\n    g.strokeStyle = rowLineColor;\r\n    g.lineWidth = rowLineWidth;\r\n    g.stroke();\r\n}\r\n\r\n// draw table head\r\nvar fx = x + borderWidth,\r\n\tthFont = thFontSize + 'px ' + thFontFamily;\r\nif (showHead) {\r\n\tfor (var i = 0; i < columnCount; i++) {\r\n\t\tvar columnDef = columns[i],\r\n\t\t\tcolumnWidth = colWidths[i] - 2 * cellPadding,\r\n\t\t\tcolor = columnDef.headColor || columnDef.color || thColor;\r\n\t\tfx += cellPadding;\r\n\t\tg.save();\r\n\t\tg.beginPath();\r\n\t\tg.rect(fx, y + borderWidth + translateY, columnWidth, thHeight);\r\n\t\tg.clip();\r\n\t\tht.Default.drawText(g, columnDef.displayName, thFont, color, fx, y + borderWidth + translateY, columnWidth, thHeight, columnDef.align || 'left', 'middle');\r\n\t\tg.restore();\r\n\t\tfx += columnWidth + columnLineWidth + cellPadding;\r\n\t}\r\n}\r\n\r\n// draw table body\r\nif (dataSource && dataSource.length > 0) {\r\n\r\n\tvar tdFont = tdFontSize + 'px ' + tdFontFamily;\r\n    var rowNo = 0;\r\n\tdataSource.forEach(function(data, dataIndex){\r\n\t\tvar fy = dataIndex * tdHeight + rowLineWidth * (dataIndex + showHeadRowLine * showHead * 1) + thHeight * showHead + borderWidth + translateY;\r\n\t\tfx = x + borderWidth;\r\n\t\tfor (var i = 0; i < columnCount; i++) {\r\n\t\t\tvar columnWidth = colWidths[i] - 2 * cellPadding,\r\n\t\t\t\tcolor = columns[i].bodyColor || columns[i].color || tdColor;;\r\n\t\t\tfx += cellPadding;\r\n\r\n            if (tdBackground == null && tdBackgrounds != undefined && tdBackgrounds.length > 0) {\r\n                g.save();\r\n                g.fillStyle = tdBackgrounds[rowNo % tdBackgrounds.length];\r\n                g.fillRect(\r\n                    fx,\r\n                    fy,\r\n                    columnWidth,\r\n                    tdHeight);\r\n                g.restore();\r\n            }\r\n\r\n\t\t\tg.save()\r\n\t\t\tg.beginPath();\r\n\t\t\tg.rect(fx, fy, columnWidth, tdHeight);\r\n\t\t\tg.clip();\r\n\t\t\tif (columns[i].isIcon) {\r\n\t\t\t\tif (columnWidth > 0) {\r\n\t\t\t\t\tht.Default.drawStretchImage(g, ht.Default.getImage(data[columns[i].key]),\r\n\t\t\t\t\t\t'centerUniform', fx, fy + 1, columnWidth, tdHeight - 2, data);\r\n\t\t\t\t}\r\n\t\t\t} else {\r\n\t\t\t\tht.Default.drawText(g, data[columns[i].key], tdFont, color, fx, fy, columnWidth, tdHeight, columns[i].align || 'left', 'middle');\r\n\t\t\t}\r\n\t\t\tg.restore();\r\n\r\n\r\n\r\n\t\t\tfx += columnWidth + columnLineWidth + cellPadding;\r\n\t\t}\r\n        rowNo++;\r\n\t});\r\n}\r\n\r\n// draw border\r\nif (borderWidth) {\r\n    ht.Default.drawBorder(g, borderColor, x, y, width, height, borderWidth);\r\n}\n}",
+  "properties": {
+    "columns": {
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "displayName": "Name",
+          "key": "username",
+          "align": "center",
+          "width": 120
+        },
+        {
+          "displayName": "Sex",
+          "align": "center",
+          "key": "sex",
+          "width": 100
+        },
+        {
+          "displayName": "Age",
+          "align": "center",
+          "key": "userAge",
+          "width": 70
+        },
+        {
+          "displayName": "Address",
+          "align": "center",
+          "key": "address"
+        }
+      ]
+    },
+    "dataSource": {
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "username": "Joe",
+          "userAge": "23",
+          "sex": "female",
+          "address": "New York No. 1 Lake Park"
+        },
+        {
+          "username": "Jim Green",
+          "userAge": "29",
+          "sex": "male",
+          "address": "London No. 1 Lake Park"
+        },
+        {
+          "username": "Conor",
+          "userAge": "29",
+          "sex": "male",
+          "address": "Sidney No. 1 Lake Park"
+        },
+        {
+          "username": "Evie Frye",
+          "userAge": "29",
+          "sex": "female",
+          "address": "London No. 2 Lake Park"
+        },
+        {
+          "username": "Jacob Frye",
+          "userAge": "29",
+          "sex": "male",
+          "address": "New York No. 3"
+        }
+      ]
+    },
+    "thBackground": {
+      "valueType": "Color",
+      "defaultValue": "rgb(12,61,110)"
+    },
+    "tdBackgrounds": {
+      "valueType": "ColorArray",
+      "defaultValue": [
+        "rgb(250,250,250)",
+        "rgb(240,240,240)"
+      ]
+    },
+    "borderWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    "borderColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    "columnLineColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    "columnLineWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    "rowLineColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(212,212,212)"
+    },
+    "rowLineWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    },
+    "thFontSize": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 19
+    },
+    "tdFontSize": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 14
+    },
+    "thHeight": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 30
+    },
+    "tdHeight": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 30
+    },
+    "showHeadRowLine": {
+      "valueType": "Boolean",
+      "defaultValue": false
+    },
+    "thColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(247,247,247)"
+    },
+    "tdColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    "cellPadding": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 0
+    },
+    "thFontFamily": {
+      "valueType": "String",
+      "defaultValue": "sans-serif, arial"
+    },
+    "tdFontFamily": {
+      "valueType": "String",
+      "defaultValue": "sans-serif, arial"
+    },
+    "showHead": {
+      "valueType": "Boolean",
+      "defaultValue": true
+    },
+    "translateY": {
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    "tdBackground": {
+      "valueType": "Color",
+      "defaultValue": null
+    }
+  }
+}

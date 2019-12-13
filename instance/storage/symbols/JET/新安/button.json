@@ -1,0 +1,42 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "String",
+      "defaultValue": "天然气"
+    }
+  ],
+  "rotateAsClock": true,
+  "width": 90,
+  "height": 40,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "rect",
+      "rect": [
+        0,
+        0,
+        90,
+        40
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "天然气"
+      },
+      "align": "right",
+      "color": "rgb(255,255,255)",
+      "font": "14px Arial",
+      "rect": [
+        -0.05678,
+        0,
+        90.16069,
+        39.28307
+      ]
+    }
+  ]
+}

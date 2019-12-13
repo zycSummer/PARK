@@ -1,0 +1,14 @@
+{
+  "width": 100,
+  "height": 100,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\n// get current time\r\nvar hours = comp.getValue('hours');\r\nvar minutes = comp.getValue('minutes');\r\nvar seconds = comp.getValue('seconds');\r\nhours = hours > 12 ? hours - 12 : hours;\r\nvar hour = hours + minutes / 60;\r\nvar minute = minutes + seconds / 60;\r\nvar clockRadius = Math.min(rect.width/2, rect.height/2);\r\n\r\n// save current context\r\ng.save();\r\n\r\ng.translate(rect.x + rect.width/2, rect.y+ rect.height/2);\r\ng.beginPath();\r\n\r\n// draw numbers\r\nif (comp.getValue('numberVisible')) {\r\n    g.font = comp.getValue('numberFont');\r\n    g.fillStyle = comp.getValue('numberColor');\r\n    g.textAlign = 'center';\r\n    g.textBaseline = 'middle';\r\n    for (var n = 1; n <= 12; n++) {\r\n        var theta = (n - 3) * (Math.PI * 2) / 12;\r\n        var x = clockRadius * 0.75 * Math.cos(theta);\r\n        var y = clockRadius * 0.75 * Math.sin(theta);\r\n        g.fillText(n, x, y);\r\n    }\r\n}\r\n\r\n// draw hour\r\ng.save();\r\nvar theta = (hour - 3) * 2 * Math.PI / 12;\r\ng.rotate(theta);\r\ng.beginPath();\r\ng.moveTo(-15, -5);\r\ng.lineTo(-15, 5);\r\ng.lineTo(clockRadius * 0.5, 1);\r\ng.lineTo(clockRadius * 0.5, -1);\r\ng.fillStyle = comp.getValue('hourColor');\r\ng.fill();\r\ng.restore();\r\n\r\n// draw minute\r\ng.save();\r\nvar theta = (minute - 15) * 2 * Math.PI / 60;\r\ng.rotate(theta);\r\ng.beginPath();\r\ng.moveTo(-15, -4);\r\ng.lineTo(-15, 4);\r\ng.lineTo(clockRadius * 0.8, 1);\r\ng.lineTo(clockRadius * 0.8, -1);\r\ng.fillStyle = comp.getValue('minuteColor');\r\ng.fill();\r\ng.restore();\r\n\r\n// draw second\r\ng.save();\r\nvar theta = (seconds - 15) * 2 * Math.PI / 60;\r\ng.rotate(theta);\r\ng.beginPath();\r\ng.moveTo(-15, -3);\r\ng.lineTo(-15, 3);\r\ng.lineTo(clockRadius * 0.9, 1);\r\ng.lineTo(clockRadius * 0.9, -1);\r\ng.fillStyle = comp.getValue('secondColor');\r\ng.fill();\r\ng.restore();\r\n\r\ng.restore();\n}",
+  "properties": {
+    "o": {
+      "valueType": "String"
+    },
+    "p": {
+      "valueType": "String"
+    }
+  }
+}

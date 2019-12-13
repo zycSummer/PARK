@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet"  th:href="@{/public/css/admin/energyMap/energyMap.css}" media="all" />
+    <div class="container">
+    <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a><cite>能耗地图</cite></a>
+            </span>
+            
+    </blockquote>
+    <a href="javascript:void(0);" class="layui-btn layui-btn-sm fullScreen">
+        <i class="fa fa-arrows-alt"></i> 全屏
+    </a>
+    <div id="map_content">
+    
+    </div>
+    <div class="company_list layui-collapse" lay-accordion  lay-filter="company_collapse">
+        
+    </div>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=OMsOvB46KxK7PFpm3lFnGqXf"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>
+    <script type="text/javascript" th:src="@{/public/lib/map/MapWrapper.min.js}"></script>
+    <script type="text/javascript" th:src ="@{/public/js/admin/energyMap/energyMap.js}"></script>
+</div>
+
+</html>

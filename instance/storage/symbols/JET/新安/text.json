@@ -1,0 +1,94 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "Multiline",
+      "defaultValue": "100"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "borderColor",
+      "valueType": "Color"
+    },
+    {
+      "attr": "color",
+      "valueType": "String"
+    },
+    {
+      "attr": "fontSize",
+      "valueType": "String",
+      "defaultValue": "16px arial, sans-serif"
+    },
+    {
+      "attr": "area",
+      "valueType": "NumberArray",
+      "defaultValue": [
+        0,
+        0,
+        150,
+        50
+      ]
+    },
+    {
+      "attr": "borderWidth",
+      "valueType": "Number",
+      "defaultValue": 1
+    }
+  ],
+  "width": 150,
+  "height": 50,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "borderWidth": {
+        "func": "attr@borderWidth",
+        "value": 1
+      },
+      "borderColor": {
+        "func": "attr@borderColor",
+        "value": "rgb(255,255,255)"
+      },
+      "rect": {
+        "func": "attr@area",
+        "value": [
+          0,
+          0,
+          150,
+          50
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "文本"
+      },
+      "align": "center",
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(255,255,255)"
+      },
+      "font": {
+        "func": "attr@fontSize",
+        "value": "12px arial, sans-serif"
+      },
+      "rect": [
+        0,
+        0,
+        150,
+        50
+      ]
+    }
+  ]
+}

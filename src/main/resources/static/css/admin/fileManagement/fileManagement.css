@@ -1,0 +1,63 @@
+/*
+ * @Author: jpp
+ * @Date: 2019-10-30 14:04:23
+ * @Last Modified by: jpp
+ * @Last Modified time: 2019-10-30 10:14:43
+ */
+.file_content {
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.table_title{
+    margin:0 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table_title .layui-btn{
+    margin-left:0;
+}
+
+.table_content{
+    margin:0 10px;
+    height:1px;
+    flex-grow: 1;
+}
+
+.table_content .layui-table-view{
+    margin-bottom:0;
+}
+
+#table_page .layui-laypage{
+    margin-bottom:0;
+}
+
+/*新增、修改弹框*/
+#file_add .layui-form{
+    margin:10px;
+}
+#upload_file{
+    margin-top:5px;
+}
+#add_file_name{
+    line-height: 38px;
+}

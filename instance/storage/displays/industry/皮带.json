@@ -1,0 +1,4235 @@
+{
+  "v": "6.2.3",
+  "p": {
+    "background": "rgb(15,43,77)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {},
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 3046,
+      "p": {
+        "tag": "table001",
+        "image": "symbols/basic/table.json",
+        "position": {
+          "x": 321.77924,
+          "y": 1529.5148
+        },
+        "width": 600,
+        "height": 687.45646
+      },
+      "a": {
+        "table.background": null,
+        "table.line.color": "#3399FF",
+        "table.columns": [
+          {
+            "displayName": " ",
+            "key": "distributionName",
+            "width": 300
+          },
+          {
+            "displayName": "配电柜1",
+            "align": "center",
+            "key": "status",
+            "width": 0.1,
+            "isIcon": true
+          },
+          {
+            "displayName": "配电柜2",
+            "align": "center",
+            "key": "status01",
+            "width": 0.1,
+            "isIcon": true
+          }
+        ],
+        "table.dataSource": [
+          {
+            "distributionName": "1#驱动健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "2#驱动健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "3#驱动健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "水冷系统健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "张紧系统健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "皮带机外部健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "驱动系统启动准备好",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "皮带机启动准备好",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "1#逆变单元健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "2#逆变单元健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          },
+          {
+            "distributionName": "3#逆变单元健康",
+            "status": "./symbols/basic/abc.json",
+            "status01": "./symbols/basic/abc.json"
+          }
+        ],
+        "table.head.background": "rgb(68,68,255)",
+        "table.body.background": "rgba(255,255,255,0)",
+        "table.column.line.width": 1,
+        "table.border.color": "rgb(152,144,233)",
+        "table.column.line.color": "rgb(152,144,233)",
+        "table.row.line.color": "rgb(152,144,233)",
+        "table.body.color": "rgb(123,145,156)",
+        "table.cell.padding": 18,
+        "table.body.height": 54,
+        "table.head.height": 80,
+        "table.body.font.size": 30,
+        "table.head.font.size": 30,
+        "table.border.width": 1,
+        "table.body.font.family": "sans-serif, arial",
+        "table.head.font.family": "sans-serif, arial",
+        "table.head.color": "rgb(247,247,247)",
+        "myShowHead": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3047,
+      "p": {
+        "displayName": "煤",
+        "tag": "mei002",
+        "image": "symbols/demo/fan/煤.json",
+        "position": {
+          "x": 652.78255,
+          "y": 480.94305
+        },
+        "width": 166.65502,
+        "height": 163.74568
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3048,
+      "p": {
+        "displayName": "煤",
+        "tag": "mei001",
+        "image": "symbols/demo/fan/煤.json",
+        "position": {
+          "x": 332.40134,
+          "y": 479.36632
+        },
+        "width": 166.65502,
+        "height": 163.74568
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3049,
+      "p": {
+        "position": {
+          "x": 278.42774,
+          "y": 214.40052
+        },
+        "width": 456.31697,
+        "height": 350.24657
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(217,217,217,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3050,
+      "p": {
+        "position": {
+          "x": 278.40485,
+          "y": 230.26252
+        },
+        "width": 428.93795,
+        "height": 306.37466
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(217,217,217,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#60ACFC"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3051,
+      "p": {
+        "position": {
+          "x": 142.57978,
+          "y": 118.56984
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "停止状态",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3052,
+      "p": {
+        "position": {
+          "x": 278.4163,
+          "y": 230.26252
+        },
+        "width": 1.42084,
+        "height": 304.92054,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 278.42774,
+              "y": 77.80225
+            },
+            {
+              "x": 278.40485,
+              "y": 382.72279
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "#60ACFC",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3053,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng19",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 250.98371,
+          "y": 116.04069
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3054,
+      "p": {
+        "position": {
+          "x": 279.35012,
+          "y": 153.47346
+        },
+        "width": 428.30681,
+        "height": 1.50161,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 65.19671,
+              "y": 154.22426
+            },
+            {
+              "x": 493.50352,
+              "y": 152.72265
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "#60ACFC",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3055,
+      "p": {
+        "position": {
+          "x": 280.21364,
+          "y": 230.05578
+        },
+        "width": 426.57976,
+        "height": 1.50161,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 66.92376,
+              "y": 229.30497
+            },
+            {
+              "x": 493.50352,
+              "y": 230.80659
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "#60ACFC",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3056,
+      "p": {
+        "position": {
+          "x": 279.35012,
+          "y": 308.13972
+        },
+        "width": 431.76089,
+        "height": 1.50161,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 63.46967,
+              "y": 308.89052
+            },
+            {
+              "x": 495.23056,
+              "y": 307.38891
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "#60ACFC",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3057,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng20",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 451.13466,
+          "y": 116.04069
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3058,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng21",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 252.9997,
+          "y": 194.87507
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3059,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng22",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 451.13466,
+          "y": 194.87507
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3060,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng23",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 252.9997,
+          "y": 271.22358
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3061,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng24",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 451.13466,
+          "y": 275.21059
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3062,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng25",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 252.9997,
+          "y": 346.55746
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3063,
+      "p": {
+        "position": {
+          "x": 280.21364,
+          "y": 39.27724
+        },
+        "width": 191.03014,
+        "height": 49.28098
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3064,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng26",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 451.13466,
+          "y": 349.25069
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3065,
+      "p": {
+        "position": {
+          "x": 279.88111,
+          "y": 39.27724
+        },
+        "width": 190.36507,
+        "height": 40.00284
+      },
+      "s": {
+        "text": "运行状态",
+        "text.font": "34px arial, sans-serif",
+        "text.color": "rgb(61,61,61)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3066,
+      "p": {
+        "position": {
+          "x": 166.95247,
+          "y": 542.37068
+        },
+        "width": 22,
+        "height": 180
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3067,
+      "p": {
+        "position": {
+          "x": 1121.95247,
+          "y": 516.37068
+        },
+        "width": 1888,
+        "height": 52
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(204,204,204)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3068,
+      "p": {
+        "position": {
+          "x": 1121.95247,
+          "y": 514.22332
+        },
+        "width": 1888,
+        "height": 36.29472
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(102,102,102)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3069,
+      "p": {
+        "position": {
+          "x": 1124.18041,
+          "y": 576.46177
+        },
+        "width": 1890.36939,
+        "height": 39.29174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,128,128)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3070,
+      "p": {
+        "position": {
+          "x": 358.77987,
+          "y": 116.04069
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "华宁通讯",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3071,
+      "p": {
+        "position": {
+          "x": 140.64216,
+          "y": 196.16885
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "启动中状态",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3072,
+      "p": {
+        "position": {
+          "x": 144.76392,
+          "y": 271.22358
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "加速中状态",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3073,
+      "p": {
+        "position": {
+          "x": 145.01563,
+          "y": 351.83825
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "加速中状态",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3074,
+      "p": {
+        "position": {
+          "x": 358.77987,
+          "y": 196.16885
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "系统维护",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3075,
+      "p": {
+        "position": {
+          "x": 358.77987,
+          "y": 271.22358
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "综合保护",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3076,
+      "p": {
+        "position": {
+          "x": 351.25579,
+          "y": 346.55746
+        },
+        "width": 142.0843,
+        "height": 61.76908
+      },
+      "s": {
+        "text": "预警信号",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(200,200,200)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3077,
+      "p": {
+        "position": {
+          "x": 641.2705,
+          "y": 531.23916
+        },
+        "width": 22,
+        "height": 180
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3078,
+      "p": {
+        "position": {
+          "x": 1069.74817,
+          "y": 532.37068
+        },
+        "width": 22,
+        "height": 180
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3079,
+      "p": {
+        "position": {
+          "x": 1539.70046,
+          "y": 535.33025
+        },
+        "width": 22,
+        "height": 180
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3080,
+      "p": {
+        "position": {
+          "x": 277.40134,
+          "y": 497.23916
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3081,
+      "p": {
+        "position": {
+          "x": 404.05636,
+          "y": 496.27959
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3082,
+      "p": {
+        "position": {
+          "x": 535.39485,
+          "y": 495.07596
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3083,
+      "p": {
+        "position": {
+          "x": 840.87001,
+          "y": 492.6654
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3084,
+      "p": {
+        "position": {
+          "x": 972.20851,
+          "y": 491.46177
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3085,
+      "p": {
+        "position": {
+          "x": 1177.42774,
+          "y": 491.46177
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3086,
+      "p": {
+        "position": {
+          "x": 1304.08276,
+          "y": 490.5022
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3087,
+      "p": {
+        "position": {
+          "x": 1665.89606,
+          "y": 490.5022
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3088,
+      "p": {
+        "position": {
+          "x": 736.11006,
+          "y": 525.29857
+        },
+        "width": 80.25606,
+        "height": 21.73696
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3089,
+      "p": {
+        "position": {
+          "x": 1799.55108,
+          "y": 489.54263
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3090,
+      "p": {
+        "position": {
+          "x": 1930.88957,
+          "y": 488.339
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3091,
+      "p": {
+        "position": {
+          "x": 714.215,
+          "y": 493.62497
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3092,
+      "p": {
+        "position": {
+          "x": 1425.42125,
+          "y": 523.63372
+        },
+        "width": 80.25606,
+        "height": 21.73696
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3093,
+      "p": {
+        "position": {
+          "x": 1435.42125,
+          "y": 489.29857
+        },
+        "width": 20,
+        "height": 68.18218
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3094,
+      "p": {
+        "position": {
+          "x": 80.80046,
+          "y": 500.55351
+        }
+      },
+      "s": {
+        "text": "1#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3095,
+      "p": {
+        "position": {
+          "x": 80.80046,
+          "y": 552.71606
+        }
+      },
+      "s": {
+        "text": "2#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3096,
+      "p": {
+        "position": {
+          "x": 81.26926,
+          "y": 601.46177
+        }
+      },
+      "s": {
+        "text": "3#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3097,
+      "p": {
+        "position": {
+          "x": 2177.15257,
+          "y": 488.14807
+        }
+      },
+      "s": {
+        "text": "1#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3098,
+      "p": {
+        "position": {
+          "x": 2177.15257,
+          "y": 540.31061
+        }
+      },
+      "s": {
+        "text": "2#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3099,
+      "p": {
+        "position": {
+          "x": 2177.62137,
+          "y": 589.05632
+        }
+      },
+      "s": {
+        "text": "3#电机",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3100,
+      "p": {
+        "position": {
+          "x": 1132.52087,
+          "y": 861.27025
+        },
+        "width": 2221.48325,
+        "height": 336.58837
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(217,217,217,0)",
+        "shape.border.width": 2,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3101,
+      "p": {
+        "position": {
+          "x": 129.25177,
+          "y": 742.47435
+        },
+        "width": 168.74031
+      },
+      "s": {
+        "text": "cs沿线闭锁",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3102,
+      "p": {
+        "position": {
+          "x": 127.31415,
+          "y": 813.94288
+        },
+        "width": 168.74031
+      },
+      "s": {
+        "text": "沿线电话：",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3103,
+      "p": {
+        "position": {
+          "x": 240.51164,
+          "y": 813.94288
+        },
+        "width": 53.77941
+      },
+      "s": {
+        "text": "8",
+        "text.color": "rgb(12,193,193)",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3104,
+      "p": {
+        "position": {
+          "x": 1132.52087,
+          "y": 861.27025
+        },
+        "width": 2221.48325,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 21.77925,
+              "y": 861.27025
+            },
+            {
+              "x": 2243.2625,
+              "y": 861.27025
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "#979797",
+        "shape.border.width": 2
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3105,
+      "p": {
+        "position": {
+          "x": 127.31415,
+          "y": 939.56731
+        },
+        "width": 168.74031
+      },
+      "s": {
+        "text": "沿线皮带维护：",
+        "text.color": "rgb(255,255,255)",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3106,
+      "p": {
+        "position": {
+          "x": 2076.3651,
+          "y": 542.37068
+        },
+        "width": 22,
+        "height": 180
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,0,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3107,
+      "p": {
+        "position": {
+          "x": 201.53968,
+          "y": 495.93916
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3108,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan001",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 200.65902,
+          "y": 497.37068
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3109,
+      "p": {
+        "position": {
+          "x": 201.95247,
+          "y": 545.77596
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3110,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan002",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 200.65902,
+          "y": 546.46177
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3111,
+      "p": {
+        "position": {
+          "x": 201.95247,
+          "y": 592.4677
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3112,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan003",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 200.65902,
+          "y": 591.23916
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3113,
+      "p": {
+        "position": {
+          "x": 2040.3651,
+          "y": 503.41062
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3114,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan004",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 2040.36511,
+          "y": 502.59329
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3115,
+      "p": {
+        "position": {
+          "x": 2041.95247,
+          "y": 551.06193
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3116,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan005",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 2042.36511,
+          "y": 553.68438
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3117,
+      "p": {
+        "position": {
+          "x": 2040.3651,
+          "y": 600.10764
+        },
+        "width": 48,
+        "height": 46.69174
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3118,
+      "p": {
+        "displayName": "fan3 2",
+        "tag": "fan006",
+        "image": "symbols/demo/fan/fan4.json",
+        "position": {
+          "x": 2043.36511,
+          "y": 602.46177
+        },
+        "width": 60,
+        "height": 60
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3119,
+      "p": {
+        "position": {
+          "x": 295.68027,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3120,
+      "p": {
+        "position": {
+          "x": 329.35012,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "1",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3121,
+      "p": {
+        "position": {
+          "x": 330.38651,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3122,
+      "p": {
+        "position": {
+          "x": 364.05636,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "2",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3123,
+      "p": {
+        "position": {
+          "x": 392.96301,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3124,
+      "p": {
+        "position": {
+          "x": 426.63287,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "3",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3125,
+      "p": {
+        "position": {
+          "x": 429.05636,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "4"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3126,
+      "p": {
+        "position": {
+          "x": 462.72621,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "4",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3127,
+      "p": {
+        "position": {
+          "x": 483.39129,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3128,
+      "p": {
+        "position": {
+          "x": 517.06114,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "5",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3129,
+      "p": {
+        "position": {
+          "x": 524.58622,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3130,
+      "p": {
+        "position": {
+          "x": 565.25608,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "6",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3131,
+      "p": {
+        "position": {
+          "x": 560.92115,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3132,
+      "p": {
+        "position": {
+          "x": 594.59101,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "7",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3133,
+      "p": {
+        "position": {
+          "x": 609.54515,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3134,
+      "p": {
+        "position": {
+          "x": 648.215,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "8",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3135,
+      "p": {
+        "position": {
+          "x": 646.31684,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3136,
+      "p": {
+        "position": {
+          "x": 679.98669,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "9",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3137,
+      "p": {
+        "position": {
+          "x": 681.02308,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3138,
+      "p": {
+        "position": {
+          "x": 705.69293,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "10",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3139,
+      "p": {
+        "position": {
+          "x": 743.59958,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3140,
+      "p": {
+        "position": {
+          "x": 768.26944,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "11",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3141,
+      "p": {
+        "position": {
+          "x": 779.69293,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "4"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3142,
+      "p": {
+        "position": {
+          "x": 803.36278,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "12",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3143,
+      "p": {
+        "position": {
+          "x": 834.02786,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3144,
+      "p": {
+        "position": {
+          "x": 856.69771,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "13",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3145,
+      "p": {
+        "position": {
+          "x": 875.22279,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3146,
+      "p": {
+        "position": {
+          "x": 897.89265,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "14",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3147,
+      "p": {
+        "position": {
+          "x": 911.55772,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3148,
+      "p": {
+        "position": {
+          "x": 936.22757,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "15",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3149,
+      "p": {
+        "position": {
+          "x": 960.18172,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3150,
+      "p": {
+        "position": {
+          "x": 982.85157,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "16",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3151,
+      "p": {
+        "position": {
+          "x": 998.66037,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3152,
+      "p": {
+        "position": {
+          "x": 1024.33023,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "17",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3153,
+      "p": {
+        "position": {
+          "x": 1033.36661,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3154,
+      "p": {
+        "position": {
+          "x": 1056.03647,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "18",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3155,
+      "p": {
+        "position": {
+          "x": 1095.94312,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3156,
+      "p": {
+        "position": {
+          "x": 1119.61297,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "19",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3157,
+      "p": {
+        "position": {
+          "x": 1132.03647,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "4"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3158,
+      "p": {
+        "position": {
+          "x": 1156.70632,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "20",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3159,
+      "p": {
+        "position": {
+          "x": 1186.37139,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3160,
+      "p": {
+        "position": {
+          "x": 1213.04125,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "21",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3161,
+      "p": {
+        "position": {
+          "x": 1227.56633,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3162,
+      "p": {
+        "position": {
+          "x": 1255.23619,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "22",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3163,
+      "p": {
+        "position": {
+          "x": 1263.90126,
+          "y": 737.78367
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3164,
+      "p": {
+        "position": {
+          "x": 1291.57111,
+          "y": 737.78367
+        }
+      },
+      "s": {
+        "text": "23",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3165,
+      "p": {
+        "position": {
+          "x": 1312.52525,
+          "y": 813.94288
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3166,
+      "p": {
+        "position": {
+          "x": 1339.19511,
+          "y": 813.94288
+        }
+      },
+      "s": {
+        "text": "24",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3167,
+      "p": {
+        "position": {
+          "x": 1350.93309,
+          "y": 735.39474
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3168,
+      "p": {
+        "position": {
+          "x": 1375.60295,
+          "y": 735.39474
+        }
+      },
+      "s": {
+        "text": "25",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3169,
+      "p": {
+        "position": {
+          "x": 1389.63933,
+          "y": 810.55396
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3170,
+      "p": {
+        "position": {
+          "x": 1416.30919,
+          "y": 810.55396
+        }
+      },
+      "s": {
+        "text": "26",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3171,
+      "p": {
+        "position": {
+          "x": 1448.21584,
+          "y": 735.39474
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3172,
+      "p": {
+        "position": {
+          "x": 1474.88569,
+          "y": 735.39474
+        }
+      },
+      "s": {
+        "text": "27",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3173,
+      "p": {
+        "position": {
+          "x": 1488.30919,
+          "y": 810.55396
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "4"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3174,
+      "p": {
+        "position": {
+          "x": 1515.97904,
+          "y": 810.55396
+        }
+      },
+      "s": {
+        "text": "28",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3175,
+      "p": {
+        "position": {
+          "x": 1538.64411,
+          "y": 735.39474
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3176,
+      "p": {
+        "position": {
+          "x": 1565.31397,
+          "y": 729.39474
+        }
+      },
+      "s": {
+        "text": "29",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3177,
+      "p": {
+        "position": {
+          "x": 1583.83905,
+          "y": 810.55396
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3178,
+      "p": {
+        "position": {
+          "x": 1612.50891,
+          "y": 810.55396
+        }
+      },
+      "s": {
+        "text": "30",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3179,
+      "p": {
+        "position": {
+          "x": 1623.17398,
+          "y": 734.39474
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3180,
+      "p": {
+        "position": {
+          "x": 1649.84383,
+          "y": 731.39474
+        }
+      },
+      "s": {
+        "text": "31",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3181,
+      "p": {
+        "position": {
+          "x": 1668.79797,
+          "y": 810.55396
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3182,
+      "p": {
+        "position": {
+          "x": 1693.46783,
+          "y": 811.55396
+        }
+      },
+      "s": {
+        "text": "32",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3183,
+      "p": {
+        "position": {
+          "x": 1724.61784,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3184,
+      "p": {
+        "position": {
+          "x": 1749.28769,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "33",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3185,
+      "p": {
+        "position": {
+          "x": 1759.32408,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3186,
+      "p": {
+        "position": {
+          "x": 1785.99393,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "34",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3187,
+      "p": {
+        "position": {
+          "x": 1821.90058,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3188,
+      "p": {
+        "position": {
+          "x": 1849.57044,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "35",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3189,
+      "p": {
+        "position": {
+          "x": 1857.99393,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "4"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3190,
+      "p": {
+        "position": {
+          "x": 1883.66378,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "36",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3191,
+      "p": {
+        "position": {
+          "x": 1912.32886,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3192,
+      "p": {
+        "position": {
+          "x": 1936.99871,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "37",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3193,
+      "p": {
+        "position": {
+          "x": 1953.5238,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3194,
+      "p": {
+        "position": {
+          "x": 1979.19365,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "38",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3195,
+      "p": {
+        "position": {
+          "x": 1989.85872,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3196,
+      "p": {
+        "position": {
+          "x": 2015.52858,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "39",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3197,
+      "p": {
+        "position": {
+          "x": 2038.48272,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3198,
+      "p": {
+        "position": {
+          "x": 2062.15257,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "40",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3199,
+      "p": {
+        "position": {
+          "x": 2068.69526,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "5"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3200,
+      "p": {
+        "position": {
+          "x": 2093.36511,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "41",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3201,
+      "p": {
+        "position": {
+          "x": 2109.89019,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "6"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3202,
+      "p": {
+        "position": {
+          "x": 2135.56005,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "42",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3203,
+      "p": {
+        "position": {
+          "x": 2146.22512,
+          "y": 734.65668
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "7"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3204,
+      "p": {
+        "position": {
+          "x": 2171.89498,
+          "y": 734.65668
+        }
+      },
+      "s": {
+        "text": "43",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3205,
+      "p": {
+        "position": {
+          "x": 2194.84912,
+          "y": 810.81589
+        },
+        "width": 50,
+        "height": 50
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "8"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3206,
+      "p": {
+        "position": {
+          "x": 2218.51897,
+          "y": 810.81589
+        }
+      },
+      "s": {
+        "text": "44",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3207,
+      "p": {
+        "position": {
+          "x": 334.72143,
+          "y": 988.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3208,
+      "p": {
+        "position": {
+          "x": 375.72871,
+          "y": 989.56731
+        }
+      },
+      "s": {
+        "text": "1",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3209,
+      "p": {
+        "position": {
+          "x": 384.05636,
+          "y": 987.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3210,
+      "p": {
+        "position": {
+          "x": 425.06364,
+          "y": 987.56731
+        }
+      },
+      "s": {
+        "text": "2",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3211,
+      "p": {
+        "position": {
+          "x": 434.05636,
+          "y": 986.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3212,
+      "p": {
+        "position": {
+          "x": 435.33714,
+          "y": 987.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "3",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3213,
+      "p": {
+        "position": {
+          "x": 481.58623,
+          "y": 985.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3214,
+      "p": {
+        "position": {
+          "x": 484.99418,
+          "y": 985.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "4",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3215,
+      "p": {
+        "position": {
+          "x": 527.25608,
+          "y": 985.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3216,
+      "p": {
+        "position": {
+          "x": 568.26336,
+          "y": 986.56731
+        }
+      },
+      "s": {
+        "text": "5",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3217,
+      "p": {
+        "position": {
+          "x": 576.59101,
+          "y": 986.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3218,
+      "p": {
+        "position": {
+          "x": 582.09464,
+          "y": 986.56731
+        },
+        "width": 28.99272
+      },
+      "s": {
+        "text": "6",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3219,
+      "p": {
+        "position": {
+          "x": 626.59101,
+          "y": 987.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3220,
+      "p": {
+        "position": {
+          "x": 627.87178,
+          "y": 988.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "7",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3221,
+      "p": {
+        "position": {
+          "x": 674.12087,
+          "y": 986.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3222,
+      "p": {
+        "position": {
+          "x": 677.52882,
+          "y": 986.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "8",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3223,
+      "p": {
+        "position": {
+          "x": 719.26944,
+          "y": 986.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3224,
+      "p": {
+        "position": {
+          "x": 722.67739,
+          "y": 986.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "9",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3225,
+      "p": {
+        "position": {
+          "x": 510.92115,
+          "y": 914.56731
+        }
+      },
+      "s": {
+        "text": "跑偏传感器",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(141,141,141)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3226,
+      "p": {
+        "position": {
+          "x": 826.69771,
+          "y": 982.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3227,
+      "p": {
+        "position": {
+          "x": 867.70499,
+          "y": 983.56731
+        }
+      },
+      "s": {
+        "text": "1",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3228,
+      "p": {
+        "position": {
+          "x": 876.03264,
+          "y": 981.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3229,
+      "p": {
+        "position": {
+          "x": 917.03991,
+          "y": 981.56731
+        }
+      },
+      "s": {
+        "text": "2",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3230,
+      "p": {
+        "position": {
+          "x": 926.03264,
+          "y": 980.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3231,
+      "p": {
+        "position": {
+          "x": 927.31341,
+          "y": 981.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "3",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3232,
+      "p": {
+        "position": {
+          "x": 973.5625,
+          "y": 979.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3233,
+      "p": {
+        "position": {
+          "x": 976.97045,
+          "y": 979.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "4",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3234,
+      "p": {
+        "position": {
+          "x": 1019.23236,
+          "y": 979.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3235,
+      "p": {
+        "position": {
+          "x": 1060.23963,
+          "y": 980.56731
+        }
+      },
+      "s": {
+        "text": "5",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3236,
+      "p": {
+        "position": {
+          "x": 1068.56728,
+          "y": 980.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3237,
+      "p": {
+        "position": {
+          "x": 1074.07092,
+          "y": 980.56731
+        },
+        "width": 28.99272
+      },
+      "s": {
+        "text": "6",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3238,
+      "p": {
+        "position": {
+          "x": 1118.56728,
+          "y": 981.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3239,
+      "p": {
+        "position": {
+          "x": 1119.84806,
+          "y": 982.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "7",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3240,
+      "p": {
+        "position": {
+          "x": 1166.09715,
+          "y": 980.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3241,
+      "p": {
+        "position": {
+          "x": 1169.5051,
+          "y": 980.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "8",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3242,
+      "p": {
+        "position": {
+          "x": 1005.6946,
+          "y": 914.56731
+        },
+        "width": 179.62344
+      },
+      "s": {
+        "text": "纵撕传感器",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(141,141,141)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3243,
+      "p": {
+        "position": {
+          "x": 1258.90126,
+          "y": 976.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3244,
+      "p": {
+        "position": {
+          "x": 1299.90854,
+          "y": 977.56731
+        }
+      },
+      "s": {
+        "text": "1",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3245,
+      "p": {
+        "position": {
+          "x": 1308.23619,
+          "y": 975.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3246,
+      "p": {
+        "position": {
+          "x": 1349.24346,
+          "y": 975.56731
+        }
+      },
+      "s": {
+        "text": "2",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3247,
+      "p": {
+        "position": {
+          "x": 1358.23619,
+          "y": 974.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3248,
+      "p": {
+        "position": {
+          "x": 1359.51696,
+          "y": 975.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "3",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3249,
+      "p": {
+        "position": {
+          "x": 1405.76605,
+          "y": 973.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3250,
+      "p": {
+        "position": {
+          "x": 1409.174,
+          "y": 973.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "4",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3251,
+      "p": {
+        "position": {
+          "x": 1451.4359,
+          "y": 973.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3252,
+      "p": {
+        "position": {
+          "x": 1492.44318,
+          "y": 974.56731
+        }
+      },
+      "s": {
+        "text": "5",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3253,
+      "p": {
+        "position": {
+          "x": 1500.77083,
+          "y": 974.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3254,
+      "p": {
+        "position": {
+          "x": 1506.27447,
+          "y": 974.56731
+        },
+        "width": 28.99272
+      },
+      "s": {
+        "text": "6",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3255,
+      "p": {
+        "position": {
+          "x": 1389.05518,
+          "y": 914.56731
+        },
+        "width": 179.62344
+      },
+      "s": {
+        "text": "堆煤传感器",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(141,141,141)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3256,
+      "p": {
+        "position": {
+          "x": 1579.32204,
+          "y": 975.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3257,
+      "p": {
+        "position": {
+          "x": 1620.32932,
+          "y": 976.56731
+        }
+      },
+      "s": {
+        "text": "1",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3258,
+      "p": {
+        "position": {
+          "x": 1628.65697,
+          "y": 974.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3259,
+      "p": {
+        "position": {
+          "x": 1669.66425,
+          "y": 974.56731
+        }
+      },
+      "s": {
+        "text": "2",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3260,
+      "p": {
+        "position": {
+          "x": 1678.65697,
+          "y": 973.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "3"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3261,
+      "p": {
+        "position": {
+          "x": 1679.93775,
+          "y": 974.56731
+        },
+        "width": 22.86108
+      },
+      "s": {
+        "text": "3",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3262,
+      "p": {
+        "position": {
+          "x": 1660.32098,
+          "y": 914.56731
+        },
+        "width": 179.62344
+      },
+      "s": {
+        "text": "烟雾传感器",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(141,141,141)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3263,
+      "p": {
+        "position": {
+          "x": 1734.32408,
+          "y": 971.56731
+        },
+        "width": 40,
+        "height": 40
+      },
+      "s": {
+        "shape": "oval",
+        "shape.background": "rgb(0,255,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797",
+        "text": "2"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3264,
+      "p": {
+        "position": {
+          "x": 1737.73203,
+          "y": 971.56731
+        },
+        "width": 24.80135
+      },
+      "s": {
+        "text": "4",
+        "text.font": "30px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3265,
+      "p": {
+        "displayName": "报警灯",
+        "tag": "baojingdeng27",
+        "image": "symbols/basic/报警灯.json",
+        "position": {
+          "x": 1891.01621,
+          "y": 970.03658
+        },
+        "width": 42.62529,
+        "height": 37.06145
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3266,
+      "p": {
+        "position": {
+          "x": 1938.71686,
+          "y": 914.56731
+        },
+        "width": 179.62344
+      },
+      "s": {
+        "text": "急停",
+        "text.font": "30px arial, sans-serif",
+        "text.color": "rgb(141,141,141)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3267,
+      "p": {
+        "position": {
+          "x": 980.12335,
+          "y": 364.52381
+        },
+        "width": 473.04753
+      },
+      "s": {
+        "text": "皮带速度：4.00 m/s",
+        "text.color": "rgb(246,246,246)",
+        "text.font": "44px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3268,
+      "p": {
+        "position": {
+          "x": 321.03979,
+          "y": 1502.65789
+        },
+        "width": 638.24627,
+        "height": 774.32881
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(217,217,217,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(158,158,158)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3269,
+      "p": {
+        "position": {
+          "x": 322.85742,
+          "y": 1113.13281
+        },
+        "width": 258.28593,
+        "height": 64.57148
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(110,110,110)",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3270,
+      "p": {
+        "position": {
+          "x": 325.9812,
+          "y": 1115.49348
+        },
+        "width": 250.64436
+      },
+      "s": {
+        "text": "设备运行状态",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "40px arial, sans-serif"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3271,
+      "p": {
+        "tag": "table002",
+        "image": "symbols/basic/table.json",
+        "position": {
+          "x": 989.92949,
+          "y": 1529.5148
+        },
+        "width": 600,
+        "height": 687.45646
+      },
+      "a": {
+        "table.background": null,
+        "table.line.color": "#3399FF",
+        "table.columns": [
+          {
+            "displayName": "系统参数显示 ",
+            "key": "distributionName",
+            "width": 300,
+            "TableHeadBackground": "#f00"
+          },
+          {
+            "displayName": "头驱",
+            "align": "center",
+            "key": "num01",
+            "width": 0.1
+          },
+          {
+            "displayName": "中驱",
+            "align": "center",
+            "key": "num02",
+            "width": 0.1
+          }
+        ],
+        "table.dataSource": [
+          {
+            "distributionName": "1#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "2#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "3#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "水冷系统健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "张紧系统健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "皮带机外部健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "驱动系统启动准备好",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "皮带机启动准备好",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "1#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "2#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "3#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          }
+        ],
+        "table.head.background": "rgb(68,68,255)",
+        "table.body.background": "rgba(255,255,255,0)",
+        "table.column.line.width": 1,
+        "table.border.color": "rgb(152,144,233)",
+        "table.column.line.color": "rgb(152,144,233)",
+        "table.row.line.color": "rgb(152,144,233)",
+        "table.body.color": "rgb(123,145,156)",
+        "table.cell.padding": 18,
+        "table.body.height": 54,
+        "table.head.height": 80,
+        "table.body.font.size": 30,
+        "table.head.font.size": 30,
+        "table.border.width": 1,
+        "table.body.font.family": "sans-serif, arial",
+        "table.head.font.family": "sans-serif, arial",
+        "table.head.color": "rgb(255,255,255)",
+        "myShowHead": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3272,
+      "p": {
+        "tag": "table003",
+        "image": "symbols/basic/table.json",
+        "position": {
+          "x": 1889.8461,
+          "y": 1529.5148
+        },
+        "width": 1141.03356,
+        "height": 687.45646
+      },
+      "a": {
+        "table.background": null,
+        "table.line.color": "#3399FF",
+        "table.columns": [
+          {
+            "displayName": "电机参数 ",
+            "key": "distributionName",
+            "width": 320,
+            "TableHeadBackground": "#f00"
+          },
+          {
+            "displayName": "头驱1#",
+            "align": "center",
+            "key": "num01",
+            "width": 0.1
+          },
+          {
+            "displayName": "头驱2#",
+            "align": "center",
+            "key": "num01",
+            "width": 0.1
+          },
+          {
+            "displayName": "头驱3#",
+            "align": "center",
+            "key": "num01",
+            "width": 0.1
+          },
+          {
+            "displayName": "中驱1#",
+            "align": "center",
+            "key": "num01",
+            "width": 0.1
+          },
+          {
+            "displayName": "中驱2#",
+            "align": "center",
+            "key": "num02",
+            "width": 0.1
+          },
+          {
+            "displayName": "中驱3#",
+            "align": "center",
+            "key": "num02",
+            "width": 0.1
+          }
+        ],
+        "table.dataSource": [
+          {
+            "distributionName": "1#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "2#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "3#驱动健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "水冷系统健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "张紧系统健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "皮带机外部健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "驱动系统启动准备好",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "皮带机启动准备好",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "1#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "2#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          },
+          {
+            "distributionName": "3#逆变单元健康",
+            "num01": "923.00",
+            "num02": "926.00"
+          }
+        ],
+        "table.head.background": "rgb(68,68,255)",
+        "table.body.background": "rgba(255,255,255,0)",
+        "table.column.line.width": 1,
+        "table.border.color": "rgb(152,144,233)",
+        "table.column.line.color": "rgb(152,144,233)",
+        "table.row.line.color": "rgb(152,144,233)",
+        "table.body.color": "rgb(123,145,156)",
+        "table.cell.padding": 18,
+        "table.body.height": 54,
+        "table.head.height": 80,
+        "table.body.font.size": 30,
+        "table.head.font.size": 30,
+        "table.border.width": 1,
+        "table.body.font.family": "sans-serif, arial",
+        "table.head.font.family": "sans-serif, arial",
+        "table.head.color": "rgb(255,255,255)",
+        "myShowHead": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3273,
+      "p": {
+        "position": {
+          "x": 1573.27181,
+          "y": 1500.29722
+        },
+        "width": 1800.30189,
+        "height": 774.32881
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(217,217,217,0)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(158,158,158)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3274,
+      "p": {
+        "position": {
+          "x": 1423.21584,
+          "y": 1108.20774
+        },
+        "width": 258.28593,
+        "height": 64.57148
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(110,110,110)",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3275,
+      "p": {
+        "position": {
+          "x": 1426.33962,
+          "y": 1110.56841
+        },
+        "width": 250.64436
+      },
+      "s": {
+        "text": "设备运行数据",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "40px arial, sans-serif"
+      }
+    }
+  ]
+}

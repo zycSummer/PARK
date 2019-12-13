@@ -1,0 +1,1396 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "background": "rgb(6,4,19)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 3320,
+      "p": {
+        "displayName": "中节能厂区图地图1",
+        "image": "assets/JET/连云港/中节能厂区图地图1.jpg",
+        "position": {
+          "x": 42.05323,
+          "y": 37.97212
+        },
+        "width": 1849
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3322,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": -588.75612,
+          "y": -136.77401
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3323,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": -275.70151,
+          "y": -186.76554
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3324,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 56.66204,
+          "y": -33.10176
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3325,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 71.45751,
+          "y": 178.66761
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3326,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 318.93974,
+          "y": -200.77401
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3327,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 526.0056,
+          "y": -206.77401
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3328,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 689.59746,
+          "y": -224.76554
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3329,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 770.30038,
+          "y": -17.68079
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3330,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 313.05461,
+          "y": 106.72316
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3331,
+      "p": {
+        "displayName": "2",
+        "image": "assets/JET/连云港/2.png",
+        "position": {
+          "x": 565.22269,
+          "y": 191.39787
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3332,
+      "p": {
+        "position": {
+          "x": 42.05323,
+          "y": -386.48663
+        },
+        "width": 1849,
+        "height": 193.91751
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgba(2,4,15,0.8)",
+        "shape.border.color": "rgb(217,217,217)",
+        "shape.border.width": 0.3,
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3333,
+      "p": {
+        "displayName": "jet-ajax",
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": -588.75612,
+          "y": -498.44539
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val5 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n            if(name == 'jet-text' && val5[i]){\r\n                console.log(val5[i]);\r\n                var value = val5[i].lastValue;\r\n                if(value == null){\r\n                    child.a('value', '--');\r\n                }\r\n                else if(value == 0){\r\n                    child.a('value', 0);\r\n                }\r\n                else{\r\n                    child.a('value',value?parseFloat(value).toFixed(2):'--');\r\n                }\r\n                i++;\r\n            }\r\n    });\r\n}",
+        "url": "/htweb/energyRealTimeValue",
+        "paras": "{\"datasources\":[\"LYGSHCYJD.ZJLQJJS.G21E1.P\",\"LYGSHCYJD.ZJLQJJS.G11E3.P,LYGSHCYJD.ZJLQJJS.G11E4.P#?+?\",\"LYGSHCYJD.ZJLQJJS.G11E7.P,LYGSHCYJD.ZJLQJJS.G12E16.P,LYGSHCYJD.ZJLQJJS.G12E15.P,LYGSHCYJD.ZJLQJJS.G12E17.P#?+?+?+?\",\"LYGSHCYJD.ZJLQJJS.G11E8.P\",\"LYGSHCYJD.ZJLQJJS.G12E19.P\",\"LYGSHCYJD.ZJLQJJS.G12E18.P\",\"LYGSHCYJD.ZJLQJJS.G12E13.P\",\"LYGSHCYJD.ZJLQJJS.G12E14.P,LYGSHCYJD.ZJLQJJS.G12E12.P#?+?\"]}"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3334,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -795.88136,
+          "y": -436.07533
+        },
+        "width": 153,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "变配电室",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3335,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -780.77731,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3336,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -832.38136,
+          "y": -341.6968
+        },
+        "width": 80
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3337,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -585.77731,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "综合楼",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3338,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -585.77731,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3339,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -637.38136,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3340,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -370.77731,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "焚烧车间",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3341,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -370.77731,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3342,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -422.38136,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3343,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -151.77731,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "有机废物仓库",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3344,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": -151.77731,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3345,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -203.38136,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3346,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 79.22269,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "污水处理区",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3347,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 79.22269,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3348,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 27.61864,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3349,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 305.22269,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "消防泵房",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3350,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 305.22269,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3351,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 253.61864,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3352,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 526.22269,
+          "y": -436.07533
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "甲类废物仓库",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3353,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 526.22269,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3354,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 474.61864,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3355,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 796.14199,
+          "y": -436.07533
+        },
+        "width": 267.04671,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "无机废物仓库及机修间",
+        "text.color": "rgb(58,181,62)",
+        "text.font": "bold 26px Arial",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3356,
+      "p": {
+        "parent": {
+          "__i": 3333
+        },
+        "position": {
+          "x": 754.22269,
+          "y": -378.15631
+        },
+        "width": 183.2081,
+        "height": 56.91902
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "16px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3357,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3333
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 702.61864,
+          "y": -341.6968
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "26px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3358,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": -688.38297,
+          "y": -385.8558
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3359,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": -254.44492,
+          "y": -386.54324
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3360,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": -474.19677,
+          "y": -385.8558
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3361,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": 202.61703,
+          "y": -385.8558
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3362,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": 649.55508,
+          "y": -386.54324
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3363,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": 423.80323,
+          "y": -385.8558
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3364,
+      "p": {
+        "rotation": 1.5708,
+        "position": {
+          "x": -23.38503,
+          "y": -385.8558
+        },
+        "width": 193.80429,
+        "height": 0.5
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.color": "#979797",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3365,
+      "p": {
+        "position": {
+          "x": -592.05812,
+          "y": -83.86941
+        },
+        "width": 137.1213,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "污水处理区",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3366,
+      "p": {
+        "position": {
+          "x": -286.56706,
+          "y": -127.85499
+        },
+        "width": 69.73111,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "可燃",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3367,
+      "p": {
+        "position": {
+          "x": -286.56706,
+          "y": -92.91788
+        },
+        "width": 69.73111,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "废液",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3368,
+      "p": {
+        "position": {
+          "x": -286.56706,
+          "y": -57.98078
+        },
+        "width": 69.73111,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "储运",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3369,
+      "p": {
+        "position": {
+          "x": -286.56706,
+          "y": -23.04367
+        },
+        "width": 69.73111,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "工段",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3370,
+      "p": {
+        "position": {
+          "x": 41.03701,
+          "y": 18.43518
+        },
+        "width": 108.51658,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "焚烧车间",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3371,
+      "p": {
+        "position": {
+          "x": 71.45751,
+          "y": 234.52984
+        },
+        "width": 172.8414,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "无机废物仓库",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3372,
+      "p": {
+        "position": {
+          "x": 76.66204,
+          "y": 269.41366
+        },
+        "width": 137.1213,
+        "height": 31.88383
+      },
+      "s": {
+        "text": "及机修间",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3373,
+      "p": {
+        "position": {
+          "x": 309.93974,
+          "y": -147.23707
+        },
+        "width": 108.51658,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "变配电室",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3374,
+      "p": {
+        "position": {
+          "x": 309.36803,
+          "y": 121.18622
+        },
+        "width": 61.37316,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "有机",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3375,
+      "p": {
+        "position": {
+          "x": 310.85575,
+          "y": 153.76554
+        },
+        "width": 108.51658,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "废物仓库",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3376,
+      "p": {
+        "position": {
+          "x": 509.0056,
+          "y": -151.23707
+        },
+        "width": 120.59897,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "甲类废物仓",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3377,
+      "p": {
+        "position": {
+          "x": 569.30508,
+          "y": 242.93481
+        },
+        "width": 108.51658,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "综合楼",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3378,
+      "p": {
+        "position": {
+          "x": 769.59746,
+          "y": 37.97212
+        },
+        "width": 108.51658,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "停车场",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3379,
+      "p": {
+        "position": {
+          "x": 683.86285,
+          "y": -178.85499
+        },
+        "width": 120.59897,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "消防泵房",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3380,
+      "p": {
+        "position": {
+          "x": 683.86285,
+          "y": -145.85499
+        },
+        "width": 120.59897,
+        "height": 37.07388
+      },
+      "s": {
+        "text": "及消防水池",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "25px arial, sans-serif",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "pixelPerfect": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3382,
+      "p": {
+        "position": {
+          "x": -709.44417,
+          "y": 300.06971
+        },
+        "width": 281.3761,
+        "height": 77.19592
+      },
+      "s": {
+        "text": "中节能厂区图",
+        "text.color": "rgb(0,199,7)",
+        "text.shadow.color": "rgb(48,242,120)",
+        "text.font": "42px arial, sans-serif",
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "pixelPerfect": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "dataBindings": [
+    {
+      "attr": "color",
+      "valueType": "Color"
+    }
+  ],
+  "width": 36,
+  "height": 24,
+  "comps": [
+    {
+      "type": "rect",
+      "background": "rgb(0,0,0)",
+      "borderColor": "#979797",
+      "rect": [
+        2.08323,
+        1.55462,
+        31.44662,
+        20
+      ]
+    },
+    {
+      "type": "triangle",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(242,83,75)"
+      },
+      "borderWidth": 1,
+      "borderColor": "rgb(255,255,255)",
+      "borderWidthAbsolute": true,
+      "rotation": 1.5708,
+      "rect": [
+        -0.05511,
+        3.69297,
+        20,
+        15.72331
+      ]
+    },
+    {
+      "type": "triangle",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(242,83,75)"
+      },
+      "borderWidth": 1,
+      "borderColor": "rgb(255,255,255)",
+      "borderWidthAbsolute": true,
+      "rotation": 4.71239,
+      "rect": [
+        15.6682,
+        3.69297,
+        20,
+        15.72331
+      ]
+    }
+  ]
+}

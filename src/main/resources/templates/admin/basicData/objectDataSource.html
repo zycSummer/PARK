@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/datasoucre.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a>报警管理</a>
+                <a><cite>对象数据源配置</cite></a>
+            </span>
+        </blockquote>
+        <div class="content_main  layui-row layui-col-space5">
+                <div class="control_div">
+                    <div class="layui-inline">
+                        <form class="layui-form">
+                            <div class="layui-inline">
+                                <label class="search_label">能源种类：</label>
+                                <div class="layui-input-inline"  id="energyTypeSelect"  style="width:200px">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="layui-inline  btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm "   id="search_btn_data" th:if="${MENU1404Query.visible}">查询</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="add_btn_data" th:if="${MENU1404Add.visible}">新增</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm "  id="edit_btn_data" th:if="${MENU1404Modify.visible}">修改</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm "   id="del_btn_data" th:if="${MENU1404Delete.visible}">删除</button>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="tab_content">
+                    <table class="layui-table customize-table " id="data_source_table" lay-filter="data_source_table">
+                    </table>
+
+                </div>
+                <div class="table_page" id="table_page_data"></div>
+           
+        </div>
+
+    </div>
+
+    <!-- 数据源配置 模态框 -->
+    <div id="data_source_dialog" class="layui-hide layui-row">
+        <div class="layui-col-md4">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+              
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>能源种类：</label>
+                    <div class="layui-input-inline">
+                        <select id="add_valueType" lay-filter="energyTypeSelect_add">
+                         
+                        </select>
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
+                            style="color: red; font-size: 1px;"></i>参数
+                    </label>
+                    <div class="layui-input-inline">
+                        <select id="addParaSelect" lay-filter="addParaSelect">
+                           
+                        </select>
+                    </div>
+
+                </div>
+              
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" id="add_memo" maxlength="500"></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="layui-col-md4" id="data_source_select">
+            <div class="data_source_left">
+                <p>数据源：</p>
+            </div>
+            <div class="data_source_right">
+                <div class="data_source_right_title">仪表参数列表（从右侧选择） <div class="data_source_right_title_btn"><a id="deleteDataSocureSelect">删除所选</a>
+                        <a id="delAllDataSocure">清空</a> </div>
+                </div>
+
+                <div class="data_source_right_table">
+                  <table class="layui-table">
+                      <tbody id="data_source_tbody"></tbody>
+                  </table>
+                </div>
+                <div class="data_source_right_footer">
+                    <div class="data_source_right_title">公式 <div class="data_source_right_title_btn">
+                            <a id="formula_check">检查</a><a  id="formula_addVal">所有仪表参数相加</a> <a id="formula_delAll">清空</a> </div>
+                    </div>
+
+
+                    <div class="data_source_right_footer_content"> <textarea class="layui-textarea"
+                            maxlength="500"  id="alarm_formulaVal"></textarea></div>
+                    <label class="alarmInfoTip">◆公式中用?代替上面的仪表参数，公式中的第一个?代表上面的第一个仪表参数，以此类推，上面仪表参数的个数需要等于公式中?的个数。
+
+
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-md4" id="data_source_parameter_select">
+            <div class="data_source_parameter_select_content">
+                <div class="data_source_parameter_select_content_title">仪表参数选择</div>
+                <div class="data_source_parameter_select_content_tab">
+                    <div class="layui-tab layui-tab-card" lay-filter="modelSelect">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this" lay-id="company" >企业</li>
+                            <li lay-id="meter" >仪表</li>
+                            <li lay-id="parameter" >参数</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_company" placeholder="按企业标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn "
+                                                    id="add_btn_company">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table">
+                                            <tbody id="company_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_meter" placeholder="按仪表标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn " id="add_btn_meter">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table tab_item_content_tab">
+                                            <tbody id="meter_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div class="tab_item_content">
+                                    <form class="layui-form">
+                                        <div class="layui-form-item configuration_item">
+                                            <div class="layui-input-inline">
+                                                <input class="layui-input" autocomplete="off" type="text"
+                                                    id="add_key_parameter" placeholder="按参数标识或者名称查询" maxlength="120">
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <button type="button" class="layui-btn "
+                                                    id="add_btn_parameter">查询</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="tab_item_content_table">
+                                        <table class="layui-table tab_item_content_tab">
+                                            <tbody id="parameter_tbody">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         
+         <div class="parameter_btns">
+             <p><a class="parameter_btn_type" data-type="top">添加至所选之前</a></p>
+             <p class="parameter_btns_tip">◆双击直接添加到末尾。</p>
+         </div>
+
+        </div>
+    </div>
+    </div>
+        <script type="text/javascript" th:src="@{/public/js/admin/basicData/objDataSoure.js}"></script>
+    </div>
+
+</html>

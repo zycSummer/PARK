@@ -1,0 +1,123 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "String",
+      "defaultValue": "NA"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    {
+      "attr": "fontFamily",
+      "valueType": "String",
+      "defaultValue": "arial, sans-serif"
+    },
+    {
+      "attr": "align",
+      "valueType": "Align",
+      "defaultValue": "right"
+    },
+    {
+      "attr": "borderWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 0
+    },
+    {
+      "attr": "borderColor",
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    {
+      "attr": "fontSize",
+      "valueType": "PositiveNumber",
+      "defaultValue": "13"
+    },
+    {
+      "attr": "letterSpacing",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "vAlign",
+      "valueType": "VAlign",
+      "defaultValue": "middle"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(0,0,0)"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    }
+  ],
+  "width": 90,
+  "height": 20,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": [
+    {
+      "type": "components/JET/text.json",
+      "displayName": "text",
+      "rect": [
+        0,
+        0,
+        90,
+        20
+      ],
+      "text": {
+        "func": "attr@value",
+        "value": "NA"
+      },
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(0,0,0)"
+      },
+      "fontSize": {
+        "func": "attr@fontSize",
+        "value": 13
+      },
+      "fontFamily": {
+        "func": "attr@fontFamily",
+        "value": "sans-serif, arial"
+      },
+      "borderWidth": {
+        "func": "attr@borderWidth",
+        "value": 0
+      },
+      "borderColor": {
+        "func": "attr@borderColor",
+        "value": null
+      },
+      "letterSpacing": {
+        "func": "attr@letterSpacing",
+        "value": 0
+      },
+      "align": {
+        "func": "attr@align",
+        "value": "right"
+      },
+      "vAlign": {
+        "func": "attr@vAlign",
+        "value": "middle"
+      }
+    }
+  ]
+}

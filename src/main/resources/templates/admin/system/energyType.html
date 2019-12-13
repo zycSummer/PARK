@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/system/energyType.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a>系统管理</a>
+                <a><cite>能源种类配置</cite></a>
+            </span>
+        </blockquote>
+
+        <div class="tab_content">
+
+            <div class="tab_content_tab">
+                <div class="control_div">
+                    <div class="layui-inline">
+                        <form class="layui-form">
+                            <div class="layui-inline">
+                                <label class="search_label">种类标识：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" value="" class="layui-input search_input" id="add_energyTypeId">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="search_label">种类名称：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" value="" class="layui-input search_input"
+                                        id="add_energyTypeNameLike">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="layui-inline" id="btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="search_btn" th:if="${MENU1505Query.visible}">查询</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="add_btn_type" th:if="${MENU1505Add.visible}">新增</button>
+                        </div>
+
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " id="edit_btn_type" th:if="${MENU1505Modify.visible}">修改</button>
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="del_btn_type" th:if="${MENU1505Delete.visible}">删除</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab_content_tab_menu">
+                    <table class="layui-hidden" id="energyTypeTable" lay-filter="energyTypeTable"></table>
+                </div>
+
+            </div>
+            <div class="tab_content_tree">
+                <div class="control_div">
+                    <div class="layui-inline">
+                            <form class="layui-form">
+                                    <div class="layui-inline">
+                                        <label class="search_label">参数标识：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" value="" class="layui-input search_input" id="search_energyParaId">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="search_label">参数名称：</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" value="" class="layui-input search_input"
+                                                id="search_energyParaNameLike">
+                                        </div>
+                                    </div>
+                                </form>
+                    </div>
+                    <div class="layui-inline" id="btnGroup">
+                        <div class="layui-inline">
+                            <button class="layui-btn  layui-btn-sm " id="search_btn_para" th:if="${MENU1505Para_Query.visible}">查询</button>
+                        </div>
+                        <div class="layui-inline">
+                                <button class="layui-btn  layui-btn-sm " id="add_btn_para" th:if="${MENU1505Para_Add.visible}">新增</button>
+                            </div>
+    
+                        <div class="layui-inline">
+                            <button class="layui-btn   layui-btn-sm " id="edit_btn_para" th:if="${MENU1505Para_Modify.visible}">修改</button>
+                        </div>
+                        <div class="layui-inline">
+                                <button class="layui-btn  layui-btn-sm " id="del_btn_para" th:if="${MENU1505Para_Delete.visible}">删除</button>
+                            </div>
+    
+                    </div>
+                </div>
+                <div class="tab_content_tree_main">
+                    <table class="layui-table  customize-table" id="paraTable" lay-filter="paraTable"></table>
+                    <div id="table_page" class="table_page"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--新增修改能源种类-->
+    <div id="menu_add" class="layui-hide layui-row">
+        <div class=" layui-row">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源种类标识:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input"      onKeyUp="value=value.replace(/[\W]/g,'')"  autocomplete="off" type="text" id="addEnergyTypeId"  maxlength="20">
+
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon  " id="add_energyTypeId_tip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源种类名称:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addEnergyTypeName" maxlength="20">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon  " id="addEnergyTypeNameTip"></i>
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">折标系数:</label>
+                    <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="number" id="addStdCoalCoeff" maxlength="30">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon  " id="addStdCoalCoeffTip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">碳排系数:</label>
+                    <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="number" id="addCo2Coeff" maxlength="30">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon  " id="addCo2CoeffTip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">用量参数标识:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addEnergyUsageParaId"  maxlength="20" onKeyUp="value=value.replace(/[\W]/g,'')">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon  " id="addEnergyUsageParaIdTip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">负荷参数标识:</label>
+                    <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="text" id="addEnergyLoadParaId"  maxlength="20" onKeyUp="value=value.replace(/[\W]/g,'')">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon  " id="addEnergyLoadParaIdTip"></i>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">排序标识:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text"
+                            onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10" id="addsortId">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="addSortIdTip"></i>
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline ">
+                        <textarea  class="layui-textarea" id="addMemo" maxlength="300"></textarea>
+                    </div>
+                </div>
+
+        </div>
+        </form>
+
+
+    </div>
+    <!--修改功能-->
+    <div id="para_add" class="layui-hide layui-row">
+        <div class=" layui-row">
+            <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源种类:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="paraEnergy" disabled>
+
+                    </div>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源参数标识:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="paraEnergyParaId" maxlength="20"
+                            >
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="paraEnergyParaIdTip"></i>
+
+                </div>
+
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源参数名称:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="paraEnergyParaName" maxlength="20">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="paraEnergyParaNameTip"></i>
+
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">计量单位:</label>
+                    <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="paraUnit" maxlength="15">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="paraUnitTip"></i>
+
+                </div>
+               
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                    <div class="layui-input-inline ">
+                        <textarea  class="layui-textarea"  id ="addParaMemo" maxlength="300"></textarea>
+                  
+                    </div>
+                </div>
+
+        </div>
+        </form>
+
+
+    </div>
+    <script type="text/javascript" th:src="@{/public/lib/lay-module/formSelects/formSelects-v4.js}"> </script>
+    <script type="text/javascript" th:src="@{/public/js/admin/system/energyType.js}"></script>
+</div>
+
+</html>

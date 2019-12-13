@@ -1,0 +1,167 @@
+.balance_select{
+    padding:0 10px 10px;
+}
+.balance_select .title{
+    display:inline-block;
+    width:70px;
+    margin-right:5px;
+    text-align: right;
+    font-weight: bold;
+}
+.layui-breadcrumb .layui-this{
+    color:#6fbf86!important;
+    font-weight: bold;
+}
+.item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.energySelect{
+    flex-grow: 1;
+}
+/*时间*/
+.timeSelect{
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.timeType{
+    margin-left:5px;
+}
+#timeInput{
+    display:inline-block;
+    width:200px;
+    margin-left:10px;
+}
+
+/*色条*/
+.colorList{
+    position:absolute;
+    z-index:6;
+    top:140px;
+    right:10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.colorList li{
+    width:30px;
+    height:50px;
+    position:relative;
+}
+.colorList li:nth-child(5){
+    background-color: #0033ff;
+}
+.colorList li:nth-child(4){
+    background-color: #0166ff;
+}
+.colorList li:nth-child(3){
+    background-color: #0099ff;
+}
+.colorList li:nth-child(2){
+    background-color: #00ccff;
+}
+.colorList li:nth-child(1){
+    background-color: #00ffff;
+}
+.colorList li span{
+    display:inline-block;
+    width:40px;
+    text-align:right;
+    position: absolute;
+    margin-left:-40px;
+    top:-6px;
+}
+/*图形*/
+#balance_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    overflow:auto;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    background-color: #fff;
+}
+#balance_content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+#balance_content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+#balance_content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+#chart1{
+    width:100%;
+    height:100%;
+}
+
+/*ht web 图形*/
+.main {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#chart1 .overview{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    width:200px;
+    height:150px;
+    background:rgb(240, 239, 248);
+}
+#chart1 .animation{outline:1px solid red;
+    -webkit-transition: width .3s,height .3s;
+    -moz-transition: width .3s,height .3s;
+    -o-transition: width .3s,height .3s;
+    transition: width .3s,height .3s;
+}
+
+
+.wrapper{
+    border-radius:3px;
+    background-color: rgba(174, 188, 255, 0.5);
+    padding:5px;
+    font-size: 5px;
+    overflow: hidden;
+}
+/*.use_title{*/
+/*height:20px;*/
+/*line-height: 30px;*/
+/*font-size: 1px;*/
+/*position:relative;*/
+/*}*/
+.useList{
+    font-size: 0.0002em !important;
+    color: #000;
+}
+.useList span{
+    font-size: 0.0002em;
+    color: #545a5a;
+}
+
+
+

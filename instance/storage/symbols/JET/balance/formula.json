@@ -1,0 +1,28 @@
+{
+  "width": 60,
+  "height": 60,
+  "comps": [
+    {
+      "type": "roundRect",
+      "background": "rgb(65,96,250)",
+      "borderColor": "#979797",
+      "rect": [
+        5,
+        5,
+        50,
+        50
+      ]
+    },
+    {
+      "type": "image",
+      "name": "assets/JET/NL/department2.png",
+      "displayName": "department2",
+      "rect": [
+        12.5,
+        15,
+        35,
+        30
+      ]
+    }
+  ]
+}

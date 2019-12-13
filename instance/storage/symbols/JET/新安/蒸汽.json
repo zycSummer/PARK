@@ -1,0 +1,140 @@
+{
+  "width": 100,
+  "height": 100,
+  "comps": [
+    {
+      "type": "roundRect",
+      "background": "rgb(21,235,220)",
+      "borderColor": "#979797",
+      "gradient": "linear.south",
+      "cornerRadius": 12,
+      "rect": [
+        1.03793,
+        48.85506,
+        97.32514,
+        38.48603
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(21,235,220)",
+      "borderColor": "#979797",
+      "rect": [
+        15.32811,
+        30.05045,
+        34.64229,
+        34.64229
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(21,235,220)",
+      "borderColor": "#979797",
+      "rect": [
+        40.08993,
+        20.77501,
+        44.09019,
+        44.09019
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "#D8D8D8",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        54.67062,
+        56.15908,
+        3.1493,
+        3.1493
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(18,157,216)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        31.03982,
+        65.88953,
+        4.72395,
+        4.72395
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(18,157,216)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        65.3541,
+        65.88953,
+        4.72395,
+        4.72395
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(240,120,156)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        27.7081,
+        28.78141,
+        4.72395,
+        4.72395
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(158,230,217)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        30.77139,
+        6.75575,
+        7.87325,
+        7.87325
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(18,157,216)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        46.79737,
+        36.82005,
+        7.87325,
+        7.87325
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(159,230,217)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        30.88259,
+        48.00703,
+        4.72395,
+        4.72395
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(159,230,217)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        60.63015,
+        47.3716,
+        4.72395,
+        4.72395
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(18,157,216)",
+      "borderColor": "rgb(71,65,65)",
+      "rect": [
+        8.9325,
+        22.48515,
+        3.1493,
+        3.1493
+      ]
+    }
+  ]
+}

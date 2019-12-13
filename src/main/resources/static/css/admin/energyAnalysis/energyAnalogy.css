@@ -1,0 +1,256 @@
+#energy_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+/*nav*/
+.energy_nav {
+    width: 28px;
+    font-size: 16px;
+    word-wrap: break-word;
+    letter-spacing: 20px;
+}
+.e_item{
+    cursor:pointer;
+    padding:8px 4px;
+    border:1px solid #f3f3f3;
+}
+.e_item a{color:#000;}
+.e_active{
+    background-color: #359159;
+}
+.e_active a{color:#fff;}
+
+/*tree*/
+.energy_tree{
+    width:200px;
+    height:100%;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+.energy_tree .ztree{
+    overflow: auto;
+}
+
+.energy_tree .layui-colla-content{
+    padding:0 5px 0 0;
+}
+
+.energy_tree .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.energy_tree .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.energy_tree .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+.energy_chart{
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*查询条件*/
+.energy_select{
+    padding:0 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content:space-between;
+}
+.energy_select>div{
+    margin-bottom:5px;
+}
+
+.energy_select .title{
+    display:inline-block;
+    width:70px;
+    margin-right:5px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.layui-breadcrumb .layui-this{
+    color:#6fbf86!important;
+    font-weight: bold;
+}
+
+/*时间*/
+.timeSelect{
+    flex-basis:320px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.timeType{
+    margin-left:5px;
+}
+#timeInput{
+    display:inline-block;
+    width:130px;
+    margin-left:10px;
+}
+
+.timeOption{
+    flex-basis:260px;
+    flex-grow: 1;
+}
+.dataType{
+    flex-basis:380px;
+    flex-grow: 1;
+}
+.parameter{
+    flex-basis:330px;
+    flex-grow: 1;
+}
+
+/*参数选项*/
+.parameterItem{
+    flex-basis:550px;
+    flex-grow: 1;
+}
+.paramItem .layui-form-checkbox[lay-skin=primary]{
+    padding-right:0;
+}
+.paramItem .layui-form-checkbox span{
+    padding:0;
+}
+/*图形*/
+.chart-content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    overflow:auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chart-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.chart-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.chart-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+.chart-title{
+    margin:0 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.energy_img {
+    width: 25px;
+    height: 25px;
+    margin: 0 2px;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.energy_img:hover {
+    opacity: 1;
+}
+
+#energy_export{
+    width: 22px;
+    height: 22px;
+    margin: 0 2px;
+    cursor: pointer;
+    opacity: .8;
+}
+
+#energy_export:hover {
+    opacity: 1;
+}
+
+.titleText{
+    width:1px;
+    flex-grow: 1;
+    text-align:center;
+    font-size:16px;
+}
+
+.chartMain{
+    height:1px;
+    flex-grow: 1;
+    margin:0 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#chart1{
+    width:100%;
+    height:1px;
+    flex-grow: 1;
+}
+
+.table1Box{
+    width:100%;
+    height:330px;
+}
+
+.table2Box{
+    height:1px;
+    flex-grow: 1;
+    margin:0 10px;
+}
+
+

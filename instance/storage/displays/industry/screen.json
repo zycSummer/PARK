@@ -1,0 +1,4151 @@
+{
+  "v": "6.0.8",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "width": 1920,
+    "height": 1080
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 369,
+      "p": {
+        "displayName": "背景",
+        "image": "assets/background/bg.jpg",
+        "position": {
+          "x": 960,
+          "y": 540
+        },
+        "scale": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "width": 3840
+      },
+      "s": {
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 370,
+      "p": {
+        "image": "symbols/demo/screen/进度条.json",
+        "position": {
+          "x": 272.93216,
+          "y": 993.23446
+        },
+        "width": 443.27193,
+        "height": 33.22409
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 371,
+      "p": {
+        "image": "symbols/demo/screen/表格-大.json",
+        "position": {
+          "x": 960,
+          "y": 651.68193
+        },
+        "width": 839.7454,
+        "height": 681.66332
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 372,
+      "p": {
+        "image": "symbols/demo/screen/背景框-小.json",
+        "position": {
+          "x": 960,
+          "y": 218.43819
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 373,
+      "p": {
+        "image": "symbols/demo/screen/标题框-中.json",
+        "position": {
+          "x": 1643.09632,
+          "y": 117.63847
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 374,
+      "p": {
+        "image": "symbols/demo/screen/标题框-中.json",
+        "position": {
+          "x": 266.56812,
+          "y": 117.63847
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 375,
+      "p": {
+        "image": "symbols/demo/screen/背景框-小.json",
+        "position": {
+          "x": 951.2706,
+          "y": 987.64293
+        },
+        "scale": {
+          "x": 1.3,
+          "y": 1.3
+        },
+        "width": 507.04836,
+        "height": 58.38264
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 376,
+      "p": {
+        "image": "symbols/demo/screen/背景框-中.json",
+        "position": {
+          "x": 255.44487,
+          "y": 291.42566
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 377,
+      "p": {
+        "image": "symbols/demo/screen/多进度条组合.json",
+        "position": {
+          "x": 1610.27935,
+          "y": 291.42566
+        },
+        "width": 317.32578,
+        "height": 225.73582
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 378,
+      "p": {
+        "image": "symbols/demo/screen/进度条竖.json",
+        "position": {
+          "x": 1818.81634,
+          "y": 280.61588
+        },
+        "width": 47,
+        "height": 247.35538
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 379,
+      "p": {
+        "position": {
+          "x": 1659.10569,
+          "y": 699.95951
+        },
+        "width": 424.26255,
+        "height": 2
+      },
+      "s": {
+        "shape": "rect",
+        "opacity": 1,
+        "shape.background": "rgb(145,25,43)",
+        "shape.border.color": "rgb(41,155,217)",
+        "shape.border.join": "bevel",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 380,
+      "p": {
+        "image": "symbols/demo/screen/饼图.json",
+        "position": {
+          "x": 1509.99871,
+          "y": 621.68193
+        },
+        "width": 164,
+        "height": 164
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 381,
+      "p": {
+        "image": "symbols/demo/screen/运行按钮.json",
+        "position": {
+          "x": 1509.99871,
+          "y": 618.59136
+        },
+        "scale": {
+          "x": 1.7,
+          "y": 1.7
+        },
+        "width": 34,
+        "height": 34
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 382,
+      "p": {
+        "image": "symbols/demo/screen/表格.json",
+        "position": {
+          "x": 251.26449,
+          "y": 298.05678
+        },
+        "width": 364.51812,
+        "height": 154.23719
+      },
+      "s": {
+        "opacity": 0.3
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 383,
+      "p": {
+        "image": "symbols/demo/screen/表格.json",
+        "position": {
+          "x": 274.36957,
+          "y": 845.23841
+        },
+        "width": 441.56052,
+        "height": 186.96085
+      },
+      "s": {
+        "opacity": 0.3
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 384,
+      "p": {
+        "image": "symbols/demo/screen/线图-俩数据.json",
+        "position": {
+          "x": 268.69487,
+          "y": 864.04907
+        },
+        "width": 476.5,
+        "height": 216.07689
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 385,
+      "p": {
+        "image": "symbols/demo/screen/表格.json",
+        "position": {
+          "x": 1648.52688,
+          "y": 838.71883
+        },
+        "width": 422.56369,
+        "height": 186.96085
+      },
+      "s": {
+        "opacity": 0.3
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 386,
+      "p": {
+        "image": "symbols/demo/screen/线图-俩数据.json",
+        "position": {
+          "x": 1643.09632,
+          "y": 835.45905
+        },
+        "width": 456,
+        "height": 206.51958
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 387,
+      "p": {
+        "image": "symbols/demo/screen/散点图.json",
+        "position": {
+          "x": 256.08466,
+          "y": 291.42566
+        },
+        "width": 388.56222,
+        "height": 172.79833
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 388,
+      "p": {
+        "displayName": "框框",
+        "position": {
+          "x": 951.2706,
+          "y": 573.31194
+        },
+        "width": 1841.65145,
+        "height": 244.55399
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 389,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "position": {
+          "x": 330.94487,
+          "y": 463.92533
+        },
+        "width": 305,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 178.44487,
+              "y": 463.92533
+            },
+            {
+              "x": 483.44487,
+              "y": 463.92533
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "#277cf3",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 390,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "position": {
+          "x": 483.44487,
+          "y": 463.92533
+        },
+        "width": 1,
+        "height": 6,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 483.44487,
+              "y": 460.92533
+            },
+            {
+              "x": 483.44487,
+              "y": 466.92533
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "#277cf3",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 391,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "image": "symbols/demo/screen/标题框-小.json",
+        "position": {
+          "x": 126.44487,
+          "y": 465.53495
+        }
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 392,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "position": {
+          "x": 1719.09632,
+          "y": 463.92533
+        },
+        "width": 305,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1566.59632,
+              "y": 463.92533
+            },
+            {
+              "x": 1871.59632,
+              "y": 463.92533
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "#277cf3",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 393,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "position": {
+          "x": 1871.59632,
+          "y": 463.92533
+        },
+        "width": 1,
+        "height": 6,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1871.59632,
+              "y": 460.92533
+            },
+            {
+              "x": 1871.59632,
+              "y": 466.92533
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "#277cf3",
+        "shape.border.cap": "square",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 394,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "image": "symbols/demo/screen/标题框-小.json",
+        "position": {
+          "x": 1514.59632,
+          "y": 465.53495
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 395,
+      "p": {
+        "parent": {
+          "__i": 388
+        },
+        "position": {
+          "x": 280.95406,
+          "y": 694.58894
+        },
+        "width": 427.22812,
+        "height": 2
+      },
+      "s": {
+        "shape": "rect",
+        "opacity": 1,
+        "shape.background": "rgb(145,25,43)",
+        "shape.border.color": "rgb(41,155,217)",
+        "shape.border.join": "bevel",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 396,
+      "p": {
+        "displayName": "右下框",
+        "position": {
+          "x": 1643.78787,
+          "y": 982.56848
+        },
+        "width": 424.73184,
+        "height": 65.74854
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 397,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "image": "symbols/demo/screen/背景框-长小.json",
+        "position": {
+          "x": 1643.78787,
+          "y": 982.56848
+        },
+        "width": 424.73184,
+        "height": 65.74854
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 398,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1493.57356,
+          "y": 989.73901
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 399,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1493.57356,
+          "y": 964.04314
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "文字文字",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 400,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1596.99056,
+          "y": 989.73901
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 401,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1596.99056,
+          "y": 964.04314
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "文字文字",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 402,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1700.40756,
+          "y": 989.73901
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 403,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1700.40756,
+          "y": 964.04314
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "文字文字",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 404,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1803.82457,
+          "y": 989.73901
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 405,
+      "p": {
+        "parent": {
+          "__i": 396
+        },
+        "position": {
+          "x": 1803.82457,
+          "y": 964.04314
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "文字文字",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 406,
+      "p": {
+        "displayName": "标题",
+        "position": {
+          "x": 992.67751,
+          "y": 66.61505
+        },
+        "width": 767.47051,
+        "height": 78.5508
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 407,
+      "p": {
+        "displayName": "标题",
+        "parent": {
+          "__i": 406
+        },
+        "position": {
+          "x": 1025.70642,
+          "y": 66.61505
+        },
+        "width": 701.41268,
+        "height": 78.5508
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 408,
+      "p": {
+        "parent": {
+          "__i": 407
+        },
+        "position": {
+          "x": 1272.94227,
+          "y": 94.13846
+        },
+        "width": 158.31809,
+        "height": 23.50397
+      },
+      "s": {
+        "text": "www.hightopo.com",
+        "type": "text",
+        "text.color": "#ffffff",
+        "text.font": "18px sans-serif",
+        "opacity": 1,
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 409,
+      "p": {
+        "parent": {
+          "__i": 407
+        },
+        "position": {
+          "x": 1025.70642,
+          "y": 54.86306
+        },
+        "width": 701.41268,
+        "height": 55.04683
+      },
+      "s": {
+        "text": "HT - demo  服务可视化管理平台",
+        "type": "text",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "48px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 410,
+      "p": {
+        "parent": {
+          "__i": 406
+        },
+        "position": {
+          "x": 892.96258,
+          "y": 65.83766
+        },
+        "width": 568.04065,
+        "height": 70.6016
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 411,
+      "p": {
+        "displayName": "HT logo",
+        "parent": {
+          "__i": 410
+        },
+        "position": {
+          "x": 632.94226,
+          "y": 51.53686
+        },
+        "scale": {
+          "x": 3,
+          "y": 3
+        },
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 412,
+      "p": {
+        "parent": {
+          "__i": 411
+        },
+        "position": {
+          "x": 638.94226,
+          "y": 57.53686
+        },
+        "width": 12,
+        "height": 30,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 632.94226,
+              "y": 72.53686
+            },
+            {
+              "x": 638.94226,
+              "y": 72.53686
+            },
+            {
+              "x": 642.25597,
+              "y": 72.53686
+            },
+            {
+              "x": 644.94226,
+              "y": 69.84817
+            },
+            {
+              "x": 644.94226,
+              "y": 66.538
+            },
+            {
+              "x": 644.94226,
+              "y": 42.53686
+            },
+            {
+              "x": 632.94226,
+              "y": 42.53686
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgb(105,196,245)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 413,
+      "p": {
+        "parent": {
+          "__i": 411
+        },
+        "position": {
+          "x": 638.94226,
+          "y": 36.53686
+        },
+        "width": 36,
+        "height": 12,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            2,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 650.58904,
+              "y": 30.53686
+            },
+            {
+              "x": 654.09784,
+              "y": 30.53686
+            },
+            {
+              "x": 656.94226,
+              "y": 33.2299
+            },
+            {
+              "x": 656.94226,
+              "y": 36.53686
+            },
+            {
+              "x": 656.94226,
+              "y": 36.53686
+            },
+            {
+              "x": 656.94226,
+              "y": 39.85057
+            },
+            {
+              "x": 654.10237,
+              "y": 42.53686
+            },
+            {
+              "x": 650.58904,
+              "y": 42.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 42.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 36.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 33.22315
+            },
+            {
+              "x": 623.78215,
+              "y": 30.53686
+            },
+            {
+              "x": 627.29548,
+              "y": 30.53686
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#48F4E8",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 414,
+      "p": {
+        "parent": {
+          "__i": 411
+        },
+        "position": {
+          "x": 614.94226,
+          "y": 66.53686
+        },
+        "width": 12,
+        "height": 12,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            2,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 614.94226,
+              "y": 60.53686
+            },
+            {
+              "x": 611.62855,
+              "y": 60.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 63.2299
+            },
+            {
+              "x": 608.94226,
+              "y": 66.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 66.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 69.85057
+            },
+            {
+              "x": 611.6353,
+              "y": 72.53686
+            },
+            {
+              "x": 614.94226,
+              "y": 72.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 72.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 66.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 63.22315
+            },
+            {
+              "x": 618.24922,
+              "y": 60.53686
+            },
+            {
+              "x": 614.94226,
+              "y": 60.53686
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#F24D63",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 415,
+      "p": {
+        "parent": {
+          "__i": 411
+        },
+        "position": {
+          "x": 614.94226,
+          "y": 48.53686
+        },
+        "width": 12,
+        "height": 12,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 620.94226,
+              "y": 48.5344
+            },
+            {
+              "x": 620.94226,
+              "y": 51.84946
+            },
+            {
+              "x": 618.24922,
+              "y": 54.53686
+            },
+            {
+              "x": 614.94226,
+              "y": 54.53686
+            },
+            {
+              "x": 614.94226,
+              "y": 54.53686
+            },
+            {
+              "x": 611.62855,
+              "y": 54.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 51.84382
+            },
+            {
+              "x": 608.94226,
+              "y": 48.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 48.53686
+            },
+            {
+              "x": 608.94226,
+              "y": 45.22315
+            },
+            {
+              "x": 611.6353,
+              "y": 42.53686
+            },
+            {
+              "x": 614.94226,
+              "y": 42.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 42.53686
+            },
+            {
+              "x": 620.94226,
+              "y": 48.53005
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#FFC826",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 416,
+      "p": {
+        "parent": {
+          "__i": 411
+        },
+        "position": {
+          "x": 638.94226,
+          "y": 47.09773
+        },
+        "width": 12,
+        "height": 9.12171,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 632.94226,
+              "y": 51.65857
+            },
+            {
+              "x": 638.94226,
+              "y": 51.65857
+            },
+            {
+              "x": 642.25597,
+              "y": 51.65857
+            },
+            {
+              "x": 644.94226,
+              "y": 50.84107
+            },
+            {
+              "x": 644.94226,
+              "y": 49.8346
+            },
+            {
+              "x": 644.94226,
+              "y": 42.53686
+            },
+            {
+              "x": 632.94226,
+              "y": 42.53686
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(51,153,255,0.15)",
+        "shape.border.color": null,
+        "shape.gradient": "linear.south",
+        "shape.gradient.color": "rgba(105,196,245,0.15)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 417,
+      "p": {
+        "displayName": "HT logo",
+        "parent": {
+          "__i": 410
+        },
+        "position": {
+          "x": 1168.98291,
+          "y": 94.13846
+        },
+        "width": 16,
+        "height": 14
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 418,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1170.98291,
+          "y": 96.13846
+        },
+        "width": 4,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1168.98291,
+              "y": 101.13846
+            },
+            {
+              "x": 1170.98291,
+              "y": 101.13846
+            },
+            {
+              "x": 1172.08748,
+              "y": 101.13846
+            },
+            {
+              "x": 1172.98291,
+              "y": 100.24223
+            },
+            {
+              "x": 1172.98291,
+              "y": 99.13884
+            },
+            {
+              "x": 1172.98291,
+              "y": 91.13846
+            },
+            {
+              "x": 1168.98291,
+              "y": 91.13846
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgb(105,196,245)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 419,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1170.98291,
+          "y": 89.13846
+        },
+        "width": 12,
+        "height": 4,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            2,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.86517,
+              "y": 87.13846
+            },
+            {
+              "x": 1176.03477,
+              "y": 87.13846
+            },
+            {
+              "x": 1176.98291,
+              "y": 88.03614
+            },
+            {
+              "x": 1176.98291,
+              "y": 89.13846
+            },
+            {
+              "x": 1176.98291,
+              "y": 89.13846
+            },
+            {
+              "x": 1176.98291,
+              "y": 90.24303
+            },
+            {
+              "x": 1176.03628,
+              "y": 91.13846
+            },
+            {
+              "x": 1174.86517,
+              "y": 91.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 91.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 89.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 88.03389
+            },
+            {
+              "x": 1165.92954,
+              "y": 87.13846
+            },
+            {
+              "x": 1167.10065,
+              "y": 87.13846
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#48F4E8",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 420,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1162.98291,
+          "y": 99.13846
+        },
+        "width": 4,
+        "height": 4,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            2,
+            4
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1162.98291,
+              "y": 97.13846
+            },
+            {
+              "x": 1161.87834,
+              "y": 97.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 98.03614
+            },
+            {
+              "x": 1160.98291,
+              "y": 99.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 99.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 100.24303
+            },
+            {
+              "x": 1161.88059,
+              "y": 101.13846
+            },
+            {
+              "x": 1162.98291,
+              "y": 101.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 101.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 99.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 98.03389
+            },
+            {
+              "x": 1164.08523,
+              "y": 97.13846
+            },
+            {
+              "x": 1162.98291,
+              "y": 97.13846
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#F24D63",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 421,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1162.98291,
+          "y": 93.13846
+        },
+        "width": 4,
+        "height": 4,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1164.98291,
+              "y": 93.13764
+            },
+            {
+              "x": 1164.98291,
+              "y": 94.24266
+            },
+            {
+              "x": 1164.08523,
+              "y": 95.13846
+            },
+            {
+              "x": 1162.98291,
+              "y": 95.13846
+            },
+            {
+              "x": 1162.98291,
+              "y": 95.13846
+            },
+            {
+              "x": 1161.87834,
+              "y": 95.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 94.24078
+            },
+            {
+              "x": 1160.98291,
+              "y": 93.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 93.13846
+            },
+            {
+              "x": 1160.98291,
+              "y": 92.03389
+            },
+            {
+              "x": 1161.88059,
+              "y": 91.13846
+            },
+            {
+              "x": 1162.98291,
+              "y": 91.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 91.13846
+            },
+            {
+              "x": 1164.98291,
+              "y": 93.13619
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "#FFC826",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 422,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1170.98291,
+          "y": 92.65875
+        },
+        "width": 4,
+        "height": 3.04057,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1168.98291,
+              "y": 94.17903
+            },
+            {
+              "x": 1170.98291,
+              "y": 94.17903
+            },
+            {
+              "x": 1172.08748,
+              "y": 94.17903
+            },
+            {
+              "x": 1172.98291,
+              "y": 93.90653
+            },
+            {
+              "x": 1172.98291,
+              "y": 93.57104
+            },
+            {
+              "x": 1172.98291,
+              "y": 91.13846
+            },
+            {
+              "x": 1168.98291,
+              "y": 91.13846
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(51,153,255,0.15)",
+        "shape.border.color": null,
+        "shape.gradient": "linear.south",
+        "shape.gradient.color": "rgba(105,196,245,0.15)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ],
+        "shape.fill.rule": "evenodd"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 423,
+      "p": {
+        "position": {
+          "x": 358.71578,
+          "y": 616.68193
+        },
+        "width": 239.85294,
+        "height": 130
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 424,
+      "p": {
+        "parent": {
+          "__i": 423
+        },
+        "position": {
+          "x": 358.71578,
+          "y": 616.68193
+        },
+        "width": 239.85294,
+        "height": 130
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 425,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 427.93349,
+          "y": 581.68193
+        },
+        "width": 61.77628,
+        "height": 30
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 426,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 309.98098,
+          "y": 581.68193
+        },
+        "width": 109.90911,
+        "height": 30
+      },
+      "s": {
+        "text": "近一周已完成",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "18px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 427,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 308.73657,
+          "y": 651.68193
+        },
+        "width": 53.19446,
+        "height": 30
+      },
+      "s": {
+        "text": "近一周未完成",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "18px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 428,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 427.93349,
+          "y": 651.68193
+        },
+        "width": 61.77628,
+        "height": 30
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 429,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 358.71578,
+          "y": 581.68193
+        },
+        "width": 239.85294,
+        "height": 60,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 475.76029,
+              "y": 551.68193
+            },
+            {
+              "x": 477.35196,
+              "y": 551.68193
+            },
+            {
+              "x": 478.64226,
+              "y": 553.01924
+            },
+            {
+              "x": 478.64226,
+              "y": 554.67787
+            },
+            {
+              "x": 478.64226,
+              "y": 608.686
+            },
+            {
+              "x": 478.64226,
+              "y": 610.34061
+            },
+            {
+              "x": 477.35178,
+              "y": 611.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 611.68193
+            },
+            {
+              "x": 241.67129,
+              "y": 611.68193
+            },
+            {
+              "x": 240.07962,
+              "y": 611.68193
+            },
+            {
+              "x": 238.78932,
+              "y": 610.34463
+            },
+            {
+              "x": 238.78932,
+              "y": 608.686
+            },
+            {
+              "x": 238.78932,
+              "y": 554.67787
+            },
+            {
+              "x": 238.78932,
+              "y": 553.02326
+            },
+            {
+              "x": 240.07979,
+              "y": 551.68193
+            },
+            {
+              "x": 241.67129,
+              "y": 551.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 551.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 551.68193
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(245,24,24,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 430,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 358.71578,
+          "y": 581.68193
+        },
+        "width": 238.89354,
+        "height": 59,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 475.76029,
+              "y": 552.18193
+            },
+            {
+              "x": 241.67129,
+              "y": 552.18193
+            },
+            {
+              "x": 240.34438,
+              "y": 552.18193
+            },
+            {
+              "x": 239.26902,
+              "y": 553.29977
+            },
+            {
+              "x": 239.26902,
+              "y": 554.67787
+            },
+            {
+              "x": 239.26902,
+              "y": 608.686
+            },
+            {
+              "x": 239.26902,
+              "y": 610.06669
+            },
+            {
+              "x": 240.34283,
+              "y": 611.18193
+            },
+            {
+              "x": 241.67129,
+              "y": 611.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 611.18193
+            },
+            {
+              "x": 477.0872,
+              "y": 611.18193
+            },
+            {
+              "x": 478.16255,
+              "y": 610.0641
+            },
+            {
+              "x": 478.16255,
+              "y": 608.686
+            },
+            {
+              "x": 478.16255,
+              "y": 554.67787
+            },
+            {
+              "x": 478.16255,
+              "y": 553.29718
+            },
+            {
+              "x": 477.08875,
+              "y": 552.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 552.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 552.18193
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(19,9,51,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 431,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 358.71578,
+          "y": 651.68193
+        },
+        "width": 239.85294,
+        "height": 60,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 475.76029,
+              "y": 621.68193
+            },
+            {
+              "x": 477.35196,
+              "y": 621.68193
+            },
+            {
+              "x": 478.64226,
+              "y": 623.01924
+            },
+            {
+              "x": 478.64226,
+              "y": 624.67787
+            },
+            {
+              "x": 478.64226,
+              "y": 678.686
+            },
+            {
+              "x": 478.64226,
+              "y": 680.34061
+            },
+            {
+              "x": 477.35178,
+              "y": 681.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 681.68193
+            },
+            {
+              "x": 241.67129,
+              "y": 681.68193
+            },
+            {
+              "x": 240.07962,
+              "y": 681.68193
+            },
+            {
+              "x": 238.78932,
+              "y": 680.34462
+            },
+            {
+              "x": 238.78932,
+              "y": 678.686
+            },
+            {
+              "x": 238.78932,
+              "y": 624.67787
+            },
+            {
+              "x": 238.78932,
+              "y": 623.02326
+            },
+            {
+              "x": 240.07979,
+              "y": 621.68193
+            },
+            {
+              "x": 241.67129,
+              "y": 621.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 621.68193
+            },
+            {
+              "x": 475.76029,
+              "y": 621.68193
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(39,125,245,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 432,
+      "p": {
+        "parent": {
+          "__i": 424
+        },
+        "position": {
+          "x": 358.71578,
+          "y": 651.68193
+        },
+        "width": 238.89354,
+        "height": 59,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 475.76029,
+              "y": 622.18193
+            },
+            {
+              "x": 241.67129,
+              "y": 622.18193
+            },
+            {
+              "x": 240.34438,
+              "y": 622.18193
+            },
+            {
+              "x": 239.26902,
+              "y": 623.29977
+            },
+            {
+              "x": 239.26902,
+              "y": 624.67787
+            },
+            {
+              "x": 239.26902,
+              "y": 678.686
+            },
+            {
+              "x": 239.26902,
+              "y": 680.06669
+            },
+            {
+              "x": 240.34283,
+              "y": 681.18193
+            },
+            {
+              "x": 241.67129,
+              "y": 681.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 681.18193
+            },
+            {
+              "x": 477.0872,
+              "y": 681.18193
+            },
+            {
+              "x": 478.16255,
+              "y": 680.0641
+            },
+            {
+              "x": 478.16255,
+              "y": 678.686
+            },
+            {
+              "x": 478.16255,
+              "y": 624.67787
+            },
+            {
+              "x": 478.16255,
+              "y": 623.29718
+            },
+            {
+              "x": 477.08875,
+              "y": 622.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 622.18193
+            },
+            {
+              "x": 475.76029,
+              "y": 622.18193
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(19,9,51,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 433,
+      "p": {
+        "position": {
+          "x": 1737.2334,
+          "y": 618.59136
+        },
+        "width": 237.84077,
+        "height": 136.98973
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 434,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1675.3948,
+          "y": 582.06077
+        },
+        "width": 114.16357,
+        "height": 63.92854,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1729.62606,
+              "y": 550.0965
+            },
+            {
+              "x": 1731.20036,
+              "y": 550.0965
+            },
+            {
+              "x": 1732.47658,
+              "y": 551.31648
+            },
+            {
+              "x": 1732.47658,
+              "y": 552.84344
+            },
+            {
+              "x": 1732.47658,
+              "y": 611.27811
+            },
+            {
+              "x": 1732.47658,
+              "y": 612.7952
+            },
+            {
+              "x": 1731.19447,
+              "y": 614.02504
+            },
+            {
+              "x": 1729.62606,
+              "y": 614.02504
+            },
+            {
+              "x": 1621.16354,
+              "y": 614.02504
+            },
+            {
+              "x": 1619.58924,
+              "y": 614.02504
+            },
+            {
+              "x": 1618.31302,
+              "y": 612.80508
+            },
+            {
+              "x": 1618.31302,
+              "y": 611.27811
+            },
+            {
+              "x": 1618.31302,
+              "y": 552.84344
+            },
+            {
+              "x": 1618.31302,
+              "y": 551.32635
+            },
+            {
+              "x": 1619.59513,
+              "y": 550.0965
+            },
+            {
+              "x": 1621.16354,
+              "y": 550.0965
+            },
+            {
+              "x": 1729.62606,
+              "y": 550.0965
+            },
+            {
+              "x": 1729.62606,
+              "y": 550.0965
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(39,125,245,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 435,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1675.3948,
+          "y": 582.06077
+        },
+        "width": 113.2122,
+        "height": 63.01527,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1729.62606,
+              "y": 550.55314
+            },
+            {
+              "x": 1621.16354,
+              "y": 550.55314
+            },
+            {
+              "x": 1619.85606,
+              "y": 550.55314
+            },
+            {
+              "x": 1618.7887,
+              "y": 551.58025
+            },
+            {
+              "x": 1618.7887,
+              "y": 552.84344
+            },
+            {
+              "x": 1618.7887,
+              "y": 611.27811
+            },
+            {
+              "x": 1618.7887,
+              "y": 612.54962
+            },
+            {
+              "x": 1619.84855,
+              "y": 613.56841
+            },
+            {
+              "x": 1621.16354,
+              "y": 613.56841
+            },
+            {
+              "x": 1729.62606,
+              "y": 613.56841
+            },
+            {
+              "x": 1730.93354,
+              "y": 613.56841
+            },
+            {
+              "x": 1732.0009,
+              "y": 612.54131
+            },
+            {
+              "x": 1732.0009,
+              "y": 611.27811
+            },
+            {
+              "x": 1732.0009,
+              "y": 552.84344
+            },
+            {
+              "x": 1732.0009,
+              "y": 551.57194
+            },
+            {
+              "x": 1730.94106,
+              "y": 550.55314
+            },
+            {
+              "x": 1729.62606,
+              "y": 550.55314
+            },
+            {
+              "x": 1729.62606,
+              "y": 550.55314
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(42,18,66,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 436,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1799.072,
+          "y": 582.06077
+        },
+        "width": 114.16357,
+        "height": 63.92854,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1853.30326,
+              "y": 550.0965
+            },
+            {
+              "x": 1854.87756,
+              "y": 550.0965
+            },
+            {
+              "x": 1856.15378,
+              "y": 551.31648
+            },
+            {
+              "x": 1856.15378,
+              "y": 552.84344
+            },
+            {
+              "x": 1856.15378,
+              "y": 611.27811
+            },
+            {
+              "x": 1856.15378,
+              "y": 612.7952
+            },
+            {
+              "x": 1854.87167,
+              "y": 614.02504
+            },
+            {
+              "x": 1853.30326,
+              "y": 614.02504
+            },
+            {
+              "x": 1744.84074,
+              "y": 614.02504
+            },
+            {
+              "x": 1743.26644,
+              "y": 614.02504
+            },
+            {
+              "x": 1741.99022,
+              "y": 612.80508
+            },
+            {
+              "x": 1741.99022,
+              "y": 611.27811
+            },
+            {
+              "x": 1741.99022,
+              "y": 552.84344
+            },
+            {
+              "x": 1741.99022,
+              "y": 551.32635
+            },
+            {
+              "x": 1743.27233,
+              "y": 550.0965
+            },
+            {
+              "x": 1744.84074,
+              "y": 550.0965
+            },
+            {
+              "x": 1853.30326,
+              "y": 550.0965
+            },
+            {
+              "x": 1853.30326,
+              "y": 550.0965
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(245,24,24,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 437,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1799.072,
+          "y": 582.06077
+        },
+        "width": 113.2122,
+        "height": 63.01527,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1853.30326,
+              "y": 550.55314
+            },
+            {
+              "x": 1744.84074,
+              "y": 550.55314
+            },
+            {
+              "x": 1743.53326,
+              "y": 550.55314
+            },
+            {
+              "x": 1742.4659,
+              "y": 551.58025
+            },
+            {
+              "x": 1742.4659,
+              "y": 552.84344
+            },
+            {
+              "x": 1742.4659,
+              "y": 611.27811
+            },
+            {
+              "x": 1742.4659,
+              "y": 612.54962
+            },
+            {
+              "x": 1743.52574,
+              "y": 613.56841
+            },
+            {
+              "x": 1744.84074,
+              "y": 613.56841
+            },
+            {
+              "x": 1853.30326,
+              "y": 613.56841
+            },
+            {
+              "x": 1854.61074,
+              "y": 613.56841
+            },
+            {
+              "x": 1855.6781,
+              "y": 612.54131
+            },
+            {
+              "x": 1855.6781,
+              "y": 611.27811
+            },
+            {
+              "x": 1855.6781,
+              "y": 552.84344
+            },
+            {
+              "x": 1855.6781,
+              "y": 551.57194
+            },
+            {
+              "x": 1854.61825,
+              "y": 550.55314
+            },
+            {
+              "x": 1853.30326,
+              "y": 550.55314
+            },
+            {
+              "x": 1853.30326,
+              "y": 550.55314
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(42,18,66,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 438,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1674.91912,
+          "y": 655.12196
+        },
+        "width": 113.2122,
+        "height": 63.92854,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1728.67008,
+              "y": 623.15769
+            },
+            {
+              "x": 1730.24693,
+              "y": 623.15769
+            },
+            {
+              "x": 1731.52522,
+              "y": 624.37767
+            },
+            {
+              "x": 1731.52522,
+              "y": 625.90463
+            },
+            {
+              "x": 1731.52522,
+              "y": 684.3393
+            },
+            {
+              "x": 1731.52522,
+              "y": 685.85639
+            },
+            {
+              "x": 1730.25379,
+              "y": 687.08623
+            },
+            {
+              "x": 1728.67008,
+              "y": 687.08623
+            },
+            {
+              "x": 1621.16816,
+              "y": 687.08623
+            },
+            {
+              "x": 1619.59131,
+              "y": 687.08623
+            },
+            {
+              "x": 1618.31302,
+              "y": 685.86626
+            },
+            {
+              "x": 1618.31302,
+              "y": 684.3393
+            },
+            {
+              "x": 1618.31302,
+              "y": 625.90463
+            },
+            {
+              "x": 1618.31302,
+              "y": 624.38754
+            },
+            {
+              "x": 1619.58445,
+              "y": 623.15769
+            },
+            {
+              "x": 1621.16816,
+              "y": 623.15769
+            },
+            {
+              "x": 1728.67008,
+              "y": 623.15769
+            },
+            {
+              "x": 1728.67008,
+              "y": 623.15769
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(245,24,24,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 439,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1674.91912,
+          "y": 655.12196
+        },
+        "width": 112.26084,
+        "height": 63.01527,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1728.67008,
+              "y": 623.61432
+            },
+            {
+              "x": 1621.16816,
+              "y": 623.61432
+            },
+            {
+              "x": 1619.84994,
+              "y": 623.61432
+            },
+            {
+              "x": 1618.7887,
+              "y": 624.63704
+            },
+            {
+              "x": 1618.7887,
+              "y": 625.90463
+            },
+            {
+              "x": 1618.7887,
+              "y": 684.3393
+            },
+            {
+              "x": 1618.7887,
+              "y": 685.61064
+            },
+            {
+              "x": 1619.85044,
+              "y": 686.62959
+            },
+            {
+              "x": 1621.16816,
+              "y": 686.62959
+            },
+            {
+              "x": 1728.67008,
+              "y": 686.62959
+            },
+            {
+              "x": 1729.98829,
+              "y": 686.62959
+            },
+            {
+              "x": 1731.04954,
+              "y": 685.60688
+            },
+            {
+              "x": 1731.04954,
+              "y": 684.3393
+            },
+            {
+              "x": 1731.04954,
+              "y": 625.90463
+            },
+            {
+              "x": 1731.04954,
+              "y": 624.63329
+            },
+            {
+              "x": 1729.9878,
+              "y": 623.61432
+            },
+            {
+              "x": 1728.67008,
+              "y": 623.61432
+            },
+            {
+              "x": 1728.67008,
+              "y": 623.61432
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(42,18,66,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 440,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1798.59632,
+          "y": 655.12196
+        },
+        "width": 113.2122,
+        "height": 63.92854,
+        "segments": {
+          "__a": [
+            1,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1852.34727,
+              "y": 623.15769
+            },
+            {
+              "x": 1853.92413,
+              "y": 623.15769
+            },
+            {
+              "x": 1855.20242,
+              "y": 624.37767
+            },
+            {
+              "x": 1855.20242,
+              "y": 625.90463
+            },
+            {
+              "x": 1855.20242,
+              "y": 684.3393
+            },
+            {
+              "x": 1855.20242,
+              "y": 685.85639
+            },
+            {
+              "x": 1853.93099,
+              "y": 687.08623
+            },
+            {
+              "x": 1852.34727,
+              "y": 687.08623
+            },
+            {
+              "x": 1744.84536,
+              "y": 687.08623
+            },
+            {
+              "x": 1743.2685,
+              "y": 687.08623
+            },
+            {
+              "x": 1741.99022,
+              "y": 685.86626
+            },
+            {
+              "x": 1741.99022,
+              "y": 684.3393
+            },
+            {
+              "x": 1741.99022,
+              "y": 625.90463
+            },
+            {
+              "x": 1741.99022,
+              "y": 624.38754
+            },
+            {
+              "x": 1743.26165,
+              "y": 623.15769
+            },
+            {
+              "x": 1744.84536,
+              "y": 623.15769
+            },
+            {
+              "x": 1852.34727,
+              "y": 623.15769
+            },
+            {
+              "x": 1852.34727,
+              "y": 623.15769
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": "rgba(39,125,245,0.20)",
+        "shape.border.color": null,
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 441,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1798.59632,
+          "y": 655.12196
+        },
+        "width": 112.26084,
+        "height": 63.01527,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2,
+            4,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1852.34727,
+              "y": 623.61432
+            },
+            {
+              "x": 1744.84536,
+              "y": 623.61432
+            },
+            {
+              "x": 1743.52714,
+              "y": 623.61432
+            },
+            {
+              "x": 1742.4659,
+              "y": 624.63704
+            },
+            {
+              "x": 1742.4659,
+              "y": 625.90463
+            },
+            {
+              "x": 1742.4659,
+              "y": 684.3393
+            },
+            {
+              "x": 1742.4659,
+              "y": 685.61064
+            },
+            {
+              "x": 1743.52764,
+              "y": 686.62959
+            },
+            {
+              "x": 1744.84536,
+              "y": 686.62959
+            },
+            {
+              "x": 1852.34727,
+              "y": 686.62959
+            },
+            {
+              "x": 1853.66549,
+              "y": 686.62959
+            },
+            {
+              "x": 1854.72674,
+              "y": 685.60688
+            },
+            {
+              "x": 1854.72674,
+              "y": 684.3393
+            },
+            {
+              "x": 1854.72674,
+              "y": 625.90463
+            },
+            {
+              "x": 1854.72674,
+              "y": 624.63329
+            },
+            {
+              "x": 1853.665,
+              "y": 623.61432
+            },
+            {
+              "x": 1852.34727,
+              "y": 623.61432
+            },
+            {
+              "x": 1852.34727,
+              "y": 623.61432
+            }
+          ]
+        }
+      },
+      "s": {
+        "type": "shape",
+        "opacity": 1,
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgba(42,18,66,0.50)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 442,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1649.41771,
+          "y": 592.96289
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 443,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1645.1628,
+          "y": 571.73325
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "东院区",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 444,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1777.65769,
+          "y": 592.96289
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 445,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1768.94224,
+          "y": 571.73325
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "西院区",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 446,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1777.65769,
+          "y": 661.75873
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 447,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1768.94224,
+          "y": 640.52907
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "北院区",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 448,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1653.67262,
+          "y": 661.75873
+        },
+        "width": 61.25802,
+        "height": 32.001
+      },
+      "s": {
+        "text": "6666",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "24px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 449,
+      "p": {
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1645.1628,
+          "y": 640.52907
+        },
+        "width": 52.7482,
+        "height": 16.08875
+      },
+      "s": {
+        "text": "南院区",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 450,
+      "p": {
+        "displayName": "确认按钮",
+        "position": {
+          "x": 1267.33883,
+          "y": 683.1643
+        },
+        "width": 144,
+        "height": 474.86199
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 451,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮否定.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 510.31797
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 452,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 460.9333
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 453,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 559.70263
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 454,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 609.0873
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 455,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 707.85663
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 456,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 757.2413
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 457,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 806.62596
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 458,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮否定.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 658.47196
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 459,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮否定.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 856.01063
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 460,
+      "p": {
+        "parent": {
+          "__i": 450
+        },
+        "image": "symbols/demo/screen/按钮否定.json",
+        "position": {
+          "x": 1267.33883,
+          "y": 905.39529
+        },
+        "scale": {
+          "x": 0.8,
+          "y": 0.8
+        }
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 461,
+      "p": {
+        "position": {
+          "x": 957.47537,
+          "y": 473.07247
+        },
+        "width": 1797.47759,
+        "height": 569.3122
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 462,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 153.63883,
+          "y": 690.62137
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 8.37413,
+        "height": 8.37413
+      },
+      "s": {
+        "shape": "circle",
+        "opacity": 1,
+        "shape.background": "rgb(245,27,27)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,120)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 463,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 186.54419,
+          "y": 722.66339
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 11.50743,
+        "height": 6
+      },
+      "s": {
+        "shape": "triangle",
+        "opacity": 1,
+        "shape.background": "rgb(103,27,245)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,235)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 464,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 414.58821,
+          "y": 491.1333
+        },
+        "width": 127.14868,
+        "height": 30
+      },
+      "s": {
+        "text": "XXXX项目进度",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "18px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 465,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1791.62808,
+          "y": 495.31797
+        },
+        "width": 127.14868,
+        "height": 30
+      },
+      "s": {
+        "text": "XXXX完成进度",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "18px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 466,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 423.56981,
+          "y": 520.52126
+        },
+        "width": 109.18548,
+        "height": 20.40658
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 467,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 128.56812,
+          "y": 193.51801
+        },
+        "scale": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "width": 109.18548,
+        "height": 20.40658
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 468,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 128.56812,
+          "y": 210.12814
+        },
+        "scale": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "width": 109.18548,
+        "height": 20.40658
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 469,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1801.62142,
+          "y": 515.72455
+        },
+        "width": 109.18548,
+        "height": 30
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 470,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 178.3433,
+          "y": 158.01266
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 8.37413,
+        "height": 8.37413
+      },
+      "s": {
+        "shape": "circle",
+        "opacity": 1,
+        "shape.background": "rgb(245,27,27)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,120)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 471,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 211.57674,
+          "y": 184.03354
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 11.50743,
+        "height": 6
+      },
+      "s": {
+        "shape": "triangle",
+        "opacity": 1,
+        "shape.background": "rgb(103,27,245)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,235)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 472,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 124.83674,
+          "y": 727.0413
+        },
+        "width": 109.18548,
+        "height": 17.94116
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 473,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 124.83675,
+          "y": 748.75799
+        },
+        "width": 109.18548,
+        "height": 17.94116
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 474,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1544.55451,
+          "y": 690.62137
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 8.37413,
+        "height": 8.37413
+      },
+      "s": {
+        "shape": "circle",
+        "opacity": 1,
+        "shape.background": "rgb(245,27,27)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,120)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 475,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1577.45987,
+          "y": 722.66339
+        },
+        "anchor": {
+          "x": 11.10653,
+          "y": -3.8491
+        },
+        "width": 11.50743,
+        "height": 6
+      },
+      "s": {
+        "shape": "triangle",
+        "opacity": 1,
+        "shape.background": "rgb(103,27,245)",
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(255,120,235)",
+        "shape.dash.pattern": [
+          16,
+          16
+        ]
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 476,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1515.75242,
+          "y": 727.0413
+        },
+        "width": 109.18548,
+        "height": 17.94116
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 477,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1515.75243,
+          "y": 748.75799
+        },
+        "width": 109.18548,
+        "height": 17.94116
+      },
+      "s": {
+        "text": "XXXXX--XXXXXX",
+        "type": "text",
+        "text.align": "center",
+        "text.color": "#ffffff",
+        "text.font": "12px sans-serif",
+        "opacity": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 478,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1578.52024,
+          "y": 661.7552
+        },
+        "width": 61.38796,
+        "height": 26.80174,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1547.82626,
+              "y": 648.35433
+            },
+            {
+              "x": 1573.15435,
+              "y": 675.15607
+            },
+            {
+              "x": 1609.21422,
+              "y": 675.15607
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(114,184,50)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 479,
+      "p": {
+        "parent": {
+          "__i": 461
+        },
+        "position": {
+          "x": 1574.63053,
+          "y": 567.70146
+        },
+        "width": 69.16739,
+        "height": 21.02509,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1540.04683,
+              "y": 578.214
+            },
+            {
+              "x": 1569.28662,
+              "y": 557.18891
+            },
+            {
+              "x": 1609.21422,
+              "y": 557.18891
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(49,84,181)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 480,
+      "p": {
+        "image": "symbols/demo/screen/时钟.json",
+        "position": {
+          "x": 128.56812,
+          "y": 613.56841
+        }
+      }
+    }
+  ]
+}

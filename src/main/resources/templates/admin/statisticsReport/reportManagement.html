@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/lib/ztree/css/zTreeStyle/zTreeStyle.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/css/admin/statisticsReport/reportManagement.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <a>统计报表</a>
+                <a><cite>报表管理</cite></a>
+            </span>
+        </blockquote>
+        <div id="report_content">
+            <div id="report_left">
+                <div class="layui-form leftSearch" lay-filter="searchIf">
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" id="reportName" value="" placeholder="报表名称">
+                    </div>
+                    <button class="layui-btn layui-btn-sm left_query" th:if="${MENU1001Query.visible}">查询</button>
+                </div>
+                <div class="report_tree">
+                    <div class="ztree" id="tree"></div>
+                </div>
+                <div class="left_btn">
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1001Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1001Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1001Delete.visible}">删除</button>
+                    <button class="layui-btn layui-btn-sm startOrStop" th:if="${MENU1001Enable_Disable.visible}">启/停用</button>
+                    <button class="layui-btn layui-btn-sm import" th:if="${MENU1001Import.visible}">导入</button>
+                    <button class="layui-btn layui-btn-sm export" th:if="${MENU1001Export.visible}">导出</button>
+                </div>
+            </div>
+            <div id="report_right">
+                <div id="report_nav">
+                    <a href="javascript:void(0);" class="nav-item nav-this" data-id="param">展示参数</a>
+                    <a href="javascript:void(0);" class="nav-item" data-id="object">展示对象</a>
+                </div>
+                <div class="layui-form param_title" lay-filter="searchIf2">
+                    <div>
+                        <span class="title">参数:</span>
+                        <div class="layui-inline">
+                            <div id="paramId"></div>
+                        </div>
+                    </div>
+                    <div class="param_name">
+                        <span class="title">展示名称:</span>
+                        <div class="layui-inline">
+                            <input type="text" class="layui-input" id="paramName" value="">
+                        </div>
+                    </div>
+                    <div>
+                        <button class="layui-btn layui-btn-sm param_query" th:if="${MENU1001Para_Query.visible}">查询</button>
+                        <button class="layui-btn layui-btn-sm param_add" th:if="${MENU1001Para_Add.visible}">新增</button>
+                        <button class="layui-btn layui-btn-sm param_edit" th:if="${MENU1001Para_Modify.visible}">修改</button>
+                        <button class="layui-btn layui-btn-sm param_delete" th:if="${MENU1001Para_Delete.visible}">删除</button>
+                    </div>
+                </div>
+                <div class="param_table">
+                    <div id="param_table"></div>
+                </div>
+
+                <div class="obj_title layui-hide">
+                    <div>
+                        <button class="layui-btn layui-btn-sm obj_add"    th:if="${MENU1001Obj_Add.visible}">新增</button>
+                        <button class="layui-btn layui-btn-sm obj_edit"   th:if="${MENU1001Obj_Modify.visible}">修改</button>
+                        <button class="layui-btn layui-btn-sm obj_delete" th:if="${MENU1001Obj_Delete.visible}">删除</button>
+                        <button class="layui-btn layui-btn-sm obj_import" th:if="${MENU1001Obj_Import.visible}">导入</button>
+                        <button class="layui-btn layui-btn-sm obj_export" th:if="${MENU1001Obj_Export.visible}">导出</button>
+                    </div>
+                </div>
+                <div class="obj_table layui-hide">
+                    <table class="layui-hidden" id="object_table" lay-filter="treeTable"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增修改报表-->
+    <div id="report_add" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item edit_report layui-hide">
+                <label class="layui-form-label">报表标识：</label>
+                <div class="layui-inline">
+                    <div id="edit_report_id"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_report">
+                <label class="layui-form-label"><span class="red">* </span>报表标识：</label>
+                <div class="layui-inline">
+                    <input type="text" name="report_id" id="report_id" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="report_id_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>报表名称：</label>
+                <div class="layui-inline">
+                    <input type="text" name="report_name" id="report_name" maxlength='30' class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="report_name_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
+                <div class="layui-input-inline">
+                    <select name="report_energyTypeId" id="report_energyTypeId"></select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>是否启用：</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="report_isUse" id="report_isUse" value="true" lay-skin="switch">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序标识：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='10' id="report_sortId">
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="report_sortId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="report_memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除报表-->
+    <div id="report_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表标识：</label>
+                <div class="layui-inline">
+                    <div id="delete_report_id"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表名称：</label>
+                <div class="layui-inline">
+                    <div id="delete_report_name"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-inline">
+                    <div id="delete_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此报表吗？<br>此报表的展示参数及展示对象配置将一并删除！
+            </div>
+        </form>
+    </div>
+
+    <!--导入报表配置-->
+    <div id="report_import" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表标识：</label>
+                <div class="layui-inline">
+                    <div id="import_report_id"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表名称：</label>
+                <div class="layui-inline">
+                    <div id="import_report_name"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">能源种类：</label>
+                <div class="layui-inline">
+                    <div id="import_energyTypeId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>配置文件：</label>
+                <div class="layui-inline">
+                    <input type="file" name="file" id="upload_file" multiple required autocomplete="off"/>
+                </div>
+                <a href="javascript:void(0)" id="download_demo" th:if="${MENU1001Download.visible}">模板文件下载</a>
+            </div>
+            <div class="layui-form-item problem">
+                说明：导入后原来配置的展示参数和展示对象将被清空。
+            </div>
+        </form>
+    </div>
+
+    <!--新增修改展示参数-->
+    <div id="param_add" class="layui-hide">
+        <form class="layui-form" lay-filter="param_add">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表：</label>
+                <div class="layui-inline">
+                    <div id="param_add_report_id"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_param">
+                <label class="layui-form-label"><span class="red">* </span>参数：</label>
+                <div class="layui-inline">
+                    <select id="param_add_parameter" lay-filter="parameter"></select>
+                </div>
+            </div>
+            <div class="layui-form-item edit_param layui-hide">
+                <label class="layui-form-label">参数：</label>
+                <div class="layui-inline">
+                    <div id="param_edit_parameter"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>展示名称：</label>
+                <div class="layui-inline">
+                    <input type="text" name="displayName" id="param_name" maxlength="20" class="layui-input" required autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="param_name_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>数值类型：</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="dataType[timeValue]" value="timeValue" title="时刻值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[maxValue]" value="maxValue" title="最大值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[minValue]" value="minValue" title="最小值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[avgValue]" value="avgValue" title="平均值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[diffValue]" value="diffValue" title="差值" lay-skin="primary">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">排序标识：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="param_sortId" onKeyUp="value=value.replace(/[\W]/g,'')" class="layui-input" maxlength="10">
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="param_sortId_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" id="param_memo" maxlength="200">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除展示参数-->
+    <div id="param_delete" class="layui-hide">
+        <form class="layui-form" lay-filter="param_delete">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表：</label>
+                <div class="layui-inline">
+                    <div id="param_delete_reportId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">参数：</label>
+                <div class="layui-inline">
+                    <div id="param_delete_paramId"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">展示名称：</label>
+                <div class="layui-inline">
+                    <div id="param_delete_name"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">数值类型：</label>
+                <div class="layui-input-inline">
+                    <input type="checkbox" name="dataType[timeValue]" value="Y" title="时刻值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[maxValue]" value="Y" title="最大值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[minValue]" value="Y" title="最小值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[avgValue]" value="Y" title="平均值" lay-skin="primary">
+                    <input type="checkbox" name="dataType[diffValue]" value="Y" title="差值" lay-skin="primary">
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此展示参数吗？
+            </div>
+        </form>
+    </div>
+
+    <!--新增修改展示对象-->
+    <div id="obj_add" class="layui-hide">
+        <div class="formContent">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">报表：</label>
+                    <div class="layui-inline">
+                        <div id="obj_report_id"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item add_obj_nodeId">
+                    <label class="layui-form-label"><span class="red">* </span>节点ID：</label>
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20" id="obj_nodeId">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="obj_nodeId_tip"></i>
+                </div>
+                <div class="layui-form-item edit_obj_nodeId layui-hide">
+                    <label class="layui-form-label">节点ID：</label>
+                    <div class="layui-inline">
+                        <div id="edit_obj_nodeId"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">父节点：</label>
+                    <div class="layui-inline">
+                        <div id="obj_parentNode"></div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class="red">* </span>节点名称：</label>
+                    <div class="layui-inline">
+                        <input type="text" class="layui-input" maxlength="30" id="obj_nodeName">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="obj_nodeName_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">排序标识：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="obj_sortId" onKeyUp="value=value.replace(/[\W]/g,'')" class="layui-input" maxlength="10">
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="obj_sortId_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">备注：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" maxlength="20" id="obj_memo">
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top:10px;">数据源：</div>
+            <div class="dataSource">
+                <div class="ds_title">
+                    <span>仪表列表（从右侧选择）</span>
+                    <div>
+                        <a href="javascript:void(0)" id="removeSelected">删除所选</a>
+                        <a href="javascript:void(0)" id="clearSelected">清空</a>
+                    </div>
+                </div>
+                <div class="ds_list layui-form" lay-filter="ds_list">
+                    <table class="layui-table">
+                        <tbody id="ds_data"></tbody>
+                    </table>
+                </div>
+                <div class="ds_formula">
+                    <div class="ds_formula_btn">
+                        <span>公式</span>
+                        <div>
+                            <a href="javascript:void(0)" id="checkFormula">检查</a>
+                            <a href="javascript:void(0)" id="addAllMeter">所有仪表相加</a>
+                            <a href="javascript:void(0)" id="clearFormula">清空</a>
+                        </div>
+                    </div>
+                    <div class="formula_content">
+                        <textarea name="formula" id="formula" value="" class="layui-textarea"></textarea>
+                    </div>
+                    <div class="infoTap">
+                        ◆公式中用?代替上面的仪表，公式中的第一个?代表上面的第一个仪表，以此类推，上面仪表的
+                        个数需要等于公式中?的个数（如果仪表列表中只有一个仪表，公式可以为空，但不能只有1个问号）。
+                    </div>
+                </div>
+            </div>
+            <div class="tableSelect">
+                <div id="tableSelect_title">仪表选择</div>
+                <div id="tableSelect_content">
+                    <div id="obj_nav">
+                        <a href="javascript:void(0);" class="obj_nav-item obj_nav-this" data-id="park">企业</a>
+                        <a href="javascript:void(0);" class="obj_nav-item" data-id="site">仪表</a>
+                    </div>
+                    <div id="parkSiteTableContent">
+                        <div class="layui-form searchForm">
+                            <input type="text" id="obj_parkSiteName" class="layui-input" maxlength="30" placeholder="按企业标识或者名称查询">
+                            <button class="layui-btn layui-btn-sm obj_parkSiteQuery">查询</button>
+                        </div>
+                        <div class="parkSite">
+                            <table class="layui-table">
+                                <tbody id="parkSiteTbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="meterTableContent" class="layui-hide">
+                        <div class="layui-form searchForm">
+                            <input type="text" id="obj_meterName" class="layui-input" maxlength="30" placeholder="按仪表标识或者名称查询">
+                            <button class="layui-btn layui-btn-sm obj_meterQuery">查询</button>
+                        </div>
+                        <div class="meter layui-form" lay-filter="meter_list">
+                            <table class="layui-table">
+                                <tbody id="meterTbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="meter_btnGroup layui-hide">
+                    <a href="javascript:void(0);" id="addSelectedBefore">添加至所选之前</a>
+                    <a href="javascript:void(0);" id="addSelectedAfter">添加至末尾</a>
+                    <a href="javascript:void(0);" id="allSelect">全选</a>
+                    <a href="javascript:void(0);" id="allUnSelect">反选</a>
+                    <a href="javascript:void(0);" id="cancel">取消</a>
+                </div>
+                <div class="infoTap meterTap layui-hide">
+                    ◆双击直接添加到末尾。
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <!--删除展示对象-->
+    <div id="obj_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表：</label>
+                <div class="layui-inline">
+                    <div id="obj_delete_report"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">对象：</label>
+                <div class="layui-inline">
+                    <div id="obj_delete_object"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此展示对象吗？
+                如果有子节点，则子节点将无法显示出来，建议先修改或删除子节点。
+            </div>
+        </form>
+    </div>
+
+    <!--导入展示对象-->
+    <div id="obj_import" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">报表：</label>
+                <div class="layui-inline">
+                    <div id="obj_import_report"></div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>展示对象文件：</label>
+                <div class="layui-inline">
+                    <input type="file" name="file" id="upload_file2" multiple required autocomplete="off"/>
+                </div>
+                <a href="javascript:void(0)" id="obj_download_demo" th:if="${MENU1001Obj_download.visible}">模板文件下载</a>
+            </div>
+            <div class="layui-form-item problem">
+                说明：导入后原来配置的展示对象将被清空。
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/lib/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/layui_exts/treeGrid.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/form-select/xm-select.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.core.js}"></script>
+    <script type="text/javascript" th:src="@{/public/js/admin/statisticsReport/reportManagement.js}"></script>
+</div>
+</html>

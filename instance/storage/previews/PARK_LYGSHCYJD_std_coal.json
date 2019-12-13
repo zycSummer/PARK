@@ -1,0 +1,2522 @@
+{
+  "v": "7.0.2",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Data",
+      "i": 3898,
+      "p": {
+        "displayName": "东港污水处理厂"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3899,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -354.78639,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3900,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -354.78639,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "text": "水",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3901,
+      "p": {
+        "parent": {
+          "__i": 3900
+        },
+        "position": {
+          "x": -354.78639,
+          "y": 571.3613
+        },
+        "width": 136.68593,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3902,
+      "p": {
+        "parent": {
+          "__i": 3900
+        },
+        "position": {
+          "x": -354.78639,
+          "y": 556.87211
+        },
+        "width": 68.36557,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "功率:",
+        "text.font": "20px Arial",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3903,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3900
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -369.10389,
+          "y": 586.60574
+        },
+        "width": 108.05094,
+        "height": 30.48888
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3904,
+      "p": {
+        "parent": {
+          "__i": 3900
+        },
+        "position": {
+          "x": -302.10389,
+          "y": 586.60574
+        },
+        "width": 25.94906,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "t/h"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3905,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -199.19904,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3906,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -199.19904,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "text": "蒸汽",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3907,
+      "p": {
+        "parent": {
+          "__i": 3906
+        },
+        "position": {
+          "x": -199.19904,
+          "y": 571.89435
+        },
+        "width": 136.68593,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3908,
+      "p": {
+        "parent": {
+          "__i": 3906
+        },
+        "position": {
+          "x": -199.19904,
+          "y": 557.40516
+        },
+        "width": 68.36557,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "功率:",
+        "text.font": "20px Arial",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3909,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3906
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -213.51654,
+          "y": 587.13879
+        },
+        "width": 108.05094,
+        "height": 30.48888
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3910,
+      "p": {
+        "parent": {
+          "__i": 3906
+        },
+        "position": {
+          "x": -146.51654,
+          "y": 587.13879
+        },
+        "width": 25.94906,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "t/h"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3911,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -507.64426,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3912,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -507.64426,
+          "y": 510.39435
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "text": "电",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3913,
+      "p": {
+        "parent": {
+          "__i": 3912
+        },
+        "position": {
+          "x": -506.30129,
+          "y": 573.87242
+        },
+        "width": 136.68593,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3914,
+      "p": {
+        "parent": {
+          "__i": 3912
+        },
+        "position": {
+          "x": -506.30129,
+          "y": 559.38323
+        },
+        "width": 68.36557,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "功率:",
+        "text.font": "20px Arial",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3915,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3912
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -520.61879,
+          "y": 589.11686
+        },
+        "width": 108.05094,
+        "height": 30.48888
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3916,
+      "p": {
+        "parent": {
+          "__i": 3912
+        },
+        "position": {
+          "x": -453.61879,
+          "y": 589.11686
+        },
+        "width": 25.94906,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "kW"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3917,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -353.42165,
+          "y": 266.16377
+        },
+        "width": 226.34333,
+        "height": 57
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3918,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -353.42165,
+          "y": 266.16597
+        },
+        "width": 226.34333,
+        "height": 57
+      },
+      "s": {
+        "text": "东港污水处理厂",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3919,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -353.42165,
+          "y": 327.66597
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3920,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -407.87293,
+          "y": 314.00378
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3921,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3898
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -339.50736,
+          "y": 314.00378
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3922,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -407.87293,
+          "y": 342.15296
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3923,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3898
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -339.50736,
+          "y": 342.15296
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3924,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -279.31767,
+          "y": 314.00378
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3925,
+      "p": {
+        "parent": {
+          "__i": 3898
+        },
+        "position": {
+          "x": -279.31767,
+          "y": 342.15296
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3926,
+      "p": {
+        "displayName": "园区"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3927,
+      "p": {
+        "parent": {
+          "__i": 3926
+        },
+        "position": {
+          "x": 1166.57788,
+          "y": 14.74508
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3928,
+      "p": {
+        "parent": {
+          "__i": 3926
+        },
+        "position": {
+          "x": 1166.57788,
+          "y": 14.74508
+        },
+        "width": 134,
+        "height": 57
+      },
+      "s": {
+        "text": "园区",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3929,
+      "p": {
+        "parent": {
+          "__i": 3926
+        },
+        "position": {
+          "x": 1330.7566,
+          "y": 10.24508
+        },
+        "width": 180,
+        "height": 48
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3930,
+      "p": {
+        "parent": {
+          "__i": 3926
+        },
+        "position": {
+          "x": 1276.30532,
+          "y": 10.24508
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3931,
+      "p": {
+        "parent": {
+          "__i": 3926
+        },
+        "position": {
+          "x": 1405.03172,
+          "y": 10.24508
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3932,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3926
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1346.53639,
+          "y": 10.24508
+        },
+        "width": 85.19862,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3933,
+      "p": {
+        "displayName": "中节能（连云港）清洁技术有限公司"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3934,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 103.61393,
+          "y": 273.86513
+        },
+        "width": 247.49081,
+        "height": 93.32741
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3935,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 103.61393,
+          "y": 254.53324
+        },
+        "width": 247.49081,
+        "height": 54.66364
+      },
+      "s": {
+        "text": "中节能（连云港）清洁",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3936,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 103.61393,
+          "y": 293.19701
+        },
+        "width": 247.49081,
+        "height": 54.66364
+      },
+      "s": {
+        "text": "技术有限公司",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3937,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 103.61393,
+          "y": 353.52883
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3938,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 49.16265,
+          "y": 339.86664
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3939,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3933
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 117.52822,
+          "y": 339.86664
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3940,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 49.16265,
+          "y": 368.01582
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3941,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3933
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 117.52822,
+          "y": 368.01582
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3942,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 177.71791,
+          "y": 339.86664
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3943,
+      "p": {
+        "parent": {
+          "__i": 3933
+        },
+        "position": {
+          "x": 177.71791,
+          "y": 368.01582
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3944,
+      "p": {
+        "displayName": "连云港荣泰化工"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3945,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 565.4017,
+          "y": 352.15296
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3946,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 510.95042,
+          "y": 338.49077
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3947,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3944
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 579.31599,
+          "y": 338.49077
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3948,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 510.95042,
+          "y": 366.63995
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3949,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3944
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 579.31599,
+          "y": 366.63995
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3950,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 639.50568,
+          "y": 338.49077
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3951,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 639.50568,
+          "y": 366.63995
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3952,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 565.4017,
+          "y": 274.16198
+        },
+        "width": 237.88789,
+        "height": 93.32741
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3953,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 565.4017,
+          "y": 250.83013
+        },
+        "width": 237.88789,
+        "height": 46.66371
+      },
+      "s": {
+        "text": "连云港荣泰化工",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3954,
+      "p": {
+        "parent": {
+          "__i": 3944
+        },
+        "position": {
+          "x": 565.4017,
+          "y": 293.49607
+        },
+        "width": 237.88789,
+        "height": 46.66371
+      },
+      "s": {
+        "text": "仓储有限公司",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3955,
+      "p": {
+        "displayName": "虹洋热电厂"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3956,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 1025.4739,
+          "y": 310.97192
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3957,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 971.02262,
+          "y": 297.30973
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3958,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3955
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1039.38819,
+          "y": 297.30973
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3959,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 971.02262,
+          "y": 325.45891
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3960,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3955
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1039.38819,
+          "y": 325.45891
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3961,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 1099.57788,
+          "y": 297.30973
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3962,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 1099.57788,
+          "y": 325.45891
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3963,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 1025.4739,
+          "y": 253.49377
+        },
+        "width": 237.88789,
+        "height": 48.00158
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3964,
+      "p": {
+        "parent": {
+          "__i": 3955
+        },
+        "position": {
+          "x": 1025.4739,
+          "y": 252.82483
+        },
+        "width": 237.88789,
+        "height": 46.66371
+      },
+      "s": {
+        "text": "虹洋热电厂",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3965,
+      "p": {
+        "displayName": "斯尔邦石化"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3966,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1482.10682,
+          "y": 299.15296
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3967,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1427.65554,
+          "y": 285.49077
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3968,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3965
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1496.02111,
+          "y": 285.49077
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3969,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1427.65554,
+          "y": 313.63995
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3970,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3965
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1496.02111,
+          "y": 313.63995
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3971,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1556.2108,
+          "y": 285.49077
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3972,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1556.2108,
+          "y": 313.63995
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3973,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1486.69156,
+          "y": 251.35691
+        },
+        "width": 237.88789,
+        "height": 48.31096
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3974,
+      "p": {
+        "parent": {
+          "__i": 3965
+        },
+        "position": {
+          "x": 1486.69156,
+          "y": 250.53328
+        },
+        "width": 237.88789,
+        "height": 46.66371
+      },
+      "s": {
+        "text": "斯尔邦石化",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3975,
+      "p": {
+        "displayName": "虹港石化"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3976,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 1945.33582,
+          "y": 312.66962
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3977,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 1890.88454,
+          "y": 299.00743
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3978,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3975
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1959.25011,
+          "y": 299.00743
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3979,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 1890.88454,
+          "y": 327.1566
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3980,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3975
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 1959.25011,
+          "y": 327.1566
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3981,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 2019.4398,
+          "y": 299.00743
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3982,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 2019.4398,
+          "y": 327.1566
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3983,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 1945.33582,
+          "y": 253.86447
+        },
+        "width": 237.88789,
+        "height": 47.26018
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3984,
+      "p": {
+        "parent": {
+          "__i": 3975
+        },
+        "position": {
+          "x": 1945.33582,
+          "y": 253.56623
+        },
+        "width": 237.88789,
+        "height": 46.66371
+      },
+      "s": {
+        "text": "虹港石化",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3985,
+      "p": {
+        "displayName": "万博丰环保科技"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3986,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2406.30305,
+          "y": 308.64579
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3987,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2351.85177,
+          "y": 294.9836
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3988,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3985
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 2420.21734,
+          "y": 294.9836
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3989,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2351.85177,
+          "y": 323.13278
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3990,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3985
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 2420.21734,
+          "y": 323.13278
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3991,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2480.40703,
+          "y": 294.9836
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3992,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2480.40703,
+          "y": 323.13278
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3993,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2406.30305,
+          "y": 253.22949
+        },
+        "width": 237.88789,
+        "height": 49.48486
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3994,
+      "p": {
+        "parent": {
+          "__i": 3985
+        },
+        "position": {
+          "x": 2406.30305,
+          "y": 253.65974
+        },
+        "width": 237.88789,
+        "height": 50.34539
+      },
+      "s": {
+        "text": "万博丰环保科技",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3995,
+      "p": {
+        "displayName": "鹏程公司"
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3996,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2866.44173,
+          "y": 314.04548
+        },
+        "width": 180,
+        "height": 66
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3997,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2811.99045,
+          "y": 300.38329
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "标煤：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3998,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3995
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 2880.35602,
+          "y": 300.38329
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3999,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2811.99045,
+          "y": 328.53247
+        },
+        "width": 64.17079,
+        "height": 37.02161
+      },
+      "s": {
+        "text": "占比：",
+        "text.font": "20px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4000,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3995
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 2880.35602,
+          "y": 328.53247
+        },
+        "width": 88.58736,
+        "height": 20
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4001,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2940.54571,
+          "y": 300.38329
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "tce/h"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4002,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2940.54571,
+          "y": 328.53247
+        },
+        "width": 31.79204,
+        "height": 14.35769
+      },
+      "s": {
+        "text": "%"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4003,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2866.44173,
+          "y": 256.32665
+        },
+        "width": 237.88789,
+        "height": 50.99159
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(125,195,125)",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4004,
+      "p": {
+        "parent": {
+          "__i": 3995
+        },
+        "position": {
+          "x": 2866.44173,
+          "y": 256.76256
+        },
+        "width": 237.88789,
+        "height": 51.86341
+      },
+      "s": {
+        "text": "鹏程公司",
+        "text.align": "center",
+        "text.font": "22px Arial"
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4005,
+      "p": {
+        "position": {
+          "x": -429.95833,
+          "y": 422.69263
+        },
+        "width": 149.70696,
+        "height": 119.27871,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -355.10485,
+              "y": 363.05327
+            },
+            {
+              "x": -504.8118,
+              "y": 482.33198
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4006,
+      "p": {
+        "position": {
+          "x": -357.33614,
+          "y": 421.97381
+        },
+        "width": 5,
+        "height": 117.84108,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -354.83614,
+              "y": 363.05327
+            },
+            {
+              "x": -359.83614,
+              "y": 480.89435
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4007,
+      "p": {
+        "position": {
+          "x": -280.51759,
+          "y": 421.97381
+        },
+        "width": 148.6371,
+        "height": 117.84108,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -354.83614,
+              "y": 363.05327
+            },
+            {
+              "x": -206.19904,
+              "y": 480.89435
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4008,
+      "p": {
+        "position": {
+          "x": 402.7808,
+          "y": 139.44115
+        },
+        "width": 1543.76937,
+        "height": 196.44964,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": -369.10389,
+              "y": 237.66597
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4009,
+      "p": {
+        "position": {
+          "x": 639.13971,
+          "y": 134.70888
+        },
+        "width": 1071.05155,
+        "height": 184.98509,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 42.21633
+            },
+            {
+              "x": 103.61393,
+              "y": 227.20142
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4010,
+      "p": {
+        "position": {
+          "x": 870.03359,
+          "y": 134.20888
+        },
+        "width": 609.26378,
+        "height": 185.98509,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 565.4017,
+              "y": 227.20142
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4011,
+      "p": {
+        "position": {
+          "x": 1100.06969,
+          "y": 135.72535
+        },
+        "width": 149.19158,
+        "height": 189.01804,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 1025.4739,
+              "y": 230.23438
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4012,
+      "p": {
+        "position": {
+          "x": 1332.8433,
+          "y": 134.20888
+        },
+        "width": 316.35563,
+        "height": 185.98509,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 1491.02111,
+              "y": 227.20142
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4013,
+      "p": {
+        "position": {
+          "x": 1566.9578,
+          "y": 136.02359
+        },
+        "width": 784.58463,
+        "height": 189.61452,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 1959.25011,
+              "y": 230.83086
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4014,
+      "p": {
+        "position": {
+          "x": 1797.44141,
+          "y": 134.20888
+        },
+        "width": 1245.55186,
+        "height": 185.9851,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 2420.21734,
+              "y": 227.20143
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4015,
+      "p": {
+        "position": {
+          "x": 2027.51075,
+          "y": 136.94005
+        },
+        "width": 1705.69054,
+        "height": 191.44744,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 1174.66548,
+              "y": 41.21633
+            },
+            {
+              "x": 2880.35602,
+              "y": 232.66377
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(61,61,61)",
+        "shape.border.width": 1
+      }
+    }
+  ]
+}

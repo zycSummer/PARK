@@ -1,0 +1,52 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-17 14:04:23 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-11-06 11:45:35
+ */
+
+
+#btnGroup {
+    margin-top: 7px;
+    float: right;
+}
+.control_div {
+    padding: 5px 5px  10px 10px !important;
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+.tab_content{
+    margin: 10px;
+    height: 1px;
+    flex-grow: 1;
+}
+
+
+.layui-form-checkbox span{
+    padding-left: 20px !important;
+}
+.calculationLeft{
+    width: 350px;
+    margin-top: 10px;
+    margin-left:50px;
+    border: 1px solid #f2f2f2;
+}
+/* 时间选择 */
+.layui-breadcrumb .layui-this{
+    color:#6fbf86!important;
+    font-weight: bold;
+}
+.layui-breadcrumb{
+cursor: pointer;
+}
+#dateSelectYear{
+    display: none;
+}

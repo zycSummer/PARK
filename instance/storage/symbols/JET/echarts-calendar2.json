@@ -1,0 +1,489 @@
+{
+  "dataBindings": [
+    {
+      "attr": "year",
+      "valueType": "String",
+      "defaultValue": "2019"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": "rgba(11,17,27,0.9)"
+    },
+    {
+      "attr": "textColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(247,247,247)"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "data",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "time": "2019-01-01",
+          "value": 30
+        },
+        {
+          "time": "2019-01-02",
+          "value": 35
+        },
+        {
+          "time": "2019-01-03",
+          "value": 49
+        },
+        {
+          "time": "2019-01-04",
+          "value": 30
+        },
+        {
+          "time": "2019-01-05",
+          "value": 55
+        },
+        {
+          "time": "2019-01-06",
+          "value": 60
+        },
+        {
+          "time": "2019-01-07",
+          "value": 80
+        },
+        {
+          "time": "2019-01-08",
+          "value": 90
+        },
+        {
+          "time": "2019-01-09",
+          "value": 55
+        },
+        {
+          "time": "2019-01-10",
+          "value": 48
+        },
+        {
+          "time": "2019-01-11",
+          "value": 19
+        },
+        {
+          "time": "2019-01-12",
+          "value": 80
+        },
+        {
+          "time": "2019-01-13",
+          "value": 88
+        },
+        {
+          "time": "2019-01-14",
+          "value": 55
+        },
+        {
+          "time": "2019-01-15",
+          "value": 60
+        },
+        {
+          "time": "2019-01-16",
+          "value": 66
+        },
+        {
+          "time": "2019-01-17",
+          "value": 88
+        },
+        {
+          "time": "2019-01-18",
+          "value": 55
+        },
+        {
+          "time": "2019-01-19",
+          "value": 77
+        },
+        {
+          "time": "2019-01-20",
+          "value": 66
+        },
+        {
+          "time": "2019-01-21",
+          "value": 87
+        },
+        {
+          "time": "2019-01-22",
+          "value": 59
+        },
+        {
+          "time": "2019-01-23",
+          "value": 49
+        },
+        {
+          "time": "2019-01-24",
+          "value": 160
+        },
+        {
+          "time": "2019-01-25",
+          "value": 29
+        },
+        {
+          "time": "2019-01-26",
+          "value": 150
+        },
+        {
+          "time": "2019-01-27",
+          "value": 29
+        },
+        {
+          "time": "2019-01-28",
+          "value": 55
+        },
+        {
+          "time": "2019-01-29",
+          "value": 120
+        },
+        {
+          "time": "2019-01-30",
+          "value": 111
+        },
+        {
+          "time": "2019-01-31",
+          "value": 60
+        },
+        {
+          "time": "2019-02-01",
+          "value": 30
+        },
+        {
+          "time": "2019-02-02",
+          "value": 35
+        },
+        {
+          "time": "2019-02-03",
+          "value": 49
+        },
+        {
+          "time": "2019-02-04",
+          "value": 30
+        },
+        {
+          "time": "2019-02-05",
+          "value": 55
+        },
+        {
+          "time": "2019-02-06",
+          "value": 60
+        },
+        {
+          "time": "2019-02-07",
+          "value": 80
+        },
+        {
+          "time": "2019-02-08",
+          "value": 90
+        },
+        {
+          "time": "2019-02-09",
+          "value": 55
+        },
+        {
+          "time": "2019-02-10",
+          "value": 48
+        },
+        {
+          "time": "2019-02-11",
+          "value": 19
+        },
+        {
+          "time": "2019-02-12",
+          "value": 80
+        },
+        {
+          "time": "2019-02-13",
+          "value": 88
+        },
+        {
+          "time": "2019-02-14",
+          "value": 55
+        },
+        {
+          "time": "2019-02-15",
+          "value": 60
+        },
+        {
+          "time": "2019-02-16",
+          "value": 66
+        },
+        {
+          "time": "2019-02-17",
+          "value": 88
+        },
+        {
+          "time": "2019-02-18",
+          "value": 55
+        },
+        {
+          "time": "2019-02-19",
+          "value": 77
+        },
+        {
+          "time": "2019-02-20",
+          "value": 66
+        },
+        {
+          "time": "2019-02-21",
+          "value": 87
+        },
+        {
+          "time": "2019-02-22",
+          "value": 59
+        },
+        {
+          "time": "2019-02-23",
+          "value": 49
+        },
+        {
+          "time": "2019-02-24",
+          "value": 160
+        },
+        {
+          "time": "2019-02-25",
+          "value": 29
+        },
+        {
+          "time": "2019-02-26",
+          "value": 150
+        },
+        {
+          "time": "2019-02-27",
+          "value": 29
+        },
+        {
+          "time": "2019-02-28",
+          "value": 55
+        },
+        {
+          "time": "2019-03-01",
+          "value": 30
+        },
+        {
+          "time": "2019-03-02",
+          "value": 35
+        },
+        {
+          "time": "2019-03-03",
+          "value": 49
+        },
+        {
+          "time": "2019-03-04",
+          "value": 30
+        },
+        {
+          "time": "2019-03-05",
+          "value": 55
+        },
+        {
+          "time": "2019-03-06",
+          "value": 60
+        },
+        {
+          "time": "2019-03-07",
+          "value": 80
+        },
+        {
+          "time": "2019-03-08",
+          "value": 90
+        },
+        {
+          "time": "2019-03-09",
+          "value": 55
+        },
+        {
+          "time": "2019-03-10",
+          "value": 48
+        },
+        {
+          "time": "2019-03-11",
+          "value": 19
+        },
+        {
+          "time": "2019-03-12",
+          "value": 80
+        },
+        {
+          "time": "2019-03-13",
+          "value": 88
+        },
+        {
+          "time": "2019-03-14",
+          "value": 55
+        },
+        {
+          "time": "2019-03-15",
+          "value": 60
+        },
+        {
+          "time": "2019-03-16",
+          "value": 66
+        },
+        {
+          "time": "2019-03-17",
+          "value": 88
+        },
+        {
+          "time": "2019-03-18",
+          "value": 55
+        },
+        {
+          "time": "2019-03-19",
+          "value": 77
+        },
+        {
+          "time": "2019-03-20",
+          "value": 66
+        },
+        {
+          "time": "2019-03-21",
+          "value": 87
+        },
+        {
+          "time": "2019-03-22",
+          "value": 59
+        },
+        {
+          "time": "2019-03-23",
+          "value": 49
+        },
+        {
+          "time": "2019-03-24",
+          "value": 160
+        },
+        {
+          "time": "2019-03-25",
+          "value": 29
+        },
+        {
+          "time": "2019-03-26",
+          "value": 150
+        },
+        {
+          "time": "2019-03-27",
+          "value": 29
+        },
+        {
+          "time": "2019-03-28",
+          "value": 55
+        },
+        {
+          "time": "2019-03-29",
+          "value": 120
+        },
+        {
+          "time": "2019-03-30",
+          "value": null
+        },
+        {
+          "time": "2019-03-31",
+          "value": null
+        }
+      ]
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    },
+    {
+      "attr": "calendarBackgroundColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(242,242,242)"
+    },
+    {
+      "attr": "calendarOpacity",
+      "valueType": "Number",
+      "defaultValue": 0.1
+    },
+    {
+      "attr": "calendarBorderWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 0.2
+    },
+    {
+      "attr": "calendarBorderColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(204,204,204)"
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    },
+    {
+      "attr": "pieces",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "min": 150,
+          "color": "#fa050f"
+        },
+        {
+          "min": 80,
+          "max": 150,
+          "color": "#fa991c"
+        },
+        {
+          "min": 50,
+          "max": 80,
+          "color": "#f2f50f"
+        },
+        {
+          "min": 20,
+          "max": 50,
+          "color": "#85e612"
+        },
+        {
+          "min": 0,
+          "max": 20,
+          "color": "#338a33"
+        }
+      ]
+    }
+  ],
+  "snapshotURL": "symbols/JET/snapshot/snapshot_echarts-calendar.json",
+  "renderHTML": "__ht__function(data, gv, cache) {\r\n\r\n    var rangeColor = data.a('rangeColor');\r\n    var rangeColorObj = null;\r\n    if (rangeColor != null && rangeColor.length > 0) {\r\n        rangeColorObj = {\r\n            color: rangeColor //['#e0ffff', '#006edd'],\r\n            // opacity: 0.3\r\n        };\r\n    }\r\n\r\n    var dateList = data.a('data');\r\n    var dateArray = [];\r\n    if (dateList != null && dateList.length > 0) {\r\n        for (var i = 0; i < dateList.length; i++) {\r\n            if (dateList[i] != null && dateList[i] !== undefined && dateList[i].time !== undefined && dateList[i].time != null) {\r\n                dateArray.push([\r\n                    dateList[i].time,\r\n                    dateList[i].value\r\n                ]);\r\n            }\r\n        }\r\n    }\r\n\r\n    var min = data.a('min');\r\n    var max = data.a('max');\r\n    // if (dateList != null && dateList.length > 0) {\r\n    //     for (var i = 0; i < dateList.length; i++) {\r\n    //         if (min > dateList[i].value) {\r\n    //             min = dateList[i].value;\r\n    //         }\r\n    //         if (max < dateList[i].value) {\r\n    //             max = dateList[i].value;\r\n    //         }\r\n    //     }\r\n    // }\r\n    \r\n    var option = {\r\n        // title: {\r\n        //     top: 30,\r\n        //     left: 'center',\r\n        //     text: 'xxx'\r\n        // },\r\n        backgroundColor: data.a('background'),\r\n        textStyle: {\r\n            color: data.a('textColor')\r\n        },\r\n        legend: {\r\n            bottom: 10,\r\n            textStyle: {\r\n                color: data.a('textColor')\r\n            }\r\n        },\r\n        tooltip: {\r\n        },\r\n        visualMap: {\r\n            // min: min,\r\n            // max: max,\r\n            type: 'piecewise',\r\n            orient: 'horizontal',\r\n            left: 'center',\r\n            bottom: 10,\r\n            textStyle: {\r\n                color: data.a('textColor')\r\n            },\r\n            // inRange: rangeColorObj\r\n            pieces: data.a('pieces')\r\n        },\r\n        calendar: {\r\n            range: data.a('year'),\r\n            // top: 50,\r\n            left: 25,\r\n            right: 10,\r\n            cellSize: ['auto', 20],\r\n            itemStyle: {\r\n                borderWidth: data.a('calendarBorderWidth'),\r\n                borderColor: data.a('calendarBorderColor'),\r\n                color: data.a('calendarBackgroundColor'),\r\n                opacity: data.a('calendarOpacity')\r\n            },\r\n            yearLabel: { \r\n                show: true,\r\n                position: 'top',\r\n                margin: 30,\r\n                color: data.a('textColor')\r\n            },\r\n            dayLabel: {\r\n                margin: 10,\r\n                firstDay: 1,\r\n                nameMap: ['日', '一', '二', '三', '四', '五', '六'],\r\n                color: data.a('textColor')\r\n            },\r\n            monthLabel: {\r\n                // show: false\r\n                nameMap: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],\r\n                color: data.a('textColor')\r\n            }\r\n        },\r\n        series: {\r\n            type: 'heatmap',\r\n            coordinateSystem: 'calendar',\r\n            data: dateArray\r\n        }\r\n    };\r\n\r\n    if (!cache.htmlView) {\r\n        cache.htmlView = document.createElement('div');\r\n        cache.htmlView.style.position = 'absolute';\r\n        cache.htmlChart = echarts.init(cache.htmlView, data.a('theme'));\r\n\r\n        // layoutHTML will be called when the data needs to be drawing\r\n        cache.htmlView.layoutHTML = function () {\r\n            gv.layoutHTML(data, cache.htmlView, false);\r\n            cache.htmlChart.resize();\r\n        };\r\n    }\r\n\r\n    cache.htmlChart.setOption(option);\r\n\r\n    // html for showing\r\n    return cache.htmlView;\r\n}",
+  "width": 800,
+  "height": 240,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": []
+}

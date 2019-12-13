@@ -1,0 +1,42 @@
+{
+  "width": 20,
+  "height": 20,
+  "func": "__ht__function(g, rect, comp, data, view) {\nht.vector.comp.radio.apply(this, arguments);\n}",
+  "properties": {
+    "disabled": {
+      "valueType": "Boolean",
+      "defaultValue": false,
+      "name": "UIDisabled"
+    },
+    "checked": {
+      "valueType": "Boolean",
+      "defaultValue": false,
+      "name": "UIChecked"
+    },
+    "normalColor": {
+      "valueType": "Color",
+      "defaultValue": "#737373",
+      "name": "UINormalColor"
+    },
+    "background": {
+      "valueType": "Color",
+      "defaultValue": "rgb(255,255,255)",
+      "name": "UIBackground"
+    },
+    "activeColor": {
+      "valueType": "Color",
+      "defaultValue": "rgb(51,153,255)",
+      "name": "UIActiveColor"
+    },
+    "disabledColor": {
+      "valueType": "Color",
+      "defaultValue": "#ebebeb",
+      "name": "UIDisabledColor"
+    },
+    "disabledBackground": {
+      "valueType": "Color",
+      "defaultValue": "#fafafa",
+      "name": "UIDisabledBackground"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/*
+ * @Author: jpp
+ * @Date: 2019-11-25 10:09:14
+ * @Last Modified by: jpp
+ * @Last Modified time: 2019-11-25 10:31:15
+ */
+#btnGroup {
+    margin-top: 7px;
+    float: right;
+}
+.control_div {
+    padding: 5px 5px  10px 10px !important;
+    border-radius: 0 2px 2px 0 !important;
+}
+.company_content{
+    flex: 1;
+    height: 1px;
+    display:flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    margin:0 5px 0 5px;
+}
+.layui-table, .layui-table-view {
+    margin: 0;
+}
+
+#table_page .layui-laypage{
+    margin-bottom:0;
+}
+
+/*新增修改企业 弹框*/
+#site_add{
+    height:100%;
+}
+#site_add .layui-form-label{
+    width:140px;
+}
+#site_add>.formContent{
+    height:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+#site_add .layui-form{
+    padding:10px 10px 0 0;
+}
+#siteImage{
+    width:120px;
+    flex-grow: 1;
+}
+#siteImage .layui-form-label{
+    width:80px;
+}
+
+#edit_siteId,#delete_siteId,#delete_siteName{
+    line-height: 38px;
+}
+
+#upload_tip{
+    float:right;
+}
+.imageContent{
+    width:200px;
+    height:200px;
+    margin-left:100px;
+    overflow: hidden;
+    border:1px solid #a3a2a2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imagePreview{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.red{
+    color:red;
+}
+.label_tip{
+    float:right;
+    font-size: 10px;
+    width: calc(50% - 200px);
+    color: #a3a2a2;
+    padding-top: 2px;
+    text-align: left;
+}
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}

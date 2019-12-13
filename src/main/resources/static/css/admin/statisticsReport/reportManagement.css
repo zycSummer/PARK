@@ -1,0 +1,407 @@
+#report_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#report_content .layui-btn{
+    margin-left:0;
+    margin-top:5px;
+}
+
+#report_left{
+    margin:0 10px 0 10px;
+    width:200px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftSearch{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5px;
+}
+
+#report_content .left_query{
+    margin-left:5px;
+}
+
+.report_tree{
+    height:1px;
+    flex-grow: 1;
+    width:100%;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+
+.report_tree .ztree{
+    overflow: auto;
+}
+
+.report_tree .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.report_tree .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.report_tree .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+#report_content .left_btn{
+    margin-top:5px;
+}
+
+#report_right{
+    margin:0 10px 10px 0;
+    width:1px;
+    flex-grow: 1;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#report_nav{
+    margin-bottom: 5px;
+    border-bottom:1px solid #a3a2a2;
+}
+
+#report_nav .nav-item{
+    display:inline-block;
+    height:28px;
+    line-height: 28px;
+    color: #666;
+    margin:0;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#report_nav .nav-this{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.param_title{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5px;
+}
+
+.param_name{
+    margin-left:10px;
+    width:1px;
+    flex-grow: 1;
+}
+
+#paramId{
+    width:320px;
+}
+
+.param_table,.obj_table{
+    position: relative;
+    width:100%;
+    heigth:1px;
+    flex-grow: 1;
+}
+
+.obj_title{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+#param_table,#object_table{
+    /*width:100%;*/
+    /*height:100%;*/
+}
+/*新增修改报表 弹框*/
+#report_add .layui-form{
+    padding-top:10px;
+}
+#edit_report_id{
+    line-height: 38px;
+}
+
+/*删除报表 弹框*/
+#report_delete .layui-inline div{
+    line-height: 38px;
+}
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}
+/*导入报表配置 弹框*/
+#report_import .layui-inline div{
+    line-height: 38px;
+}
+#download_demo{
+    text-decoration: underline;
+}
+/*新增修改展示参数 弹框*/
+#param_add_report_id,#param_edit_parameter{
+    line-height: 38px;
+}
+/*删除展示参数 弹框*/
+#param_delete_reportId,#param_delete_paramId,#param_delete_name{
+    line-height: 38px;
+}
+
+/*新增修改展示对象 弹框*/
+#obj_add{
+    height:100%;
+}
+#obj_add>.formContent{
+    height:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+#obj_parentNode{
+    width:182px;
+}
+.dataSource,.tableSelect{
+    height:100%;
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dataSource{
+    margin:0 10px 0 10px;
+}
+.ds_list{
+    margin:10px 0;
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    border:1px solid #a3a2a2;
+}
+/*数据源*/
+.ds_title{
+    margin-top:10px;
+}
+.ds_title,.ds_formula_btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.ds_formula_btn{
+    margin-bottom:10px;
+}
+.formula_content{
+    /*height:100px;*/
+}
+.infoTap{
+    color: #a3a2a2;
+    font-size: 12px;
+}
+#removeSelected,#clearSelected,#checkFormula,#addAllMeter,#clearFormula{
+    text-decoration: underline;
+}
+/*仪表选择*/
+#tableSelect_content{
+    height:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    border:1px solid #a3a2a2;
+}
+#parkSiteTableContent,#meterTableContent{
+    height:1px;
+    flex-grow: 1;
+}
+#obj_nav{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.obj_nav-item{
+    width:1px;
+    flex-grow: 1;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom:1px solid #a3a2a2;
+}
+.obj_nav-this{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+#tableSelect_content .layui-form{
+    margin:10px;
+}
+.tableSelect{
+    margin:0 10px 0 0;
+    padding-left:10px;
+    border-left: 1px solid #bbb;
+}
+#tableSelect_title{
+    margin-top:10px;
+}
+
+#parkSiteTableContent>.searchForm,#meterTableContent>.searchForm{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#obj_parkSiteName,#obj_meterName{
+    margin-right:10px;
+}
+#parkSiteTableContent,#meterTableContent{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.parkSite{
+    width:100%;
+    height:470px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+.meter{
+    width:100%;
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+
+.meter_btnGroup{
+    position: relative;
+}
+#addSelectedBefore,#addSelectedAfter{
+    text-decoration: underline;
+}
+#addSelectedAfter{
+    margin-left:10px;
+}
+#allSelect{
+    position: absolute;
+    right: 90px;
+    text-decoration: underline;
+}
+#allUnSelect{
+    position: absolute;
+    right: 50px;
+    text-decoration: underline;
+}
+#cancel{
+    position: absolute;
+    right: 10px;
+    text-decoration: underline;
+}
+
+#obj_report_id,#edit_obj_nodeId{
+    line-height: 38px;
+}
+#parkSiteTbody tr.layui-this{
+    background-color: #f2f2f2;
+}
+/*删除展示对象 弹框*/
+#obj_delete_report,#obj_delete_object{
+    line-height: 38px;
+}
+
+/*导入展示对象 弹框*/
+#obj_import .layui-form-label{
+    width:120px;
+}
+#obj_import_report{
+    line-height: 38px;
+}
+#obj_download_demo{
+    text-decoration: underline;
+}
+
+.red{
+    color:red;
+}
+.label_tip{
+    float:right;
+    font-size: 10px;
+    width: calc(50% - 200px);
+    color: #a3a2a2;
+    padding-top: 2px;
+    text-align: left;
+}

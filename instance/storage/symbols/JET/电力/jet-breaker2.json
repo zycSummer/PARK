@@ -1,0 +1,196 @@
+{
+  "dataBindings": [
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    if (valueObj.value == null) { //未知状态，灰色\r\n        data.a('color', '#777777');\r\n    }\r\n    else if (valueObj.value == data.a('openstatus')) { //打开，红色\r\n        data.a('color', '#ff0000');\r\n        data.a('open', false);\r\n    }\r\n    else { //关闭，红色\r\n        data.a('color', '#00ff00');\r\n        data.a('open', true);\r\n    }\r\n\r\n}"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(255,0,0)"
+    },
+    {
+      "attr": "openstatus",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "open",
+      "valueType": "Boolean",
+      "defaultValue": false
+    }
+  ],
+  "width": 48,
+  "height": 58,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "points": [
+        19.99627,
+        5.94429,
+        24,
+        1.05571,
+        28.00374,
+        5.94429
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn !data.a('open');\n}",
+        "value": true
+      },
+      "points": [
+        19.99627,
+        10.88858,
+        24,
+        6,
+        28.00374,
+        10.88858
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn !data.a('open');\n}",
+        "value": true
+      },
+      "points": [
+        24,
+        6.76893,
+        24,
+        51.23107
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(255,0,0)"
+      },
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn !data.a('open');\n}",
+        "value": true
+      },
+      "rect": [
+        19.94595,
+        13.07042,
+        8.10811,
+        31.85917
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn !data.a('open');\n}",
+        "value": true
+      },
+      "rotation": -3.14159,
+      "points": [
+        19.99627,
+        51.88858,
+        24,
+        47,
+        28.00374,
+        51.88858
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "rotation": -3.14159,
+      "points": [
+        19.99627,
+        56.88858,
+        24,
+        52,
+        28.00374,
+        56.88858
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn data.a('open');\n}",
+        "value": true
+      },
+      "points": [
+        9.05032,
+        10.88858,
+        13.05405,
+        6,
+        17.05779,
+        10.88858
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn data.a('open');\n}",
+        "value": true
+      },
+      "points": [
+        13.05405,
+        6.76893,
+        13.05406,
+        51.23107
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(255,0,0)"
+      },
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn data.a('open');\n}",
+        "value": true
+      },
+      "rect": [
+        9,
+        13.07042,
+        8.10811,
+        31.85917
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(255,0,0)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nreturn data.a('open');\n}",
+        "value": true
+      },
+      "rotation": -3.14159,
+      "points": [
+        9.05032,
+        51.88858,
+        13.05405,
+        47,
+        17.05779,
+        51.88858
+      ]
+    }
+  ]
+}

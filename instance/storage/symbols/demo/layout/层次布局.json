@@ -1,0 +1,104 @@
+
+{
+  "width": 16,
+  "height": 16,
+  "comps": [
+    {
+      "type": "rect",
+      "background": "rgb(125,125,125)",
+      "borderColor": "#979797",
+      "shadowColor": "#1ABC9C",
+      "rect": [
+        4,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(125,125,125)",
+      "borderColor": "#979797",
+      "shadowColor": "#1ABC9C",
+      "rect": [
+        0,
+        13,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(125,125,125)",
+      "borderColor": "#979797",
+      "shadowColor": "#1ABC9C",
+      "rect": [
+        14,
+        13,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(125,125,125)",
+      "borderColor": "#979797",
+      "shadowColor": "#1ABC9C",
+      "rect": [
+        7,
+        13,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(125,125,125)",
+      "borderColor": "#979797",
+      "shadowColor": "#1ABC9C",
+      "rect": [
+        10,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 1,
+      "borderColor": "rgb(125,125,125)",
+      "shadowColor": "#1ABC9C",
+      "points": [
+        8,
+        13.9822,
+        5,
+        2,
+        15,
+        14,
+        5,
+        2,
+        0.95542,
+        13.9822,
+        11,
+        2.45008,
+        15,
+        14,
+        11,
+        2,
+        8,
+        14
+      ],
+      "segments": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2
+      ]
+    }
+  ]
+}

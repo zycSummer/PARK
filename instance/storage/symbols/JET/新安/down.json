@@ -1,0 +1,134 @@
+{
+  "dataBindings": [
+    {
+      "attr": "color",
+      "valueType": "Color"
+    },
+    {
+      "attr": "up",
+      "valueType": "Number",
+      "defaultValue": 1
+    },
+    {
+      "attr": "down",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n\r\n    if(parseInt(valueObj) > 50){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n        data.a('color','#ff7d7d');\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n        data.a('color','#7cc27c');\r\n    }\r\n}"
+    }
+  ],
+  "width": 24,
+  "height": 35,
+  "comps": [
+    {
+      "type": "shape",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(48,242,120)"
+      },
+      "pixelPerfect": true,
+      "rotation": 1.71756,
+      "points": [
+        23.83514,
+        14.46316,
+        23.83514,
+        14.46316,
+        21.27246,
+        12.20483,
+        18.07764,
+        11.08264,
+        14.89636,
+        11.08264,
+        11.37519,
+        11.08264,
+        7.85409,
+        12.45426,
+        5.17581,
+        15.18358,
+        2.5112,
+        17.91289,
+        1.15844,
+        21.4943,
+        1.15844,
+        25.08264,
+        3.23173,
+        25.08264,
+        3.23173,
+        22.04157,
+        4.37374,
+        18.99354,
+        6.6509,
+        16.67988,
+        8.92813,
+        14.35921,
+        11.9054,
+        13.20242,
+        14.89636,
+        13.20242,
+        17.54743,
+        13.20242,
+        20.21204,
+        14.11678,
+        22.3601,
+        15.96633,
+        23.83514,
+        14.46316,
+        23.83514,
+        14.46316,
+        23.83514,
+        14.46316
+      ],
+      "segments": [
+        1,
+        2,
+        4,
+        4,
+        4,
+        2,
+        4,
+        4,
+        4,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "type": "image",
+      "name": "symbols/JET/新安/箭头2.json",
+      "pixelPerfect": true,
+      "clipPercentage": {
+        "func": "attr@down",
+        "value": 0
+      },
+      "displayName": "箭头2",
+      "rotation": 5.88176,
+      "rect": [
+        8.32408,
+        24.09564,
+        10,
+        10
+      ]
+    },
+    {
+      "type": "image",
+      "name": "symbols/JET/新安/箭头2.json",
+      "pixelPerfect": true,
+      "clipPercentage": {
+        "func": "attr@up",
+        "value": 1
+      },
+      "displayName": "箭头2",
+      "rotation": 0.47599,
+      "rect": [
+        2.01269,
+        1.93539,
+        10,
+        10.01774
+      ]
+    }
+  ]
+}

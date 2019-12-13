@@ -1,0 +1,105 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "String"
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    {
+      "attr": "align",
+      "valueType": "Align",
+      "defaultValue": "right"
+    },
+    {
+      "attr": "vAlign",
+      "valueType": "VAlign",
+      "defaultValue": "middle"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+    },
+    {
+      "attr": "enum",
+      "valueType": "ObjectArray"
+    },
+    {
+      "attr": "font",
+      "valueType": "Font",
+      "defaultValue": "12px Arial"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "valueType",
+      "valueType": "searchType",
+      "description": "0:最新值，1：当日差值，2：当月差值，3：当年差值，4：当日之和，5：当月之和，6：当年之和,"
+    }
+  ],
+  "onUp": "__ht__function(event, data, view, point, width, height) {\nvar opname = data.a('opname');\r\n//console.log(opname);\r\nif (opname != null && opname != '') {\r\n    openHistory(opname);\r\n}\n}",
+  "onEnter": "__ht__function(event, data, view, point, width, height) {\n$(\"body\").css('cursor','pointer');\r\n//$(\"body\").css('cursor','default');\n}",
+  "onLeave": "__ht__function(event, data, view, point, width, height) {\n// $(\"body\").css('cursor','pointer');\r\n$(\"body\").css('cursor','default');\n}",
+  "width": 80,
+  "height": 20,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "displayName": "矩形",
+      "rect": [
+        0,
+        0,
+        80,
+        20
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "?"
+      },
+      "align": {
+        "func": "attr@align",
+        "value": "right"
+      },
+      "vAlign": {
+        "func": "attr@vAlign",
+        "value": "middle"
+      },
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(61,61,61)"
+      },
+      "font": {
+        "func": "attr@font",
+        "value": "12px arial, sans-serif"
+      },
+      "rect": [
+        0,
+        0,
+        80,
+        20
+      ]
+    }
+  ]
+}

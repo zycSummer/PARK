@@ -1,0 +1,361 @@
+{
+  "background": "rgb(0,23,71)",
+  "dataBindings": [
+    {
+      "attr": "title",
+      "valueType": "String",
+      "defaultValue": "标题"
+    },
+    {
+      "attr": "fontcolor",
+      "valueType": "Color",
+      "defaultValue": "rgb(247,247,247)"
+    },
+    {
+      "attr": "font",
+      "valueType": "Font",
+      "defaultValue": "12px Arial"
+    },
+    {
+      "attr": "align",
+      "valueType": "Align",
+      "defaultValue": "left"
+    },
+    {
+      "attr": "valign",
+      "valueType": "VAlign",
+      "defaultValue": "middle"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(245,27,27)"
+    }
+  ],
+  "width": 1161,
+  "height": 930,
+  "fitSize": true,
+  "comps": [
+    {
+      "type": "shape",
+      "background": "rgba(5,12,43,0.6)",
+      "borderWidth": 2,
+      "borderColor": "rgb(0,30,89)",
+      "borderCap": "round",
+      "borderJoin": "bevel",
+      "displayName": "不规则图形",
+      "points": [
+        50.06593,
+        9.00975,
+        1151.98377,
+        9.00975,
+        1151.98377,
+        921.39018,
+        9.9962,
+        921.39018,
+        9.9962,
+        46.51872,
+        50.06593,
+        9.00975
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        7.99271,
+        7.0076,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        16.00666,
+        7.0076,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        7.99271,
+        15.01618,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        16.00666,
+        15.01618,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        24.02061,
+        7.0076,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        7.99271,
+        23.02475,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        7.99271,
+        31.03333,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        16.00666,
+        23.02475,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        24.02061,
+        15.01618,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(222,11,43)"
+      },
+      "borderColor": "#979797",
+      "rect": [
+        32.03456,
+        7.0076,
+        4.00697,
+        4.00429
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgb(0,30,89)",
+      "borderColor": "#979797",
+      "points": [
+        9.49532,
+        321.84476,
+        0.00001,
+        353.04484,
+        0.00001,
+        477.84515,
+        9.49532,
+        509.04524
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgb(0,30,89)",
+      "borderColor": "#979797",
+      "rotation": 3.14159,
+      "points": [
+        1160.99973,
+        0.00009,
+        1151.98404,
+        31.20018,
+        1151.98404,
+        203.21772,
+        1160.99973,
+        203.21772
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@title",
+        "value": "标题"
+      },
+      "align": {
+        "func": "attr@align",
+        "value": "left"
+      },
+      "vAlign": {
+        "func": "attr@valign",
+        "value": "middle"
+      },
+      "color": {
+        "func": "attr@fontcolor",
+        "value": "#ffffff"
+      },
+      "font": {
+        "func": "attr@font",
+        "value": "27px sans-serif"
+      },
+      "rect": [
+        38.56657,
+        27.03333,
+        1093.08705,
+        40.98655
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgb(0,30,89)",
+      "borderColor": "#979797",
+      "points": [
+        10.59894,
+        735.61575,
+        0.60275,
+        755.81982,
+        0.60275,
+        918.82268,
+        10.59894,
+        927.02253,
+        144.17777,
+        927.02253,
+        165.50154,
+        912.63484,
+        10.59894,
+        912.63484
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgba(0,30,89,0.6)",
+      "borderColor": "#979797",
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "points": [
+        179.66829,
+        911.18483,
+        192.71213,
+        911.18483,
+        163.7258,
+        931.59553,
+        150.68195,
+        931.59553,
+        179.66829,
+        911.18483
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgba(0,30,89,0.6)",
+      "borderColor": "#979797",
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "points": [
+        155.46664,
+        911.18483,
+        168.51048,
+        911.18483,
+        139.52415,
+        931.59553,
+        126.4803,
+        931.59553,
+        155.46664,
+        911.18483
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgba(0,30,89,0.6)",
+      "borderColor": "#979797",
+      "scaleX": 0.8,
+      "scaleY": 0.8,
+      "points": [
+        203.86994,
+        911.18483,
+        216.91378,
+        911.18483,
+        187.92746,
+        931.59553,
+        174.88361,
+        931.59553,
+        203.86994,
+        911.18483
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": "rgb(0,30,89)",
+      "borderWidthAbsolute": true,
+      "points": [
+        9.8243,
+        81.86256,
+        1151.32294,
+        81.86256,
+        1149.42676,
+        81.86256,
+        1149.42676,
+        81.86256
+      ],
+      "segments": [
+        1,
+        4
+      ]
+    }
+  ]
+}

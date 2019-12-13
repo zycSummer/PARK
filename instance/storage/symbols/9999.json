@@ -1,0 +1,55 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "String"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color"
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "valueType",
+      "valueType": "searchType",
+      "defaultValue": 0
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n    data.a('value', valueObj);\r\n}"
+    }
+  ],
+  "width": 100,
+  "height": 100,
+  "fitSize": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "12"
+      },
+      "color": {
+        "func": "__ht__function(data, view) {\nif(30>data.a('value') && data.a('value')>10){\r\n    return '#0f0'\r\n}else if(data.a('value')>30){\r\n    return '#00f'\r\n}else{\r\n    return '#f00'\r\n}\n}",
+        "value": "rgb(199,30,30)"
+      },
+      "font": "42px Arial",
+      "displayName": {
+        "func": "attr@opname",
+        "value": "opname"
+      },
+      "rect": [
+        21.42809,
+        30.4086,
+        59.91398,
+        29.50538
+      ],
+      "onEnter": "__ht__function(event, data, view, point, width, height) {\ndata.a('value','hover');\r\ndata.a('color','#0f0')\n}"
+    }
+  ]
+}

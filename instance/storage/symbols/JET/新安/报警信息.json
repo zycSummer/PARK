@@ -1,0 +1,51 @@
+{
+  "width": 30,
+  "height": 26,
+  "comps": [
+    {
+      "type": "triangle",
+      "background": "rgb(240,225,19)",
+      "borderCap": "round",
+      "gradient": "linear.south",
+      "rect": [
+        1.5,
+        1,
+        27,
+        24
+      ]
+    },
+    {
+      "type": "shape",
+      "background": "rgb(82,82,82)",
+      "borderWidth": 1,
+      "borderColor": "rgb(247,247,247)",
+      "closePath": true,
+      "points": [
+        13.19175,
+        8,
+        16.80825,
+        8,
+        15.87133,
+        16.30961,
+        14.12867,
+        16.30961,
+        13.21049,
+        8.01806
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(82,82,82)",
+      "borderWidth": 1,
+      "borderColor": "rgb(247,247,247)",
+      "gradient": "radial.east",
+      "fillClipDirection": "bottom",
+      "rect": [
+        12.5,
+        17.5,
+        5,
+        5
+      ]
+    }
+  ]
+}

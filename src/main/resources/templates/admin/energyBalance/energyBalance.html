@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>能源平衡</title>
+    <link rel="stylesheet" th:href="@{/public/lib/layui/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{/public/css/public.css}" media="all">
+    <link rel="stylesheet" th:href="@{/public/lib/font-awesome-4.7.0/css/font-awesome.css}" media="all" />
+    <link rel="stylesheet" th:href="@{/public/css/admin/energyBalance/energyBalance.css}" media="all" />
+</head>
+<body class="childrenBody">
+<div class="container">
+    <blockquote class="layui-elem-quote  tabBreacrumb">
+		<span class="layui-breadcrumb" lay-separator=">">
+			<a class="park_select">园区</a>
+			<a><cite>能源平衡</cite></a>
+        </span>
+    </blockquote>
+    <div class="balance_select">
+        <div class="item">
+            <div class="energySelect">
+                <span class="title">能源种类:</span>
+                <span class="layui-breadcrumb energyType" lay-separator="|"></span><br>
+            </div>
+            <div class="timeSelect">
+                <span class="title">时间选择:</span>
+                <span class="layui-breadcrumb timeType" lay-separator="|">
+                    <a href="javascript:void(0)" data-id="years" class="breadcrumb">年</a>
+                    <a href="javascript:void(0)" data-id="months" class="breadcrumb">月</a>
+                    <a href="javascript:void(0)" data-id="days" class="breadcrumb layui-this">日</a>
+                </span>
+                <div class="layui-inline" id="timeDiv">
+                    <input type="text" class="layui-input" id="timeInput" value="">
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div>
+                <span class="title">对象类别:</span>
+                <span class="layui-breadcrumb objectType" lay-separator="|"></span><br>
+            </div>
+            <button class="layui-btn layui-btn-sm search" th:if="${MENU0300Query.visible}">查询</button>
+        </div>
+    </div>
+    <ul class="colorList">
+        <li><span>0%</span></li>
+        <li><span>20%</span></li>
+        <li><span>40%</span></li>
+        <li><span>60%</span></li>
+        <li><span>80%</span></li>
+        <li><span>100%</span></li>
+    </ul>
+    <div id="balance_content">
+        <div id="chart1"></div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/public/lib/layui/layui.js}"></script>
+<script type="text/javascript" th:src="@{/public/lib/moment/moment.min.js}"></script>
+
+<!-- ht core -->
+<script src='libs/ht.js'></script>
+<script src="libs/ht-cssanimation.js"></script> <!--依赖cssanimation插件-->
+<script src="libs/ht-form.js"></script> <!--依赖form插件-->
+<script src="libs/ht-autolayout.js"></script>
+<script src="libs/ht-dialog.js"></script>
+<script src="libs/ht-edgetype.js"></script>
+
+<script src="libs/ht-animation.js"></script>
+<script src="libs/ht-obj.js"></script>
+<script src="libs/ht-flow.js"></script>
+<script src="libs/ht-dashflow.js"></script>
+<script src="libs/ht-htmlnode.js"></script>
+<script src="libs/ht-overview.js"></script>
+
+<script type="text/javascript" th:src="@{/public/js/admin/public.js}"></script>
+<script type="text/javascript" th:src="@{/public/js/admin/energyBalance/energyBalance.js}"></script>
+</body>
+</html>

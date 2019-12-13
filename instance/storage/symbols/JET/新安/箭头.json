@@ -1,0 +1,21 @@
+{
+  "width": 10,
+  "height": 10,
+  "comps": [
+    {
+      "type": "triangle",
+      "background": "#32D3EB",
+      "borderWidth": 1,
+      "borderColor": "#38373B",
+      "gradient": "linear.southwest",
+      "borderWidthAbsolute": true,
+      "rotation": 1.5708,
+      "rect": [
+        1,
+        1,
+        8,
+        8
+      ]
+    }
+  ]
+}

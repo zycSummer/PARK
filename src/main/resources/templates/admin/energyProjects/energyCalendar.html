@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+<link rel='stylesheet' th:href="@{/public/css/admin/energyProjects/energyCalendar.css}" media="all" />
+<div class="container">
+    <blockquote class="layui-elem-quote  tabBreacrumb">
+      <span class="layui-breadcrumb" lay-separator=">">
+        <a class="park_select"></a>
+        <a>项目能耗</a>
+        <a><cite>能耗日历</cite></a>
+      </span>
+
+    </blockquote>
+    <div class="chart_main">
+      <div class="title_div">
+        <h3 class="chart_head" id="chart_head_title"></h3>
+
+
+      </div>
+      <div class="date_div layui-row">
+        <div class="layui-col-md4">
+          <h3 class="chart_head  datePrv">上一年</h3>
+        </div>
+        <div class="layui-col-md4">
+          <h3 class="chart_head  head_date"></h3>
+        </div>
+        <div class="layui-col-md4">
+          <h3 class="chart_head  dateNext">下一年</h3>
+        </div>
+      </div>
+      <div class="chart_table">
+        <table class="layui-table" id="chart_tab">
+          <thead>
+            <tr>
+              <th style="width: 300px;">季度</th>
+              <th colspan="3">月份</th>
+            </tr>
+          </thead>
+          <tbody id="tab_tbody">
+           
+
+          </tbody>
+        </table>
+      </div>
+      <div class="chart_standard">
+      
+      </div>
+      <div class="chart_standard_title">
+     能耗强度(tce/万元)   
+        </div>
+    </div>
+  </div>
+<script type="text/javascript" th:src="@{/public/js/admin/energyProjects/energyCalendar.js}"></script>
+</div>
+</html>

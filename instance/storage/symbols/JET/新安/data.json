@@ -1,0 +1,151 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value1",
+      "valueType": "String"
+    },
+    {
+      "attr": "value2",
+      "valueType": "String"
+    },
+    {
+      "attr": "value3",
+      "valueType": "String"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    {
+      "attr": "borderColor",
+      "valueType": "Color"
+    },
+    {
+      "attr": "area",
+      "valueType": "NumberArray",
+      "defaultValue": [
+        0,
+        0,
+        100,
+        40
+      ]
+    },
+    {
+      "attr": "borderWidth",
+      "valueType": "Number",
+      "defaultValue": 1
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(156,240,87)"
+    },
+    {
+      "attr": "textAlign",
+      "valueType": "String",
+      "defaultValue": "right"
+    },
+    {
+      "attr": "query",
+      "valueType": "String"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n    // console.log(data);\n    // console.log(valueObj);\n\n    data.a('value1',valueObj.one);\n    data.a('value2',valueObj.two);\n    data.a('value3',valueObj.three);\n}"
+    },
+    {
+      "attr": "font",
+      "valueType": "String",
+      "defaultValue": "12px arial, sans-serif"
+    }
+  ],
+  "onUp": "__ht__function(event, data, view, point, width, height) {\nopenHistory(event,data,view)\n}",
+  "width": 100,
+  "height": 40,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "borderWidth": {
+        "func": "attr@borderWidth",
+        "value": 1
+      },
+      "borderColor": {
+        "func": "attr@borderColor",
+        "value": "rgb(48,242,120)"
+      },
+      "rect": {
+        "func": "attr@area",
+        "value": [
+          0,
+          0,
+          100,
+          40
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value1",
+        "value": ""
+      },
+      "align": "right",
+      "color": "rgb(255,0,0)",
+      "rect": [
+        5.45454,
+        0.35672,
+        89.09091,
+        15
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value2",
+        "value": ""
+      },
+      "align": "right",
+      "color": "#FEB64D",
+      "rect": [
+        5.45454,
+        12.5,
+        89.09091,
+        15
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value3",
+        "value": ""
+      },
+      "align": {
+        "func": "attr@textAlign",
+        "value": "right"
+      },
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(156,240,187)"
+      },
+      "font": {
+        "func": "attr@font",
+        "value": "12px arial, sans-serif"
+      },
+      "rect": [
+        5.45454,
+        25,
+        89.09091,
+        15
+      ]
+    }
+  ]
+}

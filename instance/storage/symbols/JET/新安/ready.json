@@ -1,0 +1,60 @@
+{
+  "dataBindings": [
+    {
+      "attr": "color",
+      "valueType": "Color"
+    },
+    {
+      "attr": "text",
+      "valueType": "String",
+      "defaultValue": "1"
+    }
+  ],
+  "width": 50,
+  "height": 50,
+  "comps": [
+    {
+      "type": "oval",
+      "background": "rgb(0,0,0)",
+      "borderWidth": 1,
+      "borderColor": "rgb(255,255,77)",
+      "rect": [
+        1,
+        1,
+        48,
+        48
+      ]
+    },
+    {
+      "type": "triangle",
+      "background": {
+        "func": "attr@color",
+        "value": "rgb(242,83,75)"
+      },
+      "borderWidth": 1,
+      "borderColor": "rgb(255,255,255)",
+      "rotation": 1.5708,
+      "rect": [
+        11.01875,
+        6.5,
+        37,
+        37
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@text",
+        "value": "1"
+      },
+      "align": "center",
+      "font": "18px Arial",
+      "rect": [
+        12.07296,
+        15.53596,
+        22.21214,
+        18.92807
+      ]
+    }
+  ]
+}

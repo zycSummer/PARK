@@ -1,0 +1,122 @@
+{
+  "dataBindings": [
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "value",
+      "valueType": "Number"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    data.a('value', valueObj.value);\r\n}"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color",
+      "defaultValue": "rgb(0,0,0)"
+    },
+    {
+      "attr": "align",
+      "valueType": "Align",
+      "defaultValue": "right"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(0,250,0)"
+    },
+    {
+      "attr": "gap",
+      "valueType": "Number",
+      "defaultValue": 2
+    },
+    {
+      "attr": "iconWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 11
+    },
+    {
+      "attr": "iconHeight",
+      "valueType": "PositiveNumber",
+      "defaultValue": "18"
+    },
+    {
+      "attr": "digitCount",
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    {
+      "attr": "fixed",
+      "valueType": "Number",
+      "defaultValue": 2
+    },
+    {
+      "attr": "opname",
+      "valueType": "String"
+    }
+  ],
+  "width": 200,
+  "height": 20,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "rect": [
+        0,
+        0,
+        200,
+        20
+      ]
+    },
+    {
+      "type": "components/textBox/numberPane.json",
+      "displayName": "numberPane",
+      "rect": [
+        0,
+        0,
+        200,
+        20
+      ],
+      "value": {
+        "func": "attr@value",
+        "value": "0"
+      },
+      "textAlign": {
+        "func": "attr@align",
+        "value": "right"
+      },
+      "gap": {
+        "func": "attr@gap",
+        "value": 2
+      },
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(0,255,0)"
+      },
+      "iconWidth": {
+        "func": "attr@iconWidth",
+        "value": 11
+      },
+      "iconHeight": {
+        "func": "attr@iconHeight",
+        "value": "18"
+      },
+      "digitCount": {
+        "func": "attr@digitCount",
+        "value": 0
+      },
+      "fixed": {
+        "func": "attr@fixed",
+        "value": 2
+      }
+    }
+  ]
+}

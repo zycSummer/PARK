@@ -1,0 +1,183 @@
+/*
+ * @Author: xzl 
+ * @Date: 2019-10-22 16:06:23 
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-06 14:41:49
+ */
+ #map_content{
+     width: calc(100% - 10px);
+     height: calc(100% - 10px);
+     margin: -10px 0 0 0;
+     z-index: 100;position: relative;
+
+ }
+ .company_list{
+    width: 350px;
+    height:100%;
+    background-color:#08121f;
+    position: absolute;
+    top:47px;
+    right: 0px;
+    overflow:auto;
+    border-left:rgba(9, 73, 71, 0.5) 1px solid ;
+ 
+ }
+ .company_list p{
+     color: #f2f2f2;
+     cursor: pointer;
+     padding:10px 0 5px 10px;
+     width: 100%;
+ }
+ .company-this{
+ color: #359159 !important;
+ font-weight: 700;
+ }
+ /* 弹框样式 */
+ .mapShow{
+    width: 530px;
+    height: 330px;
+    margin-top:5px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    border:rgba(0, 255, 0, 0.8) 1px solid;
+    display: flex;
+  
+ }
+ .mapShow .mapShowTitle{
+     width: 530px;
+     text-align: center;
+     font-weight: 700;
+    height: 60px;
+    padding-top:30px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #000;
+ 
+    background-image: linear-gradient(to right,#000, rgb(88, 213,118) );
+ }
+ 
+ .mapShowContent{
+
+     width: 530px;
+     height: 270px;
+     display: flex;
+     display: -webkit-flex;
+     flex-direction: row;
+     color: #ffffff;
+
+     background: rgba(0, 0, 0, 0.8);
+    
+ }
+ .mapShowConent_left,.mapShowConent_right{
+    margin-top:15px;
+ }
+ .mapShowConent_left div{
+     padding-bottom: 15px;
+     width: 100%;
+ }
+
+ .titleIcon {
+     display: inline-block;
+     width: 7px;
+     height: 7px;
+     background-color: #da2f69;
+     margin: 0 3px 0 20px;
+   
+ }
+ .mapShowConent_left div >p:nth-child(2){
+    width: 130px;
+    text-align: right;
+    display: inline-block;
+}
+.mapShowConent_left div > p:nth-child(3){
+    width: 90px;
+    text-align: center;
+  display: inline-block;
+  
+}
+.mapShowConent_left div > p:nth-child(4){
+  width: 60px;
+  display: inline-block;
+  text-align: right;
+  
+}
+ .mapShowConent_left{
+     width: 320px;
+     height:180px;
+     margin-right: 10px;
+ }
+ .mapShowConent_right{
+     width: 180px;
+     height: 180px;
+     margin-right: 20px;
+     border: 1px solid #bebcbc;
+ }
+ .mapShowConent_right img{
+    width: 180px;
+    height: 180px;
+ }
+ 
+
+.company_list::-webkit-scrollbar  {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.company_list::-webkit-scrollbar-track   {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.company_list::-webkit-scrollbar-thumb  {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+.company_list .layui-colla-icon {
+    position: absolute;
+    left: calc(100% - 20px) !important;
+    top: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    
+}
+.company_list .layui-colla-title{
+    height: 60px;
+    color: #01ff44;
+    background-color:#08121f;
+    padding: 15px 15px 0 35px;
+    font-size: 15px;
+    font-weight: 700;
+}
+.company_list .layui-colla-item{
+    border-bottom:rgba(9, 73, 71, 0.5) 1px solid ;
+    border-top:none;
+    border-right:none;
+}
+
+.company_list .layui-colla-content {
+    border:none;
+    background: rgba(1,30,61,0.5);
+    height: 70px;
+    color: #77D3EC;
+    font-family: 宋体;
+}
+
+.layui-collapse {
+     border-width: 0 !important; 
+     border-style: none; 
+     border-radius: none; 
+}
+
+/*全屏*/
+.fullScreen{
+    position:absolute;
+    top:50px;
+    right:355px;
+    z-index: 3;
+    background: rgba(1,30,61,0.5)!important;
+}

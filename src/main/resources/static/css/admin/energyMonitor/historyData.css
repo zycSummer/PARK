@@ -1,0 +1,168 @@
+#history_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+/*nav*/
+.history_nav {
+    width: 28px;
+    font-size: 16px;
+    word-wrap: break-word;
+    letter-spacing: 20px;
+}
+.h_item{
+    cursor:pointer;
+    padding:8px 4px;
+    border:1px solid #f3f3f3;
+}
+.h_item a{color:#000;}
+.h_active{
+    background-color: #359159;
+}
+.h_active a{color:#fff;}
+
+/*tree*/
+.history_tree{
+    width:200px;
+    height:100%;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+
+.history_tree .ztree{
+    overflow: auto;
+}
+
+.history_tree .layui-colla-content{
+    padding:0 5px 0 0;
+}
+
+.history_tree .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.history_tree .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.history_tree .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+.history_chart{
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*查询条件*/
+.history_select{
+    padding:0 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content:space-between;
+}
+.history_select>div{
+    margin-bottom:5px;
+}
+
+.history_select .title{
+    display:inline-block;
+    width:70px;
+    margin-right:5px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.layui-breadcrumb .layui-this{
+    color:#6fbf86!important;
+    font-weight: bold;
+}
+
+/*时间*/
+.timeSelect{
+    flex-basis:320px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+.timeType{
+    margin-left:5px;
+}
+#timeInput{
+    display:inline-block;
+    width:130px;
+    margin-left:10px;
+}
+
+.timeOption{
+    flex-basis:260px;
+    flex-grow: 1;
+}
+.dataType{
+    flex-basis:380px;
+    flex-grow: 1;
+}
+/*参数*/
+.parameter{
+    flex-basis:410px;
+    flex-grow: 1;
+}
+#params{
+    width:320px;
+}
+/*图形*/
+.chart-content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    overflow:auto;
+}
+.chart-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.chart-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.chart-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+#chart1{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+

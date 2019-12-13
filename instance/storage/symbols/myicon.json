@@ -1,0 +1,45 @@
+{
+  "dataBindings": [
+    {
+      "attr": "alarmColor",
+      "valueType": "Color",
+      "name": "告警颜色"
+    },
+    {
+      "attr": "alarmText",
+      "valueType": "String",
+      "name": "告警内容"
+    }
+  ],
+  "width": 100,
+  "height": 50,
+  "comps": [
+    {
+      "type": "oval",
+      "background": {
+        "func": "attr@alarmColor",
+        "value": "#D8D8D8"
+      },
+      "borderWidth": 1,
+      "borderColor": "#979797",
+      "rect": [
+        6.21359,
+        7.71845,
+        38.25243,
+        34.56311
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "#D8D8D8",
+      "borderWidth": 1,
+      "borderColor": "#979797",
+      "rect": [
+        50,
+        6.94175,
+        39.61165,
+        35.33981
+      ]
+    }
+  ]
+}

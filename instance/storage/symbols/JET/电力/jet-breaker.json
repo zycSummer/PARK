@@ -1,0 +1,131 @@
+{
+  "dataBindings": [
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "angle",
+      "valueType": "Angle",
+      "defaultValue": 0.5235
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    if (valueObj.value == null) { //未知状态，灰色\r\n        data.a('color', '#777777');\r\n    }\r\n    else if (valueObj.value == data.a('openstatus')) { //打开，红色\r\n        data.a('color', '#ff0000');\r\n        data.a('angle', Math.PI / 180 * 30);\r\n    }\r\n    else { //关闭，红色\r\n        data.a('color', '#ff0000');\r\n        data.a('angle', 0);\r\n    }\r\n\r\n}"
+    },
+    {
+      "attr": "color",
+      "valueType": "Color",
+      "defaultValue": "rgb(255,0,0)"
+    },
+    {
+      "attr": "openstatus",
+      "valueType": "Number",
+      "defaultValue": 0
+    }
+  ],
+  "width": 48,
+  "height": 58,
+  "comps": [
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": {
+        "func": "attr@color",
+        "value": "rgb(250,0,0)"
+      },
+      "points": [
+        24,
+        6.93108,
+        24,
+        0
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": {
+        "func": "attr@color",
+        "value": "rgb(250,0,0)"
+      },
+      "points": [
+        24,
+        58,
+        24,
+        51.06892
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": {
+        "func": "attr@color",
+        "value": "rgb(250,0,0)"
+      },
+      "borderCap": "round",
+      "visible": {
+        "func": "attr@enabled",
+        "value": true
+      },
+      "anchorX": 0,
+      "anchorY": 1,
+      "rotation": {
+        "func": "attr@angle",
+        "value": 0.5236
+      },
+      "points": [
+        24,
+        51.23556,
+        24,
+        6.23556
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": {
+        "func": "attr@color",
+        "value": "rgb(250,0,0)"
+      },
+      "border3dColor": null,
+      "borderCap": "round",
+      "visible": {
+        "func": "attr@enabled",
+        "value": true
+      },
+      "anchorX": 0,
+      "anchorY": 1,
+      "rotation": 0.7854,
+      "points": [
+        20.61091,
+        10.29289,
+        20.61091,
+        0.29289
+      ]
+    },
+    {
+      "type": "shape",
+      "borderWidth": 2,
+      "borderColor": {
+        "func": "attr@color",
+        "value": "rgb(250,0,0)"
+      },
+      "border3dColor": null,
+      "borderCap": "round",
+      "visible": {
+        "func": "attr@enabled",
+        "value": true
+      },
+      "anchorX": 0,
+      "anchorY": 1,
+      "rotation": -0.7854,
+      "points": [
+        27.29289,
+        10.29289,
+        27.29289,
+        0.29289
+      ]
+    }
+  ]
+}

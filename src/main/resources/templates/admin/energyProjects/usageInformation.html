@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/energyProjects/usageInformation.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a>项目能耗</a>
+                <a><cite>用量信息</cite></a>
+            </span>
+        </blockquote>
+        <div class="content_main_title"></div>
+        <div class="content_main">
+
+            <div class="content_left">
+                <div class="titleHead_left">
+                        <p class="title_text_p">用量占比</p>
+                        <p class="date_p" id="left_date"></p>
+                    </div>
+                    <div class="titleHead_left_select">
+                        <span class=" chart_title_select layui-breadcrumb" lay-separator="|">
+                            <a class=" date_select layui-this" data-unit='month'>当月</a>
+                            <a class="date_select" data-unit='year'>当年</a>
+                        </span> </div>
+
+               
+                <div class="content_left_chart" id="content_left_chart"></div>
+
+            </div>
+            <div class="content_right">
+                <div class="title_text">
+                    <p class="title_text_p">月度对比</p>
+                    <p  class="date_p"></p>
+                </div>
+                <div class="typeSelect">
+                    <span class=" chart_title_select layui-breadcrumb" lay-separator="|" id="typeBreacrumb">
+                    </span>
+                </div>
+                <div class="content_right_chart" id="content_right_chart"></div>
+                <div class="content_right_title" id="content_right_title">
+                    <div class="content_right_title_text" id="lastYearVal"></div>
+                    <div class="content_right_title_text" id="lastMonthVal"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" th:src="@{/public/js/admin/energyProjects/usageInformation.js}"></script>
+</div>
+
+</html>

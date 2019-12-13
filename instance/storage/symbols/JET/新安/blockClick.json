@@ -1,0 +1,39 @@
+{
+  "dataBindings": [
+    {
+      "attr": "opname",
+      "valueType": "String"
+    },
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "borderWidth",
+      "valueType": "PositiveNumber",
+      "defaultValue": 1
+    }
+  ],
+  "width": 100,
+  "height": 100,
+  "comps": [
+    {
+      "type": "rect",
+      "background": {
+        "func": "attr@background",
+        "value": null
+      },
+      "borderWidth": {
+        "func": "attr@borderWidth",
+        "value": 1
+      },
+      "borderColor": "#979797",
+      "rect": [
+        0,
+        0,
+        100,
+        100
+      ]
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+#tree_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#tree_content .layui-btn{
+    margin-left:0;
+    margin-top:5px;
+}
+
+#tree_left{
+    margin:0 10px 0 10px;
+    width:200px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.leftSearch{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:5px;
+}
+
+#tree_content .left_query{
+    margin-left:5px;
+}
+
+.tree_main{
+    height:1px;
+    flex-grow: 1;
+    width:100%;
+    box-shadow:0 2px 5px 1px #e0e0e0;
+    overflow:hidden;
+}
+
+.tree_main .ztree{
+    overflow: auto;
+}
+
+.tree_main .ztree::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #ddd;
+}
+
+.tree_main .ztree::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    background-color: #F5F5F5;
+}
+
+.tree_main .ztree::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #cacaca;
+}
+
+#tree_content .left_btn{
+    margin-top:5px;
+}
+
+#tree_right{
+    margin:0 10px 10px 0;
+    width:1px;
+    flex-grow: 1;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.treeDetail_table{
+    position: relative;
+    width:100%;
+    height:1px;
+    flex-grow: 1;
+}
+
+.treeDetail_title{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+/*新增修改展示结构树 弹框*/
+#tree_add .layui-form{
+    padding-top:10px;
+}
+#tree_add .layui-form-label{
+    width:140px;
+}
+#edit_treeId,#edit_tree_energyTypeId{
+    line-height: 38px;
+}
+
+/*删除展示结构树 弹框*/
+#tree_delete .layui-form-label{
+    width:120px;
+}
+#delete_treeId,#delete_treeName,#delete_energyTypeId{
+    line-height: 38px;
+}
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}
+
+/*新增修改结构树明细 弹框*/
+#treeDetail_add{
+    height:100%;
+}
+#treeDetail_add .layui-form-label{
+    width:90px;
+}
+#treeDetail_add>.formContent{
+    height:100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+#treeDetail_parentNode{
+    width:182px;
+}
+
+#isNot_std_coal,#is_std_coal{
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+/*非标煤 start*/
+.dataSource,.tableSelect{
+    height:100%;
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dataSource{
+    margin:0 10px 0 10px;
+}
+.ds_list{
+    margin:10px 0;
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    border:1px solid #a3a2a2;
+}
+/*数据源*/
+.ds_title{
+    margin-top:10px;
+}
+.ds_title,.ds_formula_btn{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.ds_formula_btn{
+    margin-bottom:10px;
+}
+.formula_content{
+    /*height:100px;*/
+}
+.infoTap{
+    color: #a3a2a2;
+    font-size: 12px;
+}
+#removeSelected,#clearSelected,#checkFormula,#addAllMeter,#clearFormula{
+    text-decoration: underline;
+}
+/*仪表选择*/
+#tableSelect_content{
+    height:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    border:1px solid #a3a2a2;
+}
+#parkSiteTableContent,#meterTableContent{
+    height:1px;
+    flex-grow: 1;
+}
+#obj_nav{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.obj_nav-item{
+    width:1px;
+    flex-grow: 1;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom:1px solid #a3a2a2;
+}
+.obj_nav-this{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+#tableSelect_content .layui-form{
+    margin:10px;
+}
+.tableSelect{
+    margin:0 10px 0 0;
+    padding-left:10px;
+    border-left: 1px solid #bbb;
+}
+#tableSelect_title{
+    margin-top:10px;
+}
+
+#parkSiteTableContent>.searchForm,#meterTableContent>.searchForm{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#obj_parkSiteName,#obj_meterName{
+    margin-right:10px;
+}
+#parkSiteTableContent,#meterTableContent{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.parkSite{
+    width:100%;
+    height:470px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+.meter{
+    width:100%;
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+
+.meter_btnGroup{
+    position: relative;
+}
+#addSelectedBefore,#addSelectedAfter{
+    text-decoration: underline;
+}
+#addSelectedAfter{
+    margin-left:10px;
+}
+#allSelect{
+    position: absolute;
+    right: 90px;
+    text-decoration: underline;
+}
+#allUnSelect{
+    position: absolute;
+    right: 50px;
+    text-decoration: underline;
+}
+#cancel{
+    position: absolute;
+    right: 10px;
+    text-decoration: underline;
+}
+#parkSiteTbody tr.layui-this{
+    background-color: #f2f2f2;
+}
+/*非标煤 end*/
+/*标煤 start*/
+.std_dataSource,.std_paramSelect,.std_tableSelect{
+    height:100%;
+    width:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.std_dataSource{
+    margin:0 10px;
+}
+.std_tableSelect{
+    margin:0 10px;
+}
+.std_ds_list{
+    height:415px;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+}
+.ds_left_list{
+    width:220px;
+    height:99%;
+    position: relative;
+    overflow: auto;
+    border:1px solid #a3a2a2;
+}
+.ds_right_list{
+    width:20px;
+    flex-grow: 1;
+    height:99%;
+    overflow: auto;
+    border:1px solid #a3a2a2;
+}
+
+.std_meterParam_list{
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+    border:1px solid #a3a2a2;
+}
+.param_formula>.ds_formula_btn{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+.std_param{
+    margin-top:10px;
+}
+.std_param p{
+    margin-bottom: 5px;
+}
+.std_param #std_coal_param,#addOrUpdateDs{
+    width:100%;
+}
+#addOrUpdateDs{
+    margin-top:5px;
+}
+
+#std_tableSelect_title{
+    margin-top:10px;
+}
+#std_tableSelect_content{
+    height:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    border:1px solid #a3a2a2;
+}
+#std_nav{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.std_nav-item{
+    width:1px;
+    flex-grow: 1;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom:1px solid #a3a2a2;
+}
+.std_nav-this{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#std_parkSiteTableContent>.searchForm,#std_meterTableContent>.searchForm,#std_paramTableContent>.searchForm{
+    margin:10px 10px 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#std_parkSiteName,#std_meterName,#std_paramName{
+    margin-right:10px;
+}
+#std_parkSiteTableContent,#std_meterTableContent,#std_paramTableContent{
+    height:1px;
+    flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.parkSite,.meter{
+    width:100%;
+    height:470px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+.param{
+    width:100%;
+    height:415px;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+
+.param_btnGroup{
+    position: relative;
+}
+
+#ds_removeSelected,#ds_clearSelected,#pa_removeSelected,#pa_clearSelected
+,#pa_checkFormula,#pa_addAllMeter,#pa_clearFormula,#std_addSelectedBefore
+, #std_addSelectedAfter{
+    text-decoration: underline;
+}
+#ds_clearSelected{
+    margin-left:10px;
+}
+#std_parkSiteTbody tr.layui-this{
+    background-color: #f2f2f2;
+}
+#std_parkSiteTbody tr.layui-this,#std_meterTbody tr.layui-this{
+    background-color: #f2f2f2;
+}
+/*标煤 end*/
+
+#treeDetail_treeName,#edit_treeDetail_nodeId{
+    line-height: 38px;
+}
+/*删除展示结构树明细节点 弹框*/
+#treeDetail_delete .layui-form-label{
+    width:140px;
+}
+#treeDetail_delete_treeId,#treeDetail_delete_nodeId{
+    line-height: 38px;
+}
+
+/*导入展示结构树明细节点 弹框*/
+#treeDetail_import .layui-form-label{
+    width:140px;
+}
+#treeDetail_import_report{
+    line-height: 38px;
+}
+#node_download_demo{
+    text-decoration: underline;
+}
+
+.red{
+    color:red;
+}
+.label_tip{
+    float:right;
+    font-size: 10px;
+    width: calc(50% - 200px);
+    color: #a3a2a2;
+    padding-top: 2px;
+    text-align: left;
+}

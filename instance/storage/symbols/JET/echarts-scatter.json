@@ -1,0 +1,98 @@
+{
+  "dataBindings": [
+    {
+      "attr": "background",
+      "valueType": "Color"
+    },
+    {
+      "attr": "textColor",
+      "valueType": "Color",
+      "defaultValue": "rgb(61,61,61)"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "data",
+      "valueType": "NumberArray",
+      "defaultValue": [
+        [
+          8.5,
+          8.04
+        ],
+        [
+          8,
+          6.95
+        ],
+        [
+          13,
+          7.58
+        ],
+        [
+          9,
+          8.81
+        ],
+        [
+          11,
+          8.33
+        ],
+        [
+          14,
+          9.96
+        ],
+        [
+          6,
+          7.24
+        ],
+        [
+          4,
+          4.26
+        ],
+        [
+          12,
+          10.84
+        ],
+        [
+          7,
+          4.82
+        ],
+        [
+          5,
+          5.68
+        ]
+      ]
+    },
+    {
+      "attr": "theme",
+      "valueType": "String",
+      "defaultValue": "shine"
+    },
+    {
+      "attr": "themes",
+      "valueType": "StringArray",
+      "defaultValue": [
+        "default",
+        "light",
+        "dark",
+        "vintage",
+        "roma",
+        "shine",
+        "infographic",
+        "macarons"
+      ]
+    }
+  ],
+  "snapshotURL": "symbols/JET/snapshot/snapshot_echarts-sactter.json",
+  "renderHTML": "__ht__function(data, gv, cache) {\r\n\r\n    var option = {\r\n        backgroundColor: data.a('background'),\r\n        textStyle: {\r\n            color: data.a('textColor')\r\n        },\r\n        // title: {\r\n        //     text: 'xxx',\r\n        //     subtext: 'jet',\r\n        //     sublink: 'http://www.jet-china.com.cn',\r\n        //     left: 'center'\r\n        // },\r\n        // legend: {\r\n        //     bottom: 10,\r\n        //     textStyle: {\r\n        //         color: data.a('textColor')\r\n        //     }\r\n        // },\r\n        tooltip: {\r\n            trigger: 'axis',\r\n            axisPointer: {\r\n                type: 'cross'\r\n            }\r\n        },\r\n        xAxis: { \r\n            scale: true,\r\n            type: 'value',\r\n            splitLine: {\r\n                lineStyle: {\r\n                    type: 'dashed'\r\n                }\r\n            }\r\n        },\r\n        yAxis: { \r\n            scale: true,\r\n            type: 'value',\r\n            splitLine: {\r\n                lineStyle: {\r\n                    type: 'dashed'\r\n                }\r\n            }\r\n        },\r\n        series: [{\r\n            type: 'scatter',\r\n            symbolSize: 20,\r\n            data: data.a('data')\r\n        }]\r\n    };\r\n\r\n\r\n    if (!cache.htmlView) {\r\n        cache.htmlView = document.createElement('div');\r\n        cache.htmlView.style.position = 'absolute';\r\n        cache.htmlChart = echarts.init(cache.htmlView, data.a('theme'));\r\n\r\n        // layoutHTML will be called when the data needs to be drawing\r\n        cache.htmlView.layoutHTML = function () {\r\n            gv.layoutHTML(data, cache.htmlView, false);\r\n            cache.htmlChart.resize();\r\n        };\r\n    }\r\n\r\n    cache.htmlChart.setOption(option);\r\n\r\n    // html for showing\r\n    return cache.htmlView;\r\n}",
+  "width": 350,
+  "height": 250,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": []
+}

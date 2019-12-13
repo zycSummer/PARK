@@ -1,0 +1,370 @@
+{
+  "dataBindings": [
+    {
+      "attr": "data",
+      "valueType": "ObjectArray",
+      "defaultValue": [
+        {
+          "type": "能效诊断",
+          "obj": "1#楼/1层/房间1",
+          "time": "2019-03-20 17:00:00",
+          "desc": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+        },
+        {
+          "type": "控制逻辑",
+          "obj": "1#楼/公共照明",
+          "time": "2019-03-20 16:52:00",
+          "desc": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+        },
+        {
+          "type": "能耗漏洞",
+          "obj": "1#楼/中央空调机组1",
+          "time": "2019-03-20 16:50:00",
+          "desc": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+        }
+      ]
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}"
+    },
+    {
+      "attr": "query",
+      "valueType": "Multiline"
+    }
+  ],
+  "width": 520,
+  "height": 350,
+  "comps": [
+    {
+      "type": "rect",
+      "background": "rgba(11,17,27,0.9)",
+      "borderColor": "#979797",
+      "rect": [
+        5,
+        3,
+        510,
+        38
+      ]
+    },
+    {
+      "type": "rect",
+      "borderColor": "#979797",
+      "rect": [
+        0,
+        3,
+        510,
+        350
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgba(21,89,148,0.4)",
+      "borderColor": "#979797",
+      "rect": [
+        5,
+        43.3914,
+        510,
+        101
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgba(21,89,148,0.4)",
+      "borderColor": "#979797",
+      "rect": [
+        5,
+        144.9457,
+        510,
+        101
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgba(21,89,148,0.4)",
+      "borderColor": "#979797",
+      "rect": [
+        5,
+        246.5,
+        510,
+        101
+      ]
+    },
+    {
+      "type": "text",
+      "text": "对象 / 时间 / 描述",
+      "align": "right",
+      "color": "rgb(200,200,200)",
+      "font": "bold 16px Arial",
+      "rect": [
+        342.14423,
+        9.5,
+        165.85577,
+        25
+      ]
+    },
+    {
+      "type": "text",
+      "text": "类型",
+      "align": "center",
+      "color": "rgb(200,200,200)",
+      "font": "bold 16px Arial",
+      "rect": [
+        31.01183,
+        9.5,
+        45.36199,
+        25
+      ]
+    },
+    {
+      "type": "oval",
+      "background": "rgb(201,125,10)",
+      "borderWidth": 5,
+      "borderColor": "rgb(255,255,0)",
+      "border3dColor": "rgb(247,247,247)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif (d.length > 0) {\r\n    return true;\r\n}\r\nelse {\r\n    return false;\r\n}\n}",
+        "value": true
+      },
+      "rect": [
+        15.69283,
+        55.07768,
+        80,
+        80
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        27.9738,
+        70.03921,
+        51.43806,
+        52.07693
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 0) && (d[0]!==undefined) && (d[0].type!==undefined)) {\r\n    return d[0].type;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "能效诊断"
+      },
+      "fontSize": 20,
+      "textAlign": "center",
+      "color": "rgb(247,247,247)",
+      "lineHeight": 22,
+      "padding": "2"
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 0) && (d[0]!==undefined) && (d[0].obj!==undefined)) {\r\n    return d[0].obj;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "1#楼/1层/房间1"
+      },
+      "align": "right",
+      "color": "rgb(51,153,255)",
+      "font": "bold 14px Arial",
+      "rect": [
+        109.43273,
+        44.3914,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 0) && (d[0]!==undefined) && (d[0].time!==undefined)) {\r\n    return d[0].time;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "2019-03-20 16:50:00"
+      },
+      "align": "right",
+      "color": "#FEB64D",
+      "rect": [
+        109.43273,
+        67.87556,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        109.43273,
+        95.36953,
+        398.56727,
+        39.70814
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 0) && (d[0]!==undefined) && (d[0].desc!==undefined)) {\r\n    return d[0].desc;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+      },
+      "textAlign": "right",
+      "color": "rgb(220,220,220)"
+    },
+    {
+      "type": "oval",
+      "background": "rgb(201,125,10)",
+      "borderWidth": 5,
+      "borderColor": "rgb(255,255,0)",
+      "border3dColor": "rgb(247,247,247)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif (d.length > 1) {\r\n    return true;\r\n}\r\nelse {\r\n    return false;\r\n}\n}",
+        "value": true
+      },
+      "rect": [
+        15.69283,
+        155.4457,
+        80,
+        80
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        27.9738,
+        169.40723,
+        51.43806,
+        52.07693
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 1) && (d[1]!==undefined) && (d[1].type!==undefined)) {\r\n    return d[1].type;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "能效诊断"
+      },
+      "fontSize": 20,
+      "textAlign": "center",
+      "color": "rgb(247,247,247)",
+      "lineHeight": 22,
+      "padding": "2"
+    },
+    {
+      "type": "oval",
+      "background": "rgb(201,125,10)",
+      "borderWidth": 5,
+      "borderColor": "rgb(255,255,0)",
+      "border3dColor": "rgb(247,247,247)",
+      "visible": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif (d.length > 2  && !(d[2]===undefined)) {\r\n    return true;\r\n}\r\nelse {\r\n    return false;\r\n}\n}",
+        "value": true
+      },
+      "rect": [
+        15.69283,
+        257,
+        80,
+        80
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        27.9738,
+        270.96154,
+        51.43806,
+        52.07693
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 2) && (d[2]!==undefined) && (d[2].type!==undefined)) {\r\n    return d[2].type;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "能效诊断"
+      },
+      "fontSize": 20,
+      "textAlign": "center",
+      "color": "rgb(247,247,247)",
+      "lineHeight": 22,
+      "padding": "2"
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 1) && (d[1]!==undefined) && (d[1].obj!==undefined)) {\r\n    return d[1].obj;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "1#楼/1层/房间1"
+      },
+      "align": "right",
+      "color": "rgb(51,153,255)",
+      "font": "bold 14px Arial",
+      "rect": [
+        109.43273,
+        149.10256,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 1) && (d[1]!==undefined) && (d[1].time!==undefined)) {\r\n    return d[1].time;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "2019-03-20 16:50:00"
+      },
+      "align": "right",
+      "color": "#FEB64D",
+      "rect": [
+        109.43273,
+        172.58672,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        109.43273,
+        200.08069,
+        398.56727,
+        39.70814
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 1) && (d[1]!==undefined) && (d[1].desc!==undefined)) {\r\n    return d[1].desc;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+      },
+      "textAlign": "right",
+      "color": "rgb(220,220,220)"
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 2) && (d[2]!==undefined) && (d[2].obj!==undefined)) {\r\n    return d[2].obj;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "1#楼/1层/房间1"
+      },
+      "align": "right",
+      "color": "rgb(51,153,255)",
+      "font": "bold 14px Arial",
+      "rect": [
+        109.43273,
+        250.65687,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "text",
+      "text": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 2) && (d[2]!==undefined) && (d[2].time!==undefined)) {\r\n    return d[2].time;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "2019-03-20 16:50:00"
+      },
+      "align": "right",
+      "color": "#FEB64D",
+      "rect": [
+        109.43273,
+        274.14103,
+        398.56727,
+        28.48416
+      ]
+    },
+    {
+      "type": "components/textBox/textBox.json",
+      "displayName": "textBox",
+      "rect": [
+        109.43273,
+        301.635,
+        398.56727,
+        39.70814
+      ],
+      "content": {
+        "func": "__ht__function(data, view) {\nvar d = data.a('data');\r\nif ( (d.length > 2) && (d[2]!==undefined) && (d[2].desc!==undefined)) {\r\n    return d[2].desc;\r\n}\r\nelse {\r\n    return '';\r\n}\n}",
+        "value": "问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述"
+      },
+      "textAlign": "right",
+      "color": "rgb(220,220,220)"
+    }
+  ]
+}

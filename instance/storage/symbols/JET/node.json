@@ -1,0 +1,62 @@
+{
+  "width": 60,
+  "height": 100,
+  "comps": [
+    {
+      "type": "rect",
+      "borderWidth": 2,
+      "borderColor": "rgb(17,114,212)",
+      "rect": [
+        1,
+        0.88116,
+        58,
+        38.11884
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(247,247,247)",
+      "gradient": "linear.southwest",
+      "gradientColor": "rgb(9,115,222)",
+      "rect": [
+        4.1677,
+        4,
+        51.6646,
+        32
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(17,114,212)",
+      "gradientColor": null,
+      "rect": [
+        21,
+        39,
+        18,
+        7
+      ]
+    },
+    {
+      "type": "rect",
+      "background": "rgb(17,114,212)",
+      "gradientColor": null,
+      "rect": [
+        12,
+        46,
+        36,
+        3
+      ]
+    },
+    {
+      "type": "rect",
+      "gradientColor": null,
+      "displayName": "不可以删除",
+      "rect": [
+        0,
+        50,
+        60,
+        50
+      ]
+    }
+  ]
+}

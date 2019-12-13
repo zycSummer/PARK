@@ -1,0 +1,83 @@
+.meter_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.table_title{
+    padding:0 10px 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#searchEnergyTypeId{
+    width:180px;
+}
+
+.table_title .layui-btn{
+    margin-left:0;
+}
+
+.meter_table{
+    position: relative;
+    height:1px;
+    flex-grow: 1;
+    margin:0 10px;
+}
+
+#table1{
+    width:100%;
+}
+
+.table_content .layui-table-view{
+    margin-bottom:0;
+}
+
+#table_page .layui-laypage{
+    margin-bottom:0;
+}
+
+/*新增修改 弹框*/
+#meter_add .layui-form{
+    padding-top:10px;
+}
+#meter_add .layui-form-label{
+    width:120px;
+}
+#edit_meterId,#import_object{
+    line-height: 38px;
+}
+
+/*导入 弹框*/
+#meter_download_demo{
+    position: absolute;
+    right: 10px;
+    text-decoration: underline;
+}
+
+.problem{
+    color:red;
+    font-size:16px;
+    padding-left:25px;
+}
+.red{
+    color:red;
+}

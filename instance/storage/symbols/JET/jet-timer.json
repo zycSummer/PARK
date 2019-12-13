@@ -1,0 +1,36 @@
+{
+  "dataBindings": [
+    {
+      "attr": "jet-type",
+      "valueType": "String",
+      "defaultValue": "timer"
+    },
+    {
+      "attr": "interval",
+      "valueType": "Number",
+      "defaultValue": 60
+    },
+    {
+      "attr": "update",
+      "valueType": "Function",
+      "defaultValue": "__ht__function update(dm) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //dm:当前ht dm对象\r\n    console.log(new Date() + \"-- ht dm --->\" + dm); //\r\n\r\n    var opnameHtObj = dm.toDatas(\r\n        function (data) {\r\n            return data.a('opname');\r\n        }\r\n    );\r\n    //console.log(opnameHtObj);\r\n\r\n    var opArr = [];\r\n    if (opnameHtObj.length > 0) {\r\n        opnameHtObj.each(function (data) {\r\n            var op = data.a('opname');\r\n            if ($.inArray(op, opArr) < 0) {\r\n                opArr.push(op);\r\n            }\r\n        });\r\n    }\r\n\r\n    $.ajax({\r\n        url: '/htImg/getDataPointList',\r\n        type: 'post',\r\n        dataType: 'json',\r\n        contentType: 'application/json',\r\n        data: JSON.stringify({ \"opNameList\": opArr }),\r\n        success: function (res) {\r\n            //console.log(new Date() + \"---success-->\" + res);\r\n            if (res.code > 0) {\r\n                return layer.msg(res.msg);\r\n            }\r\n            var obj = res.one;\r\n            if (obj) {\r\n                opnameHtObj.each(function (data) {\r\n                    var op = data.a('opname');\r\n                    if (obj[op] && (op == obj[op].opName)) {\r\n                        var u = data.a('update');\r\n                        u(data, obj[op]);\r\n                    }\r\n                });\r\n            }\r\n        },\r\n        error: function (res) {\r\n            //console.log(new Date() + \"---error-->\" + res);\r\n            layer.msg(res.statusText);\r\n        }\r\n    });\r\n}"
+    }
+  ],
+  "width": 30,
+  "height": 30,
+  "fitSize": true,
+  "pixelPerfect": false,
+  "comps": [
+    {
+      "type": "image",
+      "name": "assets/timer.png",
+      "displayName": "timer",
+      "rect": [
+        0,
+        0,
+        30,
+        30
+      ]
+    }
+  ]
+}

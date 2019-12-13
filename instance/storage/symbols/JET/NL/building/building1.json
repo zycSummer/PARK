@@ -1,0 +1,28 @@
+{
+  "width": 60,
+  "height": 60,
+  "comps": [
+    {
+      "type": "roundRect",
+      "background": "rgb(51,116,255)",
+      "borderColor": "rgb(51,153,255)",
+      "rect": [
+        5,
+        5,
+        50,
+        50
+      ]
+    },
+    {
+      "type": "image",
+      "name": "assets/JET/NL/building2.png",
+      "displayName": "building2",
+      "rect": [
+        15,
+        11,
+        30,
+        38
+      ]
+    }
+  ]
+}

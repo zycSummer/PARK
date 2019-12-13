@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/carbonManagement/carbonManagement.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote  tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select"></a>
+                <a><cite>碳排管理</cite></a>
+            </span>
+        </blockquote>
+        <div class="control_div">
+            <div class="layui-inline">
+                <form class="layui-form">
+                    <div class="layui-inline">
+                        <label class="search_label">时间：</label>
+                        <div class="layui-input-inline">
+                            <span class="  layui-breadcrumb" lay-separator="|">
+                                <a class="title_select " data-type="year">年</a>
+                                <a class="title_select layui-this" data-type="month">月</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="layui-inline" style="margin-left: 10px;">
+
+                        <div class="layui-input-inline">
+                            <input type="text" class="layui-input dateSelectVal" id="dateSelectMonth">
+                            <input type="text" class="layui-input dateSelectVal" id="dateSelectYear">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-inline" id="btnGroup">
+                <div class="layui-inline">
+                    <button class="layui-btn  layui-btn-sm " id="search_btn" th:if="${MENU0700Query.visible}">查询</button>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab_content" id="chartLine">
+
+        </div>
+
+    </div>
+    <script type="text/javascript" th:src="@{/public/js/admin/carbonManagement/carbonManagement.js}"></script>
+</div>
+
+</html>

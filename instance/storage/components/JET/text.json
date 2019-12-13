@@ -1,0 +1,48 @@
+{
+  "width": 90,
+  "height": 20,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\nvar text = comp.getValue('text'),\r\n    background = comp.getValue('background'),\r\n    color = comp.getValue('color'),\r\n    fontSize = comp.getValue('fontSize'),\r\n    fontFamily = comp.getValue('fontFamily'),\r\n    letterSpacing = comp.getValue('letterSpacing'),\r\n    align = comp.getValue('align'),\r\n    vAlign = comp.getValue('vAlign'),\r\n    borderWidth = comp.getValue('borderWidth'),\r\n    borderColor = comp.getValue('borderColor');\r\n\r\nvar font = fontSize + 'px ' + fontFamily;\r\n\r\nvar width = rect.width,\r\n    height = rect.height,\r\n    x = rect.x,\r\n    y = rect.y;\r\n\r\n//draw background\r\nif(background){\r\n    g.save();\r\n    g.fillStyle = background;\r\n    g.fillRect(\r\n        x,\r\n        y,\r\n        width,\r\n        height);\r\n    g.restore();\r\n}\r\n\r\n//draw text\r\nif(text){\r\n    g.save()\r\n    g.beginPath();\r\n    g.rect(x, y, width, height);\r\n    g.clip();\r\n    g.canvas.style.letterSpacing = letterSpacing + 'px';\r\n    var tx = x;\r\n    var twidth = width;\r\n    if (align == 'right') {\r\n        twidth = width - letterSpacing * 1;\r\n    }\r\n    if (align == 'left') {\r\n        tx = x + letterSpacing * 2;\r\n    }\r\n    ht.Default.drawText(g, text, font, color, tx, y, twidth, height, align, vAlign);\r\n    g.canvas.style.letterSpacing = 0 + 'px';\r\n    g.restore();\r\n}\r\n\r\n// draw border\r\nif (borderWidth) {\r\n    ht.Default.drawBorder(g, borderColor, x, y, width, height, borderWidth);\r\n}\n}",
+  "properties": {
+    "text": {
+      "valueType": "String",
+      "defaultValue": "NA"
+    },
+    "background": {
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    "color": {
+      "valueType": "Color",
+      "defaultValue": "rgb(0,0,0)"
+    },
+    "fontSize": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 13
+    },
+    "fontFamily": {
+      "valueType": "String",
+      "defaultValue": "sans-serif, arial"
+    },
+    "borderWidth": {
+      "valueType": "PositiveNumber",
+      "defaultValue": 0
+    },
+    "borderColor": {
+      "valueType": "Color",
+      "defaultValue": null
+    },
+    "letterSpacing": {
+      "valueType": "Number",
+      "defaultValue": 0
+    },
+    "align": {
+      "valueType": "Align",
+      "defaultValue": "right"
+    },
+    "vAlign": {
+      "valueType": "VAlign",
+      "defaultValue": "middle"
+    }
+  }
+}

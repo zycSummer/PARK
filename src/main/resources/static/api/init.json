@@ -1,0 +1,262 @@
+{
+  "homeInfo": {
+    "title": "能耗地图",
+    "icon": "fa fa-map",
+    "href": "/admin/map"
+  },
+  "logoInfo": {
+    "title": "",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "child": [
+          {
+          "title": "能耗地图",
+          "href": "/admin/map",
+          "icon": "fa fa-map",
+          "target": "_self"
+         
+        },
+        {
+          "title": "综合展示",
+          "href": "/admin/complex",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+
+        },
+        {
+          "title": "能源平衡",
+          "href": "/admin/balance",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+
+        },
+        {
+          "title": "用能监测",
+          "href": "/admin/monitor",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child":[
+            {
+              "title":"实时监测",
+              "href":"/admin/monitor",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },{
+              "title":"历史数据",
+              "href":"/admin/history",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            }]
+
+        },
+        {
+          "title": "能耗分析",
+          "href": "/admin/analogy",
+          "icon": "fa fa-window-maximize",
+          "target": "_self",
+          "child":[
+            {
+              "title":"能耗类比",
+              "href":"/admin/analogy",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },{
+              "title":"能耗时比",
+              "href":"/admin/ratio",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            }]
+
+        },
+        {
+         "title":"项目能耗",
+         "href":"/admin/burden",
+       "icon": "fa fa-window-maximize",
+         "child":[
+              {
+             "title":"实时负荷",
+           "href":"/admin/burden",
+            "icon": "fa fa-gears",
+            "target": "_self"
+           },{
+             "title":"能耗日历",
+             "href":"/admin/energyCalendar",
+             "icon":"fa fa-calendar",
+             "target": "_self"
+           },{
+            "title":"负荷排名",
+            "href":"/admin/loadRanking",
+            "icon":"fa fa-calendar",
+            "target": "_self"
+          },{
+            "title":"用量信息",
+            "href":"/admin/usageInformation",
+            "icon":"fa fa-calendar",
+            "target": "_self"
+          }
+          ]
+        },
+        {
+          "title":"碳排管理",
+          "href":"/admin/carbonManagement",
+          "icon":"fa fa-bar-chart",
+          "target":"_self"
+        },
+        {
+          "title": "报警管理",
+          "href": "/admin/alarmConfiguration",
+          "icon": "fa fa-bell",
+          "target": "_self",
+          "child":[
+            {
+            "title":"报警配置",
+            "href":"/admin/alarmConfiguration",
+            "icon": "fa fa-gears",
+            "target": "_self"  
+            },  {
+              "title":"报警查询",
+              "href":"/admin/alarmQuery",
+              "icon": "fa fa-gears",
+              "target": "_self"  
+              }
+          ]
+        },
+        {
+          "title": "文档管理",
+          "href": "/admin/fileManagement",
+          "icon": "fa fa-window-maximize",
+          "target": "_self"
+
+        },
+        {
+         "title":"设备管理",
+         "href":"/admin/device",
+         "icon":"fa fa-window-maximize",
+         "target":"_self"
+        },
+        {
+          "title": "基础数据",
+          "icon": "fa fa-gears",
+          "child":[
+            {
+              "title":"对象管理（园区）",
+              "href": " /admin/objectPark",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象管理（企业）",
+              "href": " /admin/objectFirm",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象仪表配置",
+              "href": "/admin/objectMeterConf",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象数据源配置",
+              "href": "/admin/objectDataSource",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+        
+            {
+              "title":"对象综合展示画面配置",
+              "href": "/admin/complexConf",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象组态画面配置",
+              "href": "/admin/monitorConf",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象展示结构树配置",
+              "href": "/admin/displayTreeConf",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象用能计划管理",
+              "href": "/admin/energyPlan",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"对象GDP管理",
+              "href": "/admin/GDPManagement",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "系统设置",
+          "icon": "fa fa-gears",
+          "child":[
+              {
+             "title":"角色管理",
+            "href": "/admin/role",
+            "icon": "fa fa-gears",
+            "target": "_self"
+           },
+              {
+             "title":"用户管理",
+            "href": "/admin/user",
+            "icon": "fa fa-users",
+            "target": "_self"
+           },
+              {
+             "title":"日志管理",
+            "href": "/admin/log",
+            "icon": "fa fa-users",
+            "target": "_self"
+           },
+           {
+             "title":"用户组管理",
+             "href":"/admin/userGroup",
+             "icon": "fa fa-users",
+             "target": "_self"
+           }
+           ,
+           {
+             "title":"菜单管理",
+             "href":"/admin/menu",
+             "icon": "fa fa-users",
+             "target": "_self"
+           }
+          ]
+        },
+        
+        {
+          "title": "统计报表",
+          "icon": "fa fa-gears",
+          "child":[
+            {
+              "title":"报表管理",
+              "href": "/admin/reportManagement",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            },
+            {
+              "title":"报表查询",
+              "href": "/admin/reportQuery",
+              "icon": "fa fa-gears",
+              "target": "_self"
+            }
+          ]
+        }
+       
+      ]
+  }}
+}
