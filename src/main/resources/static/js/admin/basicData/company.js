@@ -290,7 +290,7 @@ layui.use(['form', 'element', 'layer', 'table', 'jquery', 'laypage', 'upload'], 
                 if (!first) {
                     pageNum = obj.curr;
                     pageLimit = obj.limit;
-                    getRoleTabData();
+                    getSiteTabData();
                 }
             }
         });

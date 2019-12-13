@@ -435,7 +435,8 @@ layui.use(['request', 'form', 'element', 'layer', 'jquery', 'laydate', 'table','
                 if (!first) {
                     pageNum = obj.curr;
                     pageLimit = obj.limit;
-                    getRoleTabData();
+                    var val = tree1.getSelectedNodes();
+                   getRightData(val[0].benchmarkingObjId)
                 }
             }
         });

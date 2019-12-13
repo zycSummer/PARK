@@ -75,16 +75,20 @@
     margin:10px 0;
 }
 #leftList li{
-    height:35px;
-    line-height: 35px;
+    margin:0 10px;
+    height:18px;
+    line-height: 18px;
     padding:0 10px;
     cursor: pointer;
+    white-space: nowrap
 }
 #leftList li.layui-this{
-    background-color: rgb(217,217,217);
+    background-color: rgb(255,234,191);
+    border: 1px #FFB951 solid;
+    opacity: 0.8;
 }
 #leftList li:hover{
-    background-color: rgba(217,217,217,.6);
+    text-decoration: underline;
 }
 #leftBtnGroup{
     margin-top:10px;
