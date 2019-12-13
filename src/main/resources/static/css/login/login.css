@@ -2,7 +2,7 @@
  * @Author: xzl 
  * @Date: 2019-10-31 17:12:40 
  * @Last Modified by: xzl
- * @Last Modified time: 2019-12-09 17:18:04
+ * @Last Modified time: 2019-12-13 11:37:47
  */
 html,
 body {
@@ -172,6 +172,6 @@ input {
     margin: auto;
 }
 #headerImg{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom:30px;
 }

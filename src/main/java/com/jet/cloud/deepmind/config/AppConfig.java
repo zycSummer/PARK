@@ -41,7 +41,7 @@ public class AppConfig {
     private String filePath;
 
     public String getFilePath() {
-        return filePath;
+        return filePath + File.separator + "doc" + File.separator;
     }
 
     public String getImagePath() {

@@ -8,6 +8,9 @@ UPDATE `tb_sys_menu_function` SET `url` = '/reportParaDetail/add' WHERE `menu_id
 -- 将按钮表（tb_sys_menu_function）中 -[MENU1001][菜单标识] - [Para_Modify][功能标识]的[url][接口地址]修改为 "/reportParaDetail/edit"
 UPDATE `tb_sys_menu_function` SET `url` = '/reportParaDetail/edit' WHERE `menu_id` = 'MENU1001' AND `function_id` = 'Para_Modify';
 
+-- 在表 (tb_obj_gdp_monthly)中添加字段 add_value
+ALTER TABLE `tb_obj_gdp_monthly` ADD COLUMN `add_value` double NOT NULL COMMENT '工业增加值（万元）' AFTER `gdp`;
+
 -- 连云港平台新增对标管理模块
 -- 新增对标对象信息表
 CREATE TABLE `tb_obj_benchmarking_obj` (
@@ -87,39 +90,41 @@ VALUES
   ( 'MENU0902', 'RightDel', '右侧删除', '右侧删除', 'GET', '/benchmarkingObjData/delete/*', NULL, 'chuzhenbin', '2019-12-11 14:20:14', NULL, NULL );
 
 
--- 删除role_id='ROLE2' and menu_id='MENU0901' and menu_id='MENU0902'对应的菜单方法
-delete FROM `tb_sys_role_mapping_menu_function` where role_id='ROLE2' and menu_id in ('MENU0901','MENU0902');
+-- 在表（tb_sys_role_mapping_menu）中新增MENU0900[对标管理]的两个子菜单MENU0901[指标排名]和MENU0902[MENU0902]
+INSERT INTO `tb_sys_role_mapping_menu`(`role_id`, `menu_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ( 'ROLE1', 'MENU0901', '指标排名', 'chuzhenbin', '2019-11-28 13:15:42', NULL, NULL);
 
--- 新增role_id='ROLE2' and menu_id='MENU0901'对应的菜单方法
-INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
-VALUES
-  ( 'ROLE2', 'MENU0901', 'Query', NULL, 'chuzhenbin', '2019-12-12 15:49:21', NULL, NULL );
+INSERT INTO `tb_sys_role_mapping_menu`(`role_id`, `menu_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ( 'ROLE1', 'MENU0902', '指标数据', 'chuzhenbin', '2019-11-28 13:15:42', NULL, NULL);
 
--- 新增role_id='ROLE2' and menu_id='MENU0902'对应的菜单方法
+-- 新增role_id='ROLE1' and menu_id='MENU0901'对应的菜单方法
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'LeftQuery', NULL, 'chuzhenbin', '2019-12-12 15:50:12', NULL, NULL );
+  ( 'ROLE1', 'MENU0901', 'Query', NULL, 'chuzhenbin', '2019-12-12 15:49:21', NULL, NULL );
+
+-- 新增role_id='ROLE1' and menu_id='MENU0902'对应的菜单方法
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'LeftAdd', NULL, 'chuzhenbin', '2019-12-12 15:52:16', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'LeftQuery', NULL, 'chuzhenbin', '2019-12-12 15:50:12', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'LeftEdit', NULL, 'chuzhenbin', '2019-12-12 15:52:45', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'LeftAdd', NULL, 'chuzhenbin', '2019-12-12 15:52:16', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'LeftDel', NULL, 'chuzhenbin', '2019-12-12 15:53:17', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'LeftEdit', NULL, 'chuzhenbin', '2019-12-12 15:52:45', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'RightQuery', NULL, 'chuzhenbin', '2019-12-12 15:54:44', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'LeftDel', NULL, 'chuzhenbin', '2019-12-12 15:53:17', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'RightAdd', NULL, 'chuzhenbin', '2019-12-12 15:55:38', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'RightQuery', NULL, 'chuzhenbin', '2019-12-12 15:54:44', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'RightEdit', NULL, 'chuzhenbin', '2019-12-12 15:56:17', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'RightAdd', NULL, 'chuzhenbin', '2019-12-12 15:55:38', NULL, NULL );
 INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
 VALUES
-  ( 'ROLE2', 'MENU0902', 'RightDel', NULL, 'chuzhenbin', '2019-12-12 15:56:45', NULL, NULL );
+  ( 'ROLE1', 'MENU0902', 'RightEdit', NULL, 'chuzhenbin', '2019-12-12 15:56:17', NULL, NULL );
+INSERT INTO `tb_sys_role_mapping_menu_function` ( `role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time` )
+VALUES
+  ( 'ROLE1', 'MENU0902', 'RightDel', NULL, 'chuzhenbin', '2019-12-12 15:56:45', NULL, NULL );
 
 
 -- 连云港平台新增设备管理模块
@@ -177,31 +182,31 @@ INSERT INTO tb_sys_menu_function( `menu_id`, `function_id`, `function_name`, `fu
 INSERT INTO tb_sys_menu_function( `menu_id`, `function_id`, `function_name`, `function_desc`, `method`, `url`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('MENU1200', 'equip_import', '导入', '导入', 'POST', '/equip/importExcel', NULL, 'chuzhenbin', '2019-12-12 14:41:50', NULL, NULL);
 INSERT INTO tb_sys_menu_function( `menu_id`, `function_id`, `function_name`, `function_desc`, `method`, `url`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('MENU1200', 'equip_export', '导出', '导出', 'GET', '/equip/exportExcel', NULL, 'chuzhenbin', '2019-12-12 14:44:19', NULL, NULL);
 
--- 删除role_id='ROLE2' and menu_id='MENU1200'对应的菜单方法
-delete FROM `tb_sys_role_mapping_menu_function` where role_id='ROLE2' and menu_id='MENU1200';
+-- 删除role_id='ROLE1' and menu_id='MENU1200'对应的菜单方法
+delete FROM `tb_sys_role_mapping_menu_function` where role_id='ROLE1' and menu_id='MENU1200';
 
--- 新增role_id='ROLE2' and menu_id='MENU1200'对应的菜单方法
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'LeftAdd', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+-- 新增role_id='ROLE1' and menu_id='MENU1200'对应的菜单方法
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'LeftAdd', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'LeftDel', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'LeftDel', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'LeftEdit', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'LeftEdit', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'LeftQuery', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'LeftQuery', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'RightAdd', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'RightAdd', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'RightDel', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'RightDel', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'RightEdit', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'RightEdit', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'RightQuery', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'RightQuery', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'show_image', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'show_image', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'equip_import', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'equip_import', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
-INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE2', 'MENU1200', 'equip_export', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
+INSERT INTO `tb_sys_role_mapping_menu_function`(`role_id`, `menu_id`, `function_id`, `memo`, `create_user_id`, `create_time`, `update_user_id`, `update_time`) VALUES ('ROLE1', 'MENU1200', 'equip_export', NULL, 'chuzhenbin', '2019-12-12 15:26:36', NULL, NULL);
 
 
 
