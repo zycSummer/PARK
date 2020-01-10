@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/basicData/objectAnnouncement.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
+            </span>
+        </blockquote>
+        <div id="announcement_content">
+            <div class="table_title layui-form">
+                <div class="timeSelect">
+                    <span class="title search_label">创建时间：</span>
+                    <div class="layui-inline" id="timeDiv">
+                        <input type="text" class="layui-input" id="timeInput1" value=""> ~
+                        <input type="text" class="layui-input" id="timeInput2" value="">
+                    </div>
+                </div>
+                <div>
+                    <button class="layui-btn layui-btn-sm query" th:if="${MENU1410Query.visible}">查询</button>
+                    <button class="layui-btn layui-btn-sm add" th:if="${MENU1410Add.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm edit" th:if="${MENU1410Modify.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm delete" th:if="${MENU1410Delete.visible}">删除</button>
+                </div>
+            </div>
+            <div class="announcement_table">
+                <table id="table1" lay-filter="table1"></table>
+                <div id="table_page"></div>
+            </div>
+        </div>
+    </div>
+    <!--新增修改公告-->
+    <div id="announcement_add" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item edit_announcementTitle layui-hide">
+                <label class="layui-form-label">公告标题：</label>
+                <div class="layui-input-inline">
+                    <div id="edit_announcementTitle"></div>
+                </div>
+            </div>
+            <div class="layui-form-item add_announcementTitle">
+                <label class="layui-form-label"><span class="red">* </span>公告标题：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="yearMonth" id="announcementTitle" class="layui-input" autocomplete="off"/>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="announcementTitle_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><span class="red">* </span>公告内容：</label>
+                <div class="layui-input-inline">
+                    <textarea class="layui-textarea" id="announcementContent" maxlength="1000"></textarea>
+                </div>
+                <i class="fa fa-exclamation-circle tip_icon" id="announcementContent_tip"></i>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注：</label>
+                <div class="layui-input-inline">
+                    <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!--删除-->
+    <div id="announcement_delete" class="layui-hide">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">公告标题：</label>
+                <div class="layui-input-inline">
+                    <div id="delete_announcementTitle"></div>
+                </div>
+            </div>
+            <div class="layui-form-item problem">
+                确定要删除此公告吗？
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" th:src="@{/public/js/admin/basicData/objectAnnouncement.js}"></script>
+</div>
+</html>

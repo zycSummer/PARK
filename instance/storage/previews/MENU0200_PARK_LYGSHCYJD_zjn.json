@@ -1,0 +1,3899 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "background": "rgb(6,4,19)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 4378,
+      "p": {
+        "displayName": "jet-ajax",
+        "tag": "energyRealTimeValue",
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": -276.87533,
+          "y": -567.20988
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val5 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n            if(name == 'jet-text' && val5[i]){\r\n                console.log(val5[i]);\r\n                var value = val5[i].lastValue;\r\n                if(value == null){\r\n                    child.a('value', '--');\r\n                }\r\n                else if(value == 0){\r\n                    child.a('value', 0);\r\n                }\r\n                else{\r\n                    child.a('value',value?parseFloat(value).toFixed(2):'--');\r\n                }\r\n                i++;\r\n            }\r\n    });\r\n}",
+        "url": "/htweb/energyRealTimeValue",
+        "paras": "{\"datasources\":[\"LYGSHCYJD.ZJLQJJS.G21E1.P\",\"LYGSHCYJD.ZJLQJJS.G11E3.P,LYGSHCYJD.ZJLQJJS.G11E4.P#?+?\",\"LYGSHCYJD.ZJLQJJS.G11E7.P,LYGSHCYJD.ZJLQJJS.G12E16.P,LYGSHCYJD.ZJLQJJS.G12E15.P,LYGSHCYJD.ZJLQJJS.G12E17.P#?+?+?+?\",\"LYGSHCYJD.ZJLQJJS.G11E8.P\",\"LYGSHCYJD.ZJLQJJS.G12E19.P\",\"LYGSHCYJD.ZJLQJJS.G12E18.P\",\"LYGSHCYJD.ZJLQJJS.G12E13.P\",\"LYGSHCYJD.ZJLQJJS.G12E14.P,LYGSHCYJD.ZJLQJJS.G12E12.P#?+?\",\"LYGSHCYJD.ZJLQJJS.D1W10019.Flowrate\",\"LYGSHCYJD.ZJLQJJS.G21E1.P\"]}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4379,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -876.46481,
+          "y": -92.64398
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4380,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -655.71306,
+          "y": -92.64398
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4381,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -349.05238,
+          "y": -92.64398
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4382,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -51.21673,
+          "y": -92.64398
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4383,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -875.46481,
+          "y": 534.35602
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4384,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -654.71306,
+          "y": 534.35602
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4385,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -348.05238,
+          "y": 534.35602
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4386,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": -50.21673,
+          "y": 534.35602
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4387,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 530.51177,
+          "y": -359.7622
+        },
+        "width": 183,
+        "height": 45
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4388,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 4378
+        },
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 974.98894,
+          "y": -359.7622
+        },
+        "width": 183,
+        "height": 45
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": "rgb(247,247,247)",
+        "align": "left",
+        "font": "26px Arial",
+        "background": null,
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4389,
+      "p": {
+        "displayName": "标题",
+        "position": {
+          "x": 121.16348,
+          "y": -619.94766
+        },
+        "width": 2145.22615,
+        "height": 52.64306,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4390,
+      "p": {
+        "displayName": "标题背景",
+        "parent": {
+          "__i": 4389
+        },
+        "image": "assets/JET/连云港/组 2.png",
+        "position": {
+          "x": 121.16348,
+          "y": -588.22355
+        },
+        "width": 2145.22615,
+        "height": 51.19484
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4391,
+      "p": {
+        "parent": {
+          "__i": 4389
+        },
+        "position": {
+          "x": 120.2268,
+          "y": -586.94766
+        },
+        "width": 864.70186,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "中节能（连云港）清洁技术有限公司",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 50px Arial",
+        "text.align": "center",
+        "text.shadow": true,
+        "text.shadow.color": "rgb(124,145,155)",
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 1,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4392,
+      "p": {
+        "displayName": "监测数",
+        "position": {
+          "x": -358.80937,
+          "y": -395.19973
+        },
+        "width": 1185.28045,
+        "height": 263.6999
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4393,
+      "p": {
+        "displayName": "框",
+        "parent": {
+          "__i": 4392
+        },
+        "position": {
+          "x": -380.03353,
+          "y": -395.19973
+        },
+        "width": 1142.83213,
+        "height": 263.6999
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,199,7)",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4394,
+      "p": {
+        "displayName": "左上",
+        "parent": {
+          "__i": 4393
+        },
+        "position": {
+          "x": -940.98576,
+          "y": -512.04968
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4395,
+      "p": {
+        "parent": {
+          "__i": 4394
+        },
+        "position": {
+          "x": -940.52192,
+          "y": -522.04968
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4396,
+      "p": {
+        "parent": {
+          "__i": 4394
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": -951.4496,
+          "y": -512.04968
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4397,
+      "p": {
+        "displayName": "左下",
+        "parent": {
+          "__i": 4393
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": -941.98576,
+          "y": -273.34978
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4398,
+      "p": {
+        "parent": {
+          "__i": 4397
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": -951.98576,
+          "y": -273.81362
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4399,
+      "p": {
+        "parent": {
+          "__i": 4397
+        },
+        "position": {
+          "x": -941.98576,
+          "y": -262.88594
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4400,
+      "p": {
+        "displayName": "右上",
+        "parent": {
+          "__i": 4393
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 180.3101,
+          "y": -516.65811
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4401,
+      "p": {
+        "parent": {
+          "__i": 4400
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 190.3101,
+          "y": -516.19426
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4402,
+      "p": {
+        "parent": {
+          "__i": 4400
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 180.3101,
+          "y": -527.12195
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4403,
+      "p": {
+        "displayName": "右下",
+        "parent": {
+          "__i": 4393
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 180.78762,
+          "y": -272.81366
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4404,
+      "p": {
+        "parent": {
+          "__i": 4403
+        },
+        "rotation": -3.14159,
+        "position": {
+          "x": 180.32378,
+          "y": -262.81366
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4405,
+      "p": {
+        "parent": {
+          "__i": 4403
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 191.25147,
+          "y": -272.81366
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4406,
+      "p": {
+        "displayName": "形状 22 副本 4",
+        "parent": {
+          "__i": 4392
+        },
+        "image": "assets/JET/连云港/形状 22 副本 4.png",
+        "position": {
+          "x": -591.01355,
+          "y": -397.17312
+        },
+        "width": 34,
+        "height": 181
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4407,
+      "p": {
+        "displayName": "形状 22 副本 4",
+        "parent": {
+          "__i": 4392
+        },
+        "image": "assets/JET/连云港/形状 22 副本 4.png",
+        "position": {
+          "x": -159.46488,
+          "y": -397.17312
+        },
+        "width": 34,
+        "height": 181
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4408,
+      "p": {
+        "displayName": "工业水监测数(个)",
+        "parent": {
+          "__i": 4392
+        },
+        "position": {
+          "x": 76.80706,
+          "y": -399.93111
+        },
+        "width": 314.04758,
+        "height": 125.00766
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4409,
+      "p": {
+        "parent": {
+          "__i": 4408
+        },
+        "position": {
+          "x": 99.12145,
+          "y": -436.11341
+        },
+        "width": 269.4188,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "工业水监测数(个)",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4410,
+      "p": {
+        "displayName": "班级",
+        "parent": {
+          "__i": 4408
+        },
+        "image": "assets/JET/连云港/班级.png",
+        "position": {
+          "x": -63.71673,
+          "y": -432.43667
+        },
+        "width": 33,
+        "height": 43
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4411,
+      "p": {
+        "parent": {
+          "__i": 4408
+        },
+        "position": {
+          "x": 59.54997,
+          "y": -373.08804
+        },
+        "width": 187.0423,
+        "height": 71.32153,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4412,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": -5.12686,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4413,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": -5.12686,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4414,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": 58.78855,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4415,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": 58.78855,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4416,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": 124.2268,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4417,
+      "p": {
+        "parent": {
+          "__i": 4411
+        },
+        "position": {
+          "x": 124.2268,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "1",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4418,
+      "p": {
+        "displayName": "电力低压监测数(个)",
+        "parent": {
+          "__i": 4392
+        },
+        "position": {
+          "x": -358.03878,
+          "y": -399.93111
+        },
+        "width": 311.04758,
+        "height": 125.00766
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4419,
+      "p": {
+        "parent": {
+          "__i": 4418
+        },
+        "position": {
+          "x": -359.79586,
+          "y": -373.08804
+        },
+        "width": 187.04229,
+        "height": 71.32153,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4420,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -424.47269,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4421,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -424.47269,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4422,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -360.55728,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4423,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -360.55728,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "1",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4424,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -295.11904,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4425,
+      "p": {
+        "parent": {
+          "__i": 4419
+        },
+        "position": {
+          "x": -295.11904,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "8",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4426,
+      "p": {
+        "parent": {
+          "__i": 4418
+        },
+        "position": {
+          "x": -337.22439,
+          "y": -436.11341
+        },
+        "width": 269.4188,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "电力低压监测数(个)",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4427,
+      "p": {
+        "displayName": "班级",
+        "parent": {
+          "__i": 4418
+        },
+        "image": "assets/JET/连云港/班级.png",
+        "position": {
+          "x": -497.06257,
+          "y": -432.43667
+        },
+        "width": 33,
+        "height": 43
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4428,
+      "p": {
+        "displayName": "电力高压监测数(个)",
+        "parent": {
+          "__i": 4392
+        },
+        "position": {
+          "x": -779.88461,
+          "y": -399.93111
+        },
+        "width": 310.04758,
+        "height": 125.00766
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4429,
+      "p": {
+        "parent": {
+          "__i": 4428
+        },
+        "position": {
+          "x": -782.1417,
+          "y": -373.08804
+        },
+        "width": 187.04229,
+        "height": 71.32153,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4430,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -846.81852,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4431,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -846.81852,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4432,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -782.90311,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4433,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -782.90311,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "0",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4434,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -717.46487,
+          "y": -373.08804
+        },
+        "width": 57.68864,
+        "height": 71.32153
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": "#979797",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4435,
+      "p": {
+        "parent": {
+          "__i": 4429
+        },
+        "position": {
+          "x": -717.46487,
+          "y": -373.08804
+        },
+        "width": 54.50339,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "3",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "bold 37px Arial",
+        "text.align": "center",
+        "text.vAlign": "bottom",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4436,
+      "p": {
+        "parent": {
+          "__i": 4428
+        },
+        "position": {
+          "x": -759.57022,
+          "y": -436.11341
+        },
+        "width": 269.4188,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "电力高压监测数(个)",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4437,
+      "p": {
+        "displayName": "班级",
+        "parent": {
+          "__i": 4428
+        },
+        "image": "assets/JET/连云港/班级.png",
+        "position": {
+          "x": -918.4084,
+          "y": -432.43667
+        },
+        "width": 33,
+        "height": 43
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4438,
+      "p": {
+        "displayName": "实时监测(总)",
+        "position": {
+          "x": 720.81053,
+          "y": -395.66357
+        },
+        "width": 946.29288,
+        "height": 263.6999
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4439,
+      "p": {
+        "displayName": "形状 22 副本 4",
+        "parent": {
+          "__i": 4438
+        },
+        "image": "assets/JET/连云港/形状 22 副本 4.png",
+        "position": {
+          "x": 712.3143,
+          "y": -397.17312
+        },
+        "width": 34,
+        "height": 181
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4440,
+      "p": {
+        "displayName": "框",
+        "parent": {
+          "__i": 4438
+        },
+        "position": {
+          "x": 720.81053,
+          "y": -395.66357
+        },
+        "width": 946.29288,
+        "height": 263.6999
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,199,7)",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4441,
+      "p": {
+        "displayName": "右上",
+        "parent": {
+          "__i": 4440
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 1183.77655,
+          "y": -517.58584
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4442,
+      "p": {
+        "parent": {
+          "__i": 4441
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 1193.77655,
+          "y": -517.12199
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4443,
+      "p": {
+        "parent": {
+          "__i": 4441
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 1183.77655,
+          "y": -528.04968
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4444,
+      "p": {
+        "displayName": "右下",
+        "parent": {
+          "__i": 4440
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 1182.77655,
+          "y": -273.81362
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4445,
+      "p": {
+        "parent": {
+          "__i": 4444
+        },
+        "rotation": -3.14159,
+        "position": {
+          "x": 1182.31271,
+          "y": -263.81362
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4446,
+      "p": {
+        "parent": {
+          "__i": 4444
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 1193.2404,
+          "y": -273.81362
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4447,
+      "p": {
+        "displayName": "左上",
+        "parent": {
+          "__i": 4440
+        },
+        "position": {
+          "x": 257.93217,
+          "y": -518.04972
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4448,
+      "p": {
+        "parent": {
+          "__i": 4447
+        },
+        "position": {
+          "x": 258.39601,
+          "y": -528.04972
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4449,
+      "p": {
+        "parent": {
+          "__i": 4447
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 247.46833,
+          "y": -518.04972
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4450,
+      "p": {
+        "displayName": "左下",
+        "parent": {
+          "__i": 4440
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": 258.39603,
+          "y": -274.27746
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4451,
+      "p": {
+        "parent": {
+          "__i": 4450
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 248.39603,
+          "y": -274.7413
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4452,
+      "p": {
+        "parent": {
+          "__i": 4450
+        },
+        "position": {
+          "x": 258.39603,
+          "y": -263.81362
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4453,
+      "p": {
+        "displayName": "实时用水量（t/h）",
+        "parent": {
+          "__i": 4438
+        },
+        "position": {
+          "x": 521.51618,
+          "y": -407.09857
+        },
+        "width": 381.32101,
+        "height": 110.67274
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4454,
+      "p": {
+        "parent": {
+          "__i": 4453
+        },
+        "position": {
+          "x": 577.46728,
+          "y": -436.11341
+        },
+        "width": 269.4188,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "实时用水量（t/h）",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4455,
+      "p": {
+        "displayName": "班级",
+        "parent": {
+          "__i": 4453
+        },
+        "image": "assets/JET/连云港/班级.png",
+        "position": {
+          "x": 369.85567,
+          "y": -402.7622
+        },
+        "width": 78,
+        "height": 102
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4456,
+      "p": {
+        "displayName": "用电总功率（kW）",
+        "parent": {
+          "__i": 4438
+        },
+        "position": {
+          "x": 961.98894,
+          "y": -404.65791
+        },
+        "width": 385.06714,
+        "height": 115.55406
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4457,
+      "p": {
+        "parent": {
+          "__i": 4456
+        },
+        "position": {
+          "x": 1019.81311,
+          "y": -436.11341
+        },
+        "width": 269.4188,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "用电总功率（kW）",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4458,
+      "p": {
+        "displayName": "班级",
+        "parent": {
+          "__i": 4456
+        },
+        "image": "assets/JET/连云港/班级.png",
+        "position": {
+          "x": 808.45537,
+          "y": -397.88088
+        },
+        "width": 78,
+        "height": 102
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4459,
+      "p": {
+        "displayName": "实时监测数据",
+        "position": {
+          "x": -382.33099,
+          "y": 183.46773
+        },
+        "width": 1138.23723,
+        "height": 808.333,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4460,
+      "p": {
+        "displayName": "中节能厂区图地图1",
+        "parent": {
+          "__i": 4459
+        },
+        "image": "assets/JET/连云港/中节能厂区图地图1.jpg",
+        "position": {
+          "x": -382.05238,
+          "y": 165.78832
+        },
+        "width": 1082.7523,
+        "height": 451.71663
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4461,
+      "p": {
+        "displayName": "框",
+        "parent": {
+          "__i": 4459
+        },
+        "position": {
+          "x": -382.33099,
+          "y": 183.46773
+        },
+        "width": 1138.23723,
+        "height": 808.333
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,199,7)",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4462,
+      "p": {
+        "displayName": "左上",
+        "parent": {
+          "__i": 4461
+        },
+        "position": {
+          "x": -940.98576,
+          "y": -209.69877
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4463,
+      "p": {
+        "parent": {
+          "__i": 4462
+        },
+        "position": {
+          "x": -940.52192,
+          "y": -219.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4464,
+      "p": {
+        "parent": {
+          "__i": 4462
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": -951.4496,
+          "y": -209.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4465,
+      "p": {
+        "displayName": "左下",
+        "parent": {
+          "__i": 4461
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": -941.98576,
+          "y": 574.17039
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4466,
+      "p": {
+        "parent": {
+          "__i": 4465
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": -951.98576,
+          "y": 573.70655
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4467,
+      "p": {
+        "parent": {
+          "__i": 4465
+        },
+        "position": {
+          "x": -941.98576,
+          "y": 584.63423
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4468,
+      "p": {
+        "displayName": "右上",
+        "parent": {
+          "__i": 4461
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 176.38248,
+          "y": -211.23493
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4469,
+      "p": {
+        "parent": {
+          "__i": 4468
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 186.38248,
+          "y": -210.77109
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4470,
+      "p": {
+        "parent": {
+          "__i": 4468
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 176.38248,
+          "y": -221.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4471,
+      "p": {
+        "displayName": "右下",
+        "parent": {
+          "__i": 4461
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 175.84632,
+          "y": 575.70655
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4472,
+      "p": {
+        "parent": {
+          "__i": 4471
+        },
+        "rotation": -3.14159,
+        "position": {
+          "x": 175.38248,
+          "y": 585.70655
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4473,
+      "p": {
+        "parent": {
+          "__i": 4471
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 186.31016,
+          "y": 575.70655
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4474,
+      "p": {
+        "displayName": "上",
+        "parent": {
+          "__i": 4459
+        },
+        "position": {
+          "x": -399.49218,
+          "y": -145.29819
+        },
+        "width": 1037.21967,
+        "height": 123.30843
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4475,
+      "p": {
+        "displayName": "实时用水量",
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -849.90404,
+          "y": -180.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "变电站",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4476,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -630.2788,
+          "y": -180.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "综合楼",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4477,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -283.64755,
+          "y": -180.63088
+        },
+        "width": 211.14689,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "焚烧车间",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4478,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": 13.54421,
+          "y": -180.63088
+        },
+        "width": 211.14689,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "有机废物仓库",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4479,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -849.90404,
+          "y": -132.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4480,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -630.2788,
+          "y": -132.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4481,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -321.02302,
+          "y": -132.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4482,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "position": {
+          "x": -23.83126,
+          "y": -132.63088
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4483,
+      "p": {
+        "displayName": "不规则图形",
+        "parent": {
+          "__i": 4474
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -729.29938,
+          "y": -143.65707
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -729.29938,
+              "y": -203.67016
+            },
+            {
+              "x": -729.29938,
+              "y": -83.64398
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4484,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -429.84077,
+          "y": -143.65707
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -429.84077,
+              "y": -203.67016
+            },
+            {
+              "x": -429.84077,
+              "y": -83.64398
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4485,
+      "p": {
+        "parent": {
+          "__i": 4474
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -124.71673,
+          "y": -143.75798
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -124.71673,
+              "y": -203.77107
+            },
+            {
+              "x": -124.71673,
+              "y": -83.74489
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4486,
+      "p": {
+        "displayName": "下",
+        "parent": {
+          "__i": 4459
+        },
+        "position": {
+          "x": -399.49218,
+          "y": 486.70181
+        },
+        "width": 1037.21967,
+        "height": 123.30843
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4487,
+      "p": {
+        "displayName": "实时用水量",
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -849.90404,
+          "y": 451.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "污水处理",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4488,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -630.2788,
+          "y": 451.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "消防泵房",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4489,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -283.64755,
+          "y": 451.36912
+        },
+        "width": 211.14689,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "甲类废物仓库",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4490,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": 13.54421,
+          "y": 451.36912
+        },
+        "width": 211.14689,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "无机废物仓库及机修间",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4491,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -849.90404,
+          "y": 499.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4492,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -630.2788,
+          "y": 499.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4493,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -321.02302,
+          "y": 499.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4494,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "position": {
+          "x": -23.83126,
+          "y": 499.36912
+        },
+        "width": 136.39595,
+        "height": 52.64306
+      },
+      "s": {
+        "text": "功率（kW）",
+        "text.color": "rgb(247,247,247)",
+        "text.font": "20px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4495,
+      "p": {
+        "displayName": "不规则图形",
+        "parent": {
+          "__i": 4486
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -729.29938,
+          "y": 488.34293
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -729.29938,
+              "y": 428.32984
+            },
+            {
+              "x": -729.29938,
+              "y": 548.35602
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4496,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -429.84077,
+          "y": 488.34293
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -429.84077,
+              "y": 428.32984
+            },
+            {
+              "x": -429.84077,
+              "y": 548.35602
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 4497,
+      "p": {
+        "parent": {
+          "__i": 4486
+        },
+        "tag": "fixed",
+        "position": {
+          "x": -124.71673,
+          "y": 488.24202
+        },
+        "width": 1,
+        "height": 120.02618,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": -124.71673,
+              "y": 428.22893
+            },
+            {
+              "x": -124.71673,
+              "y": 548.25511
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 2,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          8
+        ],
+        "shape.dash.3d.color": "rgb(247,247,247)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": null,
+        "shape.dash.color": "rgb(0,199,7)",
+        "border.width": 0,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4498,
+      "p": {
+        "displayName": "简介",
+        "position": {
+          "x": 720.72032,
+          "y": 183.46773
+        },
+        "width": 946.11246,
+        "height": 808.333,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4499,
+      "p": {
+        "parent": {
+          "__i": 4498
+        },
+        "position": {
+          "x": 723.01953,
+          "y": -163.66492
+        },
+        "width": 874.70572,
+        "height": 83.32984
+      },
+      "s": {
+        "text": "简介--中节能（连云港）清洁技术有限公司",
+        "text.color": "rgb(0,199,7)",
+        "text.font": "bold 27px Arial",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4500,
+      "p": {
+        "displayName": "textBox",
+        "parent": {
+          "__i": 4498
+        },
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": 719.48967,
+          "y": 51.43548
+        },
+        "width": 881.646,
+        "height": 346.87095
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "879-34610px sans-serif, arial18",
+          "content": "      中节能（连云港）清洁技术发展有限公司是中国节能环保集团旗下的控股公司，由中节能清洁技术发展有限公司和江苏方洋集团有限公司共同投资设立，是从事危险废物安全处置和资源化利用的专业化公司。\n      公司位于国家级石化产业基地连云港市徐圩新区，占地面积277亩，总投资5.6亿元。现拥有一条年处置1.5万吨回转窑焚烧系统、三座总计约6000m2的废物暂存库、主要仪器设备价值300多万元的检测化验中心和完善的公辅配套设施等，国内领先的70000m3遮断型刚性填埋场已开工建设。\n      按照江苏省环境保护厅颁发的《危险废物经营许可证》，核准经营范围，现阶段可以接纳处置各类危险废物10大类196项，年处置核准量15000吨。",
+          "scale": 2.14443
+        },
+        "tb.color": "rgb(0,199,129)",
+        "tb.content": "      中节能（连云港）清洁技术发展有限公司是中国节能环保集团旗下的控股公司，由中节能清洁技术发展有限公司和江苏方洋集团有限公司共同投资设立，是从事危险废物安全处置和资源化利用的专业化公司。\n      公司位于国家级石化产业基地连云港市徐圩新区，占地面积277亩，总投资5.6亿元。现拥有一条年处置1.5万吨回转窑焚烧系统、三座总计约6000m2的废物暂存库、主要仪器设备价值300多万元的检测化验中心和完善的公辅配套设施等，国内领先的70000m3遮断型刚性填埋场已开工建设。\n      按照江苏省环境保护厅颁发的《危险废物经营许可证》，核准经营范围，现阶段可以接纳处置各类危险废物10大类196项，年处置核准量15000吨。",
+        "tb.fontSize": 10,
+        "tb.autoScale": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4501,
+      "p": {
+        "displayName": "框",
+        "parent": {
+          "__i": 4498
+        },
+        "position": {
+          "x": 720.72032,
+          "y": 183.46773
+        },
+        "width": 946.11246,
+        "height": 808.333
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": null,
+        "shape.border.width": 1,
+        "shape.border.color": "rgb(0,199,7)",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4502,
+      "p": {
+        "displayName": "右下",
+        "parent": {
+          "__i": 4501
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 1182.77655,
+          "y": 577.63423
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4503,
+      "p": {
+        "parent": {
+          "__i": 4502
+        },
+        "rotation": -3.14159,
+        "position": {
+          "x": 1182.31271,
+          "y": 587.63423
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4504,
+      "p": {
+        "parent": {
+          "__i": 4502
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 1193.2404,
+          "y": 577.63423
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4505,
+      "p": {
+        "displayName": "右上",
+        "parent": {
+          "__i": 4501
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 1183.77655,
+          "y": -212.23493
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4506,
+      "p": {
+        "parent": {
+          "__i": 4505
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 1193.77655,
+          "y": -211.77109
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4507,
+      "p": {
+        "parent": {
+          "__i": 4505
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 1183.77655,
+          "y": -222.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4508,
+      "p": {
+        "displayName": "左下",
+        "parent": {
+          "__i": 4501
+        },
+        "rotation": 4.71239,
+        "position": {
+          "x": 255.93217,
+          "y": 574.17039
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4509,
+      "p": {
+        "parent": {
+          "__i": 4508
+        },
+        "rotation": -1.5708,
+        "position": {
+          "x": 245.93217,
+          "y": 573.70655
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4510,
+      "p": {
+        "parent": {
+          "__i": 4508
+        },
+        "position": {
+          "x": 255.93217,
+          "y": 584.63423
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 4511,
+      "p": {
+        "displayName": "左上",
+        "parent": {
+          "__i": 4501
+        },
+        "position": {
+          "x": 257.93217,
+          "y": -207.69877
+        },
+        "width": 30.92768,
+        "syncSize": false
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4512,
+      "p": {
+        "parent": {
+          "__i": 4511
+        },
+        "position": {
+          "x": 258.39601,
+          "y": -217.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4513,
+      "p": {
+        "parent": {
+          "__i": 4511
+        },
+        "rotation": 1.5708,
+        "position": {
+          "x": 247.46833,
+          "y": -207.69877
+        },
+        "width": 30,
+        "height": 10
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(0,199,7)",
+        "shape.border.color": null,
+        "shape.gradient.color": null,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4514,
+      "p": {
+        "displayName": "zjn",
+        "parent": {
+          "__i": 4498
+        },
+        "image": "assets/JET/连云港/zjn.png",
+        "position": {
+          "x": 723.01953,
+          "y": 391.64664
+        },
+        "width": 874.70572,
+        "height": 282.45706
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4515,
+      "p": {
+        "position": {
+          "x": 110.53582,
+          "y": -634.5556
+        },
+        "width": 192.71319,
+        "height": 32.11887
+      },
+      "s": {
+        "text": "文本",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 4516,
+      "p": {
+        "position": {
+          "x": 207.47425,
+          "y": 608.6937
+        },
+        "width": 192.71319,
+        "height": 32.11887
+      },
+      "s": {
+        "text": "文本",
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4688,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -755.81467,
+          "y": 109.18536
+        },
+        "width": 72.69959,
+        "height": 42.86229
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "污水\n处理区",
+        "tb.autoScale": false,
+        "tb.wordBreak": false,
+        "tb.textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4689,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -577.08083,
+          "y": 113.1837
+        },
+        "width": 34,
+        "height": 83.24885
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "可燃废液储运工段",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4690,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -378.36658,
+          "y": 155.57358
+        },
+        "width": 60.62841,
+        "height": 20.42948
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "焚烧车间",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4691,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -225.87006,
+          "y": 74.55927
+        },
+        "width": 60.71014,
+        "height": 20.42948
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "变配电室",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4692,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -367.8712,
+          "y": 270.49278
+        },
+        "width": 72.69959,
+        "height": 38.14934
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "无极废物仓库及机修间",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4693,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -224.67002,
+          "y": 203.16265
+        },
+        "width": 50.31005,
+        "height": 37.81931
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "有机废物仓库",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4694,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -76.64744,
+          "y": 266.84759
+        },
+        "width": 54.86142,
+        "height": 20.42948
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "综合楼",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4695,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": 44.36671,
+          "y": 165.78832
+        },
+        "width": 51.53305,
+        "height": 20.42948
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "停车场",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4696,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -4.81294,
+          "y": 72.09485
+        },
+        "width": 72.69959,
+        "height": 41.31873
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "消防泵房及消防水池",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 4697,
+      "p": {
+        "displayName": "textBox",
+        "image": "symbols/basic/textBox.json",
+        "position": {
+          "x": -110.07815,
+          "y": 71.55927
+        },
+        "width": 72.69959,
+        "height": 20.42948
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "cacheScaleMap": {
+          "key": "47-5614px sans-serif, arial18",
+          "content": "污水处理区",
+          "scale": 1.29975
+        },
+        "tb.color": "rgb(247,247,247)",
+        "tb.content": "甲类废物仓",
+        "tb.autoScale": false,
+        "tb.wordBreak": false
+      }
+    }
+  ]
+}

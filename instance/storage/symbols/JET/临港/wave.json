@@ -1,0 +1,68 @@
+{
+  "dataBindings": [
+    {
+      "attr": "offsetX",
+      "valueType": "Int",
+      "defaultValue": -20
+    },
+    {
+      "attr": "offsetY",
+      "valueType": "Int",
+      "defaultValue": 0
+    },
+    {
+      "attr": "animation",
+      "valueType": "Function",
+      "defaultValue": "__ht__function(data) {\r\n    console.log(data)\r\n    data.setAnimation({\r\n        up: {\r\n            from: -12, \r\n            to: 12,\r\n            frames: 90,\r\n            next: 'down',\r\n            delay: 0,\r\n            easing:'Quad.easeIn',\r\n            onUpdate: function(value) {\r\n                // this.setPosition(this.getPosition().x, value);\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/30);\r\n            },\r\n            onComplete: function() {\r\n                // data.a('offsetX',-12);\r\n            },\r\n        },\r\n        down: {\r\n            from: 12, \r\n            to: -12,\r\n            frames: 90,\r\n            delay: 0,\r\n            easing:'Quad.easeOut',\r\n            next: \"up\",\r\n            onUpdate: function(value) {\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/30);\r\n            }\r\n        },\r\n        start: [\"up\"]\r\n    });\r\n    \r\n}"
+    },
+    {
+      "attr": "image",
+      "valueType": "URL",
+      "defaultValue": "symbols/JET/临港/渐变.json"
+    },
+    {
+      "attr": "per",
+      "valueType": "Percentage",
+      "defaultValue": 0.6
+    },
+    {
+      "attr": "show",
+      "valueType": "Boolean",
+      "defaultValue": true
+    }
+  ],
+  "width": 100,
+  "height": 100,
+  "comps": [
+    {
+      "type": "components/JET/wave.json",
+      "displayName": "wave",
+      "rect": [
+        0,
+        0,
+        100,
+        100
+      ],
+      "wave": {
+        "func": "attr@image",
+        "value": "symbols/JET/临港/渐变.json"
+      },
+      "offsetX": {
+        "func": "attr@offsetX",
+        "value": -20
+      },
+      "offsetY": {
+        "func": "attr@offsetY",
+        "value": 0
+      },
+      "per": {
+        "func": "attr@per",
+        "value": 0.6
+      },
+      "show": {
+        "func": "attr@show",
+        "value": true
+      }
+    }
+  ]
+}

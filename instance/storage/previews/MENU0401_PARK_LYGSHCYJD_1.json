@@ -1,0 +1,97 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 45,
+      "p": {
+        "position": {
+          "x": 438.33377,
+          "y": 232.49234
+        },
+        "width": 185.08319,
+        "height": 149.45936
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(247,247,247)",
+        "shape.border.color": "#979797"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 46,
+      "p": {
+        "displayName": "wave",
+        "image": "symbols/JET/新安/wave.json",
+        "position": {
+          "x": 438.33377,
+          "y": 230.08171
+        }
+      },
+      "a": {
+        "image": "symbols/JET/新安/渐变2.json",
+        "offsetX": 12,
+        "offsetY": 0,
+        "animation": "__ht__function(data) {\r\n    console.log(data)\r\n    data.setAnimation({\r\n        up: {\r\n            from: 12, \r\n            to: -12,\r\n            frames: 180,\r\n            next: 'down',\r\n            delay: 0,\r\n            easing:'Quad.easeIn',\r\n            onUpdate: function(value) {\r\n                // this.setPosition(this.getPosition().x, value);\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/15);\r\n            },\r\n            onComplete: function() {\r\n                // data.a('offsetX',-12);\r\n            },\r\n        },\r\n        down: {\r\n            from: -12, \r\n            to: 12,\r\n            frames: 180,\r\n            delay: 0,\r\n            easing:'Quad.easeOut',\r\n            next: \"up\",\r\n            onUpdate: function(value) {\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/15);\r\n            }\r\n        },\r\n        start: [\"up\"]\r\n    });\r\n    \r\n}",
+        "per": 0.6
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 47,
+      "p": {
+        "displayName": "wave",
+        "image": "symbols/JET/新安/wave.json",
+        "position": {
+          "x": 438.33377,
+          "y": 230.08171
+        }
+      },
+      "a": {
+        "offsetX": -16,
+        "offsetY": 0,
+        "animation": "__ht__function(data) {\r\n    console.log(data)\r\n    data.setAnimation({\r\n        up: {\r\n            from: -16, \r\n            to: 12,\r\n            frames: 180,\r\n            next: 'down',\r\n            delay: 0,\r\n            easing:'Quad.easeIn',\r\n            onUpdate: function(value) {\r\n                // this.setPosition(this.getPosition().x, value);\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/10);\r\n            },\r\n            onComplete: function() {\r\n                // data.a('offsetX',-12);\r\n            },\r\n        },\r\n        down: {\r\n            from: 12, \r\n            to: -16,\r\n            frames: 180,\r\n            delay: 0,\r\n            easing:'Quad.easeOut',\r\n            next: \"up\",\r\n            onUpdate: function(value) {\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/10);\r\n            }\r\n        },\r\n        start: [\"up\"]\r\n    });\r\n    \r\n}",
+        "image": "symbols/JET/新安/渐变.json",
+        "per": 0.6
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 48,
+      "p": {
+        "displayName": "jet-text",
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 466,
+          "y": 290
+        }
+      },
+      "a": {
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial",
+        "valueType": 0,
+        "query": "LGHB.JAXYF.E2-1-2.P"
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/css/admin/complexOverview/complexOverview.css}" media="all" />
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
+            <span class="layui-breadcrumb" lay-separator=">">
+                <a class="park_select">园区</a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
+            </span>
+        </blockquote>
+        <a href="javascript:void(0);" class="layui-btn layui-btn-sm fullScreen">
+            <i class="fa fa-arrows-alt"></i> 全屏
+        </a>
+        <div id="overview_content">
+            <div class="header_title">
+                <span th:text='${@sysParameter.currentLangPlateTitle("PlatformName")}'></span>
+            </div>
+            <div id="main">
+                <div id="left_content">
+                    <div class="line firstLine"><span></span><span></span></div>
+                    <div class="ISO_electricity item">
+                        <div class="title">万元GDP电耗</div>
+                        <div id="ISO_line"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="ISO_water item">
+                        <div class="title">万元GDP水耗</div>
+                        <div class="tableCon"><div id="ISO_table"></div></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="ISO_energy item">
+                        <div class="title">万元GDP能耗</div>
+                        <div id="ISO_bar"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="ISO_addValue item">
+                        <div class="title">万元工业增加值能耗</div>
+                        <div id="ISO_pie"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                </div>
+                <div id="center_content">
+                    <div id="map"></div>
+                    <div id="currentValue">
+                        <div class="valueItem">
+                            <img src="/public/images/electric.png" width="100" />
+                            <div class="fontItem">
+                                <div class="eleItem">万元GDP电耗</div>
+                                <div id="gdpElectricity">1234.5 单位</div>
+                            </div>
+                        </div>
+                        <div class="valueItem">
+                            <img src="/public/images/water.png" width="100" />
+                            <div class="fontItem">
+                                <div class="waterItem">万元GDP水耗</div>
+                                <div id="gdpWater">1234.5 单位</div>
+                            </div>
+                        </div>
+                        <div class="valueItem">
+                            <img src="/public/images/hot.png" width="100" />
+                            <div class="fontItem">
+                                <div class="hotItem">万元GDP热耗</div>
+                                <div id="gdpSteam">1234.5 单位</div>
+                            </div>
+                        </div>
+                        <div class="valueItem">
+                            <img src="/public/images/energy.png" width="100" />
+                            <div class="fontItem">
+                                <div class="energyItem">万元GDP能耗</div>
+                                <div id="gdpStdCoal">1234.5 单位</div>
+                            </div>
+                        </div>
+                        <div class="valueItem">
+                            <img src="/public/images/addValue.png" width="100" />
+                            <div class="fontItem">
+                                <div class="addValueItem">万元工业增加值能耗</div>
+                                <div id="addValueStdCoal">1234.5 单位</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profileInfoCon">
+                        <div class="line"><span></span><span></span></div>
+                        <div id="profileInfoMain">
+                            <div class="title">简介信息</div>
+                            <div id="profileInfo">
+                                <div id="imageContent">
+                                    <img id="profileImg" src="/public/images/baseProfileInfo.jpg" width="200" />
+                                </div>
+                                <div id="profileContent">
+                                    <p>1.园区介绍
+                                        徐圩新区是国务院批准设立的国家东中西区域合作示范区的先导区，是江苏沿海开发的主要实施载体，是连云港市委市政府“十三五”规划确定的发展新型临港产业的核心区。新区将依托陆桥经济带，服务中西部，面向东北亚，建成服务中西部地区对外开放的重要门户、东中西产业合作示范基地、区域合作体制机制创新试验区。
+                                    </p>
+                                    <p>
+                                        徐圩新区总规划面积约467平方公里，其中，徐圩港区74平方公里，临港产业区153平方公里，适宜布局和发展临港大工业。按照“生态、智能、融合、示范”的发展理念，新区主要发展石化、先进装备制造、节能环保和现代港口物流等主导产业，重点打造世界一流石化产业基地、国家生态工业示范园区、智能化新区，努力发展成为江苏沿海地区新的经济增长极。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line"><span></span><span></span></div>
+                    </div>
+                </div>
+                <div id="right_content">
+                    <div class="line firstLine"><span></span><span></span></div>
+                    <div class="GB_electricity item">
+                        <div class="title GB_title">万元GDP电耗</div>
+                        <div id="GB_line"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="GB_water item">
+                        <div class="title GB_title">万元GDP水耗</div>
+                        <div class="tableCon"><div id="GB_table"></div></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="GB_energy item">
+                        <div class="title GB_title">万元GDP能耗</div>
+                        <div id="GB_bar"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                    <div class="GB_addValue item">
+                        <div class="title GB_title">万元工业增加值能耗</div>
+                        <div id="GB_pie"></div>
+                    </div>
+                    <div class="line"><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://gallery.echartsjs.com/dep/echarts/map/js/world.js"></script>
+    <script type="text/javascript" th:src="@{/public/js/admin/complexOverview/complexOverview.js}"></script>
+</div>
+</html>

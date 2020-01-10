@@ -1,0 +1,2789 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "background": "rgb(0,0,0)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 3351,
+      "p": {
+        "displayName": "临港弘博",
+        "image": "assets/JET/连云港/临港弘博.jpg",
+        "position": {
+          "x": 960,
+          "y": 540
+        },
+        "width": 1920
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3352,
+      "p": {
+        "position": {
+          "x": 962.62479,
+          "y": 31.81757
+        },
+        "width": 396.46007,
+        "height": 50.11604
+      },
+      "s": {
+        "text": "临港弘博综合能源管理平台",
+        "text.font": "24px Arial",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3353,
+      "p": {
+        "displayName": "实时负荷",
+        "position": {
+          "x": 237.13993,
+          "y": 212.18779
+        },
+        "width": 393.69246,
+        "height": 312.62441,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3354,
+      "p": {
+        "displayName": "上海临港综合展示大屏_03",
+        "parent": {
+          "__i": 3353
+        },
+        "image": "assets/JET/连云港/上海临港综合展示大屏_03.png",
+        "position": {
+          "x": 137.7937,
+          "y": 195
+        },
+        "width": 195,
+        "height": 117
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3355,
+      "p": {
+        "displayName": "上海临港综合展示大屏_03",
+        "parent": {
+          "__i": 3353
+        },
+        "image": "assets/JET/连云港/上海临港综合展示大屏_03.png",
+        "position": {
+          "x": 137.7937,
+          "y": 310
+        },
+        "width": 195,
+        "height": 117
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3356,
+      "p": {
+        "parent": {
+          "__i": 3353
+        },
+        "position": {
+          "x": 106.00576,
+          "y": 104.77398
+        },
+        "width": 118.80443,
+        "height": 43.23798
+      },
+      "s": {
+        "text": "实时负荷",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3357,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3353
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 145.73079,
+          "y": 68.13984
+        },
+        "width": 100,
+        "height": 24.5285
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val4 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'line' && val4){\r\n            var timeArr = val4.timeValues;\r\n            var x = [];\r\n            for(var ii=0;ii<timeArr.length;ii++){\r\n                var timeNum = timeArr[ii];\r\n                var date = new Date(timeNum);\r\n                var h = date.getHours();\r\n                h = h < 10 ? ('0' + h) : h;\r\n                var m = date.getMinutes();\r\n                m = m < 10 ? ('0' + m) : m;\r\n                 x.push(h+':'+m);\r\n            }\r\n            var title = data.a('title');\r\n            title = title?title:'电';\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val4.dailyHisValue?val4.dailyHisValue:[]\r\n                }];\r\n                \r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/loadTodayHistoryValue",
+        "paras": "{\"datasource\":\"LGHB.SHJCC.E1-1-1.P,LGHB.SHJCC.E2-1-1.P,LGHB.SHJCC.E17-1-1.P,LGHB.SHJCC.E18-1-1.P,LGHB.SHJCC.E21-1-1.P,LGHB.SHJCC.E25-1-1.P,LGHB.SHJCC.E30-1-1.P,LGHB.SHJCC.E35-1-1.P,LGHB.SHJCC.E39-1-1.P,LGHB.SHJCC.E40-1-1.P,LGHB.SHJCC.E41-1-1.P,LGHB.SHJCC.E42-1-1.P,LGHB.SHJCC.E43-1-1.P,LGHB.SHJCC.E44-1-1.P,LGHB.JAXYF.E2-1-2.P,LGHB.JAXYF.E2-3-32.P#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\"}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3358,
+      "p": {
+        "displayName": "gauge",
+        "parent": {
+          "__i": 3357
+        },
+        "image": "symbols/JET/临港/gauge.json",
+        "position": {
+          "x": 359.84141,
+          "y": 253.75384
+        },
+        "width": 270,
+        "height": 250
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      },
+      "a": {
+        "dataY": [
+          {
+            "name": "s1",
+            "data": [
+              {
+                "value": 13000
+              }
+            ]
+          }
+        ],
+        "min": 0,
+        "max": 30000,
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "theme": "shine",
+        "color": "rgb(246,255,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3359,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3357
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 137.7937,
+          "y": 208.68947
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "color": "rgb(251,255,6)",
+        "fontSize": "bold 28px Arial",
+        "value": "51250",
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3360,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3357
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 137.7937,
+          "y": 323.78906
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "color": "rgb(251,255,6)",
+        "fontSize": "bold 28px Arial",
+        "value": "43223",
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3361,
+      "p": {
+        "parent": {
+          "__i": 3353
+        },
+        "position": {
+          "x": 414.38933,
+          "y": 357.2136
+        },
+        "width": 39.19367,
+        "height": 20.5728
+      },
+      "s": {
+        "text": "kW",
+        "text.font": "20px Arial",
+        "text.color": "rgb(253,255,0)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3362,
+      "p": {
+        "parent": {
+          "__i": 3353
+        },
+        "position": {
+          "x": 136.9422,
+          "y": 179.45573
+        },
+        "width": 127.86926,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "配电容量  (kWVA)",
+        "text.font": "15px Arial",
+        "text.color": "rgb(179,228,242)",
+        "text.align": "center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3363,
+      "p": {
+        "parent": {
+          "__i": 3353
+        },
+        "position": {
+          "x": 136.9422,
+          "y": 294.78346
+        },
+        "width": 127.86926,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "用电量  (kWh)",
+        "text.font": "15px Arial",
+        "text.color": "rgb(179,228,242)",
+        "text.align": "center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3364,
+      "p": {
+        "parent": {
+          "__i": 3353
+        },
+        "position": {
+          "x": 359.84141,
+          "y": 329.65436
+        },
+        "width": 104.00034,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "实时负荷",
+        "text.color": "rgb(255,255,255)",
+        "text.align": "center"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3365,
+      "p": {
+        "displayName": "光伏实时功率",
+        "position": {
+          "x": 230.63993,
+          "y": 554.17935
+        },
+        "width": 380.69246,
+        "height": 293.6413
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3366,
+      "p": {
+        "displayName": "上海临港综合展示大屏_06",
+        "parent": {
+          "__i": 3365
+        },
+        "image": "assets/JET/连云港/上海临港综合展示大屏_06.png",
+        "position": {
+          "x": 137.7937,
+          "y": 530
+        },
+        "width": 195,
+        "height": 112
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3367,
+      "p": {
+        "displayName": "上海临港综合展示大屏_06",
+        "parent": {
+          "__i": 3365
+        },
+        "image": "assets/JET/连云港/上海临港综合展示大屏_06.png",
+        "position": {
+          "x": 137.7937,
+          "y": 645
+        },
+        "width": 195,
+        "height": 112
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3368,
+      "p": {
+        "parent": {
+          "__i": 3365
+        },
+        "position": {
+          "x": 110.40366,
+          "y": 437.85179
+        },
+        "width": 127.60023,
+        "height": 38.35234
+      },
+      "s": {
+        "text": "光伏实时功率",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3369,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3365
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 235.2937,
+          "y": 422.3587
+        },
+        "width": -1,
+        "height": -1
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val3 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'bar' && val3){\r\n            var x = val3.rankSiteAbbrName?val3.rankSiteAbbrName:[];\r\n            var title = '';\r\n            switch(val3.energyTypeId){\r\n                case 'electricity':\r\n                    title = '电';\r\n                    child.a('xAxisName','kW');\r\n                    break;\r\n                case 'water':\r\n                    title = '水';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                case 'steam':\r\n                    title = '蒸汽';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                default:\r\n                    title = '标煤';\r\n                    child.a('xAxisName','tce/h');\r\n                    break;\r\n            }\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val3.rankSiteLoad?val3.rankSiteLoad:[]\r\n                }];\r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyRealTimeLoadRanking",
+        "paras": "{     \"energyTypeId\": \"electricity\" }"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3370,
+      "p": {
+        "displayName": "gauge",
+        "parent": {
+          "__i": 3369
+        },
+        "image": "symbols/JET/临港/gauge.json",
+        "position": {
+          "x": 359.84141,
+          "y": 582.45909
+        },
+        "width": 270,
+        "height": 250
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      },
+      "a": {
+        "dataY": [
+          {
+            "name": "s1",
+            "data": [
+              {
+                "value": 965
+              }
+            ]
+          }
+        ],
+        "min": 0,
+        "max": 2000,
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n}",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "theme": "shine",
+        "color": "rgb(0,255,0)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3371,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3369
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 137.7937,
+          "y": 545
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      },
+      "a": {
+        "color": "rgb(0,255,0)",
+        "fontSize": "bold 28px Arial",
+        "value": "25.2",
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3372,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3369
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 137.7937,
+          "y": 660.18213
+        }
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "color": "rgb(0,255,0)",
+        "fontSize": "bold 28px Arial",
+        "value": "2930",
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3373,
+      "p": {
+        "parent": {
+          "__i": 3365
+        },
+        "position": {
+          "x": 401.38933,
+          "y": 686.46853
+        },
+        "width": 39.19367,
+        "height": 20.5728
+      },
+      "s": {
+        "text": "kW",
+        "text.font": "20px Arial",
+        "text.color": "rgb(0,255,0)",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3374,
+      "p": {
+        "parent": {
+          "__i": 3365
+        },
+        "position": {
+          "x": 136.9422,
+          "y": 516.44071
+        },
+        "width": 127.86926,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "光伏容量  (MW)",
+        "text.font": "15px Arial",
+        "text.color": "rgb(179,227,241)",
+        "text.align": "center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3375,
+      "p": {
+        "parent": {
+          "__i": 3365
+        },
+        "position": {
+          "x": 136.9422,
+          "y": 630.28302
+        },
+        "width": 127.86926,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "当日发电量  (kWh)",
+        "text.font": "15px Arial",
+        "text.color": "rgb(179,227,241)",
+        "text.align": "center",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3376,
+      "p": {
+        "parent": {
+          "__i": 3365
+        },
+        "position": {
+          "x": 355.2109,
+          "y": 658.08124
+        },
+        "width": 104.00034,
+        "height": 27.79822
+      },
+      "s": {
+        "text": "实时负荷",
+        "text.color": "rgb(255,255,255)",
+        "text.align": "center",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3377,
+      "p": {
+        "displayName": "储能",
+        "position": {
+          "x": 246.14446,
+          "y": 894.77005
+        },
+        "width": 399.08184,
+        "height": 298.64923
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3378,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 110.40366,
+          "y": 775.93853
+        },
+        "width": 127.60023,
+        "height": 38.35234
+      },
+      "s": {
+        "text": "储能",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3379,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 303.21073,
+          "y": 828.04169
+        },
+        "width": 75.42606,
+        "height": 29.29628
+      },
+      "s": {
+        "text": "储能容量：",
+        "text.align": "center",
+        "text.color": "rgb(165,229,229)",
+        "text.font": "15px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3380,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3377
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 235.2937,
+          "y": 760.44544
+        },
+        "width": -1,
+        "height": -1
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val3 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'bar' && val3){\r\n            var x = val3.rankSiteAbbrName?val3.rankSiteAbbrName:[];\r\n            var title = '';\r\n            switch(val3.energyTypeId){\r\n                case 'electricity':\r\n                    title = '电';\r\n                    child.a('xAxisName','kWh');\r\n                    break;\r\n                case 'water':\r\n                    title = '水';\r\n                    child.a('xAxisName','t');\r\n                    break;\r\n                case 'steam':\r\n                    title = '蒸汽';\r\n                    child.a('xAxisName','t');\r\n                    break;\r\n                default:\r\n                    title = '标煤';\r\n                    child.a('xAxisName','tce');\r\n                    break;\r\n            }\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val3.rankSiteLoad?val3.rankSiteLoad:[]\r\n                }];\r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyTodayUsageRanking",
+        "paras": "{     \"energyTypeId\": \"electricity\" }"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3381,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3380
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 93.21443,
+          "y": 858.09467
+        },
+        "width": 91.05048,
+        "height": 28
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "textAlign": "right",
+        "value": "257",
+        "color": "rgb(222,43,111)",
+        "fontSize": "bold 16px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3382,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3380
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 93.21443,
+          "y": 938.09467
+        },
+        "width": 91.05048,
+        "height": 28
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "textAlign": "right",
+        "value": "987",
+        "color": "rgb(222,43,111)",
+        "fontSize": "bold 16px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3383,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3380
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 93.21443,
+          "y": 1022.09467
+        },
+        "width": 91.05048,
+        "height": 28
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "textAlign": "right",
+        "value": "980",
+        "color": "rgb(222,43,111)",
+        "fontSize": "bold 16px Arial"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3384,
+      "p": {
+        "displayName": "jet-text",
+        "parent": {
+          "__i": 3380
+        },
+        "image": "symbols/JET/临港/jet-text.json",
+        "position": {
+          "x": 365.73022,
+          "y": 829.04169
+        },
+        "width": 54.09912,
+        "height": 28
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "textAlign": "left",
+        "value": "2.5",
+        "color": "rgb(222,43,111)",
+        "fontSize": "bold 16px Arial"
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 3385,
+      "p": {
+        "parent": {
+          "__i": 3377
+        }
+      },
+      "s": {
+        "editor.folder": true
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3386,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 49.64759,
+          "y": 815.39354
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 54.64759,
+              "y": 810.39354
+            },
+            {
+              "x": 44.64759,
+              "y": 810.39354
+            },
+            {
+              "x": 44.64759,
+              "y": 820.39354
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3387,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 49.64759,
+          "y": 897.57024
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 54.64759,
+              "y": 892.57024
+            },
+            {
+              "x": 44.64759,
+              "y": 892.57024
+            },
+            {
+              "x": 44.64759,
+              "y": 902.57024
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3388,
+      "p": {
+        "displayName": "不规则图形",
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 49.64759,
+          "y": 979.74694
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 54.64759,
+              "y": 974.74694
+            },
+            {
+              "x": 44.64759,
+              "y": 974.74694
+            },
+            {
+              "x": 44.64759,
+              "y": 984.74694
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3389,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 232.2937,
+          "y": 815.39354
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 237.2937,
+              "y": 810.39354
+            },
+            {
+              "x": 227.2937,
+              "y": 810.39354
+            },
+            {
+              "x": 227.2937,
+              "y": 820.39354
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3390,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 49.64759,
+          "y": 873.98189
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 44.64759,
+              "y": 868.98189
+            },
+            {
+              "x": 54.64759,
+              "y": 868.98189
+            },
+            {
+              "x": 54.64759,
+              "y": 878.98189
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3391,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 49.64759,
+          "y": 956.15859
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 44.64759,
+              "y": 951.15859
+            },
+            {
+              "x": 54.64759,
+              "y": 951.15859
+            },
+            {
+              "x": 54.64759,
+              "y": 961.15859
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3392,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 49.64759,
+          "y": 1038.33529
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 44.64759,
+              "y": 1033.33529
+            },
+            {
+              "x": 54.64759,
+              "y": 1033.33529
+            },
+            {
+              "x": 54.64759,
+              "y": 1043.33529
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3393,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 232.2937,
+          "y": 1038.33529
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 227.2937,
+              "y": 1033.33529
+            },
+            {
+              "x": 237.2937,
+              "y": 1033.33529
+            },
+            {
+              "x": 237.2937,
+              "y": 1043.33529
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3394,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 201.0858,
+          "y": 815.39354
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 196.0858,
+              "y": 810.39354
+            },
+            {
+              "x": 206.0858,
+              "y": 810.39354
+            },
+            {
+              "x": 206.0858,
+              "y": 820.39354
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3395,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 201.0858,
+          "y": 897.57024
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 196.0858,
+              "y": 892.57024
+            },
+            {
+              "x": 206.0858,
+              "y": 892.57024
+            },
+            {
+              "x": 206.0858,
+              "y": 902.57024
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3396,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 201.0858,
+          "y": 979.74694
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 196.0858,
+              "y": 974.74694
+            },
+            {
+              "x": 206.0858,
+              "y": 974.74694
+            },
+            {
+              "x": 206.0858,
+              "y": 984.74694
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3397,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 462.59259,
+          "y": 815.39354
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 457.59259,
+              "y": 810.39354
+            },
+            {
+              "x": 467.59259,
+              "y": 810.39354
+            },
+            {
+              "x": 467.59259,
+              "y": 820.39354
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3398,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 201.0858,
+          "y": 873.98189
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 206.0858,
+              "y": 868.98189
+            },
+            {
+              "x": 196.0858,
+              "y": 868.98189
+            },
+            {
+              "x": 196.0858,
+              "y": 878.98189
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3399,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 201.0858,
+          "y": 956.15859
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 206.0858,
+              "y": 951.15859
+            },
+            {
+              "x": 196.0858,
+              "y": 951.15859
+            },
+            {
+              "x": 196.0858,
+              "y": 961.15859
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3400,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 201.0858,
+          "y": 1038.33529
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 206.0858,
+              "y": 1033.33529
+            },
+            {
+              "x": 196.0858,
+              "y": 1033.33529
+            },
+            {
+              "x": 196.0858,
+              "y": 1043.33529
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3401,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "rotation": 3.14159,
+        "position": {
+          "x": 462.59259,
+          "y": 1038.33529
+        },
+        "width": 10,
+        "height": 10,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 467.59259,
+              "y": 1033.33529
+            },
+            {
+              "x": 457.59259,
+              "y": 1033.33529
+            },
+            {
+              "x": 457.59259,
+              "y": 1043.33529
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3402,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 836.97233
+        },
+        "width": 152.2464,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 48.5609,
+              "y": 836.97233
+            },
+            {
+              "x": 200.8073,
+              "y": 836.97233
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3403,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 918.97233
+        },
+        "width": 152.2464,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 48.5609,
+              "y": 918.97233
+            },
+            {
+              "x": 200.8073,
+              "y": 918.97233
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 3404,
+      "p": {
+        "parent": {
+          "__i": 3385
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 1000.97233
+        },
+        "width": 152.2464,
+        "height": 1,
+        "segments": {
+          "__a": [
+            1,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 48.5609,
+              "y": 1000.97233
+            },
+            {
+              "x": 200.8073,
+              "y": 1000.97233
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.color": "rgb(5,255,248)",
+        "shape.border.width": 1,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3405,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 164.20378,
+          "y": 858.09467
+        },
+        "width": 45,
+        "height": 28
+      },
+      "s": {
+        "text": "kW",
+        "text.color": "rgb(2,104,186)",
+        "text.font": "bold 16px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3406,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 164.20378,
+          "y": 938.09467
+        },
+        "width": 45,
+        "height": 28
+      },
+      "s": {
+        "text": "kWh",
+        "text.color": "rgb(2,104,186)",
+        "text.font": "bold 16px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3407,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 164.20378,
+          "y": 1022.09467
+        },
+        "width": 45,
+        "height": 28
+      },
+      "s": {
+        "text": "kWh",
+        "text.color": "rgb(2,104,186)",
+        "text.font": "bold 16px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3408,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 395.84158,
+          "y": 829.04169
+        },
+        "width": 45,
+        "height": 28
+      },
+      "s": {
+        "text": "MW",
+        "text.color": "rgb(2,104,186)",
+        "text.font": "bold 16px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3409,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 826.82419
+        },
+        "width": 75.42606,
+        "height": 29.29628
+      },
+      "s": {
+        "text": "实时功率",
+        "text.align": "center",
+        "text.color": "rgb(165,229,229)",
+        "text.font": "12px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3410,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 907.28556
+        },
+        "width": 75.42606,
+        "height": 29.29628
+      },
+      "s": {
+        "text": "当日充电量",
+        "text.align": "center",
+        "text.color": "rgb(165,229,229)",
+        "text.font": "12px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3411,
+      "p": {
+        "parent": {
+          "__i": 3377
+        },
+        "position": {
+          "x": 124.6841,
+          "y": 987.74694
+        },
+        "width": 75.42606,
+        "height": 29.29628
+      },
+      "s": {
+        "text": "当日放电量",
+        "text.align": "center",
+        "text.color": "rgb(165,229,229)",
+        "text.font": "12px Arial",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3412,
+      "p": {
+        "displayName": "wave",
+        "parent": {
+          "__i": 3377
+        },
+        "image": "symbols/JET/临港/wave.json",
+        "position": {
+          "x": 345.41243,
+          "y": 944.32172
+        },
+        "width": 193.26742,
+        "height": 192.56005
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "per": 0.6,
+        "offsetY": 0,
+        "image": "symbols/JET/临港/渐变2.json",
+        "offsetX": 2,
+        "animation": "__ht__function(data) {\r\n    console.log(data)\r\n    data.setAnimation({\r\n        up: {\r\n            from: 2, \r\n            to: -110,\r\n            frames: 220,\r\n            next: 'down',\r\n            delay: 0,\r\n            easing:'Linear',\r\n            onUpdate: function(value) {\r\n                // this.setPosition(this.getPosition().x, value);\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/15);\r\n            },\r\n            onComplete: function() {\r\n                // data.a('offsetX',-12);\r\n            },\r\n        },\r\n        down: {\r\n            from: -110, \r\n            to: 2,\r\n            frames: 220,\r\n            delay: 0,\r\n            easing:'Linear',\r\n            next: \"up\",\r\n            onUpdate: function(value) {\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/15);\r\n            }\r\n        },\r\n        start: [\"up\"]\r\n    });\r\n    \r\n}",
+        "show": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3413,
+      "p": {
+        "displayName": "wave",
+        "parent": {
+          "__i": 3377
+        },
+        "image": "symbols/JET/临港/wave.json",
+        "position": {
+          "x": 345.41243,
+          "y": 944.32172
+        },
+        "width": 193.26742,
+        "height": 192.56005
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "per": 0.6,
+        "offsetY": 0,
+        "offsetX": -110,
+        "animation": "__ht__function(data) {\r\n    console.log(data)\r\n    data.setAnimation({\r\n        up: {\r\n            from: -110, \r\n            to: 2,\r\n            frames: 220,\r\n            next: 'down',\r\n            delay: 0,\r\n            easing:'Quad.easeIn',\r\n            onUpdate: function(value) {\r\n                // this.setPosition(this.getPosition().x, value);\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/10);\r\n            },\r\n            onComplete: function() {\r\n                // data.a('offsetX',-12);\r\n            },\r\n        },\r\n        down: {\r\n            from: 2, \r\n            to: -110,\r\n            frames: 220,\r\n            delay: 0,\r\n            easing:'Quad.easeOut',\r\n            next: \"up\",\r\n            onUpdate: function(value) {\r\n                data.a('offsetX',value);\r\n                data.a('offsetY',value/10);\r\n            }\r\n        },\r\n        start: [\"up\"]\r\n    });\r\n    \r\n}",
+        "image": "symbols/JET/临港/渐变.json",
+        "show": true
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3414,
+      "p": {
+        "displayName": "water",
+        "parent": {
+          "__i": 3377
+        },
+        "image": "symbols/JET/临港/water.json",
+        "position": {
+          "x": 345.68538,
+          "y": 944.09467
+        },
+        "width": 200,
+        "height": 200
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3415,
+      "p": {
+        "displayName": "地图2修改15M切片",
+        "image": "assets/JET/连云港/地图2修改15M切片.png",
+        "position": {
+          "x": 953.80896,
+          "y": 486.5416
+        },
+        "width": 962.43273,
+        "height": 905.00264
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3416,
+      "p": {
+        "displayName": "jet-ajax",
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 844.15003,
+          "y": 1042.33529
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val2 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        child.eachChild(function(node) {\r\n            var name = node.getDisplayName();\r\n            if(name == 'data' && val2[i]){\r\n                var value = val2[i].lastValue\r\n                node.a('value3',value?parseFloat(value).toFixed(2):'--');\r\n                i++;\r\n            }\r\n        });\r\n    });\r\n}",
+        "paras": "{\"datasources\":[\"LGHB.SHJCC.E1-1-1.Ep_imp,LGHB.SHJCC.E2-1-1.Ep_imp,LGHB.SHJCC.E17-1-1.Ep_imp,LGHB.SHJCC.E18-1-1.Ep_imp,LGHB.SHJCC.E21-1-1.Ep_imp,LGHB.SHJCC.E25-1-1.Ep_imp,LGHB.SHJCC.E30-1-1.Ep_imp,LGHB.SHJCC.E35-1-1.Ep_imp,LGHB.SHJCC.E39-1-1.Ep_imp,LGHB.SHJCC.E40-1-1.Ep_imp,LGHB.SHJCC.E41-1-1.Ep_imp,LGHB.SHJCC.E42-1-1.Ep_imp,LGHB.SHJCC.E43-1-1.Ep_imp,LGHB.SHJCC.E44-1-1.Ep_imp,LGHB.JAXYF.E2-1-2.Ep_imp,LGHB.JAXYF.E2-3-32.Ep_imp#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\",\"LYGSHCYJD.RTHGCC.W1-1.Flowrate,LYGSHCYJD.RTHGCC.W1-2.Flowrate#?+?\",\"LYGSHCYJD.RTHGCC.S2-2.Flowrate_work,LYGSHCYJD.RTHGCC.S2-3.Flowrate_work#?+?\",\"LGHB.SHJCC.E1-1-1.Ep_imp[electricity],LGHB.SHJCC.E2-1-1.Ep_imp[electricity],LGHB.SHJCC.E17-1-1.Ep_imp[electricity],LGHB.SHJCC.E18-1-1.Ep_imp[electricity],LGHB.SHJCC.E21-1-1.Ep_imp[electricity],LGHB.SHJCC.E25-1-1.Ep_imp[electricity],LGHB.SHJCC.E30-1-1.Ep_imp[electricity],LGHB.SHJCC.E35-1-1.Ep_imp[electricity],LGHB.SHJCC.E39-1-1.Ep_imp[electricity],LGHB.SHJCC.E40-1-1.Ep_imp[electricity],LGHB.SHJCC.E41-1-1.Ep_imp[electricity],LGHB.SHJCC.E42-1-1.Ep_imp[electricity],LGHB.SHJCC.E43-1-1.Ep_imp[electricity],LGHB.SHJCC.E44-1-1.Ep_imp[electricity],LGHB.JAXYF.E2-1-2.Ep_imp[electricity],LGHB.JAXYF.E2-3-32.Ep_imp[electricity]#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\"]}",
+        "url": "/htweb/energyTodayDiffValue"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3417,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 3416
+        },
+        "position": {
+          "x": 741.15,
+          "y": 950.36619
+        },
+        "width": 152,
+        "height": 172.66763
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3418,
+      "p": {
+        "displayName": "tb_09",
+        "parent": {
+          "__i": 3417
+        },
+        "image": "assets/JET/连云港/tb_09.png",
+        "position": {
+          "x": 741.15,
+          "y": 957.7
+        },
+        "width": 152,
+        "height": 158
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3419,
+      "p": {
+        "parent": {
+          "__i": 3417
+        },
+        "position": {
+          "x": 738.26405,
+          "y": 1012.97101
+        },
+        "width": 53.14095,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "当日电量",
+        "text.align": "center",
+        "text.color": "rgb(4,193,5)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3420,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 3417
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 719,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(6,140,19)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "34.652",
+        "textAlign": "3",
+        "background": null,
+        "borderWidth": 0,
+        "borderColor": "rgb(4,193,5)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3421,
+      "p": {
+        "parent": {
+          "__i": 3417
+        },
+        "position": {
+          "x": 766,
+          "y": 884
+        },
+        "width": 24.70233,
+        "height": 12.79822
+      },
+      "s": {
+        "text": "kWh",
+        "text.align": "center",
+        "text.color": "rgb(6,140,19)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3422,
+      "p": {
+        "displayName": "储能",
+        "parent": {
+          "__i": 3416
+        },
+        "position": {
+          "x": 956.62129,
+          "y": 944.68481
+        },
+        "width": 112.05743,
+        "height": 161.30487
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3423,
+      "p": {
+        "displayName": "储能56k",
+        "parent": {
+          "__i": 3422
+        },
+        "image": "assets/JET/连云港/储能56k.png",
+        "position": {
+          "x": 961.15,
+          "y": 957.7
+        },
+        "width": 103,
+        "height": 93
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3424,
+      "p": {
+        "parent": {
+          "__i": 3422
+        },
+        "position": {
+          "x": 960.35996,
+          "y": 1012.97101
+        },
+        "width": 84.65473,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "储能发电",
+        "text.align": "center",
+        "text.color": "rgb(0,100,176)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3425,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 3422
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 946.44345,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(2,105,184)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "952",
+        "textAlign": "3",
+        "background": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3426,
+      "p": {
+        "parent": {
+          "__i": 3422
+        },
+        "position": {
+          "x": 981,
+          "y": 883
+        },
+        "width": 17.92552,
+        "height": 18.34979
+      },
+      "s": {
+        "text": "kWh",
+        "text.align": "center",
+        "text.color": "rgb(2,105,184)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3427,
+      "p": {
+        "displayName": "光伏",
+        "parent": {
+          "__i": 3416
+        },
+        "position": {
+          "x": 1161.97333,
+          "y": 944.68481
+        },
+        "width": 126.75333,
+        "height": 161.30487,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3428,
+      "p": {
+        "displayName": "光伏",
+        "parent": {
+          "__i": 3427
+        },
+        "image": "assets/JET/连云港/光伏.png",
+        "position": {
+          "x": 1173.85,
+          "y": 957.7
+        },
+        "width": 103,
+        "height": 115
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3429,
+      "p": {
+        "parent": {
+          "__i": 3427
+        },
+        "position": {
+          "x": 1177.41021,
+          "y": 1012.97101
+        },
+        "width": 59.83812,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "光伏发电",
+        "text.align": "center",
+        "text.color": "rgb(143,129,188)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3430,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 3427
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1144.44754,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(142,131,187)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "1250",
+        "textAlign": "3",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3431,
+      "p": {
+        "parent": {
+          "__i": 3427
+        },
+        "position": {
+          "x": 1185.14452,
+          "y": 883
+        },
+        "width": 24.30779,
+        "height": 16.78064
+      },
+      "s": {
+        "text": "kWh",
+        "text.align": "center",
+        "text.color": "rgb(142,131,187)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3436,
+      "p": {
+        "displayName": "负荷曲线",
+        "position": {
+          "x": 1747.84216,
+          "y": 163.9785
+        },
+        "width": 256.02487,
+        "height": 161.14883,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3437,
+      "p": {
+        "parent": {
+          "__i": 3436
+        },
+        "position": {
+          "x": 1816.45238,
+          "y": 105.02308
+        },
+        "width": 118.80443,
+        "height": 43.23798
+      },
+      "s": {
+        "text": "负荷曲线",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.editable": false,
+        "2d.selectable": false,
+        "text.align": "right",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3438,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3436
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 1669.82973,
+          "y": 232.28867
+        },
+        "width": 100,
+        "height": 24.5285
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val4 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'line' && val4){\r\n            var timeArr = val4.timeValues;\r\n            var x = [];\r\n            for(var ii=0;ii<timeArr.length;ii++){\r\n                var timeNum = timeArr[ii];\r\n                var date = new Date(timeNum);\r\n                var h = date.getHours();\r\n                h = h < 10 ? ('0' + h) : h;\r\n                var m = date.getMinutes();\r\n                m = m < 10 ? ('0' + m) : m;\r\n                 x.push(h+':'+m);\r\n            }\r\n            var title = data.a('title');\r\n            title = title?title:'电';\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val4.dailyHisValue?val4.dailyHisValue:[]\r\n                }];\r\n                \r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/loadTodayHistoryValue",
+        "paras": "{\"datasource\":\"LGHB.SHJCC.E1-1-1.P,LGHB.SHJCC.E2-1-1.P,LGHB.SHJCC.E17-1-1.P,LGHB.SHJCC.E18-1-1.P,LGHB.SHJCC.E21-1-1.P,LGHB.SHJCC.E25-1-1.P,LGHB.SHJCC.E30-1-1.P,LGHB.SHJCC.E35-1-1.P,LGHB.SHJCC.E39-1-1.P,LGHB.SHJCC.E40-1-1.P,LGHB.SHJCC.E41-1-1.P,LGHB.SHJCC.E42-1-1.P,LGHB.SHJCC.E43-1-1.P,LGHB.SHJCC.E44-1-1.P,LGHB.JAXYF.E2-1-2.P,LGHB.JAXYF.E2-3-32.P#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\"}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3439,
+      "p": {
+        "displayName": "line",
+        "parent": {
+          "__i": 3438
+        },
+        "image": "symbols/JET/临港/line.json",
+        "position": {
+          "x": 1673.24593,
+          "y": 259.12929
+        },
+        "width": 476.44121,
+        "height": 265.47264
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false
+      },
+      "a": {
+        "background": null,
+        "lineSmooth": true,
+        "textColor": "rgb(255,255,255)",
+        "dataX": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "dataY": [
+          {
+            "data": [
+              30,
+              33,
+              31,
+              33,
+              35,
+              32,
+              34,
+              35,
+              33
+            ],
+            "name": "s1"
+          }
+        ],
+        "area": true,
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "theme": "shine",
+        "lineColor": "rgb(247,255,0)",
+        "lineEndColor": "rgba(217,195,0,0)",
+        "lineStartColor": "rgba(247,255,0,0.5)"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3440,
+      "p": {
+        "displayName": "光伏功率",
+        "position": {
+          "x": 1731.86994,
+          "y": 417.52947
+        },
+        "width": 287.96931,
+        "height": 81.32772
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3441,
+      "p": {
+        "parent": {
+          "__i": 3440
+        },
+        "position": {
+          "x": 1812.05448,
+          "y": 439.01716
+        },
+        "width": 127.60023,
+        "height": 38.35234
+      },
+      "s": {
+        "text": "光伏功率",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.editable": false,
+        "2d.selectable": false,
+        "text.align": "right",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3442,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3440
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 1637.88529,
+          "y": 391.86561
+        },
+        "width": -1,
+        "height": -1
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val3 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'bar' && val3){\r\n            var x = val3.rankSiteAbbrName?val3.rankSiteAbbrName:[];\r\n            var title = '';\r\n            switch(val3.energyTypeId){\r\n                case 'electricity':\r\n                    title = '电';\r\n                    child.a('xAxisName','kW');\r\n                    break;\r\n                case 'water':\r\n                    title = '水';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                case 'steam':\r\n                    title = '蒸汽';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                default:\r\n                    title = '标煤';\r\n                    child.a('xAxisName','tce/h');\r\n                    break;\r\n            }\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val3.rankSiteLoad?val3.rankSiteLoad:[]\r\n                }];\r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyRealTimeLoadRanking",
+        "paras": "{     \"energyTypeId\": \"electricity\" }"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3443,
+      "p": {
+        "displayName": "bar",
+        "parent": {
+          "__i": 3442
+        },
+        "image": "symbols/JET/临港/bar.json",
+        "position": {
+          "x": 1673.24593,
+          "y": 590.3907
+        },
+        "width": 476.44121,
+        "height": 266.72548
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "dataY": [
+          {
+            "data": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "name": "s1"
+          }
+        ],
+        "textColor": "rgb(255,255,255)",
+        "barColorStart": "rgb(47,119,186)",
+        "barColorEnd": "rgb(5,192,5)",
+        "dataX": [
+          "1XX",
+          "2XX",
+          "3XX",
+          "4XX",
+          "5XX",
+          "6XX",
+          "7XX",
+          "8XX",
+          "9XX"
+        ],
+        "stack": false,
+        "theme": "shine",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "xAxisName": "kW"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 3444,
+      "p": {
+        "displayName": "储能概况",
+        "position": {
+          "x": 1713.00357,
+          "y": 763.80574
+        },
+        "width": 325.70204,
+        "height": 61.2794,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "2d.movable": false,
+        "2d.selectable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3445,
+      "p": {
+        "parent": {
+          "__i": 3444
+        },
+        "position": {
+          "x": 1816.45238,
+          "y": 772.82645
+        },
+        "width": 118.80443,
+        "height": 43.23798
+      },
+      "s": {
+        "text": "储能概况",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.editable": false,
+        "2d.selectable": false,
+        "text.align": "right",
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3446,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 3444
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 1600.15255,
+          "y": 745.43029
+        },
+        "width": 100,
+        "height": 24.5285
+      },
+      "s": {
+        "2d.editable": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val4 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'line' && val4){\r\n            var timeArr = val4.timeValues;\r\n            var x = [];\r\n            for(var ii=0;ii<timeArr.length;ii++){\r\n                var timeNum = timeArr[ii];\r\n                var date = new Date(timeNum);\r\n                var h = date.getHours();\r\n                h = h < 10 ? ('0' + h) : h;\r\n                var m = date.getMinutes();\r\n                m = m < 10 ? ('0' + m) : m;\r\n                 x.push(h+':'+m);\r\n            }\r\n            var title = data.a('title');\r\n            title = title?title:'电';\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val4.dailyHisValue?val4.dailyHisValue:[]\r\n                }];\r\n                \r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/loadTodayHistoryValue",
+        "paras": "{\"datasource\":\"LGHB.SHJCC.E1-1-1.P,LGHB.SHJCC.E2-1-1.P,LGHB.SHJCC.E17-1-1.P,LGHB.SHJCC.E18-1-1.P,LGHB.SHJCC.E21-1-1.P,LGHB.SHJCC.E25-1-1.P,LGHB.SHJCC.E30-1-1.P,LGHB.SHJCC.E35-1-1.P,LGHB.SHJCC.E39-1-1.P,LGHB.SHJCC.E40-1-1.P,LGHB.SHJCC.E41-1-1.P,LGHB.SHJCC.E42-1-1.P,LGHB.SHJCC.E43-1-1.P,LGHB.SHJCC.E44-1-1.P,LGHB.JAXYF.E2-1-2.P,LGHB.JAXYF.E2-3-32.P#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\"}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3447,
+      "p": {
+        "displayName": "barLine",
+        "parent": {
+          "__i": 3446
+        },
+        "image": "symbols/JET/临港/barLine.json",
+        "position": {
+          "x": 1673.24593,
+          "y": 925.89036
+        },
+        "width": 476.44121,
+        "height": 262.88985
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "dataY": [
+          {
+            "data": [
+              -30,
+              33,
+              31,
+              -33,
+              -35,
+              32,
+              34,
+              -35,
+              33
+            ],
+            "name": "s1"
+          }
+        ],
+        "textColor": "rgb(255,255,255)",
+        "background": null,
+        "lineSmooth": true,
+        "dataX": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "area": true,
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "theme": "shine",
+        "lineColor": "rgb(7,247,243)",
+        "lineEndColor": "rgba(0,228,220,0.1)",
+        "lineStartColor": "rgba(5,192,5,0.70)",
+        "barColor": "rgb(4,103,179)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4696 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "background": "rgb(0,0,0)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 370,
+      "p": {
+        "displayName": "background",
+        "image": "assets/JET/连云港/综合展示大屏BG.jpg",
+        "position": {
+          "x": 960,
+          "y": 540
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 371,
+      "p": {
+        "displayName": "规划图",
+        "image": "assets/JET/连云港/规划图.png",
+        "position": {
+          "x": 971.07876,
+          "y": 477.16015
+        },
+        "width": 838.52024,
+        "height": 788.48423
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Shape",
+      "i": 372,
+      "p": {
+        "position": {
+          "x": 978.00503,
+          "y": 458.57815
+        },
+        "width": 789.92714,
+        "height": 746.77986,
+        "segments": {
+          "__a": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "points": {
+          "__a": [
+            {
+              "x": 637.25214,
+              "y": 311.98803
+            },
+            {
+              "x": 828.64906,
+              "y": 85.18822
+            },
+            {
+              "x": 971.36698,
+              "y": 188.07789
+            },
+            {
+              "x": 1021.15231,
+              "y": 119.48478
+            },
+            {
+              "x": 1308.80084,
+              "y": 268.84075
+            },
+            {
+              "x": 1337.5657,
+              "y": 290.96756
+            },
+            {
+              "x": 1359.69251,
+              "y": 318.62607
+            },
+            {
+              "x": 1371.86225,
+              "y": 350.70995
+            },
+            {
+              "x": 1372.96859,
+              "y": 381.68748
+            },
+            {
+              "x": 1367.43689,
+              "y": 414.8777
+            },
+            {
+              "x": 1348.6291,
+              "y": 454.70596
+            },
+            {
+              "x": 1328.71497,
+              "y": 489.00251
+            },
+            {
+              "x": 1177.14632,
+              "y": 756.73692
+            },
+            {
+              "x": 1151.70049,
+              "y": 784.39543
+            },
+            {
+              "x": 1118.51027,
+              "y": 816.47931
+            },
+            {
+              "x": 1100.80882,
+              "y": 831.96808
+            },
+            {
+              "x": 1070.93763,
+              "y": 831.96808
+            },
+            {
+              "x": 981.32405,
+              "y": 828.64906
+            },
+            {
+              "x": 786.60812,
+              "y": 820.90467
+            },
+            {
+              "x": 743.46083,
+              "y": 807.62859
+            },
+            {
+              "x": 722.44036,
+              "y": 799.8842
+            },
+            {
+              "x": 703.63258,
+              "y": 814.26663
+            },
+            {
+              "x": 695.88819,
+              "y": 796.56518
+            },
+            {
+              "x": 673.76138,
+              "y": 804.30956
+            },
+            {
+              "x": 647.20921,
+              "y": 805.4159
+            },
+            {
+              "x": 600.74291,
+              "y": 803.20322
+            },
+            {
+              "x": 607.38095,
+              "y": 739.03547
+            },
+            {
+              "x": 674.86772,
+              "y": 693.67551
+            },
+            {
+              "x": 583.04146,
+              "y": 522.19273
+            },
+            {
+              "x": 646.10287,
+              "y": 441.42987
+            },
+            {
+              "x": 638.35848,
+              "y": 411.55868
+            },
+            {
+              "x": 681.50576,
+              "y": 351.81629
+            },
+            {
+              "x": 635.03946,
+              "y": 310.88169
+            }
+          ]
+        }
+      },
+      "s": {
+        "shape.background": null,
+        "shape.border.width": 5,
+        "shape.dash": true,
+        "shape.dash.pattern": [
+          8,
+          20
+        ],
+        "shape.dash.3d.color": "rgb(240,225,19)",
+        "note.border.color": "rgb(61,61,61)",
+        "border.color": null,
+        "shape.border.color": "rgb(0,199,7)",
+        "shape.dash.color": "rgb(14,102,33)",
+        "border.width": 1,
+        "shape.border.3d.color": "rgb(240,225,19)",
+        "shape.dash.width": 0,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 373,
+      "p": {
+        "position": {
+          "x": 962.62479,
+          "y": 31.81757
+        },
+        "width": 396.46007,
+        "height": 50.11604
+      },
+      "s": {
+        "text": "连云港石化产业基地能源管理中心",
+        "text.font": "24px Arial",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 374,
+      "p": {
+        "displayName": "jet-ajax",
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 844.15003,
+          "y": 1042.33529
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val2 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        child.eachChild(function(node) {\r\n            var name = node.getDisplayName();\r\n            if(name == 'data' && val2[i]){\r\n                var value = val2[i].lastValue\r\n                node.a('value3',value?parseFloat(value).toFixed(2):'--');\r\n                i++;\r\n            }\r\n        });\r\n    });\r\n}",
+        "paras": "{\"datasources\":[\"LYGSHCYJD.WBFHB.S11E1.Ep_imp,LYGSHCYJD.WBFHB.S21E2.Ep_imp,LYGSHCYJD.ZJLQJJS.G21E1.Ep_imp,LYGSHCYJD.RTHGCC.G11E2.Ep_imp,LYGSHCYJD.RTHGCC.G21E2.Ep_imp,LYGSHCYJD.DGWSCL.G11E1.Ep_imp,LYGSHCYJD.DGWSCL.G11E11.Ep_imp,LYGSHCYJD.HYRD.G11E1.Ep_imp,LYGSHCYJD.HYRD.G11E2.Ep_imp,LYGSHCYJD.HYRD.G11E3.Ep_imp,LYGSHCYJD.HYRD.G11E4.Ep_imp#?+?+?+?+?+?+?+?+?+?+?\",\"LYGSHCYJD.WBFHB.D1W10143.Totalflow,LYGSHCYJD.ZJLQJJS.D1W10019.Totalflow,LYGSHCYJD.RTHGCC.D1W10130.Totalflow,LYGSHCYJD.DGWSCL.D1W10021.Totalflow,LYGSHCYJD.HYRD.D1W1001.Totalflow,LYGSHCYJD.HYRD.D1W10005.Totalflow,LYGSHCYJD.SEBSH.D1W10129.Totalflow,LYGSHCYJD.HGSH.D1W1002_1.Totalflow,LYGSHCYJD.HGSH.D1W1002_2.Totalflow,LYGSHCYJD.HGSH.D1W10145.Totalflow,LYGSHCYJD.HGSH.D1W10131.Totalflow,LYGSHCYJD.PCGS.D1W10146.Totalflow#?+?+?+?+?+?+?+?+?+?+?+?\",\"LYGSHCYJD.WBFHB.G11S1.Totalflow_work,LYGSHCYJD.HYRD.G11S1.Totalflow_work,LYGSHCYJD.HYRD.G11S2.Totalflow_work,LYGSHCYJD.HYRD.G11S3.Totalflow_work,LYGSHCYJD.HYRD.G11S4.Totalflow_work,LYGSHCYJD.HYRD.G11S5.Totalflow_work,LYGSHCYJD.SEBSH.G11S1.Totalflow_work,LYGSHCYJD.SEBSH.G11S2.Totalflow_work,LYGSHCYJD.SEBSH.G11S3.Totalflow_work,LYGSHCYJD.SEBSH.G11S4.Totalflow_work,LYGSHCYJD.SEBSH.G11S5.Totalflow_work,LYGSHCYJD.HGSH.G11S1.Totalflow_work,LYGSHCYJD.HGSH.G11S2.Totalflow_work#?+?+?+?+?+?+?+?+?+?+?+?+?\",\"LYGSHCYJD.WBFHB.S11E1.Ep_imp[electricity],LYGSHCYJD.WBFHB.S21E2.Ep_imp[electricity],LYGSHCYJD.WBFHB.D1W10143.Totalflow[water],LYGSHCYJD.WBFHB.G11S1.Totalflow_work[steam],LYGSHCYJD.ZJLQJJS.G21E1.Ep_imp[electricity],LYGSHCYJD.ZJLQJJS.D1W10019.Totalflow[water],LYGSHCYJD.RTHGCC.G11E2.Ep_imp[electricity],LYGSHCYJD.RTHGCC.G21E2.Ep_imp[electricity],LYGSHCYJD.RTHGCC.D1W10130.Totalflow[water],LYGSHCYJD.DGWSCL.G11E1.Ep_imp[electricity],LYGSHCYJD.DGWSCL.G11E11.Ep_imp[electricity],LYGSHCYJD.DGWSCL.D1W10021.Totalflow[water],LYGSHCYJD.HYRD.G11E1.Ep_imp[electricity],LYGSHCYJD.HYRD.G11E2.Ep_imp[electricity],LYGSHCYJD.HYRD.G11E3.Ep_imp[electricity],LYGSHCYJD.HYRD.G11E4.Ep_imp[electricity],LYGSHCYJD.HYRD.D1W1001.Totalflow[water],LYGSHCYJD.HYRD.D1W10005.Totalflow[water],LYGSHCYJD.HYRD.G11S1.Totalflow_work[steam],LYGSHCYJD.HYRD.G11S2.Totalflow_work[steam],LYGSHCYJD.HYRD.G11S3.Totalflow_work[steam],LYGSHCYJD.HYRD.G11S4.Totalflow_work[steam],LYGSHCYJD.HYRD.G11S5.Totalflow_work[steam],LYGSHCYJD.HYRD.G11O1.Totalflow[oil],LYGSHCYJD.HYRD.G11O2.Totalflow[oil],LYGSHCYJD.HYRD.G11O3.Totalflow[oil],LYGSHCYJD.HYRD.G11O4.Totalflow[oil],LYGSHCYJD.HYRD.G11O5.Totalflow[oil],LYGSHCYJD.HYRD.G11O6.Totalflow[oil],LYGSHCYJD.HYRD.G11O7.Totalflow[oil],LYGSHCYJD.HYRD.G11O8.Totalflow[oil],LYGSHCYJD.HYRD.G11C1.Totalflow[coal],LYGSHCYJD.HYRD.G11C2.Totalflow[coal],LYGSHCYJD.SEBSH.D1W10129.Totalflow[water],LYGSHCYJD.SEBSH.G11S1.Totalflow_work[steam],LYGSHCYJD.SEBSH.G11S2.Totalflow_work[steam],LYGSHCYJD.SEBSH.G11S3.Totalflow_work[steam],LYGSHCYJD.SEBSH.G11S4.Totalflow_work[steam],LYGSHCYJD.SEBSH.G11S5.Totalflow_work[steam],LYGSHCYJD.HGSH.D1W1002_1.Totalflow[water],LYGSHCYJD.HGSH.D1W1002_2.Totalflow[water],LYGSHCYJD.HGSH.D1W10145.Totalflow[water],LYGSHCYJD.HGSH.D1W10131.Totalflow[water],LYGSHCYJD.HGSH.G11S1.Totalflow_work[steam],LYGSHCYJD.HGSH.G11S2.Totalflow_work[steam],LYGSHCYJD.PCGS.D1W10146.Totalflow[water]#?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?+?\"]}",
+        "url": "/htweb/energyTodayDiffValue"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 375,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 374
+        },
+        "position": {
+          "x": 701.75014,
+          "y": 944.68481
+        },
+        "width": 105.20204,
+        "height": 161.30487
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 376,
+      "p": {
+        "parent": {
+          "__i": 375
+        },
+        "position": {
+          "x": 714.26405,
+          "y": 1012.97101
+        },
+        "width": 53.14095,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "当日电量",
+        "text.align": "center",
+        "text.color": "rgb(4,193,5)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 377,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 375
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 695,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(6,140,19)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "34.652",
+        "textAlign": "3",
+        "background": null,
+        "borderWidth": 0,
+        "borderColor": "rgb(4,193,5)"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 378,
+      "p": {
+        "parent": {
+          "__i": 375
+        },
+        "position": {
+          "x": 742,
+          "y": 884
+        },
+        "width": 24.70233,
+        "height": 12.79822
+      },
+      "s": {
+        "text": "kWh",
+        "text.align": "center",
+        "text.color": "rgb(6,140,19)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 379,
+      "p": {
+        "displayName": "水",
+        "parent": {
+          "__i": 374
+        },
+        "position": {
+          "x": 859.63995,
+          "y": 944.68481
+        },
+        "width": 102.09475,
+        "height": 161.30487
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 380,
+      "p": {
+        "parent": {
+          "__i": 379
+        },
+        "position": {
+          "x": 868.35996,
+          "y": 1012.97101
+        },
+        "width": 84.65473,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "当日水量",
+        "text.align": "center",
+        "text.color": "rgb(0,100,176)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 381,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 379
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 854.44345,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(2,105,184)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "34.652",
+        "textAlign": "3",
+        "background": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 382,
+      "p": {
+        "parent": {
+          "__i": 379
+        },
+        "position": {
+          "x": 889,
+          "y": 883
+        },
+        "width": 17.92552,
+        "height": 18.34979
+      },
+      "s": {
+        "text": "t",
+        "text.align": "center",
+        "text.color": "rgb(2,105,184)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 383,
+      "p": {
+        "displayName": "蒸汽",
+        "parent": {
+          "__i": 374
+        },
+        "position": {
+          "x": 1015.96297,
+          "y": 944.68481
+        },
+        "width": 98.7326,
+        "height": 161.30487,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 384,
+      "p": {
+        "parent": {
+          "__i": 383
+        },
+        "position": {
+          "x": 1035.41021,
+          "y": 1012.97101
+        },
+        "width": 59.83812,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "当日蒸汽",
+        "text.align": "center",
+        "text.color": "rgb(143,129,188)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 385,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 383
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1012.44754,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(142,131,187)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "34.652",
+        "textAlign": "3",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 386,
+      "p": {
+        "parent": {
+          "__i": 383
+        },
+        "position": {
+          "x": 1053.14452,
+          "y": 883
+        },
+        "width": 24.30779,
+        "height": 16.78064
+      },
+      "s": {
+        "text": "t",
+        "text.align": "center",
+        "text.color": "rgb(142,131,187)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 387,
+      "p": {
+        "displayName": "标煤",
+        "parent": {
+          "__i": 374
+        },
+        "position": {
+          "x": 1180.60078,
+          "y": 944.68481
+        },
+        "width": 103.21918,
+        "height": 161.30487
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 388,
+      "p": {
+        "parent": {
+          "__i": 387
+        },
+        "position": {
+          "x": 1190.77389,
+          "y": 1012.97101
+        },
+        "width": 59.83812,
+        "height": 24.73246
+      },
+      "s": {
+        "text": "当日标煤",
+        "text.align": "center",
+        "text.color": "rgb(182,169,2)",
+        "text.font": "bold 12px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 389,
+      "p": {
+        "displayName": "data",
+        "parent": {
+          "__i": 387
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1174.84207,
+          "y": 876
+        },
+        "width": 91.70175,
+        "height": 23.93525
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "bold 13px Arial",
+        "color": "rgb(178,167,0)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "34.652",
+        "textAlign": "3",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 390,
+      "p": {
+        "parent": {
+          "__i": 387
+        },
+        "position": {
+          "x": 1222.63729,
+          "y": 883
+        },
+        "width": 19.14617,
+        "height": 15.79822
+      },
+      "s": {
+        "text": "tce",
+        "text.align": "center",
+        "text.color": "rgb(178,167,0)",
+        "text.font": "bold 13px Arial",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 391,
+      "p": {
+        "displayName": "实时负载",
+        "position": {
+          "x": 121.16717,
+          "y": 91.13428
+        },
+        "width": 149.12725,
+        "height": 70.51738,
+        "clickThroughEnabled": true
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 392,
+      "p": {
+        "parent": {
+          "__i": 391
+        },
+        "position": {
+          "x": 106.00576,
+          "y": 104.77398
+        },
+        "width": 118.80443,
+        "height": 43.23798
+      },
+      "s": {
+        "text": "实时负荷",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 393,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 391
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 145.73079,
+          "y": 68.13984
+        },
+        "width": 100,
+        "height": 24.5285
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val4 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'line' && val4){\r\n            var timeArr = val4.timeValues;\r\n            var x = [];\r\n            for(var ii=0;ii<timeArr.length;ii++){\r\n                var timeNum = timeArr[ii];\r\n                var date = new Date(timeNum);\r\n                var h = date.getHours();\r\n                h = h < 10 ? ('0' + h) : h;\r\n                var m = date.getMinutes();\r\n                m = m < 10 ? ('0' + m) : m;\r\n                 x.push(h+':'+m);\r\n            }\r\n            var title = data.a('title');\r\n            title = title?title:'电';\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val4.dailyHisValue?val4.dailyHisValue:[]\r\n                }];\r\n                \r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n        if(name == 'newValue'){\r\n            var arr9 = val4.dailyHisValue?val4.dailyHisValue:[];\r\n            if(arr9.length == 0){\r\n                child.a('value','');\r\n            }else{\r\n                var lastValue = null;\r\n                for(var i9=0;i9<arr9.length;i9++){\r\n                    var curValue = arr9[i9];\r\n                    if(curValue != null){\r\n                        lastValue = curValue;\r\n                    }\r\n                }\r\n                if(lastValue != null){\r\n                    child.a('value',lastValue);\r\n                }else{\r\n                    child.a('value','--');\r\n                }\r\n            }\r\n            \r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/loadTodayHistoryValue",
+        "paras": "{\"datasource\":\"LYGSHCYJD.WBFHB.S11E1.P,LYGSHCYJD.WBFHB.S21E2.P,LYGSHCYJD.ZJLQJJS.G21E1.P,LYGSHCYJD.RTHGCC.G11E2.P,LYGSHCYJD.RTHGCC.G21E2.P,LYGSHCYJD.DGWSCL.G11E1.P,LYGSHCYJD.DGWSCL.G11E11.P,LYGSHCYJD.HYRD.G11E1.P,LYGSHCYJD.HYRD.G11E2.P,LYGSHCYJD.HYRD.G11E3.P,LYGSHCYJD.HYRD.G11E4.P#?+?+?+?+?+?+?+?+?+?+?\"}"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 394,
+      "p": {
+        "displayName": "line",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/line.json",
+        "position": {
+          "x": 251.87761,
+          "y": 253.90766
+        },
+        "width": 480,
+        "height": 211
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": true,
+        "dataX": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "dataY": [
+          {
+            "data": [
+              30,
+              33,
+              31,
+              33,
+              35,
+              32,
+              34,
+              35,
+              33
+            ],
+            "name": "s1"
+          }
+        ],
+        "query": "line",
+        "theme": "shine",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "textColor": "rgb(255,255,255)",
+        "background": null,
+        "lineSmooth": true,
+        "lineColor": "rgb(5,192,5)",
+        "lineEndColor": "rgba(0,228,220,0.1)",
+        "lineStartColor": "rgba(5,192,5,0.70)"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 395,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 84.25656,
+          "y": 149.38037
+        },
+        "width": 65.61445,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n        \"datasource\": \"LYGSHCYJD.WBFHB.S11E1.P,LYGSHCYJD.WBFHB.S21E2.P,LYGSHCYJD.ZJLQJJS.G21E1.P,LYGSHCYJD.RTHGCC.G11E2.P,LYGSHCYJD.RTHGCC.G21E2.P,LYGSHCYJD.DGWSCL.G11E1.P,LYGSHCYJD.DGWSCL.G11E11.P,LYGSHCYJD.HYRD.G11E1.P,LYGSHCYJD.HYRD.G11E2.P,LYGSHCYJD.HYRD.G11E3.P,LYGSHCYJD.HYRD.G11E4.P#?+?+?+?+?+?+?+?+?+?+?\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'line'){\r\n        child.a('lineColor','rgba(5,192,5,1)');\r\n        child.a('lineEndColor','rgba(0,228,220,0.1)');\r\n        child.a('lineStartColor','rgba(5,192,5,0.7)');\r\n    }\r\n    if(child.getDisplayName() == 'unit'){\r\n        child.a('value','kWh');\r\n    }\r\n})\r\nparent.a('title','电');\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "电"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 396,
+      "p": {
+        "displayName": "水",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 159.10437,
+          "y": 149.38037
+        },
+        "width": 65.61445,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"datasource\": \"LYGSHCYJD.WBFHB.D1W10143.Flowrate,LYGSHCYJD.ZJLQJJS.D1W10019.Flowrate,LYGSHCYJD.RTHGCC.D1W10130.Flowrate,LYGSHCYJD.DGWSCL.D1W10021.Flowrate,LYGSHCYJD.HYRD.D1W1001.Flowrate,LYGSHCYJD.HYRD.D1W10005.Flowrate,LYGSHCYJD.SEBSH.D1W10129.Flowrate,LYGSHCYJD.HGSH.D1W1002_1.Flowrate,LYGSHCYJD.HGSH.D1W1002_2.Flowrate,LYGSHCYJD.HGSH.D1W10145.Flowrate,LYGSHCYJD.HGSH.D1W10131.Flowrate,LYGSHCYJD.PCGS.D1W10146.Flowrate#?+?+?+?+?+?+?+?+?+?+?+?\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'line'){\r\n        child.a('lineColor','rgba(0,104,183,1)');\r\n        child.a('lineEndColor','rgba(0,228,220,0.1)');\r\n        child.a('lineStartColor','rgba(0,104,183,0.7)');\r\n    }\r\n    if(child.getDisplayName() == 'unit'){\r\n        child.a('value','t');\r\n    }\r\n});\r\nparent.a('title','水');\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "水"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 397,
+      "p": {
+        "displayName": "蒸汽",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 247.95023,
+          "y": 149.38037
+        },
+        "width": 65.61445,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n            \"datasource\": \"LYGSHCYJD.WBFHB.G11S1.Flowrate_work,LYGSHCYJD.HYRD.G11S1.Flowrate_work,LYGSHCYJD.HYRD.G11S2.Flowrate_work,LYGSHCYJD.HYRD.G11S3.Flowrate_work,LYGSHCYJD.HYRD.G11S4.Flowrate_work,LYGSHCYJD.HYRD.G11S5.Flowrate_work,LYGSHCYJD.SEBSH.G11S1.Flowrate_work,LYGSHCYJD.SEBSH.G11S2.Flowrate_work,LYGSHCYJD.SEBSH.G11S3.Flowrate_work,LYGSHCYJD.SEBSH.G11S4.Flowrate_work,LYGSHCYJD.SEBSH.G11S5.Flowrate_work,LYGSHCYJD.HGSH.G11S1.Flowrate_work,LYGSHCYJD.HGSH.G11S2.Flowrate_work#?+?+?+?+?+?+?+?+?+?+?+?+?\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'line'){\r\n        child.a('lineColor','rgba(143,130,188,1)');\r\n        child.a('lineEndColor','rgba(183,170,0,0.1)');\r\n        child.a('lineStartColor','rgba(143,130,188,0.7)');\r\n    }\r\n    if(child.getDisplayName() == 'unit'){\r\n        child.a('value','t');\r\n    }\r\n});\r\nparent.a('title','蒸汽');\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "蒸汽"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 398,
+      "p": {
+        "displayName": "newValue",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 390.65191,
+          "y": 104.77398
+        },
+        "width": 97.93104,
+        "height": 19.2524
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "100",
+        "borderWidth": 0,
+        "textAlign": "right",
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 399,
+      "p": {
+        "displayName": "unit",
+        "parent": {
+          "__i": 393
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 459.63254,
+          "y": 104.77398
+        },
+        "width": 40.03021,
+        "height": 19.2524
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "kWh",
+        "borderWidth": 0,
+        "textAlign": "left",
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ]
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 400,
+      "p": {
+        "displayName": "当日能耗排名",
+        "position": {
+          "x": 165.94862,
+          "y": 770.28007
+        },
+        "width": 238.69016,
+        "height": 49.66926
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 401,
+      "p": {
+        "parent": {
+          "__i": 400
+        },
+        "position": {
+          "x": 110.40366,
+          "y": 775.93853
+        },
+        "width": 127.60023,
+        "height": 38.35234
+      },
+      "s": {
+        "text": "当日能耗",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 402,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 400
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 235.2937,
+          "y": 760.44544
+        },
+        "width": -1,
+        "height": -1
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val3 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'bar' && val3){\r\n            var x = val3.rankSiteAbbrName?val3.rankSiteAbbrName:[];\r\n            var title = '';\r\n            switch(val3.energyTypeId){\r\n                case 'electricity':\r\n                    title = '电';\r\n                    child.a('xAxisName','kWh');\r\n                    break;\r\n                case 'water':\r\n                    title = '水';\r\n                    child.a('xAxisName','t');\r\n                    break;\r\n                case 'steam':\r\n                    title = '蒸汽';\r\n                    child.a('xAxisName','t');\r\n                    break;\r\n                default:\r\n                    title = '标煤';\r\n                    child.a('xAxisName','tce');\r\n                    break;\r\n            }\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val3.rankSiteLoad?val3.rankSiteLoad:[]\r\n                }];\r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyTodayUsageRanking",
+        "paras": "{     \"energyTypeId\": \"electricity\" }"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 403,
+      "p": {
+        "displayName": "bar",
+        "parent": {
+          "__i": 402
+        },
+        "image": "symbols/JET/新安/bar.json",
+        "position": {
+          "x": 264.26234,
+          "y": 939.04292
+        },
+        "width": 474.00134,
+        "height": 206.58475
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "dataX": [
+          "东港污水处理厂",
+          "中节能（连云港）清洁技",
+          "连云港荣泰化工仓储有限",
+          "虹洋热电厂",
+          "斯尔邦石化",
+          "虹港石化",
+          "万博丰环保科技",
+          "鹏程公司"
+        ],
+        "dataY": [
+          {
+            "data": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "name": "s1"
+          }
+        ],
+        "query": "bar",
+        "stack": false,
+        "theme": "shine",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "textColor": "rgb(255,255,255)",
+        "barColorStart": "rgb(46,119,187)",
+        "barColorEnd": "rgb(6,191,6)",
+        "xAxisName": "kWh"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 404,
+      "p": {
+        "displayName": "标煤",
+        "parent": {
+          "__i": 402
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 334.15605,
+          "y": 826.6147
+        },
+        "width": 58.6489,
+        "height": 26
+      },
+      "s": {
+        "interactive": true,
+        "shape.foreground": null,
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"energyTypeId\": \"std_coal\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#b7aa00');\r\n    }\r\n});\r\nchangeParas(event,data);\n}",
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "标煤"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 405,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 402
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 88.29427,
+          "y": 826.6147
+        },
+        "width": 54.9775,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nvar obj = {\r\n    \"energyTypeId\": \"electricity\"\r\n};\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#05c005');\r\n    }\r\n});\r\nparent.a('paras',JSON.stringify(obj));\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "电"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 406,
+      "p": {
+        "displayName": "蒸汽",
+        "parent": {
+          "__i": 402
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 251.20571,
+          "y": 826.6147
+        },
+        "width": 65.61445,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"energyTypeId\": \"steam\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#8f82bc');\r\n    }\r\n});\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "蒸汽"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 407,
+      "p": {
+        "displayName": "水",
+        "parent": {
+          "__i": 402
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 165.63083,
+          "y": 826.6147
+        },
+        "width": 50,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"energyTypeId\": \"water\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#2ccff9');\r\n    }\r\n});\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "水"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 408,
+      "p": {
+        "displayName": "实时负荷排名",
+        "position": {
+          "x": 165.94862,
+          "y": 432.19333
+        },
+        "width": 238.69016,
+        "height": 49.66926
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 409,
+      "p": {
+        "parent": {
+          "__i": 408
+        },
+        "position": {
+          "x": 110.40366,
+          "y": 437.85179
+        },
+        "width": 127.60023,
+        "height": 38.35234
+      },
+      "s": {
+        "text": "上月万元GDP能耗排名",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 410,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 408
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 235.2937,
+          "y": 422.3587
+        },
+        "width": -1,
+        "height": -1
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val3 = res;\r\n    var i = 0;\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        if(name == 'bar' && val3){\r\n            var x = val3.rankSiteAbbrName?val3.rankSiteAbbrName:[];\r\n            var title = '';\r\n            switch(val3.energyTypeId){\r\n                case 'electricity':\r\n                    title = '电';\r\n                    child.a('xAxisName','kW');\r\n                    break;\r\n                case 'water':\r\n                    title = '水';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                case 'steam':\r\n                    title = '蒸汽';\r\n                    child.a('xAxisName','t/h');\r\n                    break;\r\n                default:\r\n                    title = '标煤';\r\n                    child.a('xAxisName','tce/万元');\r\n                    break;\r\n            }\r\n            var y = [{\r\n                \"name\":title,\r\n                \"data\":val3.rankSiteLoad?val3.rankSiteLoad:[]\r\n                }];\r\n            var attrObject = child.getAttrObject();\r\n            var update2 = attrObject.update;\r\n            update2(child,{\"x\":x,\"y\":y});\r\n        }\r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyRealTimeLoadRanking",
+        "paras": "{     \"energyTypeId\": \"std_coal\" }"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 411,
+      "p": {
+        "displayName": "bar",
+        "parent": {
+          "__i": 410
+        },
+        "image": "symbols/JET/新安/bar.json",
+        "position": {
+          "x": 264.26234,
+          "y": 610.50852
+        },
+        "width": 474.00134,
+        "height": 206.58475
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "dataX": [
+          "东港污水处理厂",
+          "中节能（连云港）清洁技",
+          "连云港荣泰化工仓储有限",
+          "虹洋热电厂",
+          "斯尔邦石化",
+          "虹港石化",
+          "万博丰环保科技",
+          "鹏程公司"
+        ],
+        "dataY": [
+          {
+            "data": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "name": "s1"
+          }
+        ],
+        "query": "bar",
+        "stack": false,
+        "theme": "shine",
+        "themes": [
+          "default",
+          "light",
+          "dark",
+          "vintage",
+          "roma",
+          "shine",
+          "infographic",
+          "macarons"
+        ],
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    \r\n    data.a(\"dataX\",valueObj.x);\r\n    data.a(\"dataY\",valueObj.y);\r\n}",
+        "textColor": "rgb(255,255,255)",
+        "barColorStart": "rgb(46,119,187)",
+        "barColorEnd": "rgb(5,192,5)",
+        "xAxisName": "kW"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 412,
+      "p": {
+        "displayName": "标煤",
+        "parent": {
+          "__i": 410
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 102.29427,
+          "y": 477.92357
+        },
+        "width": 54.9775,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nvar obj = {\r\n    \"energyTypeId\": \"std_coal\"\r\n};\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#05c005');\r\n    }\r\n});\r\nparent.a('paras',JSON.stringify(obj));\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "标煤"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 413,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 410
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 88.29427,
+          "y": 477.92357
+        },
+        "width": 54.9775,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nvar obj = {\r\n    \"energyTypeId\": \"electricity\"\r\n};\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#05c005');\r\n    }\r\n});\r\nparent.a('paras',JSON.stringify(obj));\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.visible": false,
+        "2d.selectable": false
+      },
+      "a": {
+        "value": "电"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 414,
+      "p": {
+        "displayName": "蒸汽",
+        "parent": {
+          "__i": 410
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 251.20571,
+          "y": 477.92357
+        },
+        "width": 65.61445,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"energyTypeId\": \"steam\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#8f82bc');\r\n    }\r\n});\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "2d.visible": false
+      },
+      "a": {
+        "value": "蒸汽"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 415,
+      "p": {
+        "displayName": "水",
+        "parent": {
+          "__i": 410
+        },
+        "image": "symbols/JET/新安/button.json",
+        "position": {
+          "x": 165.63083,
+          "y": 477.92357
+        },
+        "width": 50,
+        "height": 26
+      },
+      "s": {
+        "onUp": "__ht__function(event, data, view) {\nvar parent = data.getParent();\r\nparent.a('paras',JSON.stringify({\r\n    \"energyTypeId\": \"water\"\r\n}));\r\nparent.eachChild(function(child){\r\n    if(child.getDisplayName() == 'bar'){\r\n        child.a('barColorStart','#2e77bb');\r\n        child.a('barColorEnd','#2ccff9');\r\n    }\r\n});\r\nchangeParas(event,data);\n}",
+        "interactive": true,
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false,
+        "2d.visible": false
+      },
+      "a": {
+        "value": "水"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 416,
+      "p": {
+        "parent": {
+          "__i": 410
+        },
+        "position": {
+          "x": 203.31055,
+          "y": 479.99213
+        },
+        "width": 126.57902,
+        "height": 29.12438
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "rgb(6,23,43)",
+        "shape.border.color": "#979797",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Data",
+      "i": 417,
+      "p": {
+        "displayName": "能源环比"
+      },
+      "s": {
+        "editor.folder": true,
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 418,
+      "p": {
+        "parent": {
+          "__i": 417
+        },
+        "position": {
+          "x": 1854.73873,
+          "y": 104.77398
+        },
+        "width": 107.32015,
+        "height": 57.71634
+      },
+      "s": {
+        "text": "能源环比",
+        "text.font": "18px Arial",
+        "text.color": "rgb(255,255,255)",
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 419,
+      "p": {
+        "displayName": "jet-ajax",
+        "parent": {
+          "__i": 417
+        },
+        "image": "symbols/JET/jet-ajax.json",
+        "position": {
+          "x": 1671.5896,
+          "y": 83.13984
+        }
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "paras": "[{\"energyTypeId\":\"electricity\",\"datasource\":\"LYGSHCYJD.WBFHB.S11E1.Ep_imp,LYGSHCYJD.WBFHB.S21E2.Ep_imp,LYGSHCYJD.ZJLQJJS.G21E1.Ep_imp,LYGSHCYJD.RTHGCC.G11E2.Ep_imp,LYGSHCYJD.RTHGCC.G21E2.Ep_imp,LYGSHCYJD.DGWSCL.G11E1.Ep_imp,LYGSHCYJD.DGWSCL.G11E11.Ep_imp,LYGSHCYJD.HYRD.G11E1.Ep_imp,LYGSHCYJD.HYRD.G11E2.Ep_imp,LYGSHCYJD.HYRD.G11E3.Ep_imp,LYGSHCYJD.HYRD.G11E4.Ep_imp#?+?+?+?+?+?+?+?+?+?+?\",\"objType\":\"PARK\",\"objId\":\"LYGSHCYJD\"},{\"energyTypeId\":\"water\",\"datasource\":\"LYGSHCYJD.WBFHB.D1W10143.Totalflow,LYGSHCYJD.ZJLQJJS.D1W10019.Totalflow,LYGSHCYJD.RTHGCC.D1W10130.Totalflow,LYGSHCYJD.DGWSCL.D1W10021.Totalflow,LYGSHCYJD.HYRD.D1W1001.Totalflow,LYGSHCYJD.HYRD.D1W10005.Totalflow,LYGSHCYJD.SEBSH.D1W10129.Totalflow,LYGSHCYJD.HGSH.D1W1002_1.Totalflow,LYGSHCYJD.HGSH.D1W1002_2.Totalflow,LYGSHCYJD.HGSH.D1W10145.Totalflow,LYGSHCYJD.HGSH.D1W10131.Totalflow,LYGSHCYJD.PCGS.D1W10146.Totalflow#?+?+?+?+?+?+?+?+?+?+?+?\",\"objType\":\"PARK\",\"objId\":\"LYGSHCYJD\"},{\"energyTypeId\":\"steam\",\"datasource\":\"LYGSHCYJD.WBFHB.G11S1.Totalflow_work,LYGSHCYJD.HYRD.G11S1.Totalflow_work,LYGSHCYJD.HYRD.G11S2.Totalflow_work,LYGSHCYJD.HYRD.G11S3.Totalflow_work,LYGSHCYJD.HYRD.G11S4.Totalflow_work,LYGSHCYJD.HYRD.G11S5.Totalflow_work,LYGSHCYJD.SEBSH.G11S1.Totalflow_work,LYGSHCYJD.SEBSH.G11S2.Totalflow_work,LYGSHCYJD.SEBSH.G11S3.Totalflow_work,LYGSHCYJD.SEBSH.G11S4.Totalflow_work,LYGSHCYJD.SEBSH.G11S5.Totalflow_work,LYGSHCYJD.HGSH.G11S1.Totalflow_work,LYGSHCYJD.HGSH.G11S2.Totalflow_work#?+?+?+?+?+?+?+?+?+?+?+?+?\",\"objType\":\"PARK\",\"objId\":\"LYGSHCYJD\"}]",
+        "interval": 300,
+        "update": "__ht__function(data,res){\r\n    var val = res;\r\n\r\n    data.eachChild(function(child) {\r\n        var name2 = child.getDisplayName();\r\n        if(name2 == 'std_coal'){\r\n            var obj = {\r\n                \"energyTypeId\": \"std_coal\",\r\n                \"thisMonthUsage\": 0,\r\n                \"lastMonthUsage\": 0,\r\n                \"lastMonthThisUsage\": 0,\r\n                \"ratio\": 0,\r\n                \"thisMonthPlan\": 0,\r\n                \"lastMonthPlan\": 0\r\n            };\r\n            for(var i=0;i<val.length;i++){\r\n                var thisUsage = val[i].thisMonthUsage?val[i].thisMonthUsage:0;//当月使用量\r\n                var thisPlan = val[i].thisMonthPlan?val[i].thisMonthPlan:0;//当月计划量\r\n                var lastThisUsage = val[i].lastMonthThisUsage;//当月同期使用量\r\n                var stdCoalCoeff = val[i].stdCoalCoeff;//折标系数\r\n                var ratio = val[i].ratio?val[i].ratio:0;//同期环比\r\n                var lastUsage = val[i].lastMonthUsage?val[i].lastMonthUsage:0;//上月使用量\r\n                var lastPlan = val[i].lastMonthPlan?val[i].lastMonthPlan:0;//上月计划量\r\n\r\n                obj.thisMonthUsage += parseFloat(thisUsage * stdCoalCoeff);\r\n                obj.lastMonthUsage += parseFloat(lastUsage * stdCoalCoeff);\r\n                obj.lastMonthThisUsage += parseFloat(lastThisUsage * stdCoalCoeff);\r\n                obj.ratio += parseFloat(ratio * stdCoalCoeff);\r\n                obj.thisMonthPlan += parseFloat(thisPlan * stdCoalCoeff);\r\n                obj.lastMonthPlan += parseFloat(lastPlan * stdCoalCoeff);\r\n            }\r\n            obj.thisMonthUsage = parseFloat(obj.thisMonthUsage.toFixed(2));\r\n            obj.lastMonthUsage = parseFloat(obj.lastMonthUsage.toFixed(2));\r\n            obj.lastMonthThisUsage = parseFloat(obj.lastMonthThisUsage.toFixed(2));\r\n            obj.ratio = parseFloat(obj.ratio.toFixed(2));\r\n            obj.thisMonthPlan = parseFloat(obj.thisMonthPlan.toFixed(2));\r\n            obj.lastMonthPlan = parseFloat(obj.lastMonthPlan.toFixed(2));\r\n            if(Object.prototype.toString.call(val)== '[object Array]') val.push(obj);\r\n        }\r\n    });\r\n//console.log(val);\r\n    data.eachChild(function(child) {\r\n        var name = child.getDisplayName();\r\n        for(var i=0;i<val.length;i++){\r\n            if(name == val[i].energyTypeId){\r\n                child.eachChild(function(node){\r\n                    var thisMonthUsage = val[i].thisMonthUsage;//当月使用量\r\n                    var thisMonthPlan = val[i].thisMonthPlan;//当月计划量\r\n\r\n                    var lastMonthThisUsage = val[i].lastMonthThisUsage;//当月同期使用量\r\n                    var stdCoalCoeff = val[i].stdCoalCoeff;//折标系数\r\n                    var ratio = val[i].ratio;//同期环比\r\n\r\n                    var lastMonthUsage = val[i].lastMonthUsage;//上月使用量\r\n                    var lastMonthPlan = val[i].lastMonthPlan;//上月计划量\r\n\r\n                    var displayName = node.getDisplayName();\r\n                    if(displayName == 'progress'){\r\n                        var num1 = 0;\r\n                        var num2 = 0;\r\n                        if(thisMonthUsage && thisMonthPlan){\r\n                            num1 = ((thisMonthUsage/thisMonthPlan)*100).toFixed(2);\r\n                            num1 = parseInt(num1)>100?100:num1;\r\n                        }else{\r\n                             num1 = 0;\r\n                        }\r\n                        if(lastMonthUsage && lastMonthPlan){\r\n                            num2 = ((lastMonthUsage/lastMonthPlan)*100).toFixed(2);\r\n                            num2 = parseInt(num2)>100?100:num2;\r\n                        }else{\r\n                            num2 = 0;\r\n                        }\r\n                        node.setAttrObject({'proArray':[parseFloat(num2),parseFloat(num1)]});\r\n                    }\r\n                    if(displayName == 'curPer'){\r\n                        var num3 = 0;\r\n                        if(thisMonthUsage && thisMonthPlan){\r\n                            num3 = ((thisMonthUsage/thisMonthPlan)*100).toFixed(2);\r\n                        }else{\r\n                            num3 = '--';\r\n                        }\r\n                        node.setAttrObject({'value':num3+'%'});\r\n                        node.a('borderWidth',0);\r\n                        node.a('fontSize','13px arial, sans-serif');\r\n                    }\r\n                    if(displayName == 'lastPer'){\r\n                        var num4 = 0;\r\n                        if(lastMonthUsage && lastMonthPlan){\r\n                            num4 = ((lastMonthUsage/lastMonthPlan)*100).toFixed(2);\r\n                        }else{\r\n                            num4 = '--';\r\n                        }\r\n                        node.setAttrObject({'value':num4+'%'});\r\n                        node.a('borderWidth',0);\r\n                        node.a('fontSize','13px arial, sans-serif');\r\n                    }\r\n                    if(displayName == 'thisMonth'){\r\n                        thisMonthUsage = thisMonthUsage != null?thisMonthUsage.toFixed(2):'--';\r\n                        thisMonthPlan = thisMonthPlan != null?thisMonthPlan.toFixed(2):'--';\r\n                        node.a('value3',thisMonthUsage+' / '+thisMonthPlan);\r\n                    }\r\n                    if(displayName == 'lastMonth'){\r\n                        lastMonthUsage = lastMonthUsage != null?lastMonthUsage.toFixed(2):'--';\r\n                        lastMonthPlan = lastMonthPlan != null?lastMonthPlan.toFixed(2):'--';\r\n                        node.a('value3',lastMonthUsage+' / '+lastMonthPlan);\r\n                    }\r\n                    if(displayName == 'ratio'){\r\n                        ratio = ratio!=null?ratio.toFixed(2):'--';\r\n                        node.a('value3',ratio);\r\n                        // if(parseInt(ratio) > 0){\r\n                        //     node.a('color','#ff7d7d');\r\n                        // }else{\r\n                        //     node.a('color','#7cc27c');\r\n                        // }\r\n                    }\r\n                    if(displayName == 'arrow'){\r\n                        var attrObject = node.getAttrObject();\r\n                        var update2 = attrObject.update;\r\n                        if(val[i].ratio) update2(node,parseFloat(ratio));\r\n                    }\r\n                })\r\n            }\r\n        }\r\n    \r\n    });\r\n    \r\n}",
+        "url": "/htweb/energyConsumption"
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 420,
+      "p": {
+        "displayName": "electricity",
+        "parent": {
+          "__i": 419
+        },
+        "position": {
+          "x": 1666.19947,
+          "y": 218.46611
+        },
+        "width": 327.18735,
+        "height": 158.58062
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 421,
+      "p": {
+        "displayName": "progress",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/进度.json",
+        "position": {
+          "x": 1635,
+          "y": 196
+        },
+        "width": 200,
+        "height": 100
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "color": [
+          "rgb(6,77,35)",
+          "rgb(6,192,5)"
+        ],
+        "proArray": [
+          25,
+          50
+        ],
+        "progressColor": [
+          "rgb(6,77,33)",
+          "rgb(6,192,5)"
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 422,
+      "p": {
+        "displayName": "thisMonth",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 176.15964
+        },
+        "width": 104.88726,
+        "height": 19.55853
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(6,192,5)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n\n    \n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 423,
+      "p": {
+        "displayName": "lastMonth",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 203.54778
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(6,192,5)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 424,
+      "p": {
+        "displayName": "电",
+        "parent": {
+          "__i": 420
+        },
+        "position": {
+          "x": 1512.71342,
+          "y": 149.38037
+        },
+        "width": 20.21526,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "电",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 425,
+      "p": {
+        "displayName": "当月",
+        "parent": {
+          "__i": 420
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 181.36069
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "当月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 426,
+      "p": {
+        "displayName": "上月",
+        "parent": {
+          "__i": 420
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 207.63932
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "上月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 427,
+      "p": {
+        "displayName": "同比",
+        "parent": {
+          "__i": 420
+        },
+        "position": {
+          "x": 1794.86003,
+          "y": 267.11223
+        },
+        "width": 69.86622,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "同期环比 ",
+        "text.font": "15px arial, sans-serif",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 428,
+      "p": {
+        "displayName": "ratio",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1776,
+          "y": 284.68613
+        },
+        "width": 70,
+        "height": 16.71633
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "15px arial, sans-serif",
+        "color": "rgb(255,255,255)",
+        "query": "fee",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n    // console.log(data);\n    // console.log(valueObj);\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n\n    // if(parseInt(valueObj.three) > 50){\n    //     data.a('color','#ff7d7d');\n    // }else{\n    //     data.a('color','#7cc27c');\n    // }\n}",
+        "value3": "-0.35",
+        "textAlign": "right",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 429,
+      "p": {
+        "displayName": "kWh",
+        "parent": {
+          "__i": 420
+        },
+        "position": {
+          "x": 1549.88886,
+          "y": 149.80567
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "kWh",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 430,
+      "p": {
+        "displayName": "curPer",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1582.30123,
+          "y": 182.58074
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "50%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "13px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 431,
+      "p": {
+        "displayName": "lastPer",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1596.03631,
+          "y": 208.28115
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "25%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "13px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 432,
+      "p": {
+        "displayName": "arrow",
+        "parent": {
+          "__i": 420
+        },
+        "image": "symbols/JET/新安/箭头3.json",
+        "position": {
+          "x": 1816.29979,
+          "y": 287.75642
+        },
+        "width": 15,
+        "height": 20
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    if(parseInt(valueObj) > 0){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n    }\r\n}",
+        "angle": 0,
+        "up": 1,
+        "down": 0
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 433,
+      "p": {
+        "displayName": "water",
+        "parent": {
+          "__i": 419
+        },
+        "position": {
+          "x": 1666.19947,
+          "y": 455.8852
+        },
+        "width": 327.18735,
+        "height": 169.01228
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 434,
+      "p": {
+        "displayName": "progress",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/pro1.json",
+        "position": {
+          "x": 1635,
+          "y": 436
+        },
+        "width": 200,
+        "height": 100
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "proArray": [
+          25,
+          50
+        ],
+        "progressColor": [
+          "#0243b7",
+          "#0168b7"
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 435,
+      "p": {
+        "displayName": "thisMonth",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 416.96215
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(1,104,183)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 436,
+      "p": {
+        "displayName": "lastMonth",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 443.96215
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(1,104,183)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 437,
+      "p": {
+        "displayName": "水",
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1518.8029,
+          "y": 381.58363
+        },
+        "width": 32.39421,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "水",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 438,
+      "p": {
+        "displayName": "当月",
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 420.60178
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "当月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 439,
+      "p": {
+        "displayName": "上月",
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 447.78487
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "上月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 440,
+      "p": {
+        "displayName": "同比",
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1794.86003,
+          "y": 511.12814
+        },
+        "width": 69.86622,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "同期环比",
+        "text.font": "15px arial, sans-serif",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 441,
+      "p": {
+        "displayName": "ratio",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1776,
+          "y": 527
+        },
+        "width": 70,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "15px arial, sans-serif",
+        "color": "rgb(255,255,255)",
+        "query": "fee",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n    // console.log(data);\n    // console.log(valueObj);\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n\n    // if(parseInt(valueObj.three) > 50){\n    //     data.a('color','#ff7d7d');\n    // }else{\n    //     data.a('color','#7cc27c');\n    // }\n}",
+        "value3": "-0.35",
+        "textAlign": "right",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 442,
+      "p": {
+        "displayName": "t",
+        "parent": {
+          "__i": 433
+        },
+        "position": {
+          "x": 1554.65061,
+          "y": 382.00894
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "t",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 443,
+      "p": {
+        "displayName": "curPer",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1582.30123,
+          "y": 422.98492
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "50%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 444,
+      "p": {
+        "displayName": "lastPer",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1599.03631,
+          "y": 447.20597
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "25%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 445,
+      "p": {
+        "displayName": "arrow",
+        "parent": {
+          "__i": 433
+        },
+        "image": "symbols/JET/新安/箭头3.json",
+        "position": {
+          "x": 1816.29979,
+          "y": 530.39134
+        },
+        "width": 15,
+        "height": 20
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    if(parseInt(valueObj) > 0){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n    }\r\n}",
+        "angle": 0,
+        "up": 1,
+        "down": 0
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 446,
+      "p": {
+        "displayName": "steam",
+        "parent": {
+          "__i": 419
+        },
+        "position": {
+          "x": 1666.19947,
+          "y": 689.57346
+        },
+        "width": 327.18735,
+        "height": 173.95075
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 447,
+      "p": {
+        "displayName": "progress",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/pro2.json",
+        "position": {
+          "x": 1635,
+          "y": 670
+        },
+        "width": 200,
+        "height": 100
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "proArray": [
+          25,
+          50
+        ],
+        "progressColor": [
+          "#6516a5",
+          "#7d47a9"
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 448,
+      "p": {
+        "displayName": "thisMonth",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 652.41528
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(125,71,169)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 449,
+      "p": {
+        "displayName": "lastMonth",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 679.41528
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(125,71,169)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 450,
+      "p": {
+        "displayName": "蒸汽",
+        "parent": {
+          "__i": 446
+        },
+        "position": {
+          "x": 1522.82105,
+          "y": 612.80266
+        },
+        "width": 40.43051,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "蒸汽",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 451,
+      "p": {
+        "displayName": "当月",
+        "parent": {
+          "__i": 446
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 655.05491
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "当月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 452,
+      "p": {
+        "displayName": "上月",
+        "parent": {
+          "__i": 446
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 682.23798
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "上月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 453,
+      "p": {
+        "displayName": "同比",
+        "parent": {
+          "__i": 446
+        },
+        "position": {
+          "x": 1794.86003,
+          "y": 746.12229
+        },
+        "width": 69.86622,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "同期环比",
+        "text.font": "15px arial, sans-serif",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 454,
+      "p": {
+        "displayName": "ratio",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1776,
+          "y": 761.5
+        },
+        "width": 70,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "15px arial, sans-serif",
+        "color": "rgb(255,255,255)",
+        "query": "fee",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n    // console.log(data);\n    // console.log(valueObj);\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n\n    // if(parseInt(valueObj.three) > 50){\n    //     data.a('color','#ff7d7d');\n    // }else{\n    //     data.a('color','#7cc27c');\n    // }\n}",
+        "value3": "-0.35",
+        "textAlign": "right",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 455,
+      "p": {
+        "displayName": "t",
+        "parent": {
+          "__i": 446
+        },
+        "position": {
+          "x": 1554.65062,
+          "y": 612.37736
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "t",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 456,
+      "p": {
+        "displayName": "curPer",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1582.30123,
+          "y": 658.63381
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "50%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 457,
+      "p": {
+        "displayName": "lastPer",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1599.03631,
+          "y": 680.55491
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "25%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 458,
+      "p": {
+        "displayName": "arrow",
+        "parent": {
+          "__i": 446
+        },
+        "image": "symbols/JET/新安/箭头3.json",
+        "position": {
+          "x": 1816.29979,
+          "y": 766.54884
+        },
+        "width": 15,
+        "height": 20
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    if(parseInt(valueObj) > 0){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n    }\r\n}",
+        "angle": 0,
+        "up": 1,
+        "down": 0
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 459,
+      "p": {
+        "displayName": "std_coal",
+        "parent": {
+          "__i": 419
+        },
+        "position": {
+          "x": 1666.19947,
+          "y": 924.23148
+        },
+        "width": 327.18735,
+        "height": 154.46295
+      },
+      "s": {
+        "pixelPerfect": false,
+        "2d.movable": false,
+        "2d.selectable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 460,
+      "p": {
+        "displayName": "progress",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/pro3.json",
+        "position": {
+          "x": 1635,
+          "y": 898
+        },
+        "width": 200,
+        "height": 100
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "proArray": [
+          25,
+          50
+        ],
+        "progressColor": [
+          "#95750e",
+          "#b7ab01"
+        ]
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 461,
+      "p": {
+        "displayName": "thisMonth",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 886.17792
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(183,171,1)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 462,
+      "p": {
+        "displayName": "lastMonth",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1733.04805,
+          "y": 914.17792
+        },
+        "width": 104.88726,
+        "height": 14.27927
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "12px arial, sans-serif",
+        "color": "rgb(183,171,1)",
+        "query": "1",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n}",
+        "value3": "345345 / 68549",
+        "textAlign": "left",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 463,
+      "p": {
+        "displayName": "标煤",
+        "parent": {
+          "__i": 459
+        },
+        "position": {
+          "x": 1522.82105,
+          "y": 857.20457
+        },
+        "width": 40.43051,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "标煤",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 464,
+      "p": {
+        "displayName": "当月",
+        "parent": {
+          "__i": 459
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 889.81755
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "当月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 465,
+      "p": {
+        "displayName": "上月",
+        "parent": {
+          "__i": 459
+        },
+        "position": {
+          "x": 1660.91258,
+          "y": 918.00063
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "上月：",
+        "text.align": "center",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 466,
+      "p": {
+        "displayName": "同比",
+        "parent": {
+          "__i": 459
+        },
+        "position": {
+          "x": 1794.86003,
+          "y": 971.48961
+        },
+        "width": 69.86622,
+        "height": 20.40914
+      },
+      "s": {
+        "text": "同期环比 ",
+        "text.font": "15px arial, sans-serif",
+        "text.align": "center",
+        "text.color": "rgb(255,255,255)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 467,
+      "p": {
+        "displayName": "ratio",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/data.json",
+        "position": {
+          "x": 1776,
+          "y": 989
+        },
+        "width": 70,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "area": [
+          0,
+          0,
+          100,
+          40
+        ],
+        "font": "15px arial, sans-serif",
+        "color": "rgb(255,255,255)",
+        "query": "fee",
+        "update": "__ht__function update(data, valueObj) {\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\n    //data:当前关联的ht Data对象\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\n    // console.log(data);\n    // console.log(valueObj);\n\n    // data.a('value1',valueObj.one);\n    // data.a('value2',valueObj.two);\n    // data.a('value3',valueObj.three);\n\n    // if(parseInt(valueObj.three) > 50){\n    //     data.a('color','#ff7d7d');\n    // }else{\n    //     data.a('color','#7cc27c');\n    // }\n}",
+        "value3": "-0.35",
+        "textAlign": "right",
+        "background": null,
+        "borderColor": null,
+        "borderWidth": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 468,
+      "p": {
+        "displayName": "tce",
+        "parent": {
+          "__i": 459
+        },
+        "position": {
+          "x": 1554.65062,
+          "y": 857.62987
+        },
+        "width": 39.30122,
+        "height": 19.55853
+      },
+      "s": {
+        "text": "tce",
+        "text.color": "rgb(124,145,155)",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 469,
+      "p": {
+        "displayName": "curPer",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1582.30123,
+          "y": 885.96762
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "50%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 470,
+      "p": {
+        "displayName": "lastPer",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/text.json",
+        "position": {
+          "x": 1599.03631,
+          "y": 908.00063
+        },
+        "width": 50,
+        "height": 16.71633
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "value": "25%",
+        "borderColor": null,
+        "borderWidth": 0,
+        "fontSize": "16px arial, sans-serif",
+        "area": [
+          0,
+          0,
+          150,
+          50
+        ],
+        "textAlign": "center"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 471,
+      "p": {
+        "displayName": "arrow",
+        "parent": {
+          "__i": 459
+        },
+        "image": "symbols/JET/新安/箭头3.json",
+        "position": {
+          "x": 1816.29979,
+          "y": 991.46295
+        },
+        "width": 15,
+        "height": 20
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      },
+      "a": {
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    if(parseInt(valueObj) > 0){\r\n        data.a('up',1);\r\n        data.a('down',0);\r\n    }else{\r\n        data.a('up',0);\r\n        data.a('down',1);\r\n    }\r\n}",
+        "angle": 0,
+        "up": 1,
+        "down": 0
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 472,
+      "p": {
+        "rotation": 6.28319,
+        "position": {
+          "x": 1053.14452,
+          "y": 187.38427
+        },
+        "width": 74.10223,
+        "height": 20.95123
+      },
+      "s": {
+        "text": "炼化铁路装卸区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 473,
+      "p": {
+        "position": {
+          "x": 1263.28324,
+          "y": 272.37538
+        },
+        "width": 43.1103,
+        "height": 17.21213
+      },
+      "s": {
+        "text": "公共罐区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 474,
+      "p": {
+        "position": {
+          "x": 1243.16564,
+          "y": 311.58292
+        },
+        "width": 68.74774,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "中石化罐区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 475,
+      "p": {
+        "position": {
+          "x": 1283.53951,
+          "y": 343.90626
+        },
+        "width": 76.24749,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "卫星石化罐区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 476,
+      "p": {
+        "position": {
+          "x": 1324.56443,
+          "y": 380.52077
+        },
+        "width": 76.24749,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "东华能源罐区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 477,
+      "p": {
+        "position": {
+          "x": 1162.02823,
+          "y": 220.62463
+        },
+        "width": 47.14509,
+        "height": 17.21213
+      },
+      "s": {
+        "text": "炼化罐区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 478,
+      "p": {
+        "position": {
+          "x": 1291.10811,
+          "y": 460.04778
+        },
+        "width": 55.64973,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "东华能源",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 479,
+      "p": {
+        "position": {
+          "x": 1254.14263,
+          "y": 524.42103
+        },
+        "width": 55.64973,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "中化塑料",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 480,
+      "p": {
+        "position": {
+          "x": 1140.90668,
+          "y": 470.98492
+        },
+        "width": 58.01188,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "瑞恒（三期）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 481,
+      "p": {
+        "position": {
+          "x": 1115.15208,
+          "y": 540.39134
+        },
+        "width": 43.67822,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "中化圣奥",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 482,
+      "p": {
+        "position": {
+          "x": 1062.38336,
+          "y": 623.90158
+        },
+        "width": 54.78547,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "（公共火炬区）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 483,
+      "p": {
+        "position": {
+          "x": 1202.3353,
+          "y": 633.50852
+        },
+        "width": 87.35643,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "卫星一期",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 484,
+      "p": {
+        "position": {
+          "x": 1133.73984,
+          "y": 724.73803
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "卫星二期",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 485,
+      "p": {
+        "position": {
+          "x": 945.82825,
+          "y": 472.06286
+        },
+        "width": 87.35643,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "盛虹炼化一体化",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 486,
+      "p": {
+        "position": {
+          "x": 764.04355,
+          "y": 537.93714
+        },
+        "width": 40.08711,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "赛科化学",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 487,
+      "p": {
+        "position": {
+          "x": 732.51205,
+          "y": 583.70696
+        },
+        "width": 43.67822,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "海科一期",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 488,
+      "p": {
+        "position": {
+          "x": 704.16089,
+          "y": 621.44566
+        },
+        "width": 43.67822,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "密尔克工",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 489,
+      "p": {
+        "position": {
+          "x": 772.31092,
+          "y": 620
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "海科二期",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 490,
+      "p": {
+        "position": {
+          "x": 685.04773,
+          "y": 650.09422
+        },
+        "width": 63.10657,
+        "height": 17.07919
+      },
+      "s": {
+        "text": "LNG储配站",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "2d.editable": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 491,
+      "p": {
+        "position": {
+          "x": 670.97404,
+          "y": 760.44544
+        },
+        "width": 34.9592,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "德邦",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 492,
+      "p": {
+        "position": {
+          "x": 894.00001,
+          "y": 375.22678
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','hyrd');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 493,
+      "p": {
+        "parent": {
+          "__i": 492
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 894.00001,
+          "y": 367.72678
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "连云港虹洋",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 494,
+      "p": {
+        "parent": {
+          "__i": 492
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 894.00001,
+          "y": 382.72678
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "热电有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 495,
+      "p": {
+        "position": {
+          "x": 994.6669,
+          "y": 309.8136
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','sebsh');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 496,
+      "p": {
+        "parent": {
+          "__i": 495
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 994.6669,
+          "y": 302.3136
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "江苏斯尔邦",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 497,
+      "p": {
+        "parent": {
+          "__i": 495
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 994.6669,
+          "y": 317.3136
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "石化有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 498,
+      "p": {
+        "position": {
+          "x": 1109.62214,
+          "y": 347.44349
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','hgsh');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 499,
+      "p": {
+        "parent": {
+          "__i": 498
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1109.62214,
+          "y": 339.94349
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "江苏虹港",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 500,
+      "p": {
+        "parent": {
+          "__i": 498
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1109.62214,
+          "y": 354.94349
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "石化有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 501,
+      "p": {
+        "position": {
+          "x": 1123.5889,
+          "y": 245
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','rthgcc');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 502,
+      "p": {
+        "parent": {
+          "__i": 501
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1123.5889,
+          "y": 237.5
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "连云港荣泰",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 503,
+      "p": {
+        "parent": {
+          "__i": 501
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1123.5889,
+          "y": 252.5
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "化工仓储有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 504,
+      "p": {
+        "position": {
+          "x": 1191.77389,
+          "y": 383.98211
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','dgwscl');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 505,
+      "p": {
+        "parent": {
+          "__i": 504
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1191.77389,
+          "y": 376.48211
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "连云港东港",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 506,
+      "p": {
+        "parent": {
+          "__i": 504
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1191.77389,
+          "y": 391.48211
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "污水处理厂",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 507,
+      "p": {
+        "position": {
+          "x": 1092.31435,
+          "y": 797.84539
+        },
+        "width": 92.64745,
+        "height": 33.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','zjn');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 508,
+      "p": {
+        "parent": {
+          "__i": 507
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1092.31435,
+          "y": 790.34539
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "中节能（连云港）",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 509,
+      "p": {
+        "parent": {
+          "__i": 507
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 1092.31435,
+          "y": 805.34539
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "清洁技术发展有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 510,
+      "p": {
+        "position": {
+          "x": 712.07207,
+          "y": 708.34278
+        },
+        "width": 92.64745,
+        "height": 29.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','wbfhb');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 511,
+      "p": {
+        "parent": {
+          "__i": 510
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 712.07207,
+          "y": 702.84278
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "连云港万博丰",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 512,
+      "p": {
+        "parent": {
+          "__i": 510
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 712.07207,
+          "y": 713.84278
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "环保科技有限责任公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Block",
+      "i": 513,
+      "p": {
+        "position": {
+          "x": 711.02744,
+          "y": 674
+        },
+        "width": 92.64745,
+        "height": 29.53862
+      },
+      "s": {
+        "interactive": true,
+        "onUp": "__ht__function(event, data, view) {\ndata.a('htImgId','pcgs');\r\nopenDetail(event,data,view);\n}",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.color": "rgb(0,0,0)",
+        "text.shadow": true,
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 514,
+      "p": {
+        "parent": {
+          "__i": 513
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 711.02744,
+          "y": 668.5
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "连云港鹏辰特种",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 515,
+      "p": {
+        "parent": {
+          "__i": 513
+        },
+        "rotation": 6.28319,
+        "position": {
+          "x": 711.02744,
+          "y": 679.5
+        },
+        "width": 92.64736,
+        "height": 18.53819
+      },
+      "s": {
+        "text": "新材料有限公司",
+        "text.color": "rgb(0,0,0)",
+        "pixelPerfect": false,
+        "text.align": "center",
+        "text.font": "bold 10px Microsoft YaHei",
+        "text.shadow.color": "rgb(255,255,255)",
+        "text.shadow.blur": 1,
+        "text.shadow.offset.x": 1,
+        "text.shadow.offset.y": 0,
+        "text.shadow": true,
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 516,
+      "p": {
+        "rotation": 6.28319,
+        "position": {
+          "x": 1018.55763,
+          "y": 159.58494
+        },
+        "width": 74.10223,
+        "height": 20.95123
+      },
+      "s": {
+        "text": "危化品停车场",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 517,
+      "p": {
+        "position": {
+          "x": 1070.81474,
+          "y": 410.68856
+        },
+        "width": 56.45556,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "公用工程岛",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 518,
+      "p": {
+        "position": {
+          "x": 1182.1339,
+          "y": 431.34308
+        },
+        "width": 87.35643,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "中化瑞兆科",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 519,
+      "p": {
+        "position": {
+          "x": 1201.67535,
+          "y": 475.06286
+        },
+        "width": 58.01188,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "瑞恒（一期）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 520,
+      "p": {
+        "position": {
+          "x": 1231.00757,
+          "y": 412.04778
+        },
+        "width": 58.01188,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "瑞恒（二期）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 521,
+      "p": {
+        "position": {
+          "x": 1060.92161,
+          "y": 612.37736
+        },
+        "width": 54.78547,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "炼化项目配套区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 522,
+      "p": {
+        "position": {
+          "x": 1007.83695,
+          "y": 705.63633
+        },
+        "width": 54.0183,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "台湾中石化",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 523,
+      "p": {
+        "position": {
+          "x": 949.20481,
+          "y": 767.5083
+        },
+        "width": 82.57269,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "多元化材料加工区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 524,
+      "p": {
+        "position": {
+          "x": 944.75756,
+          "y": 781.21721
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "（3660亩）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 525,
+      "p": {
+        "position": {
+          "x": 922.91846,
+          "y": 623.7398
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "科思创",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 526,
+      "p": {
+        "position": {
+          "x": 901.07936,
+          "y": 671.30084
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "第二水厂",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 527,
+      "p": {
+        "position": {
+          "x": 826.0326,
+          "y": 663.06286
+        },
+        "width": 43.67821,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "碱液公司",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 528,
+      "p": {
+        "position": {
+          "x": 815.98914,
+          "y": 239.16783
+        },
+        "width": 87.35643,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "待建炼化项目区",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 529,
+      "p": {
+        "position": {
+          "x": 662.12229,
+          "y": 492.8592
+        },
+        "width": 65.75542,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "化工下游新材料",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 530,
+      "p": {
+        "position": {
+          "x": 663.95705,
+          "y": 503.79634
+        },
+        "width": 36.72946,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "4000亩",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 531,
+      "p": {
+        "position": {
+          "x": 804.19349,
+          "y": 250.83217
+        },
+        "width": 54.8469,
+        "height": 21.87428
+      },
+      "s": {
+        "text": "（11400亩）",
+        "text.color": "rgb(124,145,155)",
+        "pixelPerfect": false,
+        "text.font": "9px arial, sans-serif",
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 532,
+      "p": {
+        "displayName": "电量",
+        "image": "assets/JET/连云港/电量.png",
+        "position": {
+          "x": 714.67249,
+          "y": 937.55822
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 533,
+      "p": {
+        "displayName": "水",
+        "image": "assets/JET/连云港/水.png",
+        "position": {
+          "x": 876.94469,
+          "y": 937.55822
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 534,
+      "p": {
+        "displayName": "蒸汽",
+        "image": "assets/JET/连云港/蒸汽.png",
+        "position": {
+          "x": 1032.21689,
+          "y": 937.55822
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 535,
+      "p": {
+        "displayName": "标煤",
+        "image": "assets/JET/连云港/标煤.png",
+        "position": {
+          "x": 1191.48908,
+          "y": 937.55822
+        }
+      },
+      "s": {
+        "2d.selectable": false,
+        "2d.movable": false,
+        "2d.editable": false
+      }
+    }
+  ]
+}

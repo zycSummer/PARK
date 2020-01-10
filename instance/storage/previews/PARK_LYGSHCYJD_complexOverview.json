@@ -1,0 +1,39 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "background": "rgb(9,19,31)",
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Node",
+      "i": 40407,
+      "p": {
+        "displayName": "bg",
+        "image": "symbols/JET/连云港/bg.json",
+        "position": {
+          "x": 960,
+          "y": 540
+        },
+        "width": 1920
+      },
+      "s": {
+        "2d.movable": false,
+        "2d.editable": false,
+        "2d.selectable": false
+      }
+    }
+  ]
+}

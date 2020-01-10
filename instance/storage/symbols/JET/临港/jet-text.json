@@ -1,0 +1,55 @@
+{
+  "dataBindings": [
+    {
+      "attr": "value",
+      "valueType": "Multiline",
+      "defaultValue": "100"
+    },
+    {
+      "attr": "color",
+      "valueType": "String"
+    },
+    {
+      "attr": "fontSize",
+      "valueType": "String",
+      "defaultValue": "bold 12px Arial"
+    },
+    {
+      "attr": "textAlign",
+      "valueType": "String",
+      "defaultValue": "center"
+    }
+  ],
+  "width": 150,
+  "height": 50,
+  "fitSize": true,
+  "scrollable": true,
+  "interactive": true,
+  "comps": [
+    {
+      "type": "text",
+      "text": {
+        "func": "attr@value",
+        "value": "文本"
+      },
+      "align": {
+        "func": "attr@textAlign",
+        "value": "center"
+      },
+      "color": {
+        "func": "attr@color",
+        "value": "rgb(255,255,255)"
+      },
+      "font": {
+        "func": "attr@fontSize",
+        "value": "bold 12px Arial"
+      },
+      "rect": [
+        0,
+        0,
+        150,
+        50
+      ]
+    }
+  ]
+}

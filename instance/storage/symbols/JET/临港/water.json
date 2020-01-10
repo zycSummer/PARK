@@ -1,0 +1,23 @@
+{
+  "width": 200,
+  "height": 200,
+  "comps": [
+    {
+      "type": "oval",
+      "borderWidth": 2,
+      "border3dColor": null,
+      "dash": true,
+      "dashPattern": [
+        5,
+        5
+      ],
+      "dashColor": "rgb(0,255,231)",
+      "rect": [
+        3,
+        3,
+        194,
+        194
+      ]
+    }
+  ]
+}

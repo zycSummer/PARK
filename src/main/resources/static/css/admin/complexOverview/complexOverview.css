@@ -1,0 +1,302 @@
+.container .tabBreacrumb{
+    margin-bottom: 0!important;
+}
+/*全屏*/
+.fullScreen{
+    position:absolute;
+    top:50px;
+    right:10px;
+    z-index: 6;
+}
+#overview_content{
+    height:1px;
+    flex-grow:1;
+    width:100%;
+    position:relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000;
+}
+
+#main{
+    height: 100px;
+    flex-grow: 1;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_title{
+    height:78px;
+    line-height: 78px;
+    width:100%;
+    text-align: center;
+    background-image: url("/public/images/title.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header_title span{
+    font-family: 微软雅黑;
+    background-image: linear-gradient(top, #33f5c1, #2af270) !important;
+    background-image: -webkit-linear-gradient(top, #33f5c1, #2af270) !important;
+    background-image: linear-gradient(top, #33f5c1, #2af270)!important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 2em;
+    letter-spacing: 0.6em;
+}
+
+#left_content{
+    margin-left:10px;
+    width:400px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #07182c;
+}
+
+#center_content{
+    margin:0 10px;
+    width:1px;
+    flex-grow: 1;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#right_content{
+    margin-right:10px;
+    width:400px;
+    height:100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #07182c;
+}
+
+.line{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.line span{
+    width:14px;
+    border-bottom:1px solid #00d904;
+    margin:8px 0;
+}
+.firstLine span{
+    margin-top:0;
+}
+
+.item{
+    margin:0 7px;
+    height: 100px;
+    flex-grow: 1;
+    outline: 1px solid #027414;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ISO_water.item,.GB_water.item{
+    height:50px;
+    flex-grow: 2;
+}
+
+#ISO_line,.tableCon,#ISO_bar,#ISO_pie,#GB_line,#GB_bar,#GB_pie{
+    height:1px;
+    flex-grow: 1;
+}
+
+.title{
+    color:#fff;
+    font-size:15px;
+    padding:5px 20px;
+    background-image: url("/public/images/titleBg2.png");
+    background-repeat: no-repeat;
+}
+.GB_title{
+    text-align: right;
+    background-image: url("/public/images/titleBg1.png");
+    background-position: right;
+}
+
+#map{
+    width:100%;
+    height:100px;
+    flex-grow: 1;
+    position: relative;
+}
+
+#currentValue{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.valueItem{
+    width:20px;
+    flex-grow: 1;
+    color:#fff;
+    text-align: center;
+}
+.fontItem{
+    text-align: center;
+}
+.eleItem{
+    color:#a345d9;
+    margin:5px 0;
+}
+.waterItem{
+    color:#058cf7;
+    margin:5px 0;
+}
+.hotItem{
+    color:#e08c43;
+    margin:5px 0;
+}
+.energyItem{
+    color:#49cbcb;
+    margin:5px 0;
+}
+.addValueItem{
+    color:#04c105;
+    margin:5px 0;
+}
+
+#profileInfoCon{
+    background-color: #07182c;
+}
+#profileInfoCon .line span{
+    margin-top:0;
+}
+#profileInfoMain{
+    margin:0 7px;
+    outline: 1px solid #027414;
+}
+
+#profileInfo{
+    color:#fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:7px;
+}
+#imageContent{
+    margin:7px;
+    width:120px;
+    height:120px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imageContent img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+#profileInfo p{
+    text-indent: 1.5rem;
+}
+#profileContent{
+    width:1px;
+    flex-grow: 1;
+    overflow: auto;
+    margin:0 7px 7px 0;
+}
+
+.layui-table-header{
+    background-color: #07182c;
+    border:none;
+}
+#main .layui-table-header tr{
+    background-color: #07182c;
+}
+#main .layui-table-header th{
+    background-image: url("/public/images/total1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color:#fff;
+    border:none;
+    padding:0;
+}
+#main .layui-table{
+    background-color: #07182c;
+}
+#main .layui-table td{
+    border-color: #3e5d75;
+    color:#fff;
+    padding:0;
+}
+#main .layui-table-body .layui-table-hover td{
+    color:#000;
+}
+#main .layui-table-cell{
+    height:20px;
+    line-height: 20px;
+    font-size: 10px;
+}
+#main .layui-table-view{
+    border:none;
+    margin:0;
+}
+
+/* 表格滚动条 */
+#main .layui-table-body::-webkit-scrollbar,.layui-table-header::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

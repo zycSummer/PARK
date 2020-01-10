@@ -1,0 +1,28 @@
+{
+  "width": 100,
+  "height": 100,
+  "snapshotURL": "",
+  "func": "__ht__function(g, rect, comp, data, view) {\nvar image = ht.Default.getImage(comp.getValue('wave'));\r\nif (!image) return;\r\n\r\ng.save();\r\n\r\nvar x = rect.x;\r\nvar y = rect.y;\r\nvar width = rect.width;\r\nvar height = rect.height;\r\nvar size = Math.min(width, height);\r\n\r\ng.beginPath();\r\ng.arc(width/2, height/2, height/2, 0, Math.PI*2, true);\r\n// g.stroke();\r\ng.clip();\r\n\r\nht.Default.drawImage(g, image, x/2+comp.getValue('offsetX'),height- height*comp.getValue('per'), width*2.5, height, data, view);\r\n\r\ng.restore();\r\n\r\nif(comp.getValue('show')){\r\n    g.font=\"20px Arial\";\r\n    g.fillStyle='#fff';\r\n    g.textAlign=\"center\";\r\n    g.fillText(comp.getValue('per')*100+'%',width/2,height/2+25);\r\n}\n}",
+  "properties": {
+    "wave": {
+      "valueType": "Image",
+      "defaultValue": "symbols/JET/临港/渐变.json"
+    },
+    "offsetX": {
+      "valueType": "Int",
+      "defaultValue": -55
+    },
+    "offsetY": {
+      "valueType": "Int",
+      "defaultValue": 0
+    },
+    "per": {
+      "valueType": "Percentage",
+      "defaultValue": 0.8
+    },
+    "show": {
+      "valueType": "Boolean",
+      "defaultValue": true
+    }
+  }
+}

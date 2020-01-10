@@ -1,0 +1,90 @@
+{
+  "v": "7.0.6",
+  "p": {
+    "autoAdjustIndex": true,
+    "hierarchicalRendering": true
+  },
+  "a": {
+    "gridBlockSize": 40,
+    "gridThickLinesEvery": 10,
+    "gridThickColor": "rgb(191, 191, 191)",
+    "gridLightColor": "rgba(191, 191, 191, 0.4)",
+    "gridAngle": 1.5708,
+    "gridRotation": 0,
+    "gridZoomThreshold": 0.25,
+    "connectActionType": null,
+    "rotateAsClock": false
+  },
+  "d": [
+    {
+      "c": "ht.Text",
+      "i": 3231,
+      "p": {
+        "position": {
+          "x": 295,
+          "y": 128
+        },
+        "width": 120,
+        "height": 70
+      },
+      "s": {
+        "text": "测试"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3232,
+      "p": {
+        "displayName": "jet-text",
+        "image": "symbols/JET/jet-text.json",
+        "position": {
+          "x": 335,
+          "y": 128
+        }
+      },
+      "a": {
+        "query": "LGHB.JAXYF.E2-1-2.P",
+        "valueType": 0,
+        "background": null,
+        "color": "rgb(61,61,61)",
+        "align": "right",
+        "vAlign": "middle",
+        "update": "__ht__function update(data, valueObj) {\r\n    //此函数需要应用程序在收到后台查询结果后主动调用，并传入对应的参数\r\n    //data:当前关联的ht Data对象\r\n    //valueObj:后台根据当前对象自定义属性query的设置值的查询结果，类型为JSON\r\n    console.log(data);\r\n    console.log(valueObj);\r\n\r\n    /*\r\n        enum为对象数组，示例如下：\r\n        [\r\n            {\r\n                \"value\": 0,\r\n                \"desc\": \"开\"\r\n            },\r\n            {\r\n                \"value\": 1,\r\n                \"desc\": \"关\"\r\n            }\r\n        ]\r\n    */\r\n    var enumobj = data.a('enum');\r\n    console.log(enumobj);\r\n    if (enumobj != null && enumobj.length > 0) {\r\n        var flag = false;\r\n        for (var i = 0; i < enumobj.length; i++) {\r\n            if (valueObj == enumobj[i].value) {\r\n                data.a('value', enumobj[i].desc);\r\n                flag = true;\r\n                break;\r\n            }\r\n        }\r\n        if (!flag) {\r\n            data.a('value', valueObj);\r\n        }\r\n    }\r\n    else {\r\n        if(valueObj != null){\r\n            data.a('value', valueObj.toFixed(1));\r\n        }\r\n        else{\r\n            data.a('value', '?');\r\n        }\r\n    }\r\n    \r\n}",
+        "font": "12px Arial"
+      }
+    },
+    {
+      "c": "ht.Text",
+      "i": 3302,
+      "p": {
+        "position": {
+          "x": 249.43311,
+          "y": 87.43764
+        },
+        "width": 33.37868,
+        "height": 17.41497
+      },
+      "s": {
+        "text": "文本"
+      }
+    },
+    {
+      "c": "ht.Node",
+      "i": 3326,
+      "p": {
+        "position": {
+          "x": 245.42012,
+          "y": 164.75106
+        },
+        "width": 46.53985,
+        "height": 29.7855
+      },
+      "s": {
+        "shape": "rect",
+        "shape.background": "#D8D8D8",
+        "shape.border.width": 1,
+        "shape.border.color": "#979797"
+      }
+    }
+  ]
+}
