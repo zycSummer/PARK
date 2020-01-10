@@ -49,7 +49,7 @@ public class SysEnergyParaServiceImpl implements SysEnergyParaService {
     @Override
     public ServiceData addOrEdit(SysEnergyPara energyPara) {
         String content;
-        SysEnergyPara old = sysEnergyParaRepo.findByEnergyParaId(energyPara.getEnergyParaId());
+        SysEnergyPara old = sysEnergyParaRepo.findByEnergyTypeIdAndEnergyParaId(energyPara.getEnergyTypeId(), energyPara.getEnergyParaId());
 
         if (energyPara.getId() == null) {
             content = "新增能源参数配置";

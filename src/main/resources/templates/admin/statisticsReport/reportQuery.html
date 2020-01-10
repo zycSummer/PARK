@@ -6,27 +6,28 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>统计报表</a>
-                <a><cite>报表查询</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="report_content">
             <div class="table_title layui-form">
                 <div>
-                    <label>报表：</label>
+                    <label class="search_label">报表：</label>
                     <div class="layui-input-inline">
                         <select name="reportId" id="reportId"></select>
                     </div>
                 </div>
                 <div class="timeSelect">
-                    <span class="title">时间：</span>
+                    <span class="title search_label">时间：</span>
                     <span class="layui-breadcrumb timeType" lay-separator="|">
                         <a href="javascript:void(0)" data-id="year" class="breadcrumb">年</a>
                         <a href="javascript:void(0)" data-id="month" class="breadcrumb">月</a>
                         <a href="javascript:void(0)" data-id="day" class="breadcrumb layui-this">日</a>
                     </span>
                     <div class="layui-inline" id="timeDiv">
-                        <input type="text" class="layui-input" id="timeInput" value="">
+                        <input type="text" class="layui-input dateInput" id="timeInput" value="">
                     </div>
                 </div>
                 <div>

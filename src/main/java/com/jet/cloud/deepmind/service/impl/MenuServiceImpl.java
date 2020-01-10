@@ -4,18 +4,15 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.common.CurrentUser;
 import com.jet.cloud.deepmind.entity.SysMenu;
-import com.jet.cloud.deepmind.entity.SysMenuFunction;
 import com.jet.cloud.deepmind.model.MenuVO;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.MenuRepo;
+import com.jet.cloud.deepmind.service.MenuMappingRoleService;
 import com.jet.cloud.deepmind.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -30,17 +27,26 @@ public class MenuServiceImpl implements MenuService {
     private MenuRepo menuRepo;
     @Autowired
     private CurrentUser currentUser;
+    @Autowired
+    private MenuMappingRoleService menuMappingRoleService;
 
     @Override
     public Response getAllMenu() {
         try {
             List<SysMenu> list = menuRepo.findAll();
-            list.sort((m, n) -> {
-                if (m.getSortId() == null) return 1;
-                if (n.getSortId() == null) return -1;
-                return m.getSortId().compareTo(n.getSortId());
-            });
-            Response ok = Response.ok(list);
+            LinkedHashSet<MenuVO> modelList = new LinkedHashSet<>();
+            Multimap<String, MenuVO> menuMultimap = ArrayListMultimap.create();
+
+            for (SysMenu menu : list) {
+                if (menu.getParentId() == null) {
+                    modelList.add(new MenuVO(menu, true));
+                    continue;
+                }
+                menuMultimap.put(menu.getParentId(), new MenuVO(menu, true));
+            }
+
+            List<MenuVO> menuList = menuMappingRoleService.getMenuVOTreeList(modelList, menuMultimap);
+            Response ok = Response.ok(menuList);
             ok.setQueryPara("获取所有菜单");
             return ok;
         } catch (Exception e) {
@@ -50,6 +56,7 @@ public class MenuServiceImpl implements MenuService {
             return error;
         }
     }
+
 
     @Override
     public ServiceData updateMenu(SysMenu menu) {

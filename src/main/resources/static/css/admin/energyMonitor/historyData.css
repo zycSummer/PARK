@@ -96,6 +96,10 @@
     font-weight: bold;
 }
 
+.history_select .timeTilte{
+    width:33px;
+}
+
 .layui-breadcrumb .layui-this{
     color:#6fbf86!important;
     font-weight: bold;
@@ -103,7 +107,7 @@
 
 /*时间*/
 .timeSelect{
-    flex-basis:320px;
+    flex-basis:260px;
     flex-grow: 1;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -120,7 +124,7 @@
 }
 
 .timeOption{
-    flex-basis:260px;
+    flex-basis:330px;
     flex-grow: 1;
 }
 .dataType{

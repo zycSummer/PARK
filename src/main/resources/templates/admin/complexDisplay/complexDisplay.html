@@ -6,7 +6,9 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a><cite>综合展示</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <a href="javascript:void(0);" class="layui-btn layui-btn-sm fullScreen">

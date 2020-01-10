@@ -1,15 +1,14 @@
 package com.jet.cloud.deepmind.service.impl;
 
 import com.google.common.collect.Multimap;
-import com.jet.cloud.deepmind.common.util.AlarmHttpUtils;
-import com.jet.cloud.deepmind.common.util.EmailUtils;
-import com.jet.cloud.deepmind.common.util.SmsUtils;
-import com.jet.cloud.deepmind.common.util.SolutionHttpUtils;
+import com.jet.cloud.deepmind.common.util.*;
 import com.jet.cloud.deepmind.entity.Alarm;
 import com.jet.cloud.deepmind.model.AlarmMsgVO;
 import com.jet.cloud.deepmind.model.AlarmSenderVO;
+import com.jet.cloud.deepmind.model.AppTencentVO;
 import com.jet.cloud.deepmind.model.SolutionMsgVO;
 import com.jet.cloud.deepmind.service.AlarmSender;
+import com.jet.cloud.deepmind.service.application.SysParameterBean;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,8 +29,23 @@ public class AlarmSenderImpl implements AlarmSender {
     private AlarmHttpUtils alarmHttpUtils;
     @Autowired
     private SolutionHttpUtils solutionHttpUtils;
+    @Autowired
+    private AppSendTencentUtils appSendTencentUtils;
     @Value("${huawei.cloud.flag}")
     private Boolean flag;
+    @Value("${app.cloud.flag}")
+    private Boolean appFlag;
+    @Value("${app.appid}")
+    private String appId;
+    @Value("${app.secretkey}")
+    private String secretKey;
+    @Autowired
+    private SysParameterBean sysParameterBean;
+
+    public EmailUtils getEmailUtils() {
+        emailUtils.setFrom(sysParameterBean.currentLangPlateTitle("PlatformName"));
+        return emailUtils;
+    }
 
     @Override
     public void emailSend(Multimap<String, Alarm> emailMap) {
@@ -39,7 +53,7 @@ public class AlarmSenderImpl implements AlarmSender {
         for (String addr : emailMap.keySet()) {
             AlarmSenderVO senderVO = AlarmSenderVO.getInstance(emailMap.get(addr));
             try {
-                emailUtils.sendHtmlTemplate(addr, senderVO.getTitle(), senderVO.getEmailContext(), "templates/alarmTemplate.html");
+                getEmailUtils().sendHtmlTemplate(addr, senderVO.getTitle(), senderVO.getEmailContext(), "templates/alarmTemplate.html");
                 log.info("邮件: {} 发送成功:{}", addr, senderVO.getContent());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -92,6 +106,27 @@ public class AlarmSenderImpl implements AlarmSender {
                 } catch (Exception e) {
                     e.printStackTrace();
                     log.error("调用上报优化建议信息，失败={}", e.getMessage());
+                }
+            }
+        }
+    }
+
+    @Override
+    public void sendAppTencent(List<AppTencentVO> appTencentVOS) {
+        if (appFlag) {
+            if (StringUtils.isNotNullAndEmpty(appTencentVOS)) {
+                try {
+                    String encode = StringUtils.encode((appId + ":" + secretKey).getBytes());
+                    log.info("腾讯移动推送info={}", appTencentVOS);
+                    for (AppTencentVO appTencentVO : appTencentVOS) {
+                        Boolean send = appSendTencentUtils.send(appTencentVO, encode);
+                        if (send) {
+                            log.info("腾讯移动推送，成功");
+                        }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    log.error("腾讯移动推送，失败={}", e.getMessage());
                 }
             }
         }

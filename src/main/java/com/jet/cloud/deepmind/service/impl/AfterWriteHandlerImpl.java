@@ -27,6 +27,11 @@ public class AfterWriteHandlerImpl implements WriteHandler {
             obj.createFreezePane(0, 1, 0, 1);
             obj.setDisplayGridlines(false);
         }
+        Sheet equip = workbook.getSheet("equip");
+        if (equip != null) {
+            equip.createFreezePane(0, 1, 0, 1);
+            equip.setDisplayGridlines(false);
+        }
         //创建样式
         columnTopStyle = PoiUtils.getColumnTopStyle(workbook);//获取列头单元格样式
         style = PoiUtils.getStyle(workbook);//列数据信息单元格样式

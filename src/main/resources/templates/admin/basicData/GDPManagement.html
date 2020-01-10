@@ -6,17 +6,18 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>基础数据</a>
-                <a><cite>对象GDP管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div id="GDP_content">
             <div class="table_title layui-form">
                 <div class="timeSelect">
-                    <span class="title">时间：</span>
+                    <span class="title search_label">时间：</span>
                     <div class="layui-inline" id="timeDiv">
-                        <input type="text" class="layui-input" id="timeInput1" value=""> ~
-                        <input type="text" class="layui-input" id="timeInput2" value="">
+                        <input type="text" class="layui-input dateInput" id="timeInput1" value=""> ~
+                        <input type="text" class="layui-input dateInput" id="timeInput2" value="">
                     </div>
                 </div>
                 <div>
@@ -37,26 +38,26 @@
         <form class="layui-form">
             <div class="layui-form-item edit_yearMonth layui-hide">
                 <label class="layui-form-label">年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="edit_yearMonth"></div>
                 </div>
             </div>
             <div class="layui-form-item add_yearMonth">
                 <label class="layui-form-label"><span class="red">* </span>年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="yearMonth" id="yearMonth" class="layui-input" autocomplete="off"/>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>GDP：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="GDP" id="GDP" maxlength='30' class="layui-input" autocomplete="off"/>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="GDP_tip"></i>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>工业增加值：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="GDP" id="addValue" maxlength='30' class="layui-input" autocomplete="off"/>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="addValue_tip"></i>
@@ -64,7 +65,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">备注：</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                    <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                 </div>
             </div>
         </form>
@@ -75,19 +76,19 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_yearMonth"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">GDP：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_GDP"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">工业增加值：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_addValue"></div>
                 </div>
             </div>

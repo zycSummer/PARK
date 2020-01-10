@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/benchmarkingRanking")
 public class BenchmarkingRankingController {
+
     @Autowired
     private BenchmarkingRankingService benchmarkingRankingService;
 
@@ -27,7 +28,6 @@ public class BenchmarkingRankingController {
         String benchmarkingType = data.getString("benchmarkingType");
         Long timestamp = data.getLong("timestamp");
         String timeUnit = data.getString("timeUnit");
-        return benchmarkingRankingService.queryObj(objType, objId, benchmarkingType,timestamp,timeUnit);
-
+        return benchmarkingRankingService.queryObj(objType, objId, benchmarkingType, timestamp, timeUnit);
     }
 }

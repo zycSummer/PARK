@@ -1,18 +1,24 @@
 package com.jet.cloud.deepmind.service.impl;
 
 import com.jet.cloud.deepmind.common.CurrentUser;
+import com.jet.cloud.deepmind.common.util.StringUtils;
+import com.jet.cloud.deepmind.config.AppConfig;
 import com.jet.cloud.deepmind.entity.Park;
 import com.jet.cloud.deepmind.entity.QPark;
+import com.jet.cloud.deepmind.entity.UserGroupMappingObj;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.ParkRepo;
+import com.jet.cloud.deepmind.repository.UserGroupMappingObjRepo;
 import com.jet.cloud.deepmind.service.ParkService;
+import com.jet.cloud.deepmind.service.SiteService;
 import com.querydsl.core.types.ExpressionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.querydsl.core.types.Predicate;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -26,12 +32,18 @@ import static com.jet.cloud.deepmind.common.util.StringUtils.isNotNullAndEmpty;
  */
 @Service
 public class ParkServiceImpl implements ParkService {
-    private static final Logger logger = LoggerFactory.getLogger(CoManageServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(ParkServiceImpl.class);
 
     @Autowired
     private ParkRepo parkRepo;
     @Autowired
     private CurrentUser currentUser;
+    @Autowired
+    private UserGroupMappingObjRepo userGroupMappingObjRepo;
+    @Autowired
+    private SiteService siteService;
+    @Autowired
+    private AppConfig appConfig;
 
     @Override
     public Response queryPark(String parkId, String parkName) {
@@ -71,20 +83,48 @@ public class ParkServiceImpl implements ParkService {
 
     @Transactional
     @Override
-    public ServiceData insertOrUpdatePark(Park park) {
+    public ServiceData insertOrUpdatePark(Park park, MultipartFile file) {
         try {
+            String suffix = null;
+            String fileName = null;
+            // 图片命名规则：对象类型_对象标识_设备标识
+            if (file != null) {
+                if (StringUtils.isNotNullAndEmpty(file.getOriginalFilename())) {
+                    suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+                    fileName = "PARK_" + park.getParkId() + suffix;
+                }
+                siteService.uploadImage(file, fileName, appConfig.getImagePath());
+            }
             if (park.getId() == null) {
+                park.setImgSuffix(suffix);
                 park.setCreateNow();
                 park.setCreateUserId(currentUser.userId());
                 parkRepo.save(park);
+
+                UserGroupMappingObj userGroup = userGroupMappingObjRepo.findByUserGroupIdAndObjTypeAndObjId(currentUser.user().getUserGroupId(), "PARK", park.getParkId());
+                if (userGroup == null) {
+                    UserGroupMappingObj userGroupMappingObj = new UserGroupMappingObj();
+                    userGroupMappingObj.setUserGroupId(currentUser.user().getUserGroupId());
+                    userGroupMappingObj.setObjType("PARK");
+                    userGroupMappingObj.setObjId(park.getParkId());
+                    userGroupMappingObj.setMemo(park.getMemo());
+                    userGroupMappingObj.setCreateNow();
+                    userGroupMappingObj.setCreateUserId(currentUser.userId());
+                    userGroupMappingObjRepo.save(userGroupMappingObj);
+                }
             } else {
                 Park old = parkRepo.findById(park.getId()).get();
                 old.setParkId(park.getParkId());
                 old.setParkName(park.getParkName());
+                old.setParkAbbrName(park.getParkAbbrName());
                 old.setRtdbTenantId(park.getRtdbTenantId());
                 old.setLongitude(park.getLongitude());
                 old.setLatitude(park.getLatitude());
                 old.setScale(park.getScale());
+                old.setWorldLatitude(park.getWorldLatitude());
+                old.setWorldLongitude(park.getWorldLongitude());
+                old.setProfile(park.getProfile());
+                old.setImgSuffix(suffix);
                 old.setMemo(park.getMemo());
                 old.setUpdateNow();
                 old.setUpdateUserId(currentUser.userId());
@@ -99,9 +139,15 @@ public class ParkServiceImpl implements ParkService {
 
     @Override
     public Response queryParkById(Integer id) {
-        Response ok = Response.ok("根据id查找园区成功", parkRepo.findById(id));
-        ok.setQueryPara(id);
-        return ok;
+        Park park = parkRepo.findById(id).get();
+        if (StringUtils.isNotNullAndEmpty(park.getImgSuffix())) {
+            try {
+                park.setImg(StringUtils.imageToBase64Str(appConfig.getImagePath() + "PARK_" + park.getParkId() + park.getImgSuffix()));
+            } catch (Exception e) {
+                ;
+            }
+        }
+        return Response.ok("根据id查找园区成功", park);
     }
 
     @Transactional

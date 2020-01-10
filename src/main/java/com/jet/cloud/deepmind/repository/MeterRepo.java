@@ -31,6 +31,10 @@ public interface MeterRepo extends JpaRepository<Meter, Integer>, QuerydslPredic
 
     List<Meter> findAllByObjTypeAndObjIdAndEnergyTypeIdOrderBySortId(String objType, String objId, String energyTypeId);
 
+    List<Meter> findAllByObjTypeAndObjIdAndEnergyTypeIdAndIsRanking(String objType, String objId, String energyTypeId, Boolean isRanking);
+
+    List<Meter> findAllByObjTypeAndObjIdAndIsRanking(String objType, String objId, Boolean isRanking);
+
     Meter findByObjTypeAndObjIdAndMeterIdOrderBySortId(String objType, String objId, String meterId);
 
     @Modifying

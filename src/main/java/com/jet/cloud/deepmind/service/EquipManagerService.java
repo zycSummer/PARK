@@ -6,7 +6,6 @@ import com.jet.cloud.deepmind.model.EquipVO;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
-import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,5 +44,4 @@ public interface EquipManagerService {
     @Transactional
     ServiceData importExcel(MultipartFile file, String objType, String objId);
 
-    void download(HttpServletResponse response);
 }

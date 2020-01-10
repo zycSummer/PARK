@@ -91,7 +91,7 @@ layui.config({
                 var   newPwd= $("#newPassword").val();
                 var   confirmPw= $("#password").val();
                  if(newPwd != confirmPw){
-                     return layer.msg("俩次输入的密码不一致，请重新输入！")
+                     return layer.msg("两次输入的密码不一致，请重新输入！")
                  }
                 var formData = {
                     oldPwd: $("#nurPassword").val(),

@@ -73,10 +73,10 @@ public class ExcelEquipModelListener extends AnalysisEventListener {
                 Equip equip = new Equip();
                 String equipId = equipModel.getEquipId();
                 if (StringUtils.isNotNullAndEmpty(equipId)) {
-                    if (equipId.matches("^[A-Za-z0-9]{0,20}$")) {
+                    if (equipId.matches("^[A-Za-z0-9_]{0,20}$")) {
                         equip.setEquipId(equipId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的equipId只能输入字母和数字且不能大于20位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的equipId只能输入字母、数字和下划线且不能大于20位");
                     }
                 } else {
                     throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的equipId不能为空");
@@ -94,10 +94,10 @@ public class ExcelEquipModelListener extends AnalysisEventListener {
 
                 String equipSysId = equipModel.getEquipSysId();
                 if (StringUtils.isNullOrEmpty(equipSysId)) {
-                    if (equipSysId.matches("^[A-Za-z0-9]{0,20}$")) {
+                    if (equipSysId.matches("^[A-Za-z0-9_]{0,20}$")) {
                         equip.setEquipSysId(equipSysId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的equipSysId只能输入字母和数字且不能大于20位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的equipSysId只能输入字母、数字和下划线且不能大于20位");
                     }
                 } else {
                     equip.setEquipSysId(equipSysId);
@@ -120,10 +120,10 @@ public class ExcelEquipModelListener extends AnalysisEventListener {
 
                 String sortId = equipModel.getSortId();
                 if (sortId != null) {
-                    if (sortId.matches("^[A-Za-z0-9]{0,10}$")) {
+                    if (sortId.matches("^[A-Za-z0-9_]{0,10}$")) {
                         equip.setSortId(sortId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母和数字且不能大于10位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母、数字和下划线且不能大于10位");
                     }
                 } else {
                     equip.setSortId(sortId);

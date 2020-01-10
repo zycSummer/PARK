@@ -6,15 +6,16 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>对标管理</a>
-                <a><cite>指标排名</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div id="index_content">
             <div id="index_left">
                 <form class="layui-form leftSearch">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">时间：</label>
+                        <label class="layui-form-label search_label">时间：</label>
                         <div class="layui-input-inline">
                             <select name="year" id="year" lay-filter="year">
 

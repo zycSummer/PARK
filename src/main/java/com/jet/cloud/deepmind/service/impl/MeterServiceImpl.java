@@ -26,6 +26,7 @@ import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -36,7 +37,9 @@ import javax.transaction.Transactional;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yhy
@@ -106,7 +109,8 @@ public class MeterServiceImpl implements MeterService {
 
     @Override
     public Response queryMeter(QueryVO vo) {
-        Pageable pageable = vo.Pageable();
+        Sort sort = new Sort(Sort.Direction.ASC, "sortId");
+        Pageable pageable = vo.Pageable(sort);
         QMeter obj = QMeter.meter;
         Predicate pre = obj.isNotNull();
         JSONObject key = vo.getKey();
@@ -152,7 +156,6 @@ public class MeterServiceImpl implements MeterService {
                 if (old != null) {
                     return ServiceData.error("新增的仪表对象已存在", currentUser);
                 }
-                //新增企业
                 meter.setCreateNow();
                 meter.setCreateUserId(currentUser.userId());
                 meterRepo.save(meter);
@@ -244,6 +247,11 @@ public class MeterServiceImpl implements MeterService {
             headList.add(headTitle9);
             sheet.setHead(headList);
             // 所有行的集合
+            List<SysEnergyType> all = sysEnergyTypeRepo.findAll();
+            Map<String, String> map = new HashMap<>();
+            for (SysEnergyType sysEnergyType : all) {
+                map.put(sysEnergyType.getEnergyTypeId(), sysEnergyType.getEnergyTypeName());
+            }
             List<Meter> value = query(objType, objId, meterId, meterName, energyTypeId);
             List<List<Object>> list = new ArrayList<>();
             for (int i = 0; i < value.size(); i++) {
@@ -251,9 +259,14 @@ public class MeterServiceImpl implements MeterService {
                 Meter meter = value.get(i);
                 row.add(meter.getMeterId());
                 row.add(meter.getMeterName());
-                row.add(meter.getEnergyTypeId());
+                row.add(map.get(meter.getEnergyTypeId()));
                 row.add(meter.getSortId());
-                row.add(meter.getIsRanking());
+                Boolean isRanking = meter.getIsRanking();
+                if (isRanking) {
+                    row.add("是");
+                } else {
+                    row.add("否");
+                }
                 row.add(meter.getMemo());
                 row.add(meter.getCreateUserId());
                 LocalDateTime createTime = meter.getCreateTime();

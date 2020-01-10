@@ -2,7 +2,7 @@
  * @Author: xzl 
  * @Date: 2019-11-21 16:41:59 
  * @Last Modified by: xzl
- * @Last Modified time: 2019-11-21 16:44:30
+ * @Last Modified time: 2019-12-30 15:13:46
  */
  #btnGroup {
     margin-top: 7px;
@@ -35,3 +35,39 @@
 .addFrom_item  .layui-input-inline{
     width: 60%;
 } 
+.pickingCoordinates{
+    cursor: pointer;
+}
+
+
+#edit_siteId,#delete_siteId,#delete_siteName{
+    line-height: 38px;
+}
+
+#upload_tip{
+    float:right;
+}
+.imageContent{
+    width:200px;
+    height:200px;
+    margin-left:100px;
+    overflow: hidden;
+    border:1px solid #a3a2a2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:-moz-box;
+    display: -moz-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imagePreview{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+#addMemo{
+    min-height: 30px!important;
+}

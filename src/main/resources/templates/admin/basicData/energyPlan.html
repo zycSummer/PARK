@@ -6,20 +6,21 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>基础数据</a>
-                <a><cite>对象用能计划管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="plan_content">
             <div class="table_title layui-form">
                 <div>
-                    <label>能源种类：</label>
+                    <label class="search_label">能源种类：</label>
                     <div class="layui-input-inline">
                         <div id="searchEnergyTypeId"></div>
                     </div>
                 </div>
                 <div class="timeSelect">
-                    <span class="title">时间：</span>
+                    <span class="title search_label">时间：</span>
                     <div class="layui-inline" id="timeDiv">
                         <input type="text" class="layui-input" id="timeInput1" value=""> ~
                         <input type="text" class="layui-input" id="timeInput2" value="">
@@ -44,38 +45,38 @@
         <form class="layui-form" lay-filter="plan_add">
             <div class="layui-form-item edit_energyTypeId layui-hide">
                 <label class="layui-form-label">能源种类：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="edit_energyTypeId"></div>
                 </div>
             </div>
             <div class="layui-form-item add_energyTypeId">
                 <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <select name="energyTypeId" id="energyTypeId"></select>
                 </div>
             </div>
             <div class="layui-form-item edit_yearMonth layui-hide">
                 <label class="layui-form-label">年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="edit_yearMonth"></div>
                 </div>
             </div>
             <div class="layui-form-item add_yearMonth">
                 <label class="layui-form-label"><span class="red">* </span>年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="yearMonth" id="yearMonth" class="layui-input" autocomplete="off"/>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>计划用量：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="usage" id="usage" maxlength='30' class="layui-input" autocomplete="off"/>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">备注：</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                    <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                 </div>
             </div>
         </form>
@@ -86,19 +87,19 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">能源种类：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_energyTypeId"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">年月：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_yearMonth"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">计划用量：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_usage"></div>
                 </div>
             </div>

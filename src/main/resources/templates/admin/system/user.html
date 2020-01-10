@@ -7,22 +7,23 @@
         <div class="container">
                 <blockquote class="layui-elem-quote  tabBreacrumb">
                         <span class="layui-breadcrumb" lay-separator=">">
-                            <a class="park_select"></a>
-                            <a>系统管理</a>
-                            <a><cite>用户管理</cite></a>
+                        
+                            <span th:each="item:${nb}">
+                                <a th:text="${item}"></a>
+                                </span>
                         </span>
                 </blockquote>
                 <div class="control_div">
                     <div class="layui-inline">
                         <form class="layui-form" >
-                            <div class="layui-inline">
-                                <label>用户ID：</label>
+                            <div class="layui-inline search_margin">
+                                <label class="search_label">用户ID：</label>
                                 <div class="layui-input-inline">
                                     <input type="text" value=""  class="layui-input search_input" id="user_code">
                                 </div>
                             </div>
                             <div class="layui-inline">
-                                <label>用户名：</label>
+                                <label class="search_label">用户名：</label>
                                 <div class="layui-input-inline">
                                     <input type="text" value="" class="layui-input search_input" id="user_name">
                                 </div>
@@ -60,23 +61,25 @@
                         <div class="calculationLeft layui-col-md12">
                             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">用户标识:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>用户标识:</label>
                                     <div class="layui-inline " style="width:350px">
                                     <input class="layui-input" autocomplete="off" type="text" id="add_user_Id"  placeholder="请输入用户标识！">
-                
                                     </div>
-                
+                                    <i class="fa fa-exclamation-circle tip_icon" id="add_user_Id_tip"></i>
+
                                 </div>
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">用户名:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>用户名:</label>
                                     <div class="layui-input-inline " style="width:350px">
                                     <input class="layui-input" autocomplete="off" type="text" id="add_user_name" placeholder="请输入用户名！">
                 
                 
                                     </div>
+                                    <i class="fa fa-exclamation-circle tip_icon" id="add_user_name_tip"></i>
+
                                 </div>
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">用户组:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>用户组:</label>
                                     <div class="layui-input-inline " style="width:350px">
                                         <select name="modules"  id="userGourp"  placeholder="请选择用户组！">
                                          
@@ -85,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">角色:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>角色:</label>
                                     <div class="layui-input-inline " style="width:350px"  id="role_select">
                                       
                 
@@ -99,7 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">是否启用:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>是否启用:</label>
                                     <div class="layui-input-inline " style="width:350px">
                                         <input type="checkbox" name="isEnabled" lay-skin="switch" lay-text="是|否" id="isEnabled">
                                          
@@ -108,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="layui-form-item addFrom_item">
-                                    <label class="layui-form-label addFrom_label"  style="width: 120px;">是否锁定:</label>
+                                    <label class="layui-form-label addFrom_label"  style="width: 120px;"><span style="color: red;">* </span>是否锁定:</label>
                                     <div class="layui-input-inline " style="width:350px">
                                         <input type="checkbox" name="isLocked" lay-skin="switch" lay-text="是|否" id="isLocked">
                 
@@ -118,7 +121,7 @@
                                 <div class="layui-form-item addFrom_item">
                                     <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
                                     <div class="layui-input-inline " style="width:350px">
-                                        <input class="layui-input" autocomplete="off" type="text" id="memo">
+                                        <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                                     </div>
                                 </div>
                 

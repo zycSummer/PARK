@@ -5,19 +5,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.jet.cloud.deepmind.entity.Meter;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
+import com.jet.cloud.deepmind.service.CommonService;
 import com.jet.cloud.deepmind.service.MeterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -33,6 +29,8 @@ public class MeterController {
 
     @Autowired
     private MeterService meterService;
+    @Autowired
+    private CommonService commonService;
 
     @PostMapping("/getAllCurrentSite")
     public Response getAllMeterBySite(@RequestBody JSONObject data) {
@@ -61,6 +59,7 @@ public class MeterController {
     public Response queryMeter(@RequestBody QueryVO vo) {
         return meterService.queryMeter(vo);
     }
+
     /**
      * 根据id查询仪表
      *
@@ -103,6 +102,7 @@ public class MeterController {
 
     /**
      * 导出仪表
+     *
      * @param response
      * @param objType
      * @param objId
@@ -111,8 +111,8 @@ public class MeterController {
      * @param energyTypeId
      */
     @GetMapping("/exportExcel")
-    public void exportExcel(String objType,String objId,String meterId,String meterName,JSONArray energyTypeId,HttpServletResponse response,HttpServletRequest request) {
-        meterService.exportExcel(objType,objId,meterId,meterName,energyTypeId,response,request);
+    public void exportExcel(String objType, String objId, String meterId, String meterName, JSONArray energyTypeId, HttpServletResponse response, HttpServletRequest request) {
+        meterService.exportExcel(objType, objId, meterId, meterName, energyTypeId, response, request);
     }
 
 
@@ -131,27 +131,8 @@ public class MeterController {
 
     @GetMapping("/download")
     public void download(HttpServletResponse response) {
-        try {
-            //获取要下载的模板名称
-            String fileName = "MeterTemplate.xlsx";
-            //设置要下载的文件的名称
-            response.setHeader("Content-disposition", "attachment;fileName=" + fileName);
-            response.setContentType("application/vnd.ms-excel;charset=UTF-8");
-            //获取文件的路径
-            String filePath = getClass().getResource("/file/" + fileName).getPath();
-            FileInputStream input = new FileInputStream(filePath);
-            OutputStream out = response.getOutputStream();
-            byte[] b = new byte[2048];
-            int len;
-            while ((len = input.read(b)) != -1) {
-                out.write(b, 0, len);
-            }
-            //修正 Excel在“xxx.xlsx”中发现不可读取的内容。是否恢复此工作薄的内容？如果信任此工作簿的来源，请点击"是"
-            response.setHeader("Content-Length", String.valueOf(input.getChannel().size()));
-            input.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("应用导入模板下载失败！");
-        }
+        //获取要下载的模板名称
+        String fileName = "MeterTemplate.xlsx";
+        commonService.download(fileName, response);
     }
 }

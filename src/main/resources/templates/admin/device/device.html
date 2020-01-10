@@ -6,7 +6,9 @@
         <blockquote class="layui-elem-quote  tabBreacrumb">
           <span class="layui-breadcrumb" lay-separator=">">
             <a class="park_select"></a>
-            <a><cite>设备管理</cite></a>
+            <span th:each="item:${nb}">
+                <a th:text="${item}"></a>
+                </span>
           </span>
         </blockquote>
         <div id="control_div">
@@ -15,28 +17,28 @@
                     <ul id="leftList"></ul>
                 </div>
                 <div id="leftBtnGroup">
-                    <button class="layui-btn layui-btn-sm" id="add">新增</button>
-                    <button class="layui-btn layui-btn-sm" id="edit">修改</button>
-                    <button class="layui-btn layui-btn-sm" id="delete">删除</button>
+                    <button class="layui-btn layui-btn-sm" id="add" th:if="${MENU1200LeftAdd.visible}">新增</button>
+                    <button class="layui-btn layui-btn-sm" id="edit" th:if="${MENU1200LeftEdit.visible}">修改</button>
+                    <button class="layui-btn layui-btn-sm" id="delete" th:if="${MENU1200LeftDel.visible}">删除</button>
                 </div>
             </div>
             <div id="rightMain">
                 <div class="searchTitle">
                     <form class="layui-form" lay-filter="searchForm">
-                        <div class="layui-inline">
-                            <label>设备标识：</label>
+                        <div class="layui-inline search_margin">
+                            <label class="search_label">设备标识：</label>
                             <div class="layui-input-inline">
                                 <input type="text" value="" class="layui-input search_input" id="search_equipId">
                             </div>
                         </div>
-                        <div class="layui-inline">
-                            <label>设备名称：</label>
+                        <div class="layui-inline search_margin">
+                            <label class="search_label">设备名称：</label>
                             <div class="layui-input-inline">
                                 <input type="text" value="" class="layui-input search_input" id="search_equipName">
                             </div>
                         </div>
                         <div class="layui-inline">
-                            <label>范围：</label>
+                            <label class="search_label">范围：</label>
                             <div class="layui-input-inline range">
                                 <input type="radio" name="range" value="equipSysId" title="左侧所选系统" checked>
                                 <input type="radio" name="range" value="all" title="所有系统">
@@ -45,22 +47,22 @@
                     </form>
                     <div class="layui-inline" id="btnGroup">
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="search_btn">查询</button>
+                            <button class="layui-btn layui-btn-sm" id="search_btn" th:if="${MENU1200RightQuery.visible}">查询</button>
                         </div>
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="add_btn">新增</button>
+                            <button class="layui-btn layui-btn-sm" id="add_btn" th:if="${MENU1200RightAdd.visible}">新增</button>
                         </div>
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="edit_btn">修改</button>
+                            <button class="layui-btn layui-btn-sm" id="edit_btn" th:if="${MENU1200RightEdit.visible}">修改</button>
                         </div>
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="del_btn">删除</button>
+                            <button class="layui-btn layui-btn-sm" id="del_btn" th:if="${MENU1200RightDel.visible}">删除</button>
                         </div>
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="import_btn">导入</button>
+                            <button class="layui-btn layui-btn-sm" id="import_btn" th:if="${MENU1200equip_import.visible}">导入</button>
                         </div>
                         <div class="layui-inline">
-                            <button class="layui-btn layui-btn-sm" id="export_btn">导出</button>
+                            <button class="layui-btn layui-btn-sm" id="export_btn" th:if="${MENU1200equip_export.visible}">导出</button>
                         </div>
                     </div>
                 </div>
@@ -69,7 +71,7 @@
                     <div id="table_page" class="table_page"></div>
                     <script type="text/html" id="queryImage">
                         {{#  if(d.imgSuffix){ }}
-                        <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+                        <a class="layui-btn layui-btn-xs" lay-event="detail" th:if="${MENU1200show_image.visible}">查看</a>
                         {{#  } }}
                     </script>
                 </div>
@@ -82,20 +84,20 @@
             <form class="layui-form">
                 <div class="layui-form-item edit_deviceSysId layui-hide">
                     <label class="layui-form-label">设备系统标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="edit_deviceSysId"></div>
                     </div>
                 </div>
                 <div class="layui-form-item add_deviceSysId">
                     <label class="layui-form-label"><span class="red">* </span>设备系统标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" class="layui-input" id="deviceSysId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="deviceSysId_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red">* </span>设备系统名称：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" id="deviceSysName" class="layui-input" maxlength="30">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="deviceSysName_tip"></i>
@@ -110,7 +112,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">备注：</label>
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input" maxlength="20" id="memoSys">
+                        <textarea class="layui-textarea" id="memoSys" maxlength="300"></textarea>
                     </div>
                 </div>
             </form>
@@ -122,13 +124,13 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">设备系统标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_deviceSysId"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">设备系统名称：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_deviceSysName"></div>
                 </div>
             </div>
@@ -145,27 +147,27 @@
             <form class="layui-form" lay-filter="equip_add_from">
                 <div class="layui-form-item edit_equipId layui-hide">
                     <label class="layui-form-label">设备标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="edit_equipId"></div>
                     </div>
                 </div>
                 <div class="layui-form-item add_equipId">
                     <label class="layui-form-label"><span class="red">* </span>设备标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" id="equipId" onKeyUp="value=value.replace(/[\W]/g,'')" class="layui-input" maxlength="10">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="equipId_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red">* </span>设备名称：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" id="equipName" class="layui-input" maxlength="30">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="equipName_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red">* </span>设备系统：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <select id="deviceSystem" name="deviceSystem"></select>
                     </div>
                 </div>
@@ -209,14 +211,14 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">备注：</label>
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input" maxlength="20" id="memo">
+                        <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                     </div>
                 </div>
             </form>
             <form class="layui-form" id="siteImage">
                 <div class="layui-form-item">
                     <label class="layui-form-label">铭牌：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="file" accept="image/*" name="file" id="file"/>
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="upload_tip"></i>
@@ -242,7 +244,7 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">对象：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="equip_import_report"></div>
                 </div>
             </div>
@@ -251,7 +253,7 @@
                 <div class="layui-inline">
                     <input type="file" name="file" id="upload_file2" multiple required autocomplete="off"/>
                 </div>
-                <a href="javascript:void(0)" id="equip_download_demo" >模板文件下载</a>
+                <a href="javascript:void(0)" id="equip_download_demo" th:if="${MENU1200equip_download.visible}">模板文件下载</a>
             </div>
             <div class="layui-form-item problem">
                 说明：导入后原来配置的设备信息将被清空。

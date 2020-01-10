@@ -1,7 +1,10 @@
 package com.jet.cloud.deepmind.entity;
 
 import lombok.Data;
+
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * @author yhy
@@ -13,10 +16,12 @@ import javax.persistence.*;
 public class SysRole extends BaseEntity {
 
     @Column(name = "role_id", unique = true)
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "只能输入字母、数字、下划线组合且不能大于20位")
     private String roleId;
 
 
     @Column(name = "role_name", nullable = false)
+    @Size(min = 1, max = 30, message = "角色名称不超过30")
     private String roleName;
 
     public SysRole() {
@@ -26,13 +31,4 @@ public class SysRole extends BaseEntity {
         this.roleId = roleId;
         this.roleName = roleName;
     }
-
-    //@Column(name = "is_default")
-    //private boolean isDefault;
-
-    //@JsonIgnore
-    //@OneToMany
-    //@JoinColumn(name = "role_code", referencedColumnName = "role_code", insertable = false, updatable = false)
-    //@LazyCollection(LazyCollectionOption.FALSE)
-    //private Set<MenuMappingRole> menuMappingRoleSet;
 }

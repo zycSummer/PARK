@@ -6,7 +6,9 @@
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select"></a>
-                <a><cite>碳排管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="control_div">
@@ -24,8 +26,8 @@
                     <div class="layui-inline" style="margin-left: 10px;">
 
                         <div class="layui-input-inline">
-                            <input type="text" class="layui-input dateSelectVal" id="dateSelectMonth">
-                            <input type="text" class="layui-input dateSelectVal" id="dateSelectYear">
+                            <input type="text" class="layui-input dateSelectVal dateInput" id="dateSelectMonth">
+                            <input type="text" class="layui-input dateSelectVal dateInput" id="dateSelectYear">
                         </div>
                     </div>
                 </form>

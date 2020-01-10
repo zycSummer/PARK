@@ -6,6 +6,7 @@ import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.service.ParkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -46,13 +47,13 @@ public class ParkController {
      * @apiNote 对象管理(新增或者更新园区)
      */
     @PostMapping("/add")
-    public Response add(@RequestBody @Valid Park park) {
-        return parkService.insertOrUpdatePark(park).getResponse();
+    public Response add(@Valid Park park, MultipartFile file) {
+        return parkService.insertOrUpdatePark(park, file).getResponse();
     }
 
     @PostMapping("/edit")
-    public Response edit(@RequestBody @Valid Park park) {
-        return parkService.insertOrUpdatePark(park).getResponse();
+    public Response edit(@Valid Park park, MultipartFile file) {
+        return parkService.insertOrUpdatePark(park, file).getResponse();
     }
 
     /**

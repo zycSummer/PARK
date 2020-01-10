@@ -18,14 +18,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.client.RestTemplate;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,19 +31,10 @@ public class AppConfig {
 
     @Value("${file.path}")
     private String filePath;
-
-    public String getFilePath() {
-        return filePath + File.separator + "doc" + File.separator;
-    }
-
-    public String getImagePath() {
-        return filePath + File.separator + "img" + File.separator;
-    }
-
-    public String getEquipImagePath() {
-        return filePath + File.separator + "equip_img" + File.separator;
-    }
-
+    @Value("${http.connect.timeout.millisecond}")
+    private Integer httpConnectTimeout;
+    @Value("${http.read.timeout.millisecond}")
+    private Integer httpReadTimeout;
     @Value("${alarm.mail.username}")
     private String mailUsername;
     @Value("${alarm.mail.password}")
@@ -74,6 +57,8 @@ public class AppConfig {
     private String alarmUrl;
     @Value("${huawei.cloud.Api.sendSolution}")
     private String solutionUrl;
+    @Value("${app.url}")
+    private String appTencentUrl;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -98,8 +83,8 @@ public class AppConfig {
     @Bean
     public RestTemplate alarmRestTemplate() {
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-        requestFactory.setConnectTimeout(3000);
-        requestFactory.setReadTimeout(3000);
+        requestFactory.setConnectTimeout(httpConnectTimeout);
+        requestFactory.setReadTimeout(httpReadTimeout);
         RestTemplate template = new RestTemplate(requestFactory);
         template.getMessageConverters().add(new MyMappingJackson2HttpMessageConverter());
         return template;
@@ -114,7 +99,7 @@ public class AppConfig {
         properties.put("username", mailUsername);
         properties.put("password", AES.decrypt(mailPassword));
         OhMyEmail.config(properties);
-        return new EmailUtils("连云港石化产业基地能源管理中心平台");
+        return new EmailUtils();
     }
 
     @Bean
@@ -132,6 +117,11 @@ public class AppConfig {
         return new SolutionHttpUtils(alarmRestTemplate(), solutionUrl);
     }
 
+    @Bean
+    public AppSendTencentUtils appSendTencentUtils() {
+        return new AppSendTencentUtils(alarmRestTemplate(), appTencentUrl);
+    }
+
     public String getAlarmCron() {
         return alarmCron;
     }
@@ -144,8 +134,21 @@ public class AppConfig {
             setSupportedMediaTypes(mediaTypes);
         }
     }
+
     @Bean
     public AntPathMatcher antPathMatcher() {
         return new AntPathMatcher();
+    }
+
+    public String getFilePath() {
+        return filePath + File.separator + "doc" + File.separator;
+    }
+
+    public String getImagePath() {
+        return filePath + File.separator + "img" + File.separator;
+    }
+
+    public String getEquipImagePath() {
+        return filePath + File.separator + "equip_img" + File.separator;
     }
 }

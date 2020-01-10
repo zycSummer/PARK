@@ -5,7 +5,7 @@ package com.jet.cloud.deepmind.common;
  * @create 2019-10-14 10:39
  */
 public interface HttpConstants {
-
+    // 成功
     int SUCCESS = 0;
     /**
      * 未授权

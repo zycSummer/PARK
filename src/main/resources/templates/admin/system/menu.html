@@ -5,9 +5,9 @@
     <div class="container">
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
-
-                <a>系统管理</a>
-                <a><cite>菜单管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
 
@@ -69,7 +69,7 @@
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">菜单名称:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>菜单名称:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="addMenuName" maxlength="20">
                     </div>
@@ -114,7 +114,7 @@
                 <div class="layui-form-item addFrom_item">
                     <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
                     <div class="layui-input-inline ">
-                        <input class="layui-input" autocomplete="off" type="text" id="addMemo">
+                        <textarea class="layui-textarea" id="addMemo" maxlength="300"></textarea>
                     </div>
                 </div>
 
@@ -144,7 +144,7 @@
                     </div>
     
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">功能名称:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>功能名称:</label>
                         <div class="layui-input-inline ">
                                 <input class="layui-input" autocomplete="off" type="text" id="addFunctionName" maxlength="20">
                         </div>
@@ -152,7 +152,7 @@
 
                     </div>
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">功能说明:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>功能说明:</label>
                         <div class="layui-input-inline ">
                                 <input class="layui-input" autocomplete="off" type="text" id="addFunctionDsc">
                         </div>
@@ -179,7 +179,7 @@
                     <div class="layui-form-item addFrom_item">
                         <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
                         <div class="layui-input-inline ">
-                            <input class="layui-input" autocomplete="off" type="text" id="addBtnMemo">
+                            <textarea class="layui-textarea" id="addBtnMemo" maxlength="300"></textarea>
                         </div>
                     </div>
     

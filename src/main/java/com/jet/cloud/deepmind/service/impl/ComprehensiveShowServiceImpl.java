@@ -51,6 +51,10 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
     private EnergyMonthlyUsagePlanRepo energyMonthlyUsagePlanRepo;
     @Autowired
     private DataSourceRepo dataSourceRepo;
+    @Autowired
+    private SysParameterRepo sysParameterRepo;
+    @Autowired
+    private GdpMonthlyRepo gdpMonthlyRepo;
 
     @Value("${ht_img_file_prefix}")
     private String filePrefix;
@@ -84,8 +88,8 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
             if (isMainPage == null || "".equals(isMainPage)) {
                 return ServiceData.error(ISMAINPAGE_ISNULL, currentUser);
             }
-            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, null, null, null);
-            String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, null, null, null, "MENU0200_");
+            String fileName = "MENU0200_" + objType + "_" + objId + "_" + htImgId + ".json";
             bigScreen.setFilePath(fileName);
             bigScreen.setCreateUserId(currentUser.userId());
             bigScreen.setCreateNow();
@@ -111,7 +115,6 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
                 return ok;
             }
         }
-
         return Response.ok();
     }
 
@@ -180,8 +183,8 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
             }
 
             String memo = bigScreen.getMemo();
-            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, screen.getObjType(), screen.getObjId(), screen.getHtImgId());
-            String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, screen.getObjType(), screen.getObjId(), screen.getHtImgId(), "MENU0200_");
+            String fileName = "MENU0200_" + objType + "_" + objId + "_" + htImgId + ".json";
             screen.setObjType(objType);
             screen.setObjId(objId);
             screen.setHtImgId(htImgId);
@@ -205,7 +208,7 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
     public ServiceData deleteSiteImg(String objType, String objId, String htImgId) {
         try {
             bigScreenRepo.deleteSiteImg(objType, objId, htImgId);
-            StringUtils.deleteFile(filePrefix, objType, objId, htImgId);
+            StringUtils.deleteFile(filePrefix, objType, objId, htImgId, "MENU0200_");
             return ServiceData.success("删除成功", currentUser);
         } catch (Exception e) {
             log.error("删除组态编辑失败,e={}", e.getMessage());
@@ -274,21 +277,11 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
     }
 
     /**
-     * url：输入后台查询各能源种类企业实时负荷排名的接口地址（例如接口名称可以定为energyLoadSiteRank）
-     * 具体逻辑如下，收到前台请求后，解析出请求参数中energyTypeId属性值，然后去系统能源种类表查出对应的负荷参数标识
-     * SELECT energy_load_para_id FROM `tb_sys_energy_type` WHERE energy_type_id = ?;
-     * 然后去对象数据源信息表找出当前用户所能看到的所有企业的当前能源种类负荷参数配置的数据源
-     * SELECT * FROM `tb_obj_data_source` WHERE obj_type = 'SITE' AND energy_type_id = ? AND energy_para_id = ?
-     * AND obj_id in ( SELECT obj_id FROM `tb_sys_user_group_mapping_obj` WHERE obj_type = 'SITE'
-     * AND user_group_id = (SELECT user_group_id FROM `tb_sys_user` WHERE user_id = ? ) );
-     * 然后根据各个企业配置的数据源去实时库查询出最新值，配置的数据源可能是单个测点，也可能是公式，以是否有#来区分，
-     * 单个测点或者公式中的每个元素都是全测点名称，而且如果后面还有中括号加上能源种类标识，
-     * 则取出测点最新值后还需要乘以此能源种类对应的折标系数。查询出测点最新值后还要检查是否超时，
-     * 即判断测点最新值时间距离当前时间是否大于系统设定值
-     * （SELECT para_value FROM tb_sys_parameter WHERE para_id = 'LastValueTimeOut'）的值，
-     * 如果没有设置则无需检查超时。单个测点超时时结果为NULL；公式中的部分测点超时时，当作0参与计算；
-     * 公式中的所有测点超时，则结果为NULL。最后将所有企业的最终结果按降序排序（取前10），
-     * 并从tb_site表的site_abbr_name字段取出各个企业的简称。
+     * 实时负荷排名 改为 上月万元GDP能耗排名
+     * 展示当前用户能看到各个企业上月的GDP能耗值
+     * 企业上月的GDP能耗值 = 企业上月能耗标煤总量 / 当前企业上月的GDP值
+     * 从小到大排
+     * 企业上月能耗标煤总量 可以参照下面的 当日能耗中的标煤计算逻辑，只是时间范围不一样
      *
      * @param energyTypeId
      * @return
@@ -297,11 +290,10 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
     public EnergyRankingVO energyRealTimeLoadRanking(String energyTypeId, SysUser sysUser) {
         EnergyRankingVO energyRankingVO = new EnergyRankingVO();
         try {
-            Long timeOutValue = commonService.getTimeOutValue();
             energyRankingVO.setEnergyTypeId(energyTypeId);
 
             SysEnergyType sysEnergyType = sysEnergyTypeRepo.findByEnergyTypeId(energyTypeId);
-            String energyLoadParaId = sysEnergyType.getEnergyLoadParaId();
+            String energyUsageParaId = sysEnergyType.getEnergyUsageParaId();
             List<UserGroupMappingObj> userGroupMappingObjs = commonRepo.queryUserGroupMappingObjs(sysUser.getUserId());
             List<String> sites = new ArrayList<>();
             if (StringUtils.isNotNullAndEmpty(userGroupMappingObjs)) {
@@ -310,7 +302,7 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
                     sites.add(objId);
                 }
             }
-            List<DataSource> dataSources = dataSourceRepo.findByObjTypeAndEnergyTypeIdAndEnergyParaIdAndObjIdIn("SITE", energyTypeId, energyLoadParaId, sites);
+            List<DataSource> dataSources = dataSourceRepo.findByObjTypeAndEnergyTypeIdAndEnergyParaIdAndObjIdIn("SITE", energyTypeId, energyUsageParaId, sites);
 
             List<String> rankSiteName = new ArrayList<>();
             List<String> rankSiteAbbrName = new ArrayList<>();
@@ -329,15 +321,46 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
                     }
                 }
                 List<String> valueList = new ArrayList<String>(points.values());
-                List<SampleDataResponse> sampleDataResponses = kairosdbClient.queryLast(valueList, timeOutValue);
-                for (SampleDataResponse sampleDataRespons : sampleDataResponses) {
-                    Double value = sampleDataRespons.getValue();
-                    String point = sampleDataRespons.getPoint();
-                    for (String objId : points.keySet()) {
-                        String pointId = points.get(objId);
-                        if (Objects.equals(pointId, point)) {
-                            mapValue.put(objId, value);
-                            break;
+                LocalDateTime start = DateUtil.dateToLocalDateTime(DateUtil.initDateByUpperMonth()).withNano(0);
+                LocalDateTime end = DateUtil.dateToLocalDateTime(DateUtil.firstDayMonth());
+                AggregatorDataResponse queryDiff = kairosdbClient.queryDiff(valueList, start, end, 1, TimeUnit.MONTHS);
+
+                int year = LocalDateTime.now().getYear();
+                int monthValue = LocalDateTime.now().minusMonths(1).getMonthValue();
+                int month = LocalDateTime.now().getMonthValue();
+                List<GdpMonthly> gdpMonthlies = new ArrayList<>();
+                if (month == 1) {
+                    gdpMonthlies = gdpMonthlyRepo.findByObjTypeAndYearAndMonthAndObjIdIn("SITE", LocalDateTime.now().minusYears(1).getYear(), LocalDateTime.now().minusMonths(1).getMonthValue(), sites);
+                } else {
+                    gdpMonthlies = gdpMonthlyRepo.findByObjTypeAndYearAndMonthAndObjIdIn("SITE", LocalDateTime.now().getYear(), LocalDateTime.now().minusMonths(1).getMonthValue(), sites);
+                }
+
+                if (StringUtils.isNotNullAndEmpty(gdpMonthlies)) {
+                    Map<String, Double> map = new HashMap<>();
+                    for (GdpMonthly gdpMonthly : gdpMonthlies) {
+                        map.put(gdpMonthly.getObjType() + gdpMonthly.getObjId() + year + monthValue, gdpMonthly.getGdp());
+                    }
+                    List<DataPointResult> dataPointResults = queryDiff.getValues();
+                    if (StringUtils.isNotNullAndEmpty(dataPointResults)) {
+                        for (DataPointResult dataPointResult : dataPointResults) {
+                            Double value = dataPointResult.getValues().get(0);
+                            String metricName = dataPointResult.getMetricName();
+                            for (String objId : points.keySet()) {
+                                String pointId = points.get(objId);
+                                if (Objects.equals(pointId, metricName)) {
+                                    Double result = map.get("SITE" + objId + year + monthValue);
+                                    if (result != null && result != 0d) {
+                                        if (value != null) {
+                                            mapValue.put(objId, value / result);
+                                        } else {
+                                            mapValue.put(objId, null);
+                                        }
+                                    } else {
+                                        mapValue.put(objId, null);
+                                    }
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -473,7 +496,14 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
                      * 根据energyTypeId、objType、objId的值去tb_obj_energy_monthly_usage_plan表取当月和上月的计划值；
                      */
                     EnergyMonthlyUsagePlan dMonthPlan = energyMonthlyUsagePlanRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndYearAndMonth(consumptionVO.getObjType(), consumptionVO.getObjId(), energyTypeId, LocalDateTime.now().getYear(), LocalDateTime.now().getMonthValue());
-                    EnergyMonthlyUsagePlan sMonthPlan = energyMonthlyUsagePlanRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndYearAndMonth(consumptionVO.getObjType(), consumptionVO.getObjId(), energyTypeId, LocalDateTime.now().getYear(), LocalDateTime.now().minusMonths(1).getMonthValue());
+                    int monthValue = LocalDateTime.now().getMonthValue();
+                    int year = LocalDateTime.now().getYear();
+                    EnergyMonthlyUsagePlan sMonthPlan = null;
+                    if (monthValue == 1) {
+                        sMonthPlan = energyMonthlyUsagePlanRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndYearAndMonth(consumptionVO.getObjType(), consumptionVO.getObjId(), energyTypeId, LocalDateTime.now().minusYears(1).getYear(), LocalDateTime.now().minusMonths(1).getMonthValue());
+                    } else {
+                        sMonthPlan = energyMonthlyUsagePlanRepo.findByObjTypeAndObjIdAndEnergyTypeIdAndYearAndMonth(consumptionVO.getObjType(), consumptionVO.getObjId(), energyTypeId, year, LocalDateTime.now().minusMonths(1).getMonthValue());
+                    }
 
                     if (dMonthPlan != null) {
                         consumptionReturnVO.setThisMonthPlan(dMonthPlan.getUsage());
@@ -485,7 +515,6 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
                     } else {
                         consumptionReturnVO.setLastMonthPlan(null);
                     }
-
                     consumptionReturnVOS.add(consumptionReturnVO);
                 }
             }
@@ -510,17 +539,26 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
             LocalDateTime startTime = DateUtil.dateToLocalDateTime(DateUtil.initDateByDay());
             LocalDateTime endTime = DateUtil.dateToLocalDateTime(DateUtil.initDateByDay24());
             SampleData4KairosResp sampleData4KairosResp = kairosdbClient.queryHis(datasource, startTime, endTime, 5, TimeUnit.MINUTES);
+
             List<Long> timestamps = sampleData4KairosResp.getTimestamps();
+            Integer minute = null;
             List<Double> values = sampleData4KairosResp.getValues();
+            /**
+             * 将当前时间 - thisPeriodDiscardMinutesBeforeNow 至 当前时间 这段时间内的数值设置为NULL（不包含开始，包含结束时间）。
+             */
+            values = commonService.queryHistoryData(values, timestamps);
             String point = sampleData4KairosResp.getPoint();
             realTimeVO.setDatasource(point);
             List<Double> newValues = new ArrayList<>();
-            for (Double value : values) {
-                if (value != null) {
-                    Double v = Double.valueOf(MathUtil.double2String(value));
-                    newValues.add(v);
-                } else {
-                    newValues.add(null);
+
+            if (StringUtils.isNotNullAndEmpty(values)) {
+                for (Double value : values) {
+                    if (value != null) {
+                        Double v = Double.valueOf(MathUtil.double2String(value));
+                        newValues.add(v);
+                    } else {
+                        newValues.add(null);
+                    }
                 }
             }
             realTimeVO.setDailyHisValue(newValues);
@@ -620,12 +658,14 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
         for (DataSource source : sourceList) {
             String objId = source.getObjId();
             Site site = siteRepo.findBySiteId(objId);
-            rankSiteName.add(site.getSiteName());
-            rankSiteAbbrName.add(site.getSiteAbbrName());
-            if (source.getLastVal() != null) {
-                rankSiteLoad.add(Double.valueOf(MathUtil.double2String(source.getLastVal())));
-            } else {
-                rankSiteLoad.add(null);
+            if (site != null) {
+                rankSiteName.add(site.getSiteName());
+                rankSiteAbbrName.add(site.getSiteAbbrName());
+                if (source.getLastVal() != null) {
+                    rankSiteLoad.add(Double.valueOf(MathUtil.double2String(source.getLastVal())));
+                } else {
+                    rankSiteLoad.add(null);
+                }
             }
         }
     }
@@ -696,23 +736,24 @@ public class ComprehensiveShowServiceImpl implements ComprehensiveShowService {
     }
 
     public static void main(String[] args) {
-        List<Double> doubles = Lists.newArrayList(null, 1.1, null, 2.2, 1.2, null);
-        // 倒叙
-        doubles.sort((o1, o2) -> {
-            Double val1 = o1;
-            Double val2 = o2;
-            if (val1 == null || val2 == null) return 0;
-            if (val1 >= val2) {
-                return -1;
+        List<Long> list = new ArrayList<>();
+        list.add(1577150368936L);
+        list.add(1577150368920L);
+        list.add(1577150368940L);
+        list.add(1577150368921L);
+
+        List<Long> list2 = new ArrayList<>();
+        list2.add(1577150368936L);
+        list2.add(1577150368920L);
+
+        List<Long> list3 = new ArrayList<>();
+        for (Long value : list) {
+            if (value > 1577150368920L && value <= 1577150368936L) {
+                int i = list.lastIndexOf(value);
+                System.out.println(i);
+                list3.add(value);
             }
-            if (val2 < val1) {
-                return 1;
-            }
-            return 0;
-        });
-      /*  for (int i = 0; i < 5; i++) {
-            doubles.add(0, null);
-        }*/
-        System.out.println(doubles);
+        }
+        System.out.println(list3);
     }
 }

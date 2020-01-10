@@ -36,6 +36,11 @@ public interface UserRepo extends JpaRepository<SysUser, Integer>, QuerydslPredi
 
     @Modifying
     @Transactional
+    @Query("update SysUser u set u.lastLoginTime = ?2,u.lastLoginIp=?3 where u.userId =?1")
+    void updateLastLoginTimeAndIp(String userId, LocalDateTime lastLoginTime, String ip);
+
+    @Modifying
+    @Transactional
     void deleteAllByUserIdIn(List<String> userIdList);
 
 }

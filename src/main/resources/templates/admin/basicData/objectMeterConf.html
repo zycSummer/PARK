@@ -6,27 +6,28 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>基础数据</a>
-                <a><cite>对象仪表配置</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="meter_content">
             <div class="table_title">
                 <form class="layui-form">
-                    <div class="layui-inline">
-                        <label>仪表标识：</label>
+                    <div class="layui-inline search_margin">
+                        <label class="search_label">仪表标识：</label>
                         <div class="layui-input-inline">
                             <input type="text" value=""  class="layui-input search_input" id="search_meterId">
                         </div>
                     </div>
-                    <div class="layui-inline">
-                        <label>仪表名称：</label>
+                    <div class="layui-inline search_margin">
+                        <label class="search_label">仪表名称：</label>
                         <div class="layui-input-inline">
                             <input type="text" value="" class="layui-input search_input" id="search_meterName">
                         </div>
                     </div>
-                    <div class="layui-inline">
-                        <label>能源种类：</label>
+                    <div class="layui-inline ">
+                        <label class="search_label">能源种类：</label>
                         <div class="layui-input-inline">
                             <div id="searchEnergyTypeId"></div>
                         </div>
@@ -53,27 +54,27 @@
         <form class="layui-form" lay-filter="meter_add">
             <div class="layui-form-item edit_meterId layui-hide">
                 <label class="layui-form-label">仪表标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="edit_meterId"></div>
                 </div>
             </div>
             <div class="layui-form-item add_meterId">
                 <label class="layui-form-label"><span class="red">* </span>仪表标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" class="layui-input" id="meterId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20'>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="meterId_tip"></i>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>仪表名称：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" class="layui-input" id="meterName" maxlength='30'>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="meterName_tip"></i>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>能源种类：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <select name="energyTypeId" id="energyTypeId"></select>
                 </div>
             </div>
@@ -94,7 +95,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">备注：</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" id="memo" maxlength="200">
+                    <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                 </div>
             </div>
         </form>
@@ -104,7 +105,7 @@
     <div id="meter_delete" class="layui-hide">
         <form class="layui-form">
             <div class="layui-form-item problem">
-                确定要删除所选的 X 个仪表吗？
+                确定要删除所选的 <span id="number">X</span> 个仪表吗？
                 <i class="fa fa-exclamation-circle tip_icon" id="delete_tip"></i>
             </div>
         </form>
@@ -115,7 +116,7 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">对象：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="import_object"></div>
                 </div>
             </div>

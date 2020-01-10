@@ -19,10 +19,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.jet.cloud.deepmind.common.Constants.OBJ_TYPE_PARK;
 import static com.jet.cloud.deepmind.common.Constants.OBJ_TYPE_SITE;
@@ -183,23 +180,12 @@ public class UserGroupServiceImpl implements UserGroupService {
                 //新增用户组
                 userGroup.setCreateNow();
                 userGroup.setCreateUserId(currentUser.userId());
-                userGroupRepo.save(userGroup);
 //                新增用户组映射关系
                 List<Map<String, String>> obj = userGroup.getObj();
                 if (obj != null) {
-                    for (int i = 0; i < obj.size(); i++) {
-                        Map<String, String> map = obj.get(i);
-                        String objType = map.get("objType");
-                        String objId = map.get("objId");
-                        UserGroupMappingObj userGroupMappingObj = new UserGroupMappingObj();
-                        userGroupMappingObj.setUserGroupId(userGroupId);
-                        userGroupMappingObj.setCreateUserId(currentUser.userId());
-                        userGroupMappingObj.setCreateNow();
-                        userGroupMappingObj.setObjType(objType);
-                        userGroupMappingObj.setObjId(objId);
-                        userGroupMappingObjRepo.save(userGroupMappingObj);
-                    }
+                    saveUsergroupMappingObj(userGroupId, obj);
                 }
+                userGroupRepo.save(userGroup);
                 return ServiceData.success("新增用户组成功", currentUser);
             } else {
                 //修改用户组，只修改用户组名称和备注
@@ -208,32 +194,53 @@ public class UserGroupServiceImpl implements UserGroupService {
                 old.setUpdateUserId(currentUser.userId());
                 old.setMemo(userGroup.getMemo());
                 old.setUserGroupName(userGroup.getUserGroupName());
-                userGroupRepo.save(old);
 //                删除当前用户组关联的对象
                 userGroupMappingObjRepo.deleteByUserGroupId(oldUserGroupId);
                 userGroupMappingObjRepo.flush();
                 //修改用户组和对象关联表
                 List<Map<String, String>> obj = userGroup.getObj();
-                List<UserGroupMappingObj> list = new ArrayList<>();
-                for (int i = 0; i < obj.size(); i++) {
-                    Map<String, String> map = obj.get(i);
-                    String objType = map.get("objType");
-                    String objId = map.get("objId");
-                    UserGroupMappingObj userGroupMappingObj = new UserGroupMappingObj();
-                    userGroupMappingObj.setUserGroupId(oldUserGroupId);
-                    userGroupMappingObj.setObjType(objType);
-                    userGroupMappingObj.setObjId(objId);
-                    userGroupMappingObj.setCreateUserId(currentUser.userId());
-                    userGroupMappingObj.setCreateNow();
-                    list.add(userGroupMappingObj);
+                if (obj != null) {
+                    saveUsergroupMappingObj(userGroupId, obj);
                 }
-                userGroupMappingObjRepo.saveAll(list);
+                userGroupRepo.save(old);
                 return ServiceData.success("修改用户组成功", currentUser);
             }
         } catch (Exception e) {
             e.printStackTrace();
             return ServiceData.error("新增或修改用户组失败", currentUser);
         }
+    }
+
+    private void saveUsergroupMappingObj(String userGroupId, List<Map<String, String>> obj) throws Exception {
+        HashMap<String, String> userGroupMappingObjs = new HashMap<>();
+        ArrayList<UserGroupMappingObj> userGroupMappingObjList = new ArrayList<>();
+        for (int i = 0; i < obj.size(); i++) {
+            Map<String, String> map = obj.get(i);
+            String objType = map.get("objType");
+            String objId = map.get("objId");
+            userGroupMappingObjs.put(objId, objType);
+        }
+        Collection<String> values = userGroupMappingObjs.values();
+        ArrayList<String> parkList = new ArrayList<>();
+        for (String value : values) {
+            if (value.equals(OBJ_TYPE_PARK)) {
+                parkList.add(value);
+            }
+        }
+        if (parkList.size() > 1) {
+            throw new Exception("一个用户组只能关联一个park对象");
+        }
+        Set<Map.Entry<String, String>> entries = userGroupMappingObjs.entrySet();
+        for (Map.Entry<String, String> entry : entries) {
+            UserGroupMappingObj userGroupMappingObj = new UserGroupMappingObj();
+            userGroupMappingObj.setUserGroupId(userGroupId);
+            userGroupMappingObj.setCreateUserId(currentUser.userId());
+            userGroupMappingObj.setCreateNow();
+            userGroupMappingObj.setObjType(entry.getValue());
+            userGroupMappingObj.setObjId(entry.getKey());
+            userGroupMappingObjList.add(userGroupMappingObj);
+        }
+        userGroupMappingObjRepo.saveAll(userGroupMappingObjList);
     }
 
     @Override

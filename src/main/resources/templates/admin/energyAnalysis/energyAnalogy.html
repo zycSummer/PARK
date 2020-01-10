@@ -1,115 +1,107 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>能耗类比</title>
-    <link rel="stylesheet" th:href="@{/public/lib/layui/css/layui.css}" media="all">
-    <link rel="stylesheet" th:href="@{/public/css/public.css}" media="all">
-    <link rel="stylesheet" th:href="@{/public/lib/font-awesome-4.7.0/css/font-awesome.css}" media="all" />
-    <link rel="stylesheet" th:href="@{/public/lib/ztree/css/zTreeStyle/zTreeStyle.css}" media="all" />
-    <link rel="stylesheet" th:href="@{/public/css/admin/energyAnalysis/energyAnalogy.css}" media="all" />
-</head>
-<body class="childrenBody">
-<div class="container">
-    <blockquote class="layui-elem-quote tabBreacrumb">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
+    <link rel="stylesheet" th:href="@{/public/lib/ztree/css/zTreeStyle/zTreeStyle.css}" media="all"/>
+    <link rel="stylesheet" th:href="@{/public/css/admin/energyAnalysis/energyAnalogy.css}" media="all"/>
+    <div class="container">
+        <blockquote class="layui-elem-quote tabBreacrumb">
 		<span class="layui-breadcrumb" lay-separator=">">
 			<a class="park_select">园区</a>
-			<a>能耗分析</a>
-			<a><cite>能耗类比</cite></a>
+            <span th:each="item:${nb}">
+                <a th:text="${item}"></a>
+                </span>
         </span>
-    </blockquote>
-    <div id="energy_content">
-        <ul class="energy_nav">
-            <li class="e_item e_active" data-id="electric"><a href="javascript:void(0)">电</a></li>
-        </ul>
-        <div class="energy_tree">
-            <div class="layui-collapse" lay-accordion lay-filter="tree">
-                <!--<div class="layui-colla-item">-->
-                <!--<h2 class="layui-colla-title">按工厂</h2>-->
-                <!--<div class="layui-colla-content layui-show">-->
-                <!--<div class="ztree1" id="tree1"></div>-->
-                <!--</div>-->
-                <!--</div>-->
+        </blockquote>
+        <div id="energy_content">
+            <ul class="energy_nav">
+                <li class="e_item e_active" data-id="electric"><a href="javascript:void(0)">电</a></li>
+            </ul>
+            <div class="energy_tree">
+                <div class="layui-collapse" lay-accordion lay-filter="tree">
+                    <!--<div class="layui-colla-item">-->
+                    <!--<h2 class="layui-colla-title">按工厂</h2>-->
+                    <!--<div class="layui-colla-content layui-show">-->
+                    <!--<div class="ztree1" id="tree1"></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
             </div>
-        </div>
-        <div class="energy_chart">
-            <form class="energy_select layui-form" lay-filter="searchIf">
-                <div class="timeSelect">
-                    <span class="title">时间:</span>
-                    <span class="layui-breadcrumb timeType" lay-separator="|">
+            <div class="energy_chart">
+                <form class="energy_select layui-form" lay-filter="searchIf">
+                    <div class="timeSelect">
+                        <span class="title">时间:</span>
+                        <span class="layui-breadcrumb timeType" lay-separator="|">
                             <a href="javascript:void(0)" data-id="year" class="breadcrumb">年</a>
                             <a href="javascript:void(0)" data-id="month" class="breadcrumb">月</a>
                             <a href="javascript:void(0)" data-id="day" class="breadcrumb layui-this">日</a>
                         </span>
-                    <div class="layui-inline" id="timeDiv">
-                        <input type="text" class="layui-input" id="timeInput" value="">
+                        <div class="layui-inline" id="timeDiv">
+                            <input type="text" class="layui-input dateInput" id="timeInput" value="">
+                        </div>
                     </div>
-                </div>
-                <div class="timeOption">
-                    <span class="title">时间间隔:</span>
-                    <span class="layui-breadcrumb timeIntervel" lay-separator="|"></span>
-                </div>
-                <div class="dataType">
-                    <span class="title">数值类型:</span>
-                    <span class="layui-breadcrumb valType" lay-separator="|">
+                    <div class="timeOption">
+                        <span class="title">时间间隔:</span>
+                        <span class="layui-breadcrumb timeIntervel" lay-separator="|"></span>
+                    </div>
+                    <div class="dataType">
+                        <span class="title">数值类型:</span>
+                        <span class="layui-breadcrumb valType" lay-separator="|">
                         <a href="javascript:void(0)" data-id="first" class="breadcrumb layui-this">时刻值</a>
                         <a href="javascript:void(0)" data-id="average" class="breadcrumb">平均值</a>
                         <a href="javascript:void(0)" data-id="max" class="breadcrumb">最大值</a>
                         <a href="javascript:void(0)" data-id="min" class="breadcrumb">最小值</a>
                         <a href="javascript:void(0)" data-id="diff" class="breadcrumb">差值</a>
                     </span>
-                </div>
-                <div class="parameter">
-                    <span class="title">参数类别:</span>
-                    <span class="layui-breadcrumb paramType" lay-separator="|"></span>
-                </div>
-                <div class="parameterItem">
-                    <span class="title">参数选项:</span>
-                    <span class="layui-breadcrumb paramItem" lay-separator="|"></span>
-                </div>
-                <div>
-                    <button class="layui-btn layui-btn-sm query">查询</button>
-                </div>
-            </form>
-            <div class="chart-content">
-                <div class="chart-title">
-                    <div>
-                        <img class="energy_img imgs" src="/public/images/common/contrast.png" />
-                        <img class="energy_img" src="/public/images/common/table_dark.png" />
                     </div>
-                    <div class="titleText"></div>
-                    <div>
-                        <img id="energy_export" title="导出" src="/public/images/common/export.png" />
+                    <div class="parameter">
+                        <span class="title">参数类别:</span>
+                        <span class="layui-breadcrumb paramType" lay-separator="|"></span>
                     </div>
-                </div>
-                <div class="chartMain">
-                    <div id="chart1"></div>
-                    <div class="table1Box"><table id="table1"></table></div>
-                </div>
-                <div class="table2Box layui-hide">
-                    <table id="table2" class="layui-table" lay-filter="parse-table2"></table>
+                    <div class="parameterItem">
+                        <span class="title">参数选项:</span>
+                        <span class="layui-breadcrumb paramItem" lay-separator="|"></span>
+                    </div>
+                    <div>
+                        <button class="layui-btn layui-btn-sm query">查询</button>
+                    </div>
+                </form>
+                <div class="chart-content">
+                    <div class="chart-title">
+                        <div>
+                            <img class="energy_img imgs" src="/public/images/common/contrast.png"/>
+                            <img class="energy_img" src="/public/images/common/table_dark.png"/>
+                        </div>
+                        <div class="titleText"></div>
+                        <div>
+                            <img id="energy_export" title="导出" src="/public/images/common/export.png"/>
+                        </div>
+                    </div>
+                    <div class="chartMain">
+                        <div id="chart1"></div>
+                        <div class="table1Box">
+                            <table id="table1"></table>
+                        </div>
+                    </div>
+                    <div class="table2Box layui-hide">
+                        <table id="table2" class="layui-table" lay-filter="parse-table2"></table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" th:src="@{/public/lib/jquery/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.core.js}"></script>
+    <!--如果需要用到 编辑功能 或 checkbox / radio 还需要分别加载-->
+    <script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.excheck.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.exedit.js}"></script>
+
+    <script type="text/javascript" th:src="@{/public/lib/jsPdf/html2canvas.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/jsPdf/jspdf.min.js}"></script>
+    <script type="text/javascript" th:src="@{/public/lib/jsPdf/simhei-normal.js}"></script>
+
+    <script type="text/javascript" th:src="@{/public/lib/layui_exts/excel.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/public/js/admin/energyAnalysis/energyAnalogy.js}"></script>
 </div>
-<script type="text/javascript" th:src="@{/public/lib/layui/layui.js}"></script>
-<script type="text/javascript" th:src="@{/public/lib/jquery/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/public/lib/echarts/echarts.min.js}"></script>
-<script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.core.js}"></script>
-<!--如果需要用到 编辑功能 或 checkbox / radio 还需要分别加载-->
-<script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.excheck.js}"></script>
-<script type="text/javascript" th:src="@{/public/lib/ztree/js/jquery.ztree.exedit.js}"></script>
-<script type="text/javascript" th:src ="@{/public/js/admin/public.js}"></script>
-
-<script  type="text/javascript" th:src="@{/public/lib/jsPdf/html2canvas.js}"></script>
-<script  type="text/javascript" th:src="@{/public/lib/jsPdf/jspdf.min.js}"></script>
-<script  type="text/javascript" th:src="@{/public/lib/jsPdf/simhei-normal.js}"></script>
-
-<script  type="text/javascript" th:src="@{/public/lib/layui_exts/excel.min.js}"></script>
-
-<script type="text/javascript" th:src ="@{/public/js/admin/energyAnalysis/energyAnalogy.js}"></script>
-</body>
 </html>

@@ -2,6 +2,7 @@ package com.jet.cloud.deepmind.common.util;
 
 import cn.hutool.core.io.FileUtil;
 import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.security.crypto.codec.Utf8;
 
 import java.io.*;
 import java.net.URLEncoder;
@@ -14,7 +15,6 @@ import java.util.regex.Pattern;
  * @create 2019-10-10 09:59
  */
 public class StringUtils {
-
     public static <T> boolean isNotNullAndEmpty(T... args) {
         return !isNullOrEmpty(args);
     }
@@ -68,10 +68,10 @@ public class StringUtils {
      * @param htImgId
      * @param content
      */
-    public static String sendFromFile(String filePrefix, String objType, String objId, String htImgId, String content, String oldObjType, String oldObjId, String oldHtImgId) {
-        String fileOldName = oldObjType + "_" + oldObjId + "_" + oldHtImgId + ".json";
+    public static String sendFromFile(String filePrefix, String objType, String objId, String htImgId, String content, String oldObjType, String oldObjId, String oldHtImgId, String menuId) {
+        String fileOldName = menuId + oldObjType + "_" + oldObjId + "_" + oldHtImgId + ".json";
         File[] fileList = null;
-        String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+        String fileName = menuId + objType + "_" + objId + "_" + htImgId + ".json";
         if (content == null) content = "";
         File file = new File(filePrefix);
         if (file.isDirectory()) {
@@ -104,9 +104,9 @@ public class StringUtils {
         }
     }
 
-    public static void deleteFile(String filePrefix, String objType, String objId, String htImgId) {
+    public static void deleteFile(String filePrefix, String objType, String objId, String htImgId, String menuId) {
         File[] fileList = null;
-        String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+        String fileName = menuId + objType + "_" + objId + "_" + htImgId + ".json";
         File file = new File(filePrefix);
         if (file.isDirectory()) {
             fileList = file.listFiles();
@@ -168,7 +168,7 @@ public class StringUtils {
     }
 
     /**
-     * 加密
+     * 解密
      *
      * @param bytes
      * @return
@@ -178,7 +178,7 @@ public class StringUtils {
     }
 
     /**
-     * 解密
+     * 加密
      * 二进制数据编码为BASE64字符串
      *
      * @param bytes
@@ -292,8 +292,7 @@ public class StringUtils {
     }
 
     public static void main(String[] args) {
-        List<Object> list = Arrays.asList(null, null, null);
-        System.out.println(isNotNullAndEmpty(list));
-
+        String token = StringUtils.encode("8b068514cf9eb:387f525908ad6f786a4dae5351d580b6".getBytes());
+        System.out.println(token);
     }
 }

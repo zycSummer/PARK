@@ -6,19 +6,29 @@
     <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select"></a>
-                <a><cite>能耗地图</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
             
     </blockquote>
-    <a href="javascript:void(0);" class="layui-btn layui-btn-sm fullScreen">
-        <i class="fa fa-arrows-alt"></i> 全屏
-    </a>
+    
     <div id="map_content">
     
     </div>
+    <div class="right_content">
+    <div class="right_content_first">
+        <a href="javascript:void(0);" class="layui-btn layui-btn-sm fullScreen">
+        <i class="fa fa-arrows-alt"></i> 全屏
+    </a>
+     <div class="showBtn">
+        <i class="layui-icon layui-icon-left  showBtnIcon" ></i>  
+     </div> 
+</div>
     <div class="company_list layui-collapse" lay-accordion  lay-filter="company_collapse">
         
     </div>
+</div>
     </div>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=OMsOvB46KxK7PFpm3lFnGqXf"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/InfoBox/1.2/src/InfoBox_min.js"></script>

@@ -153,10 +153,10 @@ public class ExcelModelListener extends AnalysisEventListener {
                 OrgTreeDetail orgTreeDetail = new OrgTreeDetail();
                 String nodeId = orgTreeDetailModel.getNodeId();
                 if (StringUtils.isNotNullAndEmpty(nodeId)) {
-                    if (nodeId.matches("^[A-Za-z0-9]{0,20}$")) {
+                    if (nodeId.matches("^[A-Za-z0-9_]{0,20}$")) {
                         orgTreeDetail.setNodeId(nodeId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId只能输入字母和数字且不能大于20位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId只能输入字母、数字和下划线且不能大于20位");
                     }
                 } else {
                     throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId不能为空");
@@ -180,10 +180,10 @@ public class ExcelModelListener extends AnalysisEventListener {
                 }
                 String sortId = orgTreeDetailModel.getSortId();
                 if (sortId != null) {
-                    if (sortId.matches("^[A-Za-z0-9]{0,10}$")) {
+                    if (sortId.matches("^[A-Za-z0-9_]{0,20}$")) {
                         orgTreeDetail.setSortId(sortId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母和数字且不能大于10位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母、数字和下划线且不能大于10位");
                     }
                 } else {
                     orgTreeDetail.setSortId(sortId);
@@ -238,10 +238,10 @@ public class ExcelModelListener extends AnalysisEventListener {
                 }
                 String sortId = meterObj.getSortId();
                 if (sortId != null) {
-                    if (sortId.matches("^[A-Za-z0-9]{0,10}$")) {
+                    if (sortId.matches("^[A-Za-z0-9_]{0,10}$")) {
                         meter.setSortId(sortId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母和数字且不能大于10位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母、数字和下划线且不能大于10位");
                     }
                 } else {
                     meter.setSortId(sortId);
@@ -278,10 +278,10 @@ public class ExcelModelListener extends AnalysisEventListener {
                 ReportObjDetail reportObjDetail = new ReportObjDetail();
                 String nodeId = objDetail.getNodeId();
                 if (StringUtils.isNotNullAndEmpty(nodeId)) {
-                    if (nodeId.matches("^[A-Za-z0-9]{0,20}$")) {
+                    if (nodeId.matches("^[A-Za-z0-9_]{0,20}$")) {
                         reportObjDetail.setNodeId(nodeId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId只能输入字母和数字且不能大于20位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId只能输入字母、数字和下划线且不能大于20位");
                     }
                 } else {
                     throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的nodeId不能为空");
@@ -305,10 +305,10 @@ public class ExcelModelListener extends AnalysisEventListener {
                 }
                 String sortId = objDetail.getSortId();
                 if (sortId != null) {
-                    if (sortId.matches("^[A-Za-z0-9]{0,10}$")) {
+                    if (sortId.matches("^[A-Za-z0-9_]{0,10}$")) {
                         reportObjDetail.setSortId(sortId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母和数字且不能大于10位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母、数字和下划线且不能大于10位");
                     }
                 } else {
                     reportObjDetail.setSortId(sortId);
@@ -404,10 +404,10 @@ public class ExcelModelListener extends AnalysisEventListener {
 
                 String sortId = paraDetail.getSortId();
                 if (sortId != null) {
-                    if (sortId.matches("^[A-Za-z0-9]{0,10}$")) {
+                    if (sortId.matches("^[A-Za-z0-9_]{0,10}$")) {
                         reportParaDetail.setSortId(sortId);
                     } else {
-                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母和数字且不能大于10位");
+                        throw new Exception("第【" + sheetNo + "】张表的第【" + countRow + "】行的sortId只能输入字母、数字和下划线且不能大于10位");
                     }
                 } else {
                     reportParaDetail.setSortId(sortId);

@@ -1,9 +1,14 @@
 package com.jet.cloud.deepmind.repository;
 
 import com.jet.cloud.deepmind.entity.EnergyMonthlyUsagePlan;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author zhuyicheng
@@ -14,7 +19,6 @@ import org.springframework.stereotype.Repository;
 public interface EnergyMonthlyUsagePlanRepo extends JpaRepository<EnergyMonthlyUsagePlan, Integer>, QuerydslPredicateExecutor<EnergyMonthlyUsagePlan> {
     EnergyMonthlyUsagePlan findByObjTypeAndObjIdAndEnergyTypeIdAndYearAndMonth(String objType, String objId, String energyTypeId, Integer year, Integer month);
 
-/*    @Modifying
-    @Query(value = "INSERT INTO tb_obj_energy_monthly_usage_plan  (obj_type,obj_id,energy_type_id,`year`,`month`,`usage`,memo,create_user_id,create_time) VALUES(?1,?2,?3,?4,?5,?6,?7,?8,?9)", nativeQuery = true)
-    void saveEnergyMonthlyUsagePlan(String objType, String objId, String energyTypeId, Integer year, Integer month, Double usage, String memo, String userId, Timestamp createTime);*/
+    @Query(nativeQuery = true, value = "SELECT * FROM tb_obj_energy_monthly_usage_plan e WHERE e.obj_type=?1 AND e.obj_id = ?2 AND e.energy_type_id IN (?3) AND CONCAT(`year`,'-', LPAD(`month`, 2, 0)) >= ?4  AND CONCAT(`year`,'-', LPAD(`month`, 2, 0)) <= ?5 ORDER BY `year` DESC, LPAD(`month`, 2, 0) DESC #{#pageable}")
+    Page<EnergyMonthlyUsagePlan> findData(String objType, String objId, List<String> energyParaIdList, String startDate, String endDate, Pageable pageable);
 }

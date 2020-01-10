@@ -14,7 +14,7 @@ import com.jet.cloud.deepmind.entity.Alarm;
 import com.jet.cloud.deepmind.entity.AlarmCondition;
 import com.jet.cloud.deepmind.entity.AlarmMsg;
 import com.jet.cloud.deepmind.enums.AlarmEnum;
-import com.jet.cloud.deepmind.model.AlarmMsgVO;
+import com.jet.cloud.deepmind.model.*;
 import com.jet.cloud.deepmind.repository.AlarmMsgRepo;
 import com.jet.cloud.deepmind.repository.AlarmRepo;
 import com.jet.cloud.deepmind.rtdb.model.SampleData4KairosResp;
@@ -46,8 +46,6 @@ import static com.jet.cloud.deepmind.common.util.StringUtils.isNullOrEmpty;
 @Service
 @Log4j2
 public class AlarmSchedulerTask {
-
-
     @Autowired
     private AlarmRepo alarmRepo;
     @Autowired
@@ -62,10 +60,8 @@ public class AlarmSchedulerTask {
     private AlarmSender alarmSender;
 
     public void check() {
-
         try {
             List<Alarm> checkAlarmList = alarmRepo.findByIsUseTrue();
-            //Long timeOutValue = commonService.getTimeOutValue();
             Long timeOutValue = commonService.getTimeOutValue();
             List<Alarm> alarmList = new ArrayList<>();
             List<Alarm> recoveryList = new ArrayList<>();
@@ -78,7 +74,6 @@ public class AlarmSchedulerTask {
                         break;
                     }
                 }
-
                 try {
                     boolean conditionAlarm = produceAlarm(alarm, timeOutValue);
                     if (hasRecoveryTime && conditionAlarm) {
@@ -94,7 +89,6 @@ public class AlarmSchedulerTask {
                     log.error(e.getMessage());
                 }
             }
-
             handleAlarmList(alarmList);
             handleRecoveryAlarmList(recoveryList);
         } catch (Exception e) {
@@ -106,7 +100,6 @@ public class AlarmSchedulerTask {
      * 没有回复时间 且 报警条件不满足 填入回复时间更新到数据库
      */
     public void handleRecoveryAlarmList(List<Alarm> recoveryList) {
-
         if (isNullOrEmpty(recoveryList)) {
             log.info("本轮没有已恢复的报警");
             return;
@@ -129,6 +122,7 @@ public class AlarmSchedulerTask {
         });
         log.info("本轮已恢复的报警数为{}", recoveryList.size());
         List<AlarmMsgVO> alarmMsgVOS = new ArrayList<>();
+        List<AppTencentVO> appTencentVOS = new ArrayList<>();
         // 发送中软报警信息
         for (Alarm alarm : recoveryList) {
             AlarmMsgVO alarmMsgVO = new AlarmMsgVO();
@@ -141,15 +135,19 @@ public class AlarmSchedulerTask {
             alarmMsgVO.setAlarmTime(DateUtil.localDateTimeToLong(alarm.getAlarmTime()));
             alarmMsgVO.setRecoveryTime(DateUtil.localDateTimeToLong(LocalDateTime.now()));
             alarmMsgVOS.add(alarmMsgVO);
+
+            queryAppTencentVOS(appTencentVOS, alarm, "android");
+            queryAppTencentVOS(appTencentVOS, alarm, "ios");
         }
         alarmSender.sendHttpAlarm(alarmMsgVOS);
+        // 发送腾讯移动推送
+        alarmSender.sendAppTencent(appTencentVOS);
     }
 
     /**
      * 满足报警条件 且 报警条件满足 数据库插入一条数据，且发送邮件和短信
      */
     private void handleAlarmList(List<Alarm> alarmList) {
-
         if (isNullOrEmpty(alarmList)) {
             log.info("本轮没有满足条件的报警，检查结束");
             return;
@@ -160,6 +158,7 @@ public class AlarmSchedulerTask {
         Multimap<String, Alarm> phoneMap = ArrayListMultimap.create();
         Multimap<String, Alarm> emailMap = ArrayListMultimap.create();
         List<AlarmMsgVO> alarmMsgVOS = new ArrayList<>();
+        List<AppTencentVO> appTencentVOS = new ArrayList<>();
         //短信或邮件
         for (Alarm alarm : alarmList) {
             for (String addr : alarm.getMailRecv()) {
@@ -172,21 +171,60 @@ public class AlarmSchedulerTask {
                     phoneMap.put(addr, alarm);
                 }
             }
-            AlarmMsgVO alarmMsgVO = new AlarmMsgVO();
-            alarmMsgVO.setParkId(alarm.getObjId());
-            alarmMsgVO.setAlarmId(alarm.getAlarmId());
-            alarmMsgVO.setAlarmName(alarm.getAlarmName());
-            alarmMsgVO.setAlarmType(alarm.getAlarmType());
-            alarmMsgVO.setAlarmMsg(alarm.getAlarmMsg());
-            alarmMsgVO.setAlarmMsg(alarm.getAlarmMsg());
-            alarmMsgVO.setAlarmTime(DateUtil.localDateTimeToLong(alarm.getAlarmTime()));
-            alarmMsgVO.setRecoveryTime(null);
-            alarmMsgVOS.add(alarmMsgVO);
+            queryAlarmMsgVO(alarmMsgVOS, alarm);
+            queryAppTencentVOS(appTencentVOS, alarm, "android");
+            queryAppTencentVOS(appTencentVOS, alarm, "ios");
         }
         alarmSender.emailSend(emailMap);
         alarmSender.smsSend(phoneMap);
         // 发送中软报警信息
         alarmSender.sendHttpAlarm(alarmMsgVOS);
+        // 发送腾讯移动推送
+        alarmSender.sendAppTencent(appTencentVOS);
+    }
+
+    private void queryAppTencentVOS(List<AppTencentVO> appTencentVOS, Alarm alarm, String platform) {
+        AppTencentVO appTencentVO = new AppTencentVO();
+        appTencentVO.setPlatform(platform);
+        appTencentVO.setAudienceType("tag");
+        TagsVO t = new TagsVO();
+        t.setOp("AND");
+        List<String> list = new ArrayList<>();
+        list.add(alarm.getObjType() + "_" + alarm.getObjId());
+        t.setTags(list);
+        appTencentVO.setTagList(t);
+        appTencentVO.setEnvironment("dev");
+        appTencentVO.setMessageType("notify");
+        MessageVO messageVO = new MessageVO();
+        messageVO.setTitle(alarm.getAlarmName());
+        messageVO.setContent(alarm.getAlarmMsg());
+        List<AcceptTimeVO> acceptTimeVOS = new ArrayList<>();
+        AcceptTimeVO acceptTimeVO = new AcceptTimeVO();
+        StartVO startVO = new StartVO();
+        startVO.setHour("00");
+        startVO.setMin("00");
+        acceptTimeVO.setStart(startVO);
+        EndVO endVO = new EndVO();
+        endVO.setHour("24");
+        endVO.setMin("00");
+        acceptTimeVO.setEnd(endVO);
+        acceptTimeVOS.add(acceptTimeVO);
+        messageVO.setAcceptTime(acceptTimeVOS);
+        appTencentVO.setMessage(messageVO);
+        appTencentVOS.add(appTencentVO);
+    }
+
+    private void queryAlarmMsgVO(List<AlarmMsgVO> alarmMsgVOS, Alarm alarm) {
+        AlarmMsgVO alarmMsgVO = new AlarmMsgVO();
+        alarmMsgVO.setParkId(alarm.getObjId());
+        alarmMsgVO.setAlarmId(alarm.getAlarmId());
+        alarmMsgVO.setAlarmName(alarm.getAlarmName());
+        alarmMsgVO.setAlarmType(alarm.getAlarmType());
+        alarmMsgVO.setAlarmMsg(alarm.getAlarmMsg());
+        alarmMsgVO.setAlarmMsg(alarm.getAlarmMsg());
+        alarmMsgVO.setAlarmTime(DateUtil.localDateTimeToLong(alarm.getAlarmTime()));
+        alarmMsgVO.setRecoveryTime(null);
+        alarmMsgVOS.add(alarmMsgVO);
     }
 
     /**

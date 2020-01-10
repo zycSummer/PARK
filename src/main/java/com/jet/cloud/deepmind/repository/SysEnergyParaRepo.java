@@ -21,8 +21,6 @@ public interface SysEnergyParaRepo extends JpaRepository<SysEnergyPara, Integer>
 
     SysEnergyPara findByEnergyTypeIdAndEnergyParaId(String energyTypeId, String energyParaId);
 
-    SysEnergyPara findByEnergyParaId(String energyParaId);
-
     @Modifying
     void deleteByEnergyParaId(String energyParaId);
 

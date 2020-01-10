@@ -29,13 +29,13 @@ public class ClientConfig {
     @Value("${server.url.prefix}")
     private String urlPrefix;
 
-    @Bean
-    public RestTemplate restTemplate() {
-        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-        requestFactory.setConnectTimeout(1000);
-        requestFactory.setReadTimeout(1000);
-        return new RestTemplate(requestFactory);
-    }
+    //@Bean
+    //public RestTemplate restTemplate() {
+    //    SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+    //    requestFactory.setConnectTimeout(1000);
+    //    requestFactory.setReadTimeout(1000);
+    //    return new RestTemplate(requestFactory);
+    //}
 
     public String getHost() {
         return host;

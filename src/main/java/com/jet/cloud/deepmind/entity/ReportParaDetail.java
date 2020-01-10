@@ -30,7 +30,7 @@ public class ReportParaDetail extends BaseEntity {
 
     @Column(name = "report_id", nullable = false)
     @NotNull(message = "报表标识不能为空")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String reportId;
 
     @Column(name = "energy_para_id", nullable = false)
@@ -63,7 +63,7 @@ public class ReportParaDetail extends BaseEntity {
     private String diffValue;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Transient

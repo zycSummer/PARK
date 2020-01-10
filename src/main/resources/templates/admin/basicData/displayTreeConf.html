@@ -7,8 +7,9 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>基础数据</a>
-                <a><cite>对象展示结构树配置</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div id="tree_content">
@@ -50,20 +51,20 @@
         <form class="layui-form">
             <div class="layui-form-item edit_treeId layui-hide">
                 <label class="layui-form-label">展示结构树标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="edit_treeId"></div>
                 </div>
             </div>
             <div class="layui-form-item add_treeId">
                 <label class="layui-form-label"><span class="red">* </span>展示结构树标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="treeId" id="treeId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input" autocomplete="off"/>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="treeId_tip"></i>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label"><span class="red">* </span>展示结构树名称：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="text" name="treeName" id="treeName" maxlength='30' class="layui-input" autocomplete="off"/>
                 </div>
                 <i class="fa fa-exclamation-circle tip_icon" id="treeName_tip"></i>
@@ -96,7 +97,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">备注：</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" id="tree_memo" maxlength="200">
+                    <textarea class="layui-textarea" id="tree_memo" maxlength="300"></textarea>
                 </div>
             </div>
         </form>
@@ -107,19 +108,19 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">展示结构树标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_treeId"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">展示结构树名称：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_treeName"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">能源种类：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_energyTypeId"></div>
                 </div>
             </div>
@@ -135,32 +136,32 @@
             <form class="layui-form">
                 <div class="layui-form-item">
                     <label class="layui-form-label">展示结构树：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="treeDetail_treeName"></div>
                     </div>
                 </div>
                 <div class="layui-form-item add_treeDetail_nodeId">
                     <label class="layui-form-label"><span class="red">* </span>节点ID：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" class="layui-input" id="treeDetail_nodeId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="treeDetail_nodeId_tip"></i>
                 </div>
                 <div class="layui-form-item edit_treeDetail_nodeId layui-hide">
                     <label class="layui-form-label">节点ID：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="edit_treeDetail_nodeId"></div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">父节点：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="treeDetail_parentNode"></div>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red">* </span>节点名称：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" class="layui-input" maxlength="30" id="treeDetail_nodeName">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="treeDetail_nodeName_tip"></i>
@@ -175,7 +176,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">备注：</label>
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input" maxlength="20" id="treeDetail_memo">
+                        <textarea class="layui-textarea" id="treeDetail_memo" maxlength="300"></textarea>
                     </div>
                 </div>
             </form>
@@ -216,10 +217,10 @@
                     <div id="tableSelect_title">仪表选择</div>
                     <div id="tableSelect_content">
                         <div id="obj_nav">
-                            <a href="javascript:void(0);" class="obj_nav-item obj_nav-this" data-id="park">企业</a>
+                            <a href="javascript:void(0);" class="obj_nav-item obj_nav-this comapnyDivTitle" data-id="park">企业</a>
                             <a href="javascript:void(0);" class="obj_nav-item" data-id="site">仪表</a>
                         </div>
-                        <div id="parkSiteTableContent">
+                        <div id="parkSiteTableContent" class="comapnyDiv">
                             <div class="layui-form searchForm">
                                 <input type="text" id="obj_parkSiteName" class="layui-input" maxlength="30" placeholder="按企业标识或者名称查询">
                                 <button class="layui-btn layui-btn-sm obj_parkSiteQuery">查询</button>
@@ -372,13 +373,13 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">展示结构树：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="treeDetail_delete_treeId"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">节点：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="treeDetail_delete_nodeId"></div>
                 </div>
             </div>
@@ -394,7 +395,7 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">展示结构树：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="treeDetail_import_report"></div>
                 </div>
             </div>

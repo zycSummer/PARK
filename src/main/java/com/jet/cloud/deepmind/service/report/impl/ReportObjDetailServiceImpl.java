@@ -8,14 +8,12 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.common.CurrentUser;
 import com.jet.cloud.deepmind.common.HttpConstants;
+import com.jet.cloud.deepmind.common.util.ExcelUtil;
 import com.jet.cloud.deepmind.common.util.StringUtils;
 import com.jet.cloud.deepmind.entity.Park;
 import com.jet.cloud.deepmind.entity.ReportObjDetail;
 import com.jet.cloud.deepmind.entity.Site;
-import com.jet.cloud.deepmind.model.ReportObjDetailModel;
-import com.jet.cloud.deepmind.model.ReportObjDetailVo;
-import com.jet.cloud.deepmind.model.Response;
-import com.jet.cloud.deepmind.model.ServiceData;
+import com.jet.cloud.deepmind.model.*;
 import com.jet.cloud.deepmind.repository.ParkRepo;
 import com.jet.cloud.deepmind.repository.SiteRepo;
 import com.jet.cloud.deepmind.repository.report.ReportObjDetailRepo;
@@ -66,7 +64,9 @@ public class ReportObjDetailServiceImpl implements ReportObjDetailService {
                 String parentId = reportObjDetail.getParentId();
                 if (StringUtils.isNotNullAndEmpty(parentId)) {
                     ReportObjDetail reportObjDetailObj = reportObjDetailRepo.findByObjTypeAndObjIdAndReportIdAndNodeId(objType, objId, reportId, parentId);
-                    parentName = reportObjDetailObj.getNodeName();
+                    if (StringUtils.isNotNullAndEmpty(reportObjDetailObj)){
+                        parentName = reportObjDetailObj.getNodeName();
+                    }
                 }
                 reportObjDetail.setParentName(parentName);
             }
@@ -146,41 +146,51 @@ public class ReportObjDetailServiceImpl implements ReportObjDetailService {
         ExcelWriter writer = null;
         String projectName = null;
         try {
-            if (objType.equals("SITE")) {
+            String str = "SITE";
+            if (objType.equals(str)) {
                 Site site = siteRepo.findBySiteId(objId);
-                projectName ="["+site.getSiteId()+"]"+site.getSiteName();
+                projectName = "[" + site.getSiteId() + "]" + site.getSiteName();
             } else {
                 Park park = parkRepo.findByParkId(objId);
-                projectName = "["+park.getParkId()+"]"+park.getParkName();
+                projectName = "[" + park.getParkId() + "]" + park.getParkName();
             }
             String userAgent = request.getHeader("User-Agent");
-            String name = projectName + fileName+"_展示对象";
+            String name = projectName + fileName + "_展示对象";
             ServletOutputStream outputStream = response.getOutputStream();
-            response.setHeader("Content-disposition", "attachment; filename=" + StringUtils.resolvingScrambling(name, userAgent)+".xlsx");
-            response.setContentType("application/vnd.ms-excel;charset=UTF-8");//设置类型
+            response.setHeader("Content-disposition", "attachment; filename=" + StringUtils.resolvingScrambling(name, userAgent) + ".xlsx");
+            //设置类型
+            response.setContentType("application/vnd.ms-excel;charset=UTF-8");
             response.setHeader("Pragma", "public");
             response.setHeader("Cache-Control", "no-store");
             response.addHeader("Cache-Control", "max-age=0");
-            response.setDateHeader("Expires", 0);//设置日期头
+            //设置日期头
+            response.setDateHeader("Expires", 0);
             //实例化 ExcelWriter
             writer = EasyExcelFactory.getWriterWithTempAndHandler(null, outputStream, ExcelTypeEnum.XLSX, true, new AfterWriteHandlerImpl());
             //实例化表单
-            Sheet sheet1 = new Sheet(1, 0, ReportObjDetailModel.class);
-            sheet1.setSheetName("obj");
+            Sheet sheet = new Sheet(1, 0, ReportObjDetailModel.class);
+            sheet.setSheetName("obj");
             //获取ReportObjDetail数据
             List<ReportObjDetail> reportObjDetails = reportObjDetailRepo.findByObjTypeAndObjIdAndReportIdOrderBySortIdAsc(objType, objId, reportId);
+            List<ReportObjDetailVos> treeInfoDetails = ExcelUtil.queryTreeInfoDetails(reportObjDetails);
+            List<ReportObjDetailVos> res = new ArrayList<>();
+            ExcelUtil.iter(res, treeInfoDetails);
+            for (ReportObjDetailVos vo : res) {
+                vo.setNodeName(ExcelUtil.setName(vo.getNodeName(), vo.getDeep()));
+            }
             List<ReportObjDetailModel> reportObjDetailModelList = new ArrayList<>();
-            for (ReportObjDetail reportObjDetail : reportObjDetails) {
+            //获取ReportObjDetail数据
+            for (ReportObjDetailVos re : res) {
                 ReportObjDetailModel reportObjDetailModel = new ReportObjDetailModel();
-                reportObjDetailModel.setNodeId(reportObjDetail.getNodeId());
-                reportObjDetailModel.setNodeName(reportObjDetail.getNodeName());
-                reportObjDetailModel.setMemo(reportObjDetail.getMemo());
-                reportObjDetailModel.setParentId(reportObjDetail.getParentId());
-                reportObjDetailModel.setSortId(reportObjDetail.getSortId());
-                reportObjDetailModel.setDataSource(reportObjDetail.getDataSource());
+                reportObjDetailModel.setNodeId(re.getNodeId());
+                reportObjDetailModel.setParentId(re.getParentId());
+                reportObjDetailModel.setNodeName(re.getNodeName());
+                reportObjDetailModel.setSortId(re.getSortId());
+                reportObjDetailModel.setDataSource(re.getDataSource());
+                reportObjDetailModel.setMemo(re.getMemo());
                 reportObjDetailModelList.add(reportObjDetailModel);
             }
-            writer.write(reportObjDetailModelList, sheet1);
+            writer.write(reportObjDetailModelList, sheet);
             writer.finish();
             outputStream.flush();
         } catch (IOException e) {

@@ -9,6 +9,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,12 +24,12 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "tb_sys_user", indexes = {
-        //@Index(columnList = "login_name,user_group_code", name = "IDX_user_group_and_login_name", unique = true)
         @Index(columnList = "user_id", name = "UN_SYS_USER", unique = true)
 })
 public class SysUser extends BaseEntity {
 
     @Column(name = "user_id", unique = true)
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "只能输入字母、数字、下划线组合且不能大于20位")
     private String userId;
 
     @Column(name = "user_group_id")
@@ -39,12 +40,6 @@ public class SysUser extends BaseEntity {
     @JsonIgnore
     @Column(name = "pwd")
     private String password;
-
-    ///**
-    // * 所属角色标识（多个角色标识逗号分隔）
-    // */
-    //@Column(name = "role_id")
-    //private String roleId;
 
     @Column(name = "is_enabled")
     @Convert(converter = String2BooleanConverter.class)

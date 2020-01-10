@@ -10,6 +10,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.common.Constants;
 import com.jet.cloud.deepmind.common.util.DateUtil;
+import com.jet.cloud.deepmind.common.util.ExcelUtil;
 import com.jet.cloud.deepmind.common.util.MathUtil;
 import com.jet.cloud.deepmind.common.util.StringUtils;
 import com.jet.cloud.deepmind.entity.*;
@@ -35,7 +36,6 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -69,7 +69,6 @@ public class ReportQueryServiceImpl implements ReportQueryService {
     @Autowired
     private SiteRepo siteRepo;
 
-    private static final String tab = "         ";
 
     @Override
     public Response queryReport(String objType, String objId) {
@@ -286,22 +285,25 @@ public class ReportQueryServiceImpl implements ReportQueryService {
         ExcelWriter writer = null;
         String projectName = null;
         try {
-            if (objType.equals("PARK")) {
+            String str = "PARK";
+            if (objType.equals(str)) {
                 Park park = parkRepo.findByParkId(objId);
-                projectName =  "["+park.getParkId()+"]"+park.getParkName();
+                projectName = "[" + park.getParkId() + "]" + park.getParkName();
             } else {
                 Site site = siteRepo.findBySiteId(objId);
-                projectName = "["+site.getSiteId()+"]"+site.getSiteName();
+                projectName = "[" + site.getSiteId() + "]" + site.getSiteName();
             }
-            String name = projectName + "_"+fileName;
+            String name = projectName + "_" + fileName;
             String userAgent = request.getHeader("User-Agent");
             ServletOutputStream outputStream = response.getOutputStream();
             response.setHeader("Content-disposition", "attachment; filename=" + StringUtils.resolvingScrambling(name, userAgent) + ".xlsx");
-            response.setContentType("application/vnd.ms-excel;charset=UTF-8");//设置类型
+            //设置类型
+            response.setContentType("application/vnd.ms-excel;charset=UTF-8");
             response.setHeader("Pragma", "public");
             response.setHeader("Cache-Control", "no-store");
             response.addHeader("Cache-Control", "max-age=0");
-            response.setDateHeader("Expires", 0);//设置日期头
+            //设置日期头
+            response.setDateHeader("Expires", 0);
             Sheet sheet = new Sheet(1, 0);
             sheet.setSheetName("report");
             writer = EasyExcelFactory.getWriterWithTempAndHandler(null, outputStream, ExcelTypeEnum.XLSX, true, new ReportWriteHandlerImpl());
@@ -352,11 +354,12 @@ public class ReportQueryServiceImpl implements ReportQueryService {
                 List<ReportInfoVO> o1 = (List<ReportInfoVO>) reportInfoVO.get("result");
                 result.add(o1);
             }
-            List<ReportObjDetailVos> treeInfoDetails = queryTreeInfoDetails(objType, objId, reportId);
+            List<ReportObjDetail> reportObjDetailList = reportObjDetailRepo.findByObjTypeAndObjIdAndReportIdOrderBySortIdAsc(objType, objId, reportId);
+            List<ReportObjDetailVos> treeInfoDetails = ExcelUtil.queryTreeInfoDetails(reportObjDetailList);
             List<ReportObjDetailVos> res = new ArrayList<>();
-            iter(res, treeInfoDetails);
+            ExcelUtil.iter(res, treeInfoDetails);
             for (ReportObjDetailVos vo : res) {
-                vo.setNodeName(setName(vo.getNodeName(), vo.getDeep()));
+                vo.setNodeName(ExcelUtil.setName(vo.getNodeName(), vo.getDeep()));
             }
             ArrayList<String> nodeNames = new ArrayList<>();
             for (ReportObjDetailVos re : res) {
@@ -483,7 +486,7 @@ public class ReportQueryServiceImpl implements ReportQueryService {
         }
     }
 
-    private List<ReportObjDetailVos> queryTreeInfoDetails(String objType, String objId, String reportId) {
+   /* public List<ReportObjDetailVos> queryTreeInfoDetails(String objType, String objId, String reportId) {
         List<ReportObjDetailVos> reportObjDetailVos = new ArrayList<>();
         try {
             List<ReportObjDetail> reportObjDetailList = reportObjDetailRepo.findByObjTypeAndObjIdAndReportIdOrderBySortIdAsc(objType, objId, reportId);
@@ -535,7 +538,7 @@ public class ReportQueryServiceImpl implements ReportQueryService {
             prefix += tab;
         }
         return prefix + nodeName;
-    }
+    }*/
 
     private void queryHead(String headDate, Multimap<String, String> mapValues, List<List<String>> headList) {
         Collection<Map.Entry<String, String>> entries = mapValues.entries();
@@ -550,7 +553,7 @@ public class ReportQueryServiceImpl implements ReportQueryService {
         }
     }
 
-    public <T> void addChild(T t, Multimap<String, T> dataMultimap, int size, Integer flag) {
+    /*public <T> void addChild(T t, Multimap<String, T> dataMultimap, int size, Integer flag) {
         if (t instanceof ReportObjDetailVos) {
             ReportObjDetailVos reportObjDetailVos = (ReportObjDetailVos) t;
             if (size > 0 && reportObjDetailVos != null) {
@@ -570,7 +573,7 @@ public class ReportQueryServiceImpl implements ReportQueryService {
                 }
             }
         }
-    }
+    }*/
 
     public static void main(String[] args) {
         Double aDouble = 50.40;

@@ -703,6 +703,7 @@ public class FileUtil {
         fos.close();
     }
 
+
     public static void main(String[] args) {
 
        /* File srcFile = new File("E:\\R.R"); //初始文件

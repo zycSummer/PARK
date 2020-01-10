@@ -33,11 +33,6 @@ public class AjaxLogoutHandler implements LogoutHandler {
     @Autowired
     private LogService logService;
 
-    //@Override
-    //public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-    //
-    //}
-
     @Override
     public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         HttpSession session = request.getSession();
@@ -60,7 +55,7 @@ public class AjaxLogoutHandler implements LogoutHandler {
         s.setMenu("系统");
         s.setFunction("登出");
         s.setOperateContent("系统-登出");
-        //s.setOperatorIp(CommonUtil.getIpAddr(request));
+        s.setOperateIp(CommonUtil.getIpAddr(request));
         logService.save(s);
         Response ok = Response.ok("注销成功");
         response.setContentType("application/json;charset=utf-8");

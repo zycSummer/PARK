@@ -1,6 +1,7 @@
 package com.jet.cloud.deepmind.controller;
 
 
+import com.jet.cloud.deepmind.common.util.EmailUtils;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.repository.CommonRepo;
 import com.jet.cloud.deepmind.rtdb.model.QueryBody;
@@ -8,8 +9,10 @@ import com.jet.cloud.deepmind.rtdb.model.TimeUnit;
 import com.jet.cloud.deepmind.rtdb.model.AggregatorDataResponse;
 import com.jet.cloud.deepmind.rtdb.model.SampleDataResponse;
 import com.jet.cloud.deepmind.rtdb.service.KairosdbClient;
+import com.jet.cloud.deepmind.service.AlarmSender;
 import com.jet.cloud.deepmind.service.report.ReportManageService;
 import com.jet.cloud.deepmind.service.report.ReportQueryService;
+import io.github.biezhi.ome.SendMailException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +35,8 @@ public class TestController {
     private CommonRepo commonRepo;
     @Autowired
     private ReportManageService reportManageService;
+    @Autowired
+    private EmailUtils emailUtils;
 
     @PostMapping("/queryLast")
     public Response queryLast(@RequestBody List<String> pointIds) {
@@ -62,5 +67,10 @@ public class TestController {
     @GetMapping("/testRepo")
     public void testRepo() {
         commonRepo.queryAllButtonsByMenuUrl("/admin/analogy");
+    }
+
+    @GetMapping("/sendEmail")
+    public void sendEmail() throws SendMailException {
+        emailUtils.sendText("18755119046@163.com","test","测试工会");
     }
 }

@@ -28,7 +28,7 @@ public class AlarmCondition extends BaseEntity {
     @Column(name = "alarm_id", nullable = false)
     @NotNull(message = "报警标识不能为空")
     private String alarmId;
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     @Column(name = "alarm_condition_id", nullable = false)
     private String alarmConditionId;
     @Column(name = "data_source")
@@ -59,6 +59,8 @@ public class AlarmCondition extends BaseEntity {
     private Double condition2Value;
     @Column(name = "alarm_msg")
     private String alarmMsg;
+
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     @Column(name = "sort_id")
     private String sortId;
 

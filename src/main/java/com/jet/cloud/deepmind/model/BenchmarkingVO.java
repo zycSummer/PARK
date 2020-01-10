@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 public class BenchmarkingVO {
     private String name;
+    private String abbrName;
     private String type;
     private Double data;
+    private Integer ranking;
 }

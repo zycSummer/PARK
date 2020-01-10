@@ -3,6 +3,7 @@ package com.jet.cloud.deepmind.service;
 import com.jet.cloud.deepmind.entity.Park;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
 
@@ -17,7 +18,7 @@ public interface ParkService {
     Response isExistPark();
 
     @Transactional
-    ServiceData insertOrUpdatePark(Park park);
+    ServiceData insertOrUpdatePark(Park park, MultipartFile file);
 
     Response queryParkById(Integer id);
 

@@ -46,6 +46,9 @@ public class SysLog {
     @Column(name = "operate_time")
     private LocalDateTime operateTime;
 
+
+    @Column(name = "operate_ip")
+    private String operateIp;
     /**
      * 操作菜单（[菜单标识]菜单名称）
      */
@@ -56,9 +59,6 @@ public class SysLog {
     @Column(name = "`function`")
     private String function;
 
-
-    //@Column(name = "operate_ip")
-    //private String operatorIp;
     /**
      * 1：post
      * 2:get

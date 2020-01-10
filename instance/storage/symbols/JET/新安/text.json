@@ -36,6 +36,11 @@
       "attr": "borderWidth",
       "valueType": "Number",
       "defaultValue": 1
+    },
+    {
+      "attr": "textAlign",
+      "valueType": "String",
+      "defaultValue": "center"
     }
   ],
   "width": 150,
@@ -74,7 +79,10 @@
         "func": "attr@value",
         "value": "文本"
       },
-      "align": "center",
+      "align": {
+        "func": "attr@textAlign",
+        "value": "center"
+      },
       "color": {
         "func": "attr@color",
         "value": "rgb(255,255,255)"

@@ -185,7 +185,7 @@ public class UserServiceImpl implements UserService {
         }
         user.setPassword(passwordEncoder.encode(newPwd));
         user.setUpdateNow();
-        user.setUserId(currentUser.userId());
+        user.setUpdateUserId(currentUser.userId());
         userRepo.save(user);
         return ServiceData.success("修改密码成功", currentUser);
     }

@@ -1,8 +1,8 @@
 /*
  * @Author: jpp
  * @Date: 2019-11-25 10:09:14
- * @Last Modified by: jpp
- * @Last Modified time: 2019-11-25 10:31:15
+ * @Last Modified by: xzl
+ * @Last Modified time: 2019-12-19 14:25:48
  */
 #btnGroup {
     margin-top: 7px;
@@ -34,6 +34,9 @@
 }
 #site_add .layui-form-label{
     width:140px;
+}
+#site_add .layui-input-inline{
+    width:300px;
 }
 #site_add>.formContent{
     height:100%;
@@ -84,6 +87,9 @@
     max-width: 100%;
     max-height: 100%;
 }
+#site_delete .layui-input-inline{
+    width: 360px;
+}
 .red{
     color:red;
 }
@@ -99,4 +105,12 @@
     color:red;
     font-size:16px;
     padding-left:25px;
+}
+#coordinateGet{
+position: absolute;
+bottom: 30px;
+}
+.pickingCoordinates{
+    cursor: pointer;
+    text-decoration: underline;
 }

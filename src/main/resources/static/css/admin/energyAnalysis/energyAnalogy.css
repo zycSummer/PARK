@@ -89,7 +89,7 @@
 
 .energy_select .title{
     display:inline-block;
-    width:70px;
+    width:63px;
     margin-right:5px;
     text-align: right;
     font-weight: bold;
@@ -119,7 +119,7 @@
 }
 
 .timeOption{
-    flex-basis:260px;
+    flex-basis:330px;
     flex-grow: 1;
 }
 .dataType{

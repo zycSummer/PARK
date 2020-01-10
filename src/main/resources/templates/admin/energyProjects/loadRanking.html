@@ -7,8 +7,9 @@
       <blockquote class="layui-elem-quote  tabBreacrumb">
         <span class="layui-breadcrumb" lay-separator=">">
           <a class="park_select"></a>
-          <a>项目能耗</a>
-          <a><cite>负荷排名</cite></a>
+          <span th:each="item:${nb}">
+            <a th:text="${item}"></a>
+            </span>
         </span>
   
       </blockquote>

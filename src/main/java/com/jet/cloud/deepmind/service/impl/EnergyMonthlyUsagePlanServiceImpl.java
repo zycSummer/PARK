@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.jet.cloud.deepmind.common.CurrentUser;
 import com.jet.cloud.deepmind.common.util.DateUtil;
 import com.jet.cloud.deepmind.entity.EnergyMonthlyUsagePlan;
-import com.jet.cloud.deepmind.entity.QEnergyMonthlyUsagePlan;
 import com.jet.cloud.deepmind.entity.SysEnergyType;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
@@ -13,12 +12,9 @@ import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.EnergyMonthlyUsagePlanRepo;
 import com.jet.cloud.deepmind.repository.SysEnergyTypeRepo;
 import com.jet.cloud.deepmind.service.EnergyMonthlyUsagePlanService;
-import com.querydsl.core.types.ExpressionUtils;
-import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -43,18 +39,10 @@ public class EnergyMonthlyUsagePlanServiceImpl implements EnergyMonthlyUsagePlan
 
     @Override
     public Response query(QueryVO vo) {
-        Sort sort = new Sort(Sort.Direction.DESC, "year", "month");
-        Pageable pageable = vo.Pageable(sort);
-        QEnergyMonthlyUsagePlan obj = QEnergyMonthlyUsagePlan.energyMonthlyUsagePlan;
-        Predicate pre = obj.isNotNull();
+        Pageable pageable = vo.Pageable();
         JSONObject key = vo.getKey();
         String objType = key.getString("objType");
-        pre = ExpressionUtils.and(pre, obj.objType.containsIgnoreCase(objType));
         String objId = key.getString("objId");
-        pre = ExpressionUtils.and(pre, obj.objId.containsIgnoreCase(objId));
-        JSONArray energyTypeIds = key.getJSONArray("energyTypeIds");
-        List<String> energyParaIdList = energyTypeIds.toJavaList(String.class);
-        pre = ExpressionUtils.and(pre, obj.energyTypeId.in(energyParaIdList));
         Long start = key.getLong("start");
         LocalDateTime localDateTime1 = DateUtil.longToLocalTime(start);
         int startYear = localDateTime1.getYear();
@@ -63,9 +51,19 @@ public class EnergyMonthlyUsagePlanServiceImpl implements EnergyMonthlyUsagePlan
         LocalDateTime localDateTime2 = DateUtil.longToLocalTime(end);
         int endYear = localDateTime2.getYear();
         int endMonth = localDateTime2.getMonth().getValue();
-        pre = ExpressionUtils.and(pre, obj.year.between(startYear, endYear));
-        pre = ExpressionUtils.and(pre, obj.month.between(startMonth, endMonth));
-        Page<EnergyMonthlyUsagePlan> list = energyMonthlyUsagePlanRepo.findAll(pre, pageable);
+        JSONArray energyTypeIds = key.getJSONArray("energyTypeIds");
+        List<String> energyParaIdList = energyTypeIds.toJavaList(String.class);
+        String sm = startMonth + "";
+        String em = endMonth + "";
+        if (startMonth < 10) {
+            sm = "0" + startMonth;
+        }
+        if (endMonth < 10) {
+            em = "0" + endMonth;
+        }
+        String startDate = startYear + "-" + sm;
+        String endDate = endYear + "-" + em;
+        Page<EnergyMonthlyUsagePlan> list = energyMonthlyUsagePlanRepo.findData(objType, objId, energyParaIdList, startDate, endDate, pageable);
         List<EnergyMonthlyUsagePlan> content = list.getContent();
         ArrayList<String> energyTypeIdList = new ArrayList<>();
         for (EnergyMonthlyUsagePlan energyMonthlyUsagePlan : content) {

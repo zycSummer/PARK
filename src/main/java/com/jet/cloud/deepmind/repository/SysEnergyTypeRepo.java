@@ -24,6 +24,8 @@ public interface SysEnergyTypeRepo extends JpaRepository<SysEnergyType, Integer>
 
     SysEnergyType findByEnergyTypeId(String energyTypeId);
 
+    SysEnergyType findByEnergyTypeIdOrderBySortId(String energyTypeId);
+
     @Modifying
     void deleteByEnergyTypeId(String energyTypeId);
 

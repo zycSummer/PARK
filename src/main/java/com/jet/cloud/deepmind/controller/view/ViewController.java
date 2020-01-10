@@ -27,6 +27,16 @@ public class ViewController {
     }
 
     /**
+     * 综合概况
+     */
+    @GetMapping("/admin/complexOverview")
+    public ModelAndView complexOverview() {
+        ModelAndView o = new ModelAndView();
+        o.setViewName("admin/complexOverview/complexOverview");
+        return o;
+    }
+
+    /**
      * 对标管理 指标排名
      */
     @GetMapping("/admin/indexRanking")
@@ -342,6 +352,16 @@ public class ViewController {
     public ModelAndView objectDataSource() {
         ModelAndView o = new ModelAndView();
         o.setViewName("admin/basicData/objectDataSource");
+        return o;
+    }
+
+    /**
+     * 基础数据  对象公告
+     */
+    @GetMapping("/admin/objectAnnouncement")
+    public ModelAndView objectAnnouncement() {
+        ModelAndView o = new ModelAndView();
+        o.setViewName("admin/basicData/objectAnnouncement");
         return o;
     }
 

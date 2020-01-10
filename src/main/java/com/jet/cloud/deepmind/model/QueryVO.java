@@ -30,6 +30,7 @@ public class QueryVO implements Serializable {
      */
     private JSONObject key;
 
+    //    @ApiIgnore忽略这个类或者方法不显示
     @ApiIgnore
     public Pageable Pageable() {
         return PageRequest.of(page - 1, limit, new Sort(Sort.Direction.ASC, "id"));

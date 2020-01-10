@@ -6,8 +6,9 @@
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select"></a>
-                <a>报警管理</a>
-                <a><cite>报警配置</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="content_main  layui-row layui-col-space5">
@@ -92,59 +93,45 @@
         <div class="calculation_content layui-row">
             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>报警标识：</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>报警标识：</label>
                     <div class="layui-input-inline">
                         <input class="layui-input" autocomplete="off" type="text" id="alarmId_conf"
                             onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10">
 
                     </div>
-                    <label class="layui-form-label  label_tip">◆只能输入字母、数字，长度不超过10，在园区/当前企业内唯一。</label>
+                    <i class="fa fa-exclamation-circle tip_icon" id="alarmId_conf_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>报警名称：</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>报警名称：</label>
                     <div class="layui-input-inline">
                         <input class="layui-input" autocomplete="off" type="text" id="alarmName_cof" maxlength="30">
 
                     </div>
-                    <label class="layui-form-label  label_tip">◆长度不超过30。</label>
+                    <i class="fa fa-exclamation-circle tip_icon" id="alarmName_cof_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>报警类型：
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>报警类型：
                     </label>
                     <div class="layui-input-inline">
                         <input class="layui-input" autocomplete="off" type="text" id="alarmType_conf" maxlength="30">
 
                     </div>
-                    <label class="layui-form-label  label_tip">◆长度不超过30。</label>
+                    <i class="fa fa-exclamation-circle tip_icon" id="alarmType_conf_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>是否启用：
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>是否启用：
                     </label>
                     <div class="layui-input-inline">
-                        <select id="addIsUSe" placeholder="请选择是否启用">
-                            <option value=""></option>
-                            <option value="true">Y</option>
-                            <option value="false">N</option>
-
-                        </select>
+                        <input type="checkbox" name="isEnabled" lay-skin="switch" lay-text="是|否" id="isEnabled">
                     </div>
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>多条件间关系：
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>多条件间关系：
                     </label>
                     <div class="layui-input-inline">
-                        <select id="addMultiConditionsLogic" placeholder="请选择多条件间关系">
-                            <option value=""></option>
-                            <option value="AND">AND</option>
-                            <option value="OR">OR</option>
-
-                        </select>
+                        <input type="radio" name="addCondition" value="AND" title="AND" id="addConditionAnd">
+                        <input type="radio" name="addCondition" value="OR" title="OR" id="addConditionOr">
                     </div>
 
                 </div>
@@ -155,8 +142,7 @@
 
 
                     </div>
-                    <label class="layui-form-label  label_tip">◆多个接收人以英文分号分隔</label>
-
+                    <i class="fa fa-exclamation-circle tip_icon" id="msgRecv_conf_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
                     <label class="layui-form-label addFrom_label" style="width: 120px;">邮件接收人：</label>
@@ -164,7 +150,7 @@
                         <textarea class="layui-textarea" maxlength="500" id="mailRecv_conf"></textarea>
 
                     </div>
-                    <label class="layui-form-label  label_tip">◆多个接收人以英文分号分隔 </label>
+                    <i class="fa fa-exclamation-circle tip_icon" id="mailRecv_conf_tip"></i>
                 </div>
 
                 <div class="layui-form-item addFrom_item">
@@ -186,8 +172,7 @@
         <div class="layui-col-md4">
             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>报警条件标识： </label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>报警条件标识： </label>
                     <div class="layui-input-inline">
                         <input class="layui-input" autocomplete="off" type="text" id="add_alarmConditionId"
                             onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="10">
@@ -195,8 +180,7 @@
                     <i class="fa fa-exclamation-circle tip_icon" id="add_alarmConditionId_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>数值类型：</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>数值类型：</label>
                     <div class="layui-input-inline">
                         <select id="add_valueType">
                             <option></option>
@@ -211,8 +195,7 @@
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>条件1操作符：
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>条件1操作符：
                     </label>
                     <div class="layui-input-inline">
                         <select id="add_condition1Op">
@@ -229,15 +212,14 @@
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>条件1值：
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>条件1值：
                     </label>
                     <div class="layui-input-inline">
                         <input class="layui-input" autocomplete="off" type="number" id="add_condition1Value"
                             maxlength="100">
 
                     </div>
-
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_condition1Value_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
                     <label class="layui-form-label addFrom_label" style="width: 120px;"> 条件间关系：
@@ -276,7 +258,7 @@
                             maxlength="100">
 
                     </div>
-
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_condition2Value_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
                     <label class="layui-form-label addFrom_label" style="width: 120px;">报警信息：</label>
@@ -296,7 +278,7 @@
                         <input class="layui-input" autocomplete="off" type="number" id="add_sortId"
                             onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20">
                     </div>
-
+                    <i class="fa fa-exclamation-circle tip_icon" id="add_sortId_tip"></i>
                 </div>
 
                 <div class="layui-form-item addFrom_item">
@@ -345,12 +327,12 @@
                 <div class="data_source_parameter_select_content_tab">
                     <div class="layui-tab layui-tab-card" lay-filter="modelSelect">
                         <ul class="layui-tab-title">
-                            <li class="layui-this" lay-id="company">企业</li>
+                            <li class="layui-this comapnyDivTitle" lay-id="company">企业</li>
                             <li lay-id="meter">仪表</li>
                             <li lay-id="parameter">参数</li>
                         </ul>
                         <div class="layui-tab-content">
-                            <div class="layui-tab-item layui-show">
+                            <div class="layui-tab-item layui-show comapnyDiv">
                                 <div class="tab_item_content">
                                     <form class="layui-form">
                                         <div class="layui-form-item configuration_item">

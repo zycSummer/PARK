@@ -115,7 +115,7 @@ public class ComprehensiveShowController {
 
     /**
      * @param datasource
-     * @apiNote 综合展示实时负荷排名(从小到大) 电、水、蒸汽
+     * @apiNote 上月万元GDP排名(标煤总量std_coal)
      */
     @MessageMapping("/energyRealTimeLoadRanking")
     public void energyRealTimeLoadRanking(@RequestParam JSONObject datasource, SimpMessageHeaderAccessor accessor) {

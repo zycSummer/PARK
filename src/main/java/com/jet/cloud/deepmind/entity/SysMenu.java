@@ -8,6 +8,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 import java.util.StringJoiner;
 
@@ -29,16 +30,11 @@ public class SysMenu extends BaseEntity {
     private String menuName;
 
     @Column(name = "sort_id")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "排序标识只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Column(name = "parent_id")
     private String parentId;
-
-    ///**
-    // * 是否可分配
-    // */
-    //@Column(name = "is_allocation")
-    //private boolean isAllocation;
 
     private String icon;
 

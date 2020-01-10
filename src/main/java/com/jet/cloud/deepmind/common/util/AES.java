@@ -45,6 +45,8 @@ public class AES {
         return null;
     }
 
+
+
     public static String decrypt(String strToDecrypt) {
         try {
             Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
@@ -57,9 +59,12 @@ public class AES {
     }
 
     public static void main(String[] args) {
-        //AES.setKey("sec123");
-        System.out.println(decrypt("928acb63d8ad7f5ea3414768dd9a212e"));
-        //System.out.println(encrypt("root"));
+      String root = "root";
+        String encrypt = encrypt(root);
+        System.out.println(encrypt);
+        String decrypt = decrypt("hoKmXZDH8kFvKEbVCWNKHo8HAxtYuyNvKWHW0lw3gto=");
+        System.out.println(decrypt);
+
     }
 
     /**

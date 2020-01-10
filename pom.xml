@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.jet.cloud.deepmind</groupId>
     <artifactId>jet-park</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.4</version>
     <name>JET-PARK</name>
     <description>Jet project for Spring Boot</description>
 

@@ -2,7 +2,7 @@
  * @Author: xzl 
  * @Date: 2019-12-11 10:24:09 
  * @Last Modified by: xzl
- * @Last Modified time: 2019-12-11 15:02:33
+ * @Last Modified time: 2019-12-17 16:53:04
  */
 
 #tree_content{
@@ -52,12 +52,17 @@
 }
 .treeDetail_title_search{
     float: left;
+    margin-left: 15px;
 }
 .treeDetail_title_btn{
     float: right;
 }
 #tree_content .left_query{
     margin-left:5px;
+}
+
+#search_treeName{
+    width:225px;
 }
 
 .tree_main{

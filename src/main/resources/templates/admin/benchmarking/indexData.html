@@ -7,8 +7,9 @@
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a>对标管理</a>
-                <a><cite>对标数据</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div id="tree_content">
@@ -32,15 +33,14 @@
                 <div class="treeDetail_title">
                     <div class="treeDetail_title_search">
                         <form class="layui-form">
-
                             <div class="layui-inline">
-                                <label class="search_label"></label>
+                                <label class="search_label layui-label">年份：</label>
                                 <div class="layui-input-inline">
-                                    <input type="text" value="" class="layui-input search_input" id="search_start_time">
+                                    <input type="text" value="" class="layui-input search_input dateInput" id="search_start_time">
                                 </div>
                                 <div class="layui-input-inline">~</div>
                                 <div class="layui-input-inline">
-                                    <input type="text" value="" class="layui-input search_input" id="search_end_time">
+                                    <input type="text" value="" class="layui-input search_input dateInput" id="search_end_time">
                                 </div>
                             </div>
                         </form>
@@ -85,6 +85,13 @@
                         <i class="fa fa-exclamation-circle tip_icon" id="benchmarkingObjName_tip"></i>
                     </div>
                     <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label"><span class="red">* </span>对标对象简称：</label>
+                        <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addbenchmarkingObjAbbrName"   maxlength="15">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon" id="addbenchmarkingObjAbbrNameTip"></i>   
+                    </div>
+                    <div class="layui-form-item addFrom_item">
                         <label class="layui-form-label"><span class="red">* </span>对标对象类型：</label>
                         <div class="layui-input-inline">
                             <select name="benchmarkingObjType" id="benchmarkingObjType">
@@ -95,7 +102,19 @@
                             </select>
                         </div>
                     </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label">世界地图-经度:</label>
+                        <div class="layui-input-inline ">
+                                <input class="layui-input" autocomplete="off" type="number" id="addWordLongitude" maxlength="30">
+                        </div>
 
+                    </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label">世界地图-纬度:</label>
+                    <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="number" id="addWordLatitude" maxlength="30">
+                    </div>
+                </div>
                     <div class="layui-form-item addFrom_item">
                         <label class="layui-form-label">排序标识：</label>
                         <div class="layui-input-inline">

@@ -5,30 +5,30 @@
   <div class="container">
     <blockquote class="layui-elem-quote  tabBreacrumb">
       <span class="layui-breadcrumb" lay-separator=">">
-          <a class="park_select">园区</a>
-        <a >基础数据</a> 
-        <a><cite>对象管理（企业）</cite></a>
+        <span th:each="item:${nb}">
+        <a th:text="${item}"></a>
+        </span>
       </span>
     </blockquote>
   
     <div class="control_div">
         <div class="layui-inline">
             <form class="layui-form" >
-                <div class="layui-inline">
-                    <label>企业标识：</label>
+                <div class="layui-inline search_margin">
+                    <label class="search_label">企业标识：</label>
                     <div class="layui-input-inline">
                         <input type="text" value=""  class="layui-input search_input" id="site_id">
                     </div>
                 </div>
-                <div class="layui-inline">
-                    <label>企业名称：</label>
+                <div class="layui-inline search_margin">
+                    <label class="search_label">企业名称：</label>
                     <div class="layui-input-inline">
                         <input type="text" value="" class="layui-input search_input" id="site_name">
                     </div>
                 </div>
                 <div class="layui-inline">
-                    <label>是否上线：</label>
-                    <div class="layui-input-inline">
+                    <label class="search_label">是否上线：</label>
+                    <div class="layui-input-inline dateInput">
                         <select id="isOnline">
                             <option value="">--</option>
                             <option value="Y">是</option>
@@ -65,47 +65,59 @@
             <form class="layui-form" lay-filter="site_add" enctype="multipart/form-data" method="post">
                 <div class="layui-form-item edit_siteId layui-hide">
                     <label class="layui-form-label">企业标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <div id="edit_siteId"></div>
                     </div>
                 </div>
                 <div class="layui-form-item add_siteId">
                     <label class="layui-form-label"><span class="red">* </span>企业标识：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" name="siteId" id="siteId" onKeyUp="value=value.replace(/[\W]/g,'')" maxlength='20' class="layui-input" autocomplete="off"/>
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="siteId_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label"><span class="red">* </span>企业名称：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" name="siteName" id="siteName" maxlength='30' class="layui-input" autocomplete="off"/>
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="siteName_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">企业简称：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" name="siteShortName" id="siteShortName" maxlength='30' class="layui-input" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">企业地址：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input type="text" name="siteAddress" id="siteAddress" maxlength='30' class="layui-input" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">百度地图-经度：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input name="longitude" id="longitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="longitude_tip"></i>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">百度地图-纬度：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <input name="latitude" id="latitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">世界地图-经度：</label>
+                    <div class="layui-input-inline">
+                        <input name="longitude" id="world_longitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">世界地图-纬度：</label>
+                    <div class="layui-input-inline">
+                        <input name="latitude" id="world_latitude" type="number" maxlength='30' class="layui-input" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -128,17 +140,24 @@
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon" id="rtdbProjectId_tip"></i>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">备注：</label>
-                    <div class="layui-input-inline">
-                        <input type="text" class="layui-input" id="memo" maxlength="200">
-                    </div>
-                </div>
             </form>
             <form class="layui-form" id="siteImage">
                 <div class="layui-form-item">
+                    <label class="layui-form-label">简介：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" id="profile" maxlength="1000"></textarea>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="profile_tip"></i>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">备注：</label>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
                     <label class="layui-form-label">企业图片：</label>
-                    <div class="layui-inline">
+                    <div class="layui-input-inline">
                         <!--<button type="button" class="layui-btn" id="upload_image">-->
                             <!--<i class="layui-icon">&#xe67c;</i>上传图片-->
                         <!--</button>-->
@@ -147,7 +166,13 @@
                     <i class="fa fa-exclamation-circle tip_icon" id="upload_tip"></i>
                 </div>
                 <div class="layui-form-item imageContent">
-                    <image id="imagePreview" src="" />
+                    <img id="imagePreview" src="" />
+                </div>
+                <div class="layui-form-item" id="coordinateGet">
+                    <label class="layui-form-label"></label>
+                    <div class="layui-input-inline" style="text-align: right;">
+                        <a class="pickingCoordinates">百度拾取坐标系统</a>                    </div>
+                 
                 </div>
             </form>
         </div>
@@ -158,13 +183,13 @@
         <form class="layui-form">
             <div class="layui-form-item">
                 <label class="layui-form-label">企业标识：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_siteId"></div>
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">企业名称：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <div id="delete_siteName"></div>
                 </div>
             </div>

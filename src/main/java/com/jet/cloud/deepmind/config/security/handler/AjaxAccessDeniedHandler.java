@@ -21,11 +21,7 @@ import java.io.IOException;
 public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException {
-
         boolean isAjax = "XMLHttpRequest".equals(request.getHeader("X-Requested-With"));
-        //Response error = Response.error(HttpConstants.UNAUTHORIZED, "Access Denied");
-        //response.setContentType("application/json;charset=utf-8");
-        //response.getWriter().write(Constants.mapper.writeValueAsString(error));
         if (isAjax) {
             Response error = Response.error(HttpConstants.AJAX_UNAUTHORIZED, "Access Denied ...");
             response.setContentType("application/json;charset=utf-8");
@@ -35,9 +31,6 @@ public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
             String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
             RequestDispatcher dispatcher = request.getRequestDispatcher("/login");
             dispatcher.forward(request, response);//执行转发
-            //response.sendRedirect("/login");
         }
-
-
     }
 }

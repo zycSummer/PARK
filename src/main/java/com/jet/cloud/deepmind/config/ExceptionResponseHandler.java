@@ -1,6 +1,7 @@
 package com.jet.cloud.deepmind.config;
 
 import com.jet.cloud.deepmind.common.CurrentUser;
+import com.jet.cloud.deepmind.common.util.CommonUtil;
 import com.jet.cloud.deepmind.entity.SysLog;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.service.LogService;

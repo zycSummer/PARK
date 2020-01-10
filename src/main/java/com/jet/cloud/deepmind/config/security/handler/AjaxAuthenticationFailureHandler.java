@@ -26,11 +26,6 @@ import static com.jet.cloud.deepmind.common.HttpConstants.UNAUTHORIZED;
  */
 @Component
 public class AjaxAuthenticationFailureHandler implements AuthenticationFailureHandler {
-
-
-    //@Resource(name = "logService")
-    //private LogService logService;
-
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
@@ -42,15 +37,6 @@ public class AjaxAuthenticationFailureHandler implements AuthenticationFailureHa
             session.removeAttribute(Constants.USER_NAME_LOGIN);
         }
 
-        //SysLog log = new SysLog();
-        //log.setOperatorIp(DateUtils.getIpAddr(request));
-        //log.setMemo(exception.getMessage());
-        //log.setOperateContent("登录");
-        //log.setResult(false);
-        //log.setOperateTime(LocalDateTime.now());
-        //log.setUrl("/");
-        //log.setMethod(2);
-        //logService.save(log);
         String result = null;
         if (exception instanceof BadCredentialsException ||
                 exception instanceof PasswordNotMatchException) {

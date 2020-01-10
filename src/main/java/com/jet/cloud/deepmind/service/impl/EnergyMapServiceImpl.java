@@ -53,8 +53,6 @@ public class EnergyMapServiceImpl implements EnergyMapService {
     @Autowired
     private KairosdbClient kairosdbClient;
     @Autowired
-    private DocumentManagementService documentManagementService;
-    @Autowired
     private GdpMonthlyRepo gdpMonthlyRepo;
     @Autowired
     private SiteRepo siteRepo;
@@ -70,7 +68,6 @@ public class EnergyMapServiceImpl implements EnergyMapService {
 
     @Override
     public Response getDetail(String siteId) {
-
 
         QDataSource obj = QDataSource.dataSource1;
         Predicate pre = obj.isNotNull()
@@ -159,7 +156,7 @@ public class EnergyMapServiceImpl implements EnergyMapService {
         try {
             if (StringUtils.isNotNullAndEmpty(site.getImgSuffix())) {
                 try {
-                    vo.setIcon(StringUtils.imageToBase64Str(appConfig.getImagePath() + siteId + site.getImgSuffix()));
+                    vo.setIcon(StringUtils.imageToBase64Str(appConfig.getImagePath() + "SITE_" + siteId + site.getImgSuffix()));
                 } catch (Exception e) {
                     ;
                 }
@@ -186,6 +183,7 @@ public class EnergyMapServiceImpl implements EnergyMapService {
         Response ok = new OKResponse(vo);
         ok.setQueryPara(siteId);
         return ok;
+
     }
 
 

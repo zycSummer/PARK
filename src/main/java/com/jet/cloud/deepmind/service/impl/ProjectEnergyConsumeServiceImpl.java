@@ -1,7 +1,6 @@
 package com.jet.cloud.deepmind.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.jet.cloud.deepmind.common.util.CommonUtil;
 import com.jet.cloud.deepmind.common.util.DateUtil;
 import com.jet.cloud.deepmind.common.util.MathUtil;
 import com.jet.cloud.deepmind.common.util.StringUtils;
@@ -22,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static com.jet.cloud.deepmind.common.Constants.*;
 
@@ -51,8 +49,13 @@ public class ProjectEnergyConsumeServiceImpl implements ProjectEnergyConsumeServ
 
     @Override
     public Response realTimeLoadResp(String objType, String objId, String energyTypeId) {
+
         try {
-            Response ok = Response.ok(realTimeLoad(objType, objId, energyTypeId));
+            SysEnergyType energyType = sysEnergyTypeRepo.findByEnergyTypeId(energyTypeId);
+            if (energyType == null || energyType.getEnergyUsageParaId() == null) {
+                throw new NotFoundException("[" + energyTypeId + "]energyType能源类型配置错误");
+            }
+            Response ok = Response.ok(realTimeLoad(objType, objId, energyType));
             ok.setQueryPara(objId, objType, energyTypeId);
             return ok;
         } catch (NotFoundException e) {
@@ -444,20 +447,21 @@ public class ProjectEnergyConsumeServiceImpl implements ProjectEnergyConsumeServ
     }
 
 
-    public RealTimeLoadVO realTimeLoad(String objType, String objId, String energyTypeId) throws NotFoundException {
+    public RealTimeLoadVO realTimeLoad(String objType, String objId, SysEnergyType energyType) throws NotFoundException {
 
         RealTimeLoadVO res = new RealTimeLoadVO();
         String name = commonService.getObjNameByObjTypeAndObjId(objType, objId);
         res.setName(name + " - 实时负荷");
         LocalDateTime start = LocalDateTime.of(LocalDate.now(), LocalTime.of(0, 0));
-        SampleData4KairosResp resp = queryHis(objType, objId, energyTypeId, start, start.plusDays(1), 5, TimeUnit.MINUTES);
+        SampleData4KairosResp resp = queryHis(objType, objId, energyType.getEnergyTypeId(), start, start.plusDays(1), 5, TimeUnit.MINUTES);
         if (resp != null) {
 
             List<Long> timestamps = resp.getTimestamps();
             List<Double> values = resp.getValues();
+            //处理最后五分钟 数据不准确的情况
+            values = commonService.queryHistoryData(values, timestamps);
             res.setTimestamps(timestamps);
             res.setValues(values);
-
             CalcPointsVO temp = commonService.getMathHandlePoints(timestamps, values);
             res.setMinVal(temp.getMinVal());
             res.setMaxVal(temp.getMaxVal());
@@ -465,6 +469,8 @@ public class ProjectEnergyConsumeServiceImpl implements ProjectEnergyConsumeServ
             res.setMinTime(temp.getMinTime() == null ? null : temp.getMinTime().toLocalTime());
             res.setAvg(temp.getAvg());
         }
+        SysEnergyPara energyPara = sysEnergyParaRepo.findByEnergyTypeIdAndEnergyParaId(energyType.getEnergyTypeId(), energyType.getEnergyUsageParaId());
+        res.setEnergyPara(energyPara);
         return res;
     }
 

@@ -1,9 +1,8 @@
 package com.jet.cloud.deepmind.common;
 
-import com.jet.cloud.deepmind.entity.SysMenuFunction;
 import com.jet.cloud.deepmind.entity.SysMenu;
+import com.jet.cloud.deepmind.entity.SysMenuFunction;
 import com.jet.cloud.deepmind.entity.SysUser;
-import com.jet.cloud.deepmind.entity.UserMappingRole;
 import com.jet.cloud.deepmind.repository.UserMappingRoleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
-import static com.jet.cloud.deepmind.common.Constants.SYMBOL_SPLIT;
-
 @Service
 public class CurrentUser {
 
@@ -23,6 +20,7 @@ public class CurrentUser {
 
     @Autowired
     private HttpServletRequest request;
+
     @Autowired
     private UserMappingRoleRepo userMappingRoleRepo;
 

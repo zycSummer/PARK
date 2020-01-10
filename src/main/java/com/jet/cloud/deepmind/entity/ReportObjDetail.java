@@ -31,12 +31,12 @@ public class ReportObjDetail extends BaseEntity {
 
     @Column(name = "report_id", nullable = false)
     @NotNull(message = "报表标识不能为空")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String reportId;
 
     @Column(name = "node_id", nullable = false)
     @NotNull(message = "节点标识不能为空")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "只能输入字母、数字、下划线组合且不能大于20位")
     private String nodeId;
 
     @Column(name = "node_name", nullable = false)
@@ -49,7 +49,7 @@ public class ReportObjDetail extends BaseEntity {
     private String parentId;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Column(name = "data_source")

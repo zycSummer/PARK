@@ -14,60 +14,60 @@ public class EquipModel extends BaseRowModel {
     /**
      * 设备标识
      */
-    @ExcelProperty(index = 0)
+    @ExcelProperty(value = "equip_id",index = 0)
     private String equipId;
 
     /**
      * 设备名称
      */
-    @ExcelProperty(index = 1)
+    @ExcelProperty(value = "equip_name",index = 1)
     private String equipName;
 
     /**
      * 设备系统标识
      */
-    @ExcelProperty(index = 2)
+    @ExcelProperty(value = "equip_sys_id",index = 2)
     private String equipSysId;
 
     /**
      * 厂家
      */
-    @ExcelProperty(index = 3)
+    @ExcelProperty(value = "manufacturer",index = 3)
     private String manufacturer;
 
     /**
      * 型号
      */
-    @ExcelProperty(index = 4)
+    @ExcelProperty(value = "model",index = 4)
     private String model;
 
     /**
      * 备注
      */
-    @ExcelProperty(index = 5)
+    @ExcelProperty(value = "location",index = 5)
     private String location;
 
     /**
      * 生产日期
      */
-    @ExcelProperty(index = 6)
+    @ExcelProperty(value = "production_date",index = 6)
     private String productionDate;
 
     /**
      * 投用日期
      */
-    @ExcelProperty(index = 7)
+    @ExcelProperty(value = "first_use_date",index = 7)
     private String firstUseDate;
 
     /**
      * 排序标识
      */
-    @ExcelProperty(index = 8)
+    @ExcelProperty(value = "sort_id",index = 8)
     private String sortId;
 
     /**
      * 备注
      */
-    @ExcelProperty(index = 9)
+    @ExcelProperty(value = "memo",index = 9)
     private String memo;
 }

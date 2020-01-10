@@ -68,6 +68,7 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
         session.setAttribute(Constants.SESSION_USER_NAME, sysUser.getUserName());
 
         SysParameter platformName = sysParameterRepo.findByParaId("PlatformName");
+
         session.setAttribute(Constants.SESSION_PLATFORM_NAME, platformName);
 
         LocalDateTime lastLoginTime = sysUser.getLastLoginTime();
@@ -80,7 +81,7 @@ public class AjaxAuthenticationSuccessHandler implements AuthenticationSuccessHa
         s.setMemo(sysUser.getUserName());
         s.setUrl("/");
         s.setMethod(POST);
-        //s.setOperatorIp(CommonUtil.getIpAddr(request));
+        s.setOperateIp(CommonUtil.getIpAddr(request));
         logService.save(s);
 
         session.setAttribute(Constants.SESSION_LAST_LOGIN_TIME, lastLoginTime);

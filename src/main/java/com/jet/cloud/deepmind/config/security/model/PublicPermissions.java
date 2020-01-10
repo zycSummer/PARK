@@ -46,6 +46,8 @@ public class PublicPermissions {
                 //HUAWEI-API
                 PERMISSION_POST("/api/v1/**"),
 
+                //APP
+                PERMISSION_POST("/app/v1/**"),
 
                 //公共接口
                 PERMISSION_GET("/common/getHtConfig"), //获取ht的ip和端口
@@ -53,7 +55,7 @@ public class PublicPermissions {
                 PERMISSION_GET("/common/queryHistoryLeftData"), //获取能源种类
                 PERMISSION_POST("/energyMonitoring/queryLeftHtImg"), //获取组态树
                 PERMISSION_POST("/common/queryHistoryLeftTree"),//获取tree
-                PERMISSION_GET("/common/queryParameter"), //获取参数
+                PERMISSION_GET("/common/queryParameter/*"), //获取参数
                 PERMISSION_GET("/common/getRtdbTenantId"),//获取园区所对应的实时库租户标识
                 PERMISSION_GET("/common/queryParkOrSite"), //获取所有的园区和site
                 PERMISSION_POST("/meter/getAllCurrentSite"),//根据所选择的企业获取仪表数据
@@ -94,7 +96,8 @@ public class PublicPermissions {
                 PERMISSION_POST("/user/updatePwd"), //修改密码
                 PERMISSION_POST("/alarmCondition/getByIndex"), //获取单条报警条件
                 PERMISSION_GET("/role/getMenuAndButtons/*"), //根据id查询角色按钮权限
-                PERMISSION_GET("/equip/queryEquipSysById/*") //根据id查询左侧设备系统列表
+                PERMISSION_GET("/equip/queryEquipSysById/*"), //根据id查询左侧设备系统列表
+                PERMISSION_GET("/park/queryParkById/*") //对象管理(根据id查找园区)
 
         );
     }

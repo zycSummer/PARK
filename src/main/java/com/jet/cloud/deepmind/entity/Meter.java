@@ -44,7 +44,7 @@ public class Meter extends BaseEntity {
     private String energyTypeId;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Column(name = "is_ranking")

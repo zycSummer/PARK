@@ -2,7 +2,7 @@
  * @Author: xzl 
  * @Date: 2019-10-31 17:12:40 
  * @Last Modified by: xzl
- * @Last Modified time: 2019-12-13 11:37:47
+ * @Last Modified time: 2019-12-17 10:40:34
  */
 html,
 body {
@@ -13,7 +13,8 @@ body {
 
 body {
  overflow: hidden;
- background-image: url('/public/images/login_bg.jpg'); 
+ background-image: url('/public/images/login_bg.jpg');
+    background-size: cover;
 
 }
 body:after {
@@ -168,8 +169,8 @@ input {
    
 }
 .login-img{
-    width: 280px;
     margin: auto;
+    text-align: center;
 }
 #headerImg{
     margin-top: 30px;

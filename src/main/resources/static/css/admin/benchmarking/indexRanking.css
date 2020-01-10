@@ -36,8 +36,8 @@
     justify-content: space-between;
     align-items: center;
 }
-.leftSearch .layui-form-label{
-    width:50px;
+.leftSearch .search_label{
+    width:43px;
     padding:9px 2px;
 }
 .leftSearch .layui-form-item .layui-input-inline{

@@ -29,6 +29,7 @@ public class BenchmarkingObjServiceImpl implements BenchmarkingObjService {
     private BenchmarkingObjDataRepo benchmarkingObjDataRepo;
     @Autowired
     private CurrentUser currentUser;
+
     @Override
     public Response query(String objType, String objId, String benchmarkingObjName) {
         Sort sort = new Sort(Sort.Direction.ASC, "sortId");
@@ -48,7 +49,7 @@ public class BenchmarkingObjServiceImpl implements BenchmarkingObjService {
     @Override
     public Response queryById(Integer id) {
         BenchmarkingObj benchmarkingObj = benchmarkingObjRepo.findById(id).get();
-        Response ok = Response.ok("根据id查询对标对象成功",benchmarkingObj);
+        Response ok = Response.ok("根据id查询对标对象成功", benchmarkingObj);
         ok.setQueryPara(id);
         return ok;
     }
@@ -67,12 +68,15 @@ public class BenchmarkingObjServiceImpl implements BenchmarkingObjService {
                 benchmarkingObj.setCreateNow();
                 benchmarkingObj.setCreateUserId(currentUser.userId());
                 benchmarkingObjRepo.save(benchmarkingObj);
-            }else {
+            } else {
                 old.setUpdateNow();
                 old.setUpdateUserId(currentUser.userId());
                 old.setMemo(benchmarkingObj.getMemo());
+                old.setBenchmarkingObjAbbrName(benchmarkingObj.getBenchmarkingObjAbbrName());
                 old.setBenchmarkingObjName(benchmarkingObj.getBenchmarkingObjName());
                 old.setBenchmarkingObjType(benchmarkingObj.getBenchmarkingObjType());
+                old.setWorldLongitude(benchmarkingObj.getWorldLongitude());
+                old.setWorldLatitude(benchmarkingObj.getWorldLatitude());
                 old.setSortId(benchmarkingObj.getSortId());
                 benchmarkingObjRepo.save(old);
             }
@@ -87,12 +91,12 @@ public class BenchmarkingObjServiceImpl implements BenchmarkingObjService {
     @Transactional
     public ServiceData delete(String objType, String objId, String benchmarkingObjId) {
         try {
-            benchmarkingObjRepo.deleteByObjTypeAndObjIdAndBenchmarkingObjId(objType,objId,benchmarkingObjId);
-            benchmarkingObjDataRepo.deleteAllByObjTypeAndObjIdAndBenchmarkingObjId(objType,objId,benchmarkingObjId);
-            return ServiceData.success("删除成功",currentUser);
+            benchmarkingObjRepo.deleteByObjTypeAndObjIdAndBenchmarkingObjId(objType, objId, benchmarkingObjId);
+            benchmarkingObjDataRepo.deleteAllByObjTypeAndObjIdAndBenchmarkingObjId(objType, objId, benchmarkingObjId);
+            return ServiceData.success("删除成功", currentUser);
         } catch (Exception e) {
             e.printStackTrace();
-            return ServiceData.error("删除失败",e,currentUser);
+            return ServiceData.error("删除失败", e, currentUser);
         }
     }
 }

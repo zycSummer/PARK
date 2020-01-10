@@ -13,36 +13,36 @@ public class OrgTreeDetailModel extends BaseRowModel {
     /**
      * 节点id
      */
-    @ExcelProperty(index = 0)
+    @ExcelProperty(value = "node_id", index = 0)
     private String nodeId;
 
     /**
      * 节点名称
      */
-    @ExcelProperty(index = 1)
+    @ExcelProperty(value = "node_name", index = 1)
     private String nodeName;
 
     /**
      * 父节点id
      */
-    @ExcelProperty(index = 2)
+    @ExcelProperty(value = "parent_id", index = 2)
     private String parentId;
 
     /**
      * 排序标识
      */
-    @ExcelProperty(index = 3)
+    @ExcelProperty(value = "sort_id", index = 3)
     private String sortId;
 
     /**
      * 数据源
      */
-    @ExcelProperty(index = 4)
+    @ExcelProperty(value = "data_source", index = 4)
     private String dataSource;
 
     /**
      * 备注
      */
-    @ExcelProperty(index = 5)
+    @ExcelProperty(value = "memo", index = 5)
     private String memo;
 }

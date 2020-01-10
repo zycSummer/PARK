@@ -6,8 +6,9 @@
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select"></a>
-                <a>报警管理</a>
-                <a><cite>对象数据源配置</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="content_main  layui-row layui-col-space5">
@@ -56,8 +57,7 @@
             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
               
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>能源种类：</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>能源种类：</label>
                     <div class="layui-input-inline">
                         <select id="add_valueType" lay-filter="energyTypeSelect_add">
                          
@@ -66,8 +66,7 @@
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;"><i class="fa fa-asterisk"
-                            style="color: red; font-size: 1px;"></i>参数
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span class="red">* </span>参数
                     </label>
                     <div class="layui-input-inline">
                         <select id="addParaSelect" lay-filter="addParaSelect">
@@ -122,12 +121,12 @@
                 <div class="data_source_parameter_select_content_tab">
                     <div class="layui-tab layui-tab-card" lay-filter="modelSelect">
                         <ul class="layui-tab-title">
-                            <li class="layui-this" lay-id="company" >企业</li>
+                            <li class="layui-this comapnyDivTitle" lay-id="company"  >企业</li>
                             <li lay-id="meter" >仪表</li>
                             <li lay-id="parameter" >参数</li>
                         </ul>
                         <div class="layui-tab-content">
-                            <div class="layui-tab-item layui-show">
+                            <div class="layui-tab-item layui-show comapnyDiv">
                                 <div class="tab_item_content">
                                     <form class="layui-form">
                                         <div class="layui-form-item configuration_item">

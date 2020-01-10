@@ -5,22 +5,22 @@
     <div class="container">
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
-                <a class="park_select"></a>
-                <a>系统管理</a>
-                <a><cite>用户组管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="control_div">
             <div class="layui-inline">
                 <form class="layui-form">
-                    <div class="layui-inline">
-                        <label>用户组ID：</label>
+                    <div class="layui-inline search_margin">
+                            <label class="search_label">用户组ID：</label>
                         <div class="layui-input-inline">
                             <input type="text" value="" class="layui-input search_input" id="user_code">
                         </div>
                     </div>
                     <div class="layui-inline">
-                        <label>用户组名：</label>
+                            <label class="search_label">用户组名：</label>
                         <div class="layui-input-inline">
                             <input type="text" value="" class="layui-input search_input" id="user_name">
                         </div>
@@ -62,7 +62,7 @@
              <div class="layui-col-md5">
             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                 <div class="layui-form-item  addFrom_item">
-                    <label class="layui-form-label addFrom_label" >用户组ID:</label>
+                    <label class="layui-form-label addFrom_label" ><span style="color: red;">* </span>用户组ID:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="add_user_groupId"
                             placeholder="请输入用户组ID"  onkeyup="value=value.replace(/[^0-9a-zA-z]/g,'')" maxlength="20">
@@ -71,7 +71,7 @@
                     <i class="fa fa-exclamation-circle tip_icon" id="add_userGroupId_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" >用户组名:</label>
+                    <label class="layui-form-label addFrom_label" ><span style="color: red;">* </span>用户组名:</label>
                     <div class="layui-input-inline " >
                         <input class="layui-input" autocomplete="off" type="text" id="add_user_groupName"
                             placeholder="请输入用户组名" maxlength="30">
@@ -82,9 +82,8 @@
                 </div>
                 <div class="layui-form-item addFrom_item">
                     <label class="layui-form-label addFrom_label" >备注：</label>
-                    <div class="layui-input-inline " >
-                    
-                        <textarea  class="layui-textarea" id="memo"></textarea>
+                    <div class="layui-input-inline">
+                        <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                     </div>
                 </div>
 

@@ -27,8 +27,6 @@ import java.util.List;
 @Component
 @Log4j2
 public class SelfAuthenticationProvider extends AbstractUserDetailsAuthenticationProvider {
-    //@Autowired
-    //SelfUserDetailsService userDetailsService;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -44,7 +42,6 @@ public class SelfAuthenticationProvider extends AbstractUserDetailsAuthenticatio
 
     @Override
     protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken token) throws AuthenticationException {
-        //UserGroupWebAuthenticationDetails details = (UserGroupWebAuthenticationDetails) token.getDetails();
         SysUser sysUser = userRepo.findByUserId(username);
         if (sysUser == null) {
             throw new UsernameNotFoundException(username);

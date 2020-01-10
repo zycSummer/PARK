@@ -130,7 +130,7 @@
 }
 
 .param_name{
-    margin-left:10px;
+    margin-left:15px;
     width:1px;
     flex-grow: 1;
 }
@@ -170,16 +170,17 @@
 }
 
 /*删除报表 弹框*/
-#report_delete .layui-inline div{
+#delete_report_id,#delete_report_name,#delete_energyTypeId{
     line-height: 38px;
 }
 .problem{
     color:red;
     font-size:16px;
     padding-left:25px;
+    padding-right:10px;
 }
 /*导入报表配置 弹框*/
-#report_import .layui-inline div{
+#report_import .layui-input-inline div{
     line-height: 38px;
 }
 #download_demo{
@@ -209,7 +210,7 @@
     justify-content: space-between;
 }
 #obj_parentNode{
-    width:182px;
+    width:188px;
 }
 .dataSource,.tableSelect{
     height:100%;

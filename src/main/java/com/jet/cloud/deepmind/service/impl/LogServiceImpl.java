@@ -22,6 +22,7 @@ import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -53,6 +54,7 @@ public class LogServiceImpl implements LogService {
     public CompletableFuture<SysLog> save(SysLog log) {
         SysLog result = null;
         try {
+            if (log.getUserId()==null) log.setUserId("SYSTEM");
             result = sysLogRepo.save(log);
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +71,7 @@ public class LogServiceImpl implements LogService {
     }
 
     private Page<SysLog> queryLogPage(QueryVO vo) {
-        Pageable pageable = vo.Pageable();
+        Pageable pageable = vo.Pageable(Sort.by(Sort.Direction.DESC, "operateTime"));
         QSysLog obj = QSysLog.sysLog;
         JSONObject key = vo.getKey();
         Predicate pre = obj.isNotNull();

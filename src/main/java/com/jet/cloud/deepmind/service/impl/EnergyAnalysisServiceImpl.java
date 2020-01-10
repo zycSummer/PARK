@@ -212,7 +212,14 @@ public class EnergyAnalysisServiceImpl implements EnergyAnalysisService {
 
                     List<Long> timestamps = agg.getTimestamps();
                     Long aLong = timestamps.get(0);
-                    String format = DateUtil.longToLocalTime(aLong).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                    String format = null;
+                    if ("day".equals(timeType)) {
+                        format = DateUtil.longToLocalTime(aLong).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+                    } else if ("month".equals(timeType)) {
+                        format = DateUtil.longToLocalTime(aLong).format(DateTimeFormatter.ofPattern("yyyy-MM"));
+                    } else if ("year".equals(timeType)) {
+                        format = DateUtil.longToLocalTime(aLong).format(DateTimeFormatter.ofPattern("yyyy"));
+                    }
                     nodeVO.setNodeNameAll(format);
                     List<DataPointResult> dataPointResults = agg.getValues();
                     if (dataPointResults != null && !dataPointResults.isEmpty()) {
@@ -225,6 +232,7 @@ public class EnergyAnalysisServiceImpl implements EnergyAnalysisService {
                             for (String point : points) {
                                 if (Objects.equals(metricName, point)) {
                                     List<Double> values = dataPointResult.getValues();
+                                    values = commonService.queryHistoryData(values, timestamps);
                                     CalcPointsVO calcPointsVO = commonService.getMathHandlePoints(timestamps, values);
                                     if (calcPointsVO != null) {
                                         String avg = calcPointsVO.getAvg();
@@ -323,19 +331,44 @@ public class EnergyAnalysisServiceImpl implements EnergyAnalysisService {
         if (points != null && !points.isEmpty()) {
             switch (type) {
                 case "first":
-                    AggregatorDataResponse aggFirst = kairosdbClient.queryHis(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggFirst = null;
+                    if (interval == 43200) {
+                        aggFirst = kairosdbClient.queryHis(points, startTime, endTime, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggFirst = kairosdbClient.queryHis(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    }
                     return aggFirst;
                 case "average":
-                    AggregatorDataResponse aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggAverage = null;
+                    if (interval == 43200) {
+                        aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggAverage;
                 case "max":
-                    AggregatorDataResponse aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggMax = null;
+                    if (interval == 43200) {
+                        aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggMax;
                 case "min":
-                    AggregatorDataResponse aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggMin = null;
+                    if (interval == 43200) {
+                        aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggMin;
                 case "diff":
-                    AggregatorDataResponse aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggDiff = null;
+                    if (interval == 43200) {
+                        aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    }
                     return aggDiff;
             }
         }

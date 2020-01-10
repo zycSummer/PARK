@@ -1,8 +1,6 @@
 package com.jet.cloud.deepmind.service;
 
-import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.entity.HtImg;
-import com.jet.cloud.deepmind.entity.SysEnergyPara;
 import com.jet.cloud.deepmind.model.*;
 
 import java.util.List;
@@ -35,4 +33,5 @@ public interface EnergyMonitoringService {
     Response queryPageInfoData(HistoryDataVO historyDataVO);
 
     Response queryHistoryInfoData(HistoryInfoDataVO historyInfoDataVO);
+
 }

@@ -28,11 +28,11 @@ public class OrgTreeDetail extends BaseEntity {
     private String objId;
 
     @Column(name = "org_tree_id", nullable = false)
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "展示结构树标识只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "展示结构树标识只能输入字母、数字、下划线组合且不能大于20位")
     private String orgTreeId;
 
     @Column(name = "node_id", nullable = false)
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "节点标识标识只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "节点标识标识只能输入字母、数字、下划线组合且不能大于20位")
     private String nodeId;
 
     @Column(name = "node_name", nullable = false)
@@ -43,7 +43,7 @@ public class OrgTreeDetail extends BaseEntity {
     private String parentId;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "排序标识只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "排序标识只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Column(name = "data_source")

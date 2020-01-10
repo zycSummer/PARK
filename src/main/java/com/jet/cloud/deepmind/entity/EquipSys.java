@@ -28,7 +28,7 @@ public class EquipSys extends BaseEntity {
 
     @Column(name = "equip_sys_id", nullable = false)
     @NotNull(message = "设备系统标识不能为空")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "只能输入字母、数字、下划线组合且不能大于20位")
     private String equipSysId;
 
     @Column(name = "equip_sys_name", nullable = false)
@@ -37,6 +37,6 @@ public class EquipSys extends BaseEntity {
     private String equipSysName;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 }

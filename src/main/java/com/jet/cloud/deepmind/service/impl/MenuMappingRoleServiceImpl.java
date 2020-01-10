@@ -64,9 +64,7 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
             }
             multimap.put(sysMenu.getUrl(), new Permission(sysMenu.getUrl(), sysMenu.getMethod(), menuMappingRole.getRoleId()));
             if (!StringUtils.isNullOrEmpty(sysMenu)) {
-                //Set<SysMenuFunction> sysMenuFunctions = sysMenu.getSysMenuFunctionList();
                 Collection<SysMenuFunction> sysMenuFunctions = functionMultimap.get(menuMappingRole.getMenuId() + "@@" + menuMappingRole.getRoleId());
-                //Set<SysMenuFunction> sysMenuFunctions = sysMenu.getSysMenuFunctionList();
                 if (StringUtils.isNullOrEmpty(sysMenuFunctions)) {
                     continue;
                 } else {
@@ -123,7 +121,7 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
         }
 
         for (MenuVO model : modelList) {
-            addChild(model, menuMultimap, 10);
+            addChild(model, menuMultimap, 20);
         }
 
         return modelList;
@@ -172,7 +170,6 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
         SysUser user = currentUser.user();
         List<String> roleIds = getRoleIdsByUserId(user.getUserId());
         LinkedHashSet<MenuVO> modelList = new LinkedHashSet<>();
-
         Multimap<String, MenuVO> menuMultimap = ArrayListMultimap.create();
         for (MenuMappingRole menuMappingRole : menuMappingRoleRepo.findByRoleIdIn(roleIds)) {
             SysMenu menu = menuMappingRole.getSysMenu();
@@ -183,6 +180,14 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
             menuMultimap.put(menu.getParentId(), new MenuVO(menu));
         }
 
+        List<MenuVO> menuList = getMenuVOTreeList(modelList, menuMultimap);
+        Response ok = Response.ok(menuList);
+        ok.setQueryPara("获取当前用户 角色集 对应的菜单");
+        return ok;
+    }
+
+    @Override
+    public List<MenuVO> getMenuVOTreeList(LinkedHashSet<MenuVO> modelList, Multimap<String, MenuVO> menuMultimap) {
         Multimap<String, MenuVO> subMenuMultimap = ArrayListMultimap.create();
         for (String key : menuMultimap.keySet()) {
             subMenuMultimap.putAll(key, new LinkedHashSet<>(menuMultimap.get(key)));
@@ -190,17 +195,12 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
 
         List<MenuVO> menuList = CommonUtil.setToArrayList(modelList);
 
-        menuList.sort((m, n) -> {
-            if (m.getSortId() == null) return 1;
-            if (n.getSortId() == null) return -1;
-            return m.getSortId().compareTo(n.getSortId());
-        });
+        menuList.sort(Comparator.comparing(MenuVO::getSortId
+                , Comparator.nullsLast(String::compareTo)));
         for (MenuVO model : menuList) {
             addChild(model, subMenuMultimap, 10);
         }
-        Response ok = Response.ok(menuList);
-        ok.setQueryPara("获取当前用户 角色集 对应的菜单");
-        return ok;
+        return menuList;
     }
 
     @Override
@@ -210,17 +210,5 @@ public class MenuMappingRoleServiceImpl implements MenuMappingRoleService {
             roleIds.add(userMappingRole.getRoleId());
         }
         return roleIds;
-    }
-
-    public static void main(String[] args) {
-        Table<String, String, String> aTable = HashBasedTable.create();
-        ArrayTable<String, String, String> arrayTable = ArrayTable.create(aTable);
-        arrayTable.put("一年级", "一班", "小汪");
-        arrayTable.put("一年级", "一班", "小李");
-        arrayTable.put("一年级", "一班", "小章");
-        arrayTable.put("二年级", "一班", "小章");
-        arrayTable.put("二年级", "一班", "小李");
-
-        //arrayTable.get("一年级","一班");
     }
 }

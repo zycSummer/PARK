@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>文档管理</title>
-    <link rel="stylesheet" th:href="@{/public/lib/layui/css/layui.css}" media="all">
-    <link rel="stylesheet" th:href="@{/public/css/public.css}" media="all">
-    <link rel="stylesheet" th:href="@{/public/lib/font-awesome-4.7.0/css/font-awesome.css}" media="all" />
+<html xmlns:th="http://www.thymeleaf.org" th:replace="admin/layout">
+<div th:fragment="content">
     <link rel="stylesheet" th:href="@{/public/css/admin/fileManagement/fileManagement.css}" media="all" />
-</head>
-<body>
     <div class="container">
         <blockquote class="layui-elem-quote tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
                 <a class="park_select">园区</a>
-                <a><cite>文档管理</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
         <div class="file_content">
             <div class="table_title layui-form">
                 <div class="layui-inline">
-                    <label>文件名：</label>
+                    <label class="search_label">文件名：</label>
                     <div class="layui-input-inline">
                         <input type="text" value="" class="layui-input" id="file_name">
                     </div>
@@ -47,11 +39,11 @@
         <form class="layui-form" enctype="multipart/form-data" method="post">
             <div class="layui-form-item layui-hide">
                 <label class="layui-form-label">文件名：</label>
-                <div class="layui-inline"><span id="add_file_name"></span></div>
+                <div class="layui-input-inline"><span id="add_file_name"></span></div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">选择文件：</label>
-                <div class="layui-inline">
+                <div class="layui-input-inline">
                     <input type="file" name="file" id="upload_file" multiple required autocomplete="off"/>
                 </div>
             </div>
@@ -64,13 +56,11 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">备注：</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" id="memo">
+                    <textarea class="layui-textarea" id="memo" maxlength="300"></textarea>
                 </div>
             </div>
         </form>
     </div>
-<script type="text/javascript" th:src="@{/public/lib/layui/layui.js}"></script>
-<script type="text/javascript" th:src="@{/public/js/admin/public.js}"></script>
-<script type="text/javascript" th:src="@{/public/js/admin/fileManagement/fileManagement.js}"></script>
-</body>
+    <script type="text/javascript" th:src="@{/public/js/admin/fileManagement/fileManagement.js}"></script>
+</div>
 </html>

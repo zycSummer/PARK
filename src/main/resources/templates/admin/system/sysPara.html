@@ -5,8 +5,9 @@
     <div class="container">
             <blockquote class="layui-elem-quote  tabBreacrumb">
                     <span class="layui-breadcrumb" lay-separator=">">
-                        <a>系统管理</a>
-                        <a><cite>系统参数管理</cite></a>
+                        <span th:each="item:${nb}">
+                            <a th:text="${item}"></a>
+                            </span>
                     </span>
             </blockquote>
             <div class="control_div">
@@ -47,7 +48,7 @@
                         </div>
                     </div>
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">参数值:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>参数值:</label>
                         <div class="layui-input-inline ">
                                 <textarea  class="layui-textarea"  id ="paraValue" maxlength="250"></textarea>
                       

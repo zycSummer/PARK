@@ -8,18 +8,20 @@ import com.jet.cloud.deepmind.common.HttpConstants;
 import com.jet.cloud.deepmind.common.util.DateUtil;
 import com.jet.cloud.deepmind.common.util.StreamUtils;
 import com.jet.cloud.deepmind.common.util.StringUtils;
-import com.jet.cloud.deepmind.entity.OrgTree;
-import com.jet.cloud.deepmind.entity.OrgTreeDetail;
-import com.jet.cloud.deepmind.entity.SysEnergyType;
+import com.jet.cloud.deepmind.entity.*;
 import com.jet.cloud.deepmind.model.OrgTreeDetailModel;
 import com.jet.cloud.deepmind.model.OrgTreeDetailVOs;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.OrgTreeDetailRepo;
 import com.jet.cloud.deepmind.repository.OrgTreeRepo;
+import com.jet.cloud.deepmind.repository.ParkRepo;
+import com.jet.cloud.deepmind.repository.SiteRepo;
 import com.jet.cloud.deepmind.service.CommonService;
 import com.jet.cloud.deepmind.service.TreeService;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
+import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -61,6 +63,10 @@ public class TreeServiceImpl implements TreeService {
     private CommonService commonService;
     @Autowired
     private CurrentUser currentUser;
+    @Autowired
+    private ParkRepo parkRepo;
+    @Autowired
+    private SiteRepo siteRepo;
 
     private final Color COLOR_BLUE = new Color(53, 111, 189);
     private final Color COLOR_YELLOW = new Color(255, 255, 0);
@@ -274,8 +280,16 @@ public class TreeServiceImpl implements TreeService {
         response.setContentType("application/msexcel;charset=UTF-8");
 
         OrgTree orgTree = orgTreeRepo.findByObjTypeAndObjIdAndOrgTreeId(objType, objId, orgTreeId);
-        String title = "[" + energyTypeName + "]" + "[" + orgTreeId + "]" + "[" + orgTree.getOrgTreeName() + "]";
-        String fileName = StringUtils.resolvingScrambling("[" + energyTypeName + "]" + "[" + orgTreeId + "]" + "[" + orgTree.getOrgTreeName() + "]" + ".xlsx", userAgent);
+        String title;
+
+        if ("PARK".equals(objType)) {
+            Park park = parkRepo.findByParkId(objId);
+            title = "[" + park.getParkId() + "]" + park.getParkName() + "_" + "[" + energyTypeName + "]" + "[" + orgTreeId + "]" + "[" + orgTree.getOrgTreeName() + "]";
+        } else {
+            Site site = siteRepo.findBySiteId(objId);
+            title = "[" + site.getSiteId() + "]" + site.getSiteName() + "_" + "[" + energyTypeName + "]" + "[" + orgTreeId + "]" + "[" + orgTree.getOrgTreeName() + "]";
+        }
+        String fileName = StringUtils.resolvingScrambling(title + ".xlsx", userAgent);
 
         response.setHeader("Content-disposition", "attachment; filename=" + fileName);
         Workbook workbook = new XSSFWorkbook();
@@ -292,8 +306,9 @@ public class TreeServiceImpl implements TreeService {
             }
             StreamUtils.closeWorkbook(workbook);
         }
-        int rowIndex = 2;
-        setExcelData(rowIndex, orgTreeDetailVOs, sheet);
+        int rowIndex = 1;
+        setExcelData(rowIndex, orgTreeDetailVOs, sheet, workbook);
+        sheet.setDisplayGridlines(false);
         try {
             workbook.write(response.getOutputStream());
         } catch (IOException e) {
@@ -302,35 +317,68 @@ public class TreeServiceImpl implements TreeService {
         StreamUtils.closeWorkbook(workbook);
     }
 
-    private void setExcelData(int rowIndex, List<OrgTreeDetailVOs> orgTreeDetailVOs, Sheet sheet) {
+    private void setExcelData(int rowIndex, List<OrgTreeDetailVOs> orgTreeDetailVOs, Sheet sheet, Workbook workbook) {
         List<OrgTreeDetailVOs> res = new ArrayList<>();
+        CellStyle colStyle = getCellStyle2(workbook, BLACK);
         iter(res, orgTreeDetailVOs);
         for (OrgTreeDetailVOs vo : res) {
             vo.setNodeName(setName(vo.getNodeName(), vo.getDeep()));
         }
         for (OrgTreeDetailVOs pojo : res) {
             Row row = sheet.createRow(rowIndex);
-            row.createCell(0, CellType.NUMERIC).setCellValue(pojo.getId());
-            row.createCell(1, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getNodeName()) ? "" : pojo.getNodeName());
-            row.createCell(2, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getNodeId()) ? "" : pojo.getNodeId());
-            row.createCell(3, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getParentId()) ? "" : pojo.getParentId());
-            row.createCell(4, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getSortId()) ? "" : pojo.getSortId());
-            row.createCell(5, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getDataSource()) ? "" : pojo.getDataSource());
-            row.createCell(6, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getMemo()) ? "" : pojo.getMemo());
-            row.createCell(7, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getCreateUserId()) ? "" : pojo.getCreateUserId());
+            Cell cell0 = row.createCell(0, CellType.STRING);
+            cell0.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getNodeName()) ? "" : pojo.getNodeName());
+            cell0.setCellStyle(colStyle);
+
+            Cell cell1 = row.createCell(1, CellType.STRING);
+            cell1.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getNodeId()) ? "" : pojo.getNodeId());
+            cell1.setCellStyle(colStyle);
+
+            Cell cell2 = row.createCell(2, CellType.STRING);
+            cell2.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getParentId()) ? "" : pojo.getParentId());
+            cell2.setCellStyle(colStyle);
+
+            Cell cell3 = row.createCell(3, CellType.STRING);
+            cell3.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getSortId()) ? "" : pojo.getSortId());
+            cell3.setCellStyle(colStyle);
+
+            Cell cell4 = row.createCell(4, CellType.STRING);
+            cell4.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getDataSource()) ? "" : pojo.getDataSource());
+            cell4.setCellStyle(colStyle);
+
+            Cell cell5 = row.createCell(5, CellType.STRING);
+            cell5.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getMemo()) ? "" : pojo.getMemo());
+            cell5.setCellStyle(colStyle);
+
+            Cell cell6 = row.createCell(6, CellType.STRING);
+            cell6.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getCreateUserId()) ? "" : pojo.getCreateUserId());
+            cell6.setCellStyle(colStyle);
+
             LocalDateTime createTime = pojo.getCreateTime();
+            Cell cell7;
             if (createTime != null) {
-                row.createCell(8, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(DateUtil.localDateTimeToString(pojo.getCreateTime())) ? "" : DateUtil.localDateTimeToString(pojo.getCreateTime()));
+                cell7 = row.createCell(7, CellType.STRING);
+                cell7.setCellValue(org.springframework.util.StringUtils.isEmpty(DateUtil.localDateTimeToString(pojo.getCreateTime())) ? "" : DateUtil.localDateTimeToString(pojo.getCreateTime()));
             } else {
-                row.createCell(8, CellType.STRING).setCellValue("");
+                cell7 = row.createCell(7, CellType.STRING);
+                cell7.setCellValue("");
             }
-            row.createCell(9, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getUpdateUserId()) ? "" : pojo.getUpdateUserId());
+            cell7.setCellStyle(colStyle);
+
+            Cell cell8 = row.createCell(8, CellType.STRING);
+            cell8.setCellValue(org.springframework.util.StringUtils.isEmpty(pojo.getUpdateUserId()) ? "" : pojo.getUpdateUserId());
+            cell8.setCellStyle(colStyle);
+
+            Cell cell9;
             LocalDateTime updateTime = pojo.getUpdateTime();
             if (updateTime != null) {
-                row.createCell(10, CellType.STRING).setCellValue(org.springframework.util.StringUtils.isEmpty(DateUtil.localDateTimeToString(pojo.getUpdateTime())) ? "" : DateUtil.localDateTimeToString(pojo.getCreateTime()));
+                cell9 = row.createCell(9, CellType.STRING);
+                cell9.setCellValue(org.springframework.util.StringUtils.isEmpty(DateUtil.localDateTimeToString(pojo.getUpdateTime())) ? "" : DateUtil.localDateTimeToString(pojo.getCreateTime()));
             } else {
-                row.createCell(10, CellType.STRING).setCellValue("");
+                cell9 = row.createCell(9, CellType.STRING);
+                cell9.setCellValue("");
             }
+            cell9.setCellStyle(colStyle);
             rowIndex++;
         }
     }
@@ -356,58 +404,56 @@ public class TreeServiceImpl implements TreeService {
     private int setExcelHeaderData(Workbook workbook, Sheet sheet, String fileName) {
         // 合并单元格(4个参数，分别为起始行，结束行，起始列，结束列)
         // 行和列都是从0开始计数，且起始结束都会合并
-        CellRangeAddress region = new CellRangeAddress(0, 0, 0, 10);
-        sheet.addMergedRegion(region);
-        CellStyle colStyle = getCellStyle(workbook, COLOR_BLUE, WHITE);
-        Row row = sheet.createRow(1);
-        Cell col = row.createCell(0);
-        col.setCellValue("序号");
-        col.setCellStyle(colStyle);
+     /*   CellRangeAddress region = new CellRangeAddress(0, 0, 0, 10);
+        sheet.addMergedRegion(region);*/
+        sheet.createFreezePane(0, 1, 0, 1);
+        CellStyle colStyle = getCellStyle(workbook, COLOR_YELLOW, BLACK);
+        Row row = sheet.createRow(0);
 
-        Cell col1 = row.createCell(1);
+        Cell col1 = row.createCell(0);
         col1.setCellValue("节点名称");
         col1.setCellStyle(colStyle);
 
-        Cell col2 = row.createCell(2);
+        Cell col2 = row.createCell(1);
         col2.setCellValue("节点ID");
         col2.setCellStyle(colStyle);
 
-        Cell col3 = row.createCell(3);
+        Cell col3 = row.createCell(2);
         col3.setCellValue("父节点ID");
         col3.setCellStyle(colStyle);
 
-        Cell col4 = row.createCell(4);
+        Cell col4 = row.createCell(3);
         col4.setCellValue("排序");
         col4.setCellStyle(colStyle);
 
-        Cell col5 = row.createCell(5);
+        Cell col5 = row.createCell(4);
         col5.setCellValue("数据源");
         col5.setCellStyle(colStyle);
 
-        Cell col6 = row.createCell(6);
+        Cell col6 = row.createCell(5);
         col6.setCellValue("备注");
         col6.setCellStyle(colStyle);
 
-        Cell col7 = row.createCell(7);
+        Cell col7 = row.createCell(6);
         col7.setCellValue("创建者");
         col7.setCellStyle(colStyle);
 
-        Cell col8 = row.createCell(8);
+        Cell col8 = row.createCell(7);
         col8.setCellValue("创建时间");
         col8.setCellStyle(colStyle);
 
-        Cell col9 = row.createCell(9);
+        Cell col9 = row.createCell(8);
         col9.setCellValue("修改者");
         col9.setCellStyle(colStyle);
 
-        Cell col10 = row.createCell(10);
+        Cell col10 = row.createCell(9);
         col10.setCellValue("修改时间");
         col10.setCellStyle(colStyle);
 
-        Row title = sheet.createRow(0);
+       /* Row title = sheet.createRow(0);
         Cell titleCell = title.createCell(0, CellType.STRING);
         titleCell.setCellValue(fileName);
-        titleCell.setCellStyle(getCellStyle(workbook, COLOR_YELLOW, BLACK));
+        titleCell.setCellStyle(getCellStyle(workbook, COLOR_YELLOW, BLACK));*/
         return 10;
     }
 
@@ -424,6 +470,54 @@ public class TreeServiceImpl implements TreeService {
         titleStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);//背景色填充模式为全填充模式
         titleStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         titleStyle.setAlignment(HorizontalAlignment.CENTER);
+        //设置底边框;
+        titleStyle.setBorderBottom(BorderStyle.THIN);
+        //设置底边框颜色;
+        titleStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        //设置左边框;
+        titleStyle.setBorderLeft(BorderStyle.THIN);
+        //设置左边框颜色;
+        titleStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+        //设置右边框;
+        titleStyle.setBorderRight(BorderStyle.THIN);
+        //设置右边框颜色;
+        titleStyle.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        //设置顶边框;
+        titleStyle.setBorderTop(BorderStyle.THIN);
+        //设置顶边框颜色;
+        titleStyle.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        Font font = workbook.createFont();
+        font.setColor(fontColor.getIndex());
+        font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
+        titleStyle.setFont(font);
+        return titleStyle;
+    }
+
+    /**
+     * 设置单元格颜色
+     *
+     * @param workbook
+     * @param color
+     * @return
+     */
+    private CellStyle getCellStyle2(Workbook workbook, IndexedColors fontColor) {
+        XSSFCellStyle titleStyle = (XSSFCellStyle) workbook.createCellStyle();
+        //设置底边框;
+        titleStyle.setBorderBottom(BorderStyle.THIN);
+        //设置底边框颜色;
+        titleStyle.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        //设置左边框;
+        titleStyle.setBorderLeft(BorderStyle.THIN);
+        //设置左边框颜色;
+        titleStyle.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+        //设置右边框;
+        titleStyle.setBorderRight(BorderStyle.THIN);
+        //设置右边框颜色;
+        titleStyle.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        //设置顶边框;
+        titleStyle.setBorderTop(BorderStyle.THIN);
+        //设置顶边框颜色;
+        titleStyle.setTopBorderColor(IndexedColors.BLACK.getIndex());
         Font font = workbook.createFont();
         font.setColor(fontColor.getIndex());
         titleStyle.setFont(font);
@@ -437,7 +531,7 @@ public class TreeServiceImpl implements TreeService {
         String message = "";
         try {
             ExcelModelListener modelListener = ExcelModelListener.create();
-            EasyExcelFactory.readBySax(file.getInputStream(), new com.alibaba.excel.metadata.Sheet(1, 0, OrgTreeDetailModel.class), modelListener);
+            EasyExcelFactory.readBySax(file.getInputStream(), new com.alibaba.excel.metadata.Sheet(1, 1, OrgTreeDetailModel.class), modelListener);
             List<OrgTreeDetail> orgTreeDetails = modelListener.getOrgTreeDetails();
             List<Exception> exceptionList = modelListener.getExceptionList();
             List<String> msg = new ArrayList<>();

@@ -6,10 +6,12 @@ import com.jet.cloud.deepmind.common.util.StringUtils;
 import com.jet.cloud.deepmind.config.AppConfig;
 import com.jet.cloud.deepmind.entity.QSite;
 import com.jet.cloud.deepmind.entity.Site;
+import com.jet.cloud.deepmind.entity.UserGroupMappingObj;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.SiteRepo;
+import com.jet.cloud.deepmind.repository.UserGroupMappingObjRepo;
 import com.jet.cloud.deepmind.service.SiteService;
 import com.querydsl.core.types.ExpressionUtils;
 import com.querydsl.core.types.Predicate;
@@ -40,7 +42,12 @@ public class SiteServiceImpl implements SiteService {
     @Autowired
     private CurrentUser currentUser;
 
-    // 支持的文件类型
+    @Autowired
+    private UserGroupMappingObjRepo userGroupMappingObjRepo;
+
+    /**
+     * 支持的文件类型
+     */
     private final List<String> suffixes = Arrays.asList("image/png", "image/jpg", "image/jpeg");
 
     @Autowired
@@ -77,7 +84,7 @@ public class SiteServiceImpl implements SiteService {
         Site site = siteRepo.findById(id).get();
         if (StringUtils.isNotNullAndEmpty(site.getImgSuffix())) {
             try {
-                site.setImg(StringUtils.imageToBase64Str(appConfig.getImagePath() + site.getSiteId() + site.getImgSuffix()));
+                site.setImg(StringUtils.imageToBase64Str(appConfig.getImagePath() + "SITE_" + site.getSiteId() + site.getImgSuffix()));
             } catch (Exception e) {
                 ;
             }
@@ -88,7 +95,6 @@ public class SiteServiceImpl implements SiteService {
     @Transactional
     @Override
     public ServiceData addOrEditSite(MultipartFile file, @Valid Site site) {
-
         try {
             String siteId = site.getSiteId();
             Site old = siteRepo.findBySiteId(siteId);
@@ -97,7 +103,7 @@ public class SiteServiceImpl implements SiteService {
             if (file != null) {
                 if (StringUtils.isNotNullAndEmpty(file.getOriginalFilename())) {
                     suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
-                    fileName = siteId + suffix;
+                    fileName = "SITE_" + siteId + suffix;
                 }
                 uploadImage(file, fileName, appConfig.getImagePath());
             }
@@ -105,13 +111,17 @@ public class SiteServiceImpl implements SiteService {
                 if (old != null) {
                     return ServiceData.error("企业标识重复", currentUser);
                 }
-
                 site.setImgSuffix(suffix);
-
-                //site.setFilePath(filePath);
                 site.setCreateNow();
                 site.setCreateUserId(currentUser.userId());
                 siteRepo.save(site);
+                UserGroupMappingObj userGroupMappingObj = new UserGroupMappingObj();
+                userGroupMappingObj.setUserGroupId(currentUser.userGroupId());
+                userGroupMappingObj.setObjType("SITE");
+                userGroupMappingObj.setObjId(siteId);
+                userGroupMappingObj.setCreateNow();
+                userGroupMappingObj.setCreateUserId(currentUser.userId());
+                userGroupMappingObjRepo.save(userGroupMappingObj);
             } else {
                 //修改企业
                 old.setImgSuffix(suffix);
@@ -120,9 +130,12 @@ public class SiteServiceImpl implements SiteService {
                 old.setAddr(site.getAddr());
                 old.setLongitude(site.getLongitude());
                 old.setLatitude(site.getLatitude());
+                old.setWorldLongitude(site.getWorldLongitude());
+                old.setWorldLatitude(site.getWorldLatitude());
                 old.setIsOnline(site.getIsOnline());
                 old.setSortId(site.getSortId());
                 old.setRtdbProjectId(site.getRtdbProjectId());
+                old.setProfile(site.getProfile());
                 old.setMemo(site.getMemo());
                 old.setUpdateNow();
                 old.setUpdateUserId(currentUser.userId());

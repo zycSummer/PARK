@@ -5,21 +5,22 @@
   <div class="container">
     <blockquote class="layui-elem-quote  tabBreacrumb">
       <span class="layui-breadcrumb" lay-separator=">">
-       <a >基础数据</a> 
-        <a><cite>对象管理（园区）</cite></a>
+        <span th:each="item:${nb}">
+            <a th:text="${item}"></a>
+            </span>
       </span>
     </blockquote>
   
     <div class="control_div">
         <div class="layui-inline">
             <form class="layui-form" >
-                <div class="layui-inline">
+                <div class="layui-inline search_margin">
                     <label class="search_label">园区标识：</label>
                     <div class="layui-input-inline">
                         <input type="text" value=""  class="layui-input search_input" id="search_parkId">
                     </div>
                 </div>
-                <div class="layui-inline">
+                <div class="layui-inline search_margin">
                     <label class="search_label">园区名称：</label>
                     <div class="layui-input-inline">
                         <input type="text" value="" class="layui-input search_input" id="search_parkName">
@@ -50,20 +51,28 @@
 <div id="park_add" class="layui-hide layui-row">
         <div class="calculation_content layui-row">
             <div class="calculationLeft layui-col-md12">
+            <div class="layui-col-md7">
                 <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label">园区标识:</label>
+                        <label class="layui-form-label addFrom_label"><span style="color: red;">* </span>园区标识:</label>
                         <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="addParkId"    onKeyUp="value=value.replace(/[\W]/g,'')" maxlength="20" >
                         </div>
                         <i class="fa fa-exclamation-circle tip_icon  " id="addParkIdTip"></i>
                     </div>
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label">园区名称:</label>
+                        <label class="layui-form-label addFrom_label"><span style="color: red;">* </span>园区名称:</label>
                         <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="addParkName"   maxlength="30">
                         </div>
                         <i class="fa fa-exclamation-circle tip_icon" id="addParkNameTip"></i>   
+                    </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label"><span style="color: red;">* </span>园区简称:</label>
+                        <div class="layui-input-inline ">
+                        <input class="layui-input" autocomplete="off" type="text" id="addParkAbbrName"   maxlength="15">
+                        </div>
+                        <i class="fa fa-exclamation-circle tip_icon" id="addParkAbbrNameTip"></i>   
                     </div>
                     <div class="layui-form-item addFrom_item">
                         <label class="layui-form-label addFrom_label">实时库租户标识:</label>
@@ -93,15 +102,60 @@
                         </div>
                     </div> 
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                        <label class="layui-form-label addFrom_label">世界地图-经度:</label>
                         <div class="layui-input-inline ">
-                            <textarea class="layui-textarea" id="addMemo" maxlength="300"></textarea>
+                                <input class="layui-input" autocomplete="off" type="number" id="addWordLongitude" maxlength="30">
+                        </div>
+
+                    </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label">世界地图-纬度:</label>
+                    <div class="layui-input-inline ">
+                            <input class="layui-input" autocomplete="off" type="number" id="addWordLatitude" maxlength="30">
+                    </div>
+                </div>
+                <div class="layui-form-item addFrom_item">
+                    <label class="layui-form-label addFrom_label" style="width: 120px;">简介：</label>
+                    <div class="layui-input-inline ">
+                        <textarea class="layui-textarea" id="addProfile" maxlength="1000"></textarea>
+                      
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="addDescTip"></i> 
+                </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                        <div class="layui-input-inline " >
+                            <textarea class="layui-textarea" id="addMemo" maxlength="300" ></textarea>
                           
                         </div>
                     </div>
-    
-            </div>
+                    <div class="layui-form-item addFrom_item">
+                        <label class="layui-form-label addFrom_label" style="width: 120px;"></label>
+                        <div class="layui-input-inline " style="text-align: right; height: 20px;">
+                            <a class="pickingCoordinates">百度拾取坐标系统</a>
+                          
+                        </div>
+                    </div>
+                </form></div>
+          <div class="layui-col-md5">
+            <form class="layui-form" id="siteImage" style="padding:20px 5px 0 0;"> 
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">企业图片：</label>
+                    <div class="layui-input-inline">
+                        <!--<button type="button" class="layui-btn" id="upload_image">-->
+                            <!--<i class="layui-icon">&#xe67c;</i>上传图片-->
+                        <!--</button>-->
+                        <input type="file" accept="image/*" name="file" id="file"/>
+                    </div>
+                    <i class="fa fa-exclamation-circle tip_icon" id="upload_tip"></i>
+                </div>
+                <div class="layui-form-item imageContent">
+                    <img id="imagePreview" src="" />
+                </div>
+             
             </form>
+          </div>
+        </div>
         </div>
     
     </div>

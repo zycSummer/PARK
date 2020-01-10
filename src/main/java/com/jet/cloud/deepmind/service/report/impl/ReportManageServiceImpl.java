@@ -6,12 +6,10 @@ import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.jet.cloud.deepmind.common.CurrentUser;
 import com.jet.cloud.deepmind.common.HttpConstants;
+import com.jet.cloud.deepmind.common.util.ExcelUtil;
 import com.jet.cloud.deepmind.common.util.StringUtils;
 import com.jet.cloud.deepmind.entity.*;
-import com.jet.cloud.deepmind.model.ReportObjDetailModel;
-import com.jet.cloud.deepmind.model.ReportParaDetailModel;
-import com.jet.cloud.deepmind.model.Response;
-import com.jet.cloud.deepmind.model.ServiceData;
+import com.jet.cloud.deepmind.model.*;
 import com.jet.cloud.deepmind.repository.ParkRepo;
 import com.jet.cloud.deepmind.repository.SiteRepo;
 import com.jet.cloud.deepmind.repository.SysEnergyParaRepo;
@@ -68,6 +66,9 @@ public class ReportManageServiceImpl implements ReportManageService {
 
     @Autowired
     private SiteRepo siteRepo;
+
+    @Autowired
+    private ReportQueryServiceImpl queryTreeInfoDetails;
 
     @Override
     public Response query(String objType, String objId, String reportName) {
@@ -171,7 +172,8 @@ public class ReportManageServiceImpl implements ReportManageService {
         ExcelWriter writer = null;
         String projectName = null;
         try {
-            if (objType.equals("PARK")) {
+            String str = "PARK";
+            if (objType.equals(str)) {
                 Park park = parkRepo.findByParkId(objId);
                 projectName = "[" + park.getParkId() + "]" + park.getParkName();
             } else {
@@ -182,11 +184,13 @@ public class ReportManageServiceImpl implements ReportManageService {
             String name = projectName + fileName;
             ServletOutputStream outputStream = response.getOutputStream();
             response.setHeader("Content-disposition", "attachment; filename=" + StringUtils.resolvingScrambling(name, userAgent) + ".xlsx");
-            response.setContentType("application/vnd.ms-excel;charset=UTF-8");//设置类型
+            //设置类型
+            response.setContentType("application/vnd.ms-excel;charset=UTF-8");
             response.setHeader("Pragma", "public");
             response.setHeader("Cache-Control", "no-store");
             response.addHeader("Cache-Control", "max-age=0");
-            response.setDateHeader("Expires", 0);//设置日期头
+            //设置日期头
+            response.setDateHeader("Expires", 0);
             //实例化 ExcelWriter
             writer = EasyExcelFactory.getWriterWithTempAndHandler(null, outputStream, ExcelTypeEnum.XLSX, true, new AfterWriteHandlerImpl());
             //实例化表单
@@ -196,18 +200,24 @@ public class ReportManageServiceImpl implements ReportManageService {
             sheet2.setSheetName("obj");
             //获取ReportObjDetail数据
             List<ReportObjDetail> reportObjDetails = reportObjDetailRepo.findByObjTypeAndObjIdAndReportIdOrderBySortIdAsc(objType, objId, reportId);
+            List<ReportObjDetailVos> treeInfoDetails = ExcelUtil.queryTreeInfoDetails(reportObjDetails);
+            List<ReportObjDetailVos> res = new ArrayList<>();
+            ExcelUtil.iter(res, treeInfoDetails);
+            for (ReportObjDetailVos vo : res) {
+                vo.setNodeName(ExcelUtil.setName(vo.getNodeName(), vo.getDeep()));
+            }
             List<ReportObjDetailModel> reportObjDetailModelList = new ArrayList<>();
-            for (ReportObjDetail reportObjDetail : reportObjDetails) {
+            //获取ReportObjDetail数据
+            for (ReportObjDetailVos re : res) {
                 ReportObjDetailModel reportObjDetailModel = new ReportObjDetailModel();
-                reportObjDetailModel.setNodeId(reportObjDetail.getNodeId());
-                reportObjDetailModel.setNodeName(reportObjDetail.getNodeName());
-                reportObjDetailModel.setParentId(reportObjDetail.getParentId());
-                reportObjDetailModel.setSortId(reportObjDetail.getSortId());
-                reportObjDetailModel.setDataSource(reportObjDetail.getDataSource());
-                reportObjDetailModel.setMemo(reportObjDetail.getMemo());
+                reportObjDetailModel.setNodeId(re.getNodeId());
+                reportObjDetailModel.setNodeName(re.getNodeName());
+                reportObjDetailModel.setParentId(re.getParentId());
+                reportObjDetailModel.setSortId(re.getSortId());
+                reportObjDetailModel.setDataSource(re.getDataSource());
+                reportObjDetailModel.setMemo(re.getMemo());
                 reportObjDetailModelList.add(reportObjDetailModel);
             }
-            //获取ReportObjDetail数据
             List<ReportParaDetail> reportParaDetails = reportParaDetailRepo.findByObjTypeAndObjIdAndReportIdOrderBySortId(objType, objId, reportId);
             List<ReportParaDetailModel> reportParaDetailModelList = new ArrayList<>();
             for (ReportParaDetail reportParaDetail : reportParaDetails) {

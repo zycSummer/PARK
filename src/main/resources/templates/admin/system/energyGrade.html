@@ -5,8 +5,9 @@
     <div class="container">
             <blockquote class="layui-elem-quote  tabBreacrumb">
                     <span class="layui-breadcrumb" lay-separator=">">
-                        <a>系统管理</a>
-                        <a><cite>能耗强度等级配置</cite></a>
+                        <span th:each="item:${nb}">
+                            <a th:text="${item}"></a>
+                            </span>
                     </span>
             </blockquote>
             <div class="control_div">
@@ -48,7 +49,7 @@
             <div class=" layui-row">
                 <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">能耗强度等级标识:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 150px;"><span style="color: red;">* </span>能耗强度等级标识:</label>
                         <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="text" id="energyGradeId"  maxlength="20">
     
@@ -56,7 +57,7 @@
                         <i class="fa fa-exclamation-circle tip_icon" id="energyGradeIdTip"></i>
                     </div>
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">能耗强度下限:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 150px;">能耗强度下限:</label>
                         <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="number" id="lower" maxlength="30"
                                 >
@@ -66,7 +67,7 @@
                     </div>
     
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">能耗强度上限:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 150px;">能耗强度上限:</label>
                         <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="number" id="upper" maxlength="30">
                         </div>
@@ -74,7 +75,7 @@
     
                     </div>
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">颜色:</label>
+                        <label class="layui-form-label addFrom_label" style="width: 150px;"><span style="color: red;">* </span>颜色:</label>
                         <div class="layui-input-inline" style="width: 151px;">
                                 <input type="text" value="" placeholder="请选择颜色" class="layui-input" id="addColorVal">
                               </div>
@@ -86,7 +87,7 @@
                     </div>
                    
                     <div class="layui-form-item addFrom_item">
-                        <label class="layui-form-label addFrom_label" style="width: 120px;">备注：</label>
+                        <label class="layui-form-label addFrom_label" style="width: 150px;">备注：</label>
                         <div class="layui-input-inline ">
                             <textarea  class="layui-textarea"  id ="addmemo" maxlength="300"></textarea>
                       

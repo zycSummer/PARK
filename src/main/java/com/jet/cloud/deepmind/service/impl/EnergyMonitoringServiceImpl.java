@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -112,8 +113,8 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
             if (htImgName == null || "".equals(htImgName)) {
                 return ServiceData.error(HTIMGNAME_ISNULL, currentUser);
             }
-            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, null, null, null);
-            String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, null, null, null, "MENU0401_");
+            String fileName = "MENU0401_" + objType + "_" + objId + "_" + htImgId + ".json";
             htImg.setFilePath(fileName);
             htImg.setCreateUserId(currentUser.userId());
             htImg.setCreateNow();
@@ -148,8 +149,8 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                 return ServiceData.error(HTIMGNAME_ISNULL, currentUser);
             }
 
-            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, ht.getObjType(), ht.getObjId(), ht.getHtImgId());
-            String fileName = objType + "_" + objId + "_" + htImgId + ".json";
+            String path = StringUtils.sendFromFile(filePrefix, objType, objId, htImgId, cfgPic, ht.getObjType(), ht.getObjId(), ht.getHtImgId(), "MENU0401_");
+            String fileName = "MENU0401_" + objType + "_" + objId + "_" + htImgId + ".json";
 
             ht.setObjType(objType);
             ht.setObjId(objId);
@@ -174,7 +175,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
     public ServiceData deleteRightHtImg(String objType, String objId, String htImgId) {
         try {
             htImgRepo.deleteRightHtImg(objType, objId, htImgId);
-            StringUtils.deleteFile(filePrefix, objType, objId, htImgId);
+            StringUtils.deleteFile(filePrefix, objType, objId, htImgId, "MENU0401_");
             return ServiceData.success("右侧组态画面删除成功", currentUser);
         } catch (Exception e) {
             log.error("右侧组态画面删除,e={}", e.getMessage());
@@ -311,7 +312,8 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
             for (SysEnergyType sysEnergyType : sysEnergyTypes) {
                 String energyTypeId = sysEnergyType.getEnergyTypeId();
                 String energyTypeName = sysEnergyType.getEnergyTypeName();
-                SysEnergyTypeVO sysEnergyTypeVO = new SysEnergyTypeVO(energyTypeId, energyTypeName);
+                String energyLoadParaId = sysEnergyType.getEnergyLoadParaId();
+                SysEnergyTypeVO sysEnergyTypeVO = new SysEnergyTypeVO(energyTypeId, energyTypeName, energyLoadParaId);
                 sysEnergyTypeVOS.add(sysEnergyTypeVO);
             }
         }
@@ -401,7 +403,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                     List<Map> maps = jsonArray.toJavaList(Map.class);
                     String source = maps.get(0).get("data_source").toString();
                     if (source != null) {
-                        datasourcesMap.put(objType + objId + orgTreeId + nodeId, StringUtils.splicingFormula(energyLoadParaId, source));
+                        datasourcesMap.put(objType + objId + orgTreeId + nodeId, source);
                     }
                 }
             }
@@ -589,12 +591,21 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                     }
                 }
             }
+
+            SysParameter sysParameter = sysParameterRepo.findByParaId("thisDiscardMinutesBeforeNow");
+            Integer minute = null;
+            if (sysParameter != null) {
+                String paraValue = sysParameter.getParaValue();
+                if (StringUtils.isNotNullAndEmpty(paraValue)) {
+                    minute = Integer.valueOf(paraValue);
+                }
+            }
             switch (timeType) {
                 case "year":
                     Long startYTime = DateUtil.stringToLong(time + "-01-01 00:00:00");
                     Long endYTime = DateUtil.stringToLong((Integer.valueOf(time) + 1) + "-01-01 00:00:00");
                     AggregatorDataResponse aggYear = queryData(type, interval, points, startYTime, endYTime);
-                    historyVOS = queryAggInfo(nodeInfos, aggYear, energyParaIds, energyTypeId, multimap, timeType);
+                    historyVOS = queryAggInfo(nodeInfos, aggYear, energyParaIds, energyTypeId, multimap, timeType, minute);
                     break;
                 case "month":
                     Long startMTime = DateUtil.stringToLong(time + "-01 00:00:00");
@@ -603,7 +614,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                     String end = DateUtil.localDateToString(localDate);
                     Long endMTime = DateUtil.stringToLong(end + " 00:00:00");
                     AggregatorDataResponse aggMonth = queryData(type, interval, points, startMTime, endMTime);
-                    historyVOS = queryAggInfo(nodeInfos, aggMonth, energyParaIds, energyTypeId, multimap, timeType);
+                    historyVOS = queryAggInfo(nodeInfos, aggMonth, energyParaIds, energyTypeId, multimap, timeType, minute);
                     break;
                 case "day":
                     Long startDTime = DateUtil.stringToLong(time + " 00:00:00");
@@ -612,7 +623,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                     String endD = DateUtil.localDateToString(localDateD);
                     Long endDTime = DateUtil.stringToLong(endD + " 00:00:00");
                     AggregatorDataResponse aggDay = queryData(type, interval, points, startDTime, endDTime);
-                    historyVOS = queryAggInfo(nodeInfos, aggDay, energyParaIds, energyTypeId, multimap, timeType);
+                    historyVOS = queryAggInfo(nodeInfos, aggDay, energyParaIds, energyTypeId, multimap, timeType, minute);
                     break;
             }
             Response ok = Response.ok("查询成功", historyVOS);
@@ -627,7 +638,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
         }
     }
 
-    private List<HistoryVO> queryAggInfo(List<NodeInfoVO> nodeInfos, AggregatorDataResponse agg, List<String> energyParaIds, String energyTypeId, Multimap<String, String> multimap, String timeType) {
+    private List<HistoryVO> queryAggInfo(List<NodeInfoVO> nodeInfos, AggregatorDataResponse agg, List<String> energyParaIds, String energyTypeId, Multimap<String, String> multimap, String timeType, Integer minute) {
         List<HistoryVO> historyVOS = new ArrayList<>();
         for (String energyParaId : energyParaIds) {
             HistoryVO historyVO = new HistoryVO();
@@ -666,6 +677,7 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
                             for (String point : points) {
                                 if (Objects.equals(metricName, point)) {
                                     List<Double> values = dataPointResult.getValues();
+                                    values = commonService.queryHistoryData(values, timestamps);
                                     CalcPointsVO calcPointsVO = commonService.getMathHandlePoints(timestamps, values);
                                     if (calcPointsVO != null) {
                                         String avg = calcPointsVO.getAvg();
@@ -800,19 +812,44 @@ public class EnergyMonitoringServiceImpl implements EnergyMonitoringService {
         if (points != null && !points.isEmpty()) {
             switch (type) {
                 case "first":
-                    AggregatorDataResponse aggFirst = kairosdbClient.queryHis(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggFirst = null;
+                    if (interval == 43200) {
+                        aggFirst = kairosdbClient.queryHis(points, startTime, endTime, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggFirst = kairosdbClient.queryHis(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    }
                     return aggFirst;
                 case "average":
-                    AggregatorDataResponse aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggAverage = null;
+                    if (interval == 43200) {
+                        aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggAverage = kairosdbClient.queryAvg(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggAverage;
                 case "max":
-                    AggregatorDataResponse aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggMax = null;
+                    if (interval == 43200) {
+                        aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggMax = kairosdbClient.queryMax(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggMax;
                 case "min":
-                    AggregatorDataResponse aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggMin = null;
+                    if (interval == 43200) {
+                        aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggMin = kairosdbClient.queryMin(points, startTime, endTime, Constants.MINIMUM_MINUTE, TimeUnit.MINUTES, interval, TimeUnit.MINUTES);
+                    }
                     return aggMin;
                 case "diff":
-                    AggregatorDataResponse aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    AggregatorDataResponse aggDiff = null;
+                    if (interval == 43200) {
+                        aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, 1, TimeUnit.MONTHS);
+                    } else {
+                        aggDiff = kairosdbClient.queryDiff(points, startTime, endTime, interval, TimeUnit.MINUTES);
+                    }
                     return aggDiff;
             }
         }

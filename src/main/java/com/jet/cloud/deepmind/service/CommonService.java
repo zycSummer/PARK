@@ -2,14 +2,13 @@ package com.jet.cloud.deepmind.service;
 
 import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.entity.Site;
-import com.jet.cloud.deepmind.entity.SysEnergyPara;
-import com.jet.cloud.deepmind.entity.SysEnergyType;
 import com.jet.cloud.deepmind.model.CalcPointsVO;
 import com.jet.cloud.deepmind.model.CombinePointVO;
 import com.jet.cloud.deepmind.model.ComprehensiveShowVO;
 import com.jet.cloud.deepmind.model.Response;
 import javassist.NotFoundException;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -95,4 +94,17 @@ public interface CommonService {
      * @apiNote 按仪表标识或者名称查询
      */
     Response queryEnergyParaIdOrEnergyParaName(String key, String energyTypeId);
+
+    /**
+     * 模板文件下载
+     *
+     * @param fileName
+     * @param response
+     */
+    void download(String fileName, HttpServletResponse response);
+
+    /**
+     * 添加thisPeriodDiscardMinutesBeforeNow
+     */
+    List<Double> queryHistoryData(List<Double> values, List<Long> timestamps);
 }

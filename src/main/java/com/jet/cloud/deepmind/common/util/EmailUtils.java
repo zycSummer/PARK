@@ -16,11 +16,15 @@ import java.util.Map;
 
 public class EmailUtils {
 
-    public EmailUtils(String from) {
-        this.from = from;
+    public EmailUtils() {
+        this.from = "Jet";
     }
 
     private String from;
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
 
     public void sendText(String toEmail, String title, String content) throws SendMailException {
 

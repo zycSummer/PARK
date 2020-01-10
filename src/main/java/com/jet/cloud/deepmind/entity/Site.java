@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 @Table(name = "tb_site")
 public class Site extends BaseEntity {
     @Column(name = "site_id", unique = true, nullable = false)
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "企业标识只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "企业标识只能输入字母、数字、下划线组合且不能大于20位")
     @NotNull(message = "企业标识不能为空")
     private String siteId;
 
@@ -40,17 +40,26 @@ public class Site extends BaseEntity {
     @Column(name = "latitude")
     private Double latitude;
 
+    @Column(name = "world_longitude")
+    private Double worldLongitude;
+
+    @Column(name = "world_latitude")
+    private Double worldLatitude;
+
     @Column(name = "is_online")
     @Convert(converter = String2BooleanConverter.class)
     private Boolean isOnline;
 
     @Column(name = "sort_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,10}$", message = "只能输入字母和数字且不能大于10位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,10}$", message = "只能输入字母、数字、下划线组合且不能大于10位")
     private String sortId;
 
     @Column(name = "rtdb_project_id")
-    @Pattern(regexp = "^[A-Za-z0-9]{0,20}$", message = "实时库项目标识只能输入字母和数字且不能大于20位")
+    @Pattern(regexp = "^[A-Za-z0-9_]{0,20}$", message = "实时库项目标识只能输入字母、数字、下划线组合且不能大于20位")
     private String rtdbProjectId;
+
+    @Column(name = "profile")
+    private String profile;
 
     //企业图片后缀
     @JsonIgnore

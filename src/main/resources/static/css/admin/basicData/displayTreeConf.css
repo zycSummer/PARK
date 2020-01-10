@@ -157,7 +157,7 @@
     justify-content: space-between;
 }
 #treeDetail_parentNode{
-    width:182px;
+    width:188px;
 }
 
 #isNot_std_coal,#is_std_coal{
@@ -505,7 +505,7 @@
 }
 /*删除展示结构树明细节点 弹框*/
 #treeDetail_delete .layui-form-label{
-    width:140px;
+    width:100px;
 }
 #treeDetail_delete_treeId,#treeDetail_delete_nodeId{
     line-height: 38px;

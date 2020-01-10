@@ -65,7 +65,7 @@ public class SysParameterBean {
         return true;
     }
 
-    public Object currentLangPlateTitle(String key) {
+    public String currentLangPlateTitle(String key) {
         String arrStr = this.parameters.get(key);
         if (StringUtils.isEmpty(arrStr)) {
             return "";

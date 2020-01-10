@@ -3,6 +3,7 @@ package com.jet.cloud.deepmind.service;
 import com.google.common.collect.Multimap;
 import com.jet.cloud.deepmind.entity.Alarm;
 import com.jet.cloud.deepmind.model.AlarmMsgVO;
+import com.jet.cloud.deepmind.model.AppTencentVO;
 import com.jet.cloud.deepmind.model.SolutionMsgVO;
 import org.springframework.scheduling.annotation.Async;
 
@@ -22,4 +23,7 @@ public interface AlarmSender {
 
     @Async
     void sendHttpSolution(List<SolutionMsgVO> solutionMsgVOS);
+
+    @Async
+    void sendAppTencent(List<AppTencentVO> appTencentVOs);
 }

@@ -53,7 +53,6 @@ public class ApiServiceImpl implements ApiService {
 
     @Override
     public VResult queryMeter(String parkId, String meterId) {
-
         /**
          * 如果有传仪表标识，则根据以下SQL查询结果
          * RTHGCC.W1-8

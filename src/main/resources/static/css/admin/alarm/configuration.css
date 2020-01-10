@@ -200,3 +200,7 @@
 .addFrom_item .layui-textarea {
 min-height: 70px!important;
 }
+
+.red{
+    color:red;
+}

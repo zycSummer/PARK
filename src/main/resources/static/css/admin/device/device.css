@@ -170,6 +170,10 @@
     display: flex;
     justify-content: space-between;
 }
+#siteImage{
+    width:100px;
+    flex-grow: 1;
+}
 #equip_add .layui-form-label{
     width:90px;
 }

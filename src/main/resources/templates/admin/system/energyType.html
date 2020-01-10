@@ -5,8 +5,9 @@
     <div class="container">
         <blockquote class="layui-elem-quote  tabBreacrumb">
             <span class="layui-breadcrumb" lay-separator=">">
-                <a>系统管理</a>
-                <a><cite>能源种类配置</cite></a>
+                <span th:each="item:${nb}">
+                    <a th:text="${item}"></a>
+                    </span>
             </span>
         </blockquote>
 
@@ -16,7 +17,7 @@
                 <div class="control_div">
                     <div class="layui-inline">
                         <form class="layui-form">
-                            <div class="layui-inline">
+                            <div class="layui-inline search_margin">
                                 <label class="search_label">种类标识：</label>
                                 <div class="layui-input-inline">
                                     <input type="text" value="" class="layui-input search_input" id="add_energyTypeId">
@@ -57,7 +58,7 @@
                 <div class="control_div">
                     <div class="layui-inline">
                             <form class="layui-form">
-                                    <div class="layui-inline">
+                                    <div class="layui-inline search_margin">
                                         <label class="search_label">参数标识：</label>
                                         <div class="layui-input-inline">
                                             <input type="text" value="" class="layui-input search_input" id="search_energyParaId">
@@ -102,7 +103,7 @@
         <div class=" layui-row">
             <form class="layui-form " id="addForm" style="padding:20px 5px 0 0;">
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源种类标识:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>能源种类标识:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input"      onKeyUp="value=value.replace(/[\W]/g,'')"  autocomplete="off" type="text" id="addEnergyTypeId"  maxlength="20">
 
@@ -110,7 +111,7 @@
                     <i class="fa fa-exclamation-circle tip_icon  " id="add_energyTypeId_tip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源种类名称:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>能源种类名称:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="addEnergyTypeName" maxlength="20">
                     </div>
@@ -118,28 +119,28 @@
                 </div>
 
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">折标系数:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>折标系数:</label>
                     <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="number" id="addStdCoalCoeff" maxlength="30">
                         </div>
                         <i class="fa fa-exclamation-circle tip_icon  " id="addStdCoalCoeffTip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">碳排系数:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>碳排系数:</label>
                     <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="number" id="addCo2Coeff" maxlength="30">
                         </div>
                         <i class="fa fa-exclamation-circle tip_icon  " id="addCo2CoeffTip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">用量参数标识:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>用量参数标识:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="addEnergyUsageParaId"  maxlength="20" onKeyUp="value=value.replace(/[\W]/g,'')">
                     </div>
                     <i class="fa fa-exclamation-circle tip_icon  " id="addEnergyUsageParaIdTip"></i>
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">负荷参数标识:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>负荷参数标识:</label>
                     <div class="layui-input-inline ">
                             <input class="layui-input" autocomplete="off" type="text" id="addEnergyLoadParaId"  maxlength="20" onKeyUp="value=value.replace(/[\W]/g,'')">
                         </div>
@@ -179,7 +180,7 @@
 
                 </div>
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源参数标识:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>能源参数标识:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="paraEnergyParaId" maxlength="20"
                             >
@@ -189,7 +190,7 @@
                 </div>
 
                 <div class="layui-form-item addFrom_item">
-                    <label class="layui-form-label addFrom_label" style="width: 120px;">能源参数名称:</label>
+                    <label class="layui-form-label addFrom_label" style="width: 120px;"><span style="color: red;">* </span>能源参数名称:</label>
                     <div class="layui-input-inline ">
                         <input class="layui-input" autocomplete="off" type="text" id="paraEnergyParaName" maxlength="20">
                     </div>

@@ -11,20 +11,19 @@ import com.jet.cloud.deepmind.model.*;
 import com.jet.cloud.deepmind.repository.*;
 import com.jet.cloud.deepmind.service.CommonService;
 import com.jet.cloud.deepmind.service.MenuMappingRoleService;
-import com.querydsl.core.types.ExpressionUtils;
-import com.querydsl.core.types.Predicate;
 import javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.util.*;
 
 import static com.jet.cloud.deepmind.common.Constants.*;
-import static com.jet.cloud.deepmind.common.Constants.ENERGY_TYPE_STD_COAL;
-import static com.jet.cloud.deepmind.common.util.StringUtils.isNotNullAndEmpty;
 
 /**
  * @author zhuyicheng
@@ -484,5 +483,55 @@ public class CommonServiceImpl implements CommonService {
         Response ok = Response.ok(sysEnergyParas);
         ok.setQueryPara(key, energyTypeId);
         return ok;
+    }
+
+    @Override
+    public void download(String fileName, HttpServletResponse response) {
+        try {
+            //设置文件下载头
+            response.addHeader("Content-Disposition", "attachment;filename=" + fileName);
+            response.setContentType("application/form-data");
+            ServletOutputStream out = response.getOutputStream();
+            InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("file/" + fileName);
+            byte[] in = new byte[1024];
+            int i = inputStream.read(in);
+            while ((i != -1)) {
+                out.write(in, 0, i);
+                i = inputStream.read(in);
+            }
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Double> queryHistoryData(List<Double> values, List<Long> timestamps) {
+        SysParameter sysParameter = sysParameterRepo.findByParaId("thisDiscardMinutesBeforeNow");
+        Integer minute = null;
+        if (sysParameter != null) {
+            String paraValue = sysParameter.getParaValue();
+            if (StringUtils.isNotNullAndEmpty(paraValue)) {
+                minute = Integer.valueOf(paraValue);
+            }
+        }
+        if (minute == null) return values;
+        List<Integer> indexs = new ArrayList<>();
+        Long end = DateUtil.localDateTimeToLong(LocalDateTime.now().withNano(0));
+        Long start = DateUtil.localDateTimeToLong(LocalDateTime.now().withNano(0).minusMinutes(minute));
+        for (Long timestamp : timestamps) {
+            if (timestamp > start && timestamp <= end) {
+                int i = timestamps.lastIndexOf(timestamp);
+                indexs.add(i);
+            }
+        }
+        if (StringUtils.isNotNullAndEmpty(values)) {
+            if (StringUtils.isNotNullAndEmpty(indexs)) {
+                for (Integer index : indexs) {
+                    values.set(index, null);
+                }
+            }
+        }
+        return values;
     }
 }

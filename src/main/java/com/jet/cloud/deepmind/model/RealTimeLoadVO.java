@@ -1,6 +1,7 @@
 package com.jet.cloud.deepmind.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.jet.cloud.deepmind.entity.SysEnergyPara;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,4 +26,11 @@ public class RealTimeLoadVO implements Serializable {
     private String minVal;
     @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime minTime;
+    private String energyParaName;
+    private String unit;
+
+    public void setEnergyPara(SysEnergyPara energyPara) {
+        this.energyParaName = energyPara.getEnergyParaName();
+        this.unit = energyPara.getUnit();
+    }
 }

@@ -1,27 +1,21 @@
 package com.jet.cloud.deepmind.service.impl;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.jet.cloud.deepmind.common.CurrentUser;
 import com.jet.cloud.deepmind.common.util.DateUtil;
 import com.jet.cloud.deepmind.entity.GdpMonthly;
-import com.jet.cloud.deepmind.entity.QGdpMonthly;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
 import com.jet.cloud.deepmind.model.ServiceData;
 import com.jet.cloud.deepmind.repository.GdpMonthlyRepo;
 import com.jet.cloud.deepmind.service.GdpMonthlyService;
-import com.querydsl.core.types.ExpressionUtils;
-import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * @author maohandong
@@ -37,15 +31,10 @@ public class GdpMonthlyServiceImpl implements GdpMonthlyService {
 
     @Override
     public Response query(QueryVO vo) {
-        Sort sort = new Sort(Sort.Direction.DESC, "year", "month");
-        Pageable pageable = vo.Pageable(sort);
-        QGdpMonthly obj = QGdpMonthly.gdpMonthly;
-        Predicate pre = obj.isNotNull();
+        Pageable pageable = vo.Pageable();
         JSONObject key = vo.getKey();
         String objType = key.getString("objType");
-        pre = ExpressionUtils.and(pre, obj.objType.containsIgnoreCase(objType));
         String objId = key.getString("objId");
-        pre = ExpressionUtils.and(pre, obj.objId.containsIgnoreCase(objId));
         Long start = key.getLong("start");
         LocalDateTime localDateTime1 = DateUtil.longToLocalTime(start);
         int startYear = localDateTime1.getYear();
@@ -54,9 +43,17 @@ public class GdpMonthlyServiceImpl implements GdpMonthlyService {
         LocalDateTime localDateTime2 = DateUtil.longToLocalTime(end);
         int endYear = localDateTime2.getYear();
         int endMonth = localDateTime2.getMonth().getValue();
-        pre = ExpressionUtils.and(pre, obj.year.between(startYear, endYear));
-        pre = ExpressionUtils.and(pre, obj.month.between(startMonth,endMonth));
-        Page<GdpMonthly> list = gdpMonthlyRepo.findAll(pre, pageable);
+        String sm = startMonth + "";
+        String em = endMonth + "";
+        if (startMonth < 10) {
+            sm = "0" + startMonth;
+        }
+        if (endMonth < 10) {
+            em = "0" + endMonth;
+        }
+        String startDate = startYear + "-" + sm;
+        String endDate = endYear + "-" + em;
+        Page<GdpMonthly> list = gdpMonthlyRepo.findData(objType, objId, startDate, endDate, pageable);
         Response ok = Response.ok(list.getContent(), list.getTotalElements());
         ok.setQueryPara(vo);
         return ok;

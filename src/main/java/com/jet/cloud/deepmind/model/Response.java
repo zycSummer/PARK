@@ -28,6 +28,9 @@ public class Response<T> {
 
     protected Long count;
 
+    public Response() {
+    }
+
     public Response(int code, String msg) {
         this.code = code;
         this.msg = msg;

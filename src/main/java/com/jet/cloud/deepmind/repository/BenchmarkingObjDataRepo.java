@@ -23,4 +23,7 @@ public interface BenchmarkingObjDataRepo extends JpaRepository<BenchmarkingObjDa
     @Modifying
     @Transactional
     void deleteAllByObjTypeAndObjIdAndBenchmarkingObjId(String objType, String objId, String benchmarkingObjId);
+
+    List<BenchmarkingObjData> findAllByObjTypeAndObjId(String objType, String objId);
+
 }

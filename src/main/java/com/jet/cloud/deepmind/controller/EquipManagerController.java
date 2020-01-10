@@ -6,6 +6,7 @@ import com.jet.cloud.deepmind.entity.EquipSys;
 import com.jet.cloud.deepmind.model.EquipVO;
 import com.jet.cloud.deepmind.model.QueryVO;
 import com.jet.cloud.deepmind.model.Response;
+import com.jet.cloud.deepmind.service.CommonService;
 import com.jet.cloud.deepmind.service.EquipManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +27,8 @@ import java.util.List;
 public class EquipManagerController {
     @Autowired
     private EquipManagerService equipManagerService;
+    @Autowired
+    private CommonService commonService;
 
     /**
      * @param jsonObject
@@ -167,6 +170,8 @@ public class EquipManagerController {
      */
     @GetMapping("/download")
     public void download(HttpServletResponse response) {
-        equipManagerService.download(response);
+        //获取要下载的模板名称
+        String fileName = "EquipTemplate.xlsx";
+        commonService.download(fileName, response);
     }
 }

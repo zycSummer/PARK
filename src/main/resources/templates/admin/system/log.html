@@ -7,14 +7,15 @@
         <blockquote class="layui-elem-quote  tabBreacrumb">
                 <span class="layui-breadcrumb" lay-separator=">">
                     <a class="park_select"></a>
-                    <a>系统管理</a>
-                    <a><cite>日志管理</cite></a>
+                    <span th:each="item:${nb}">
+                        <a th:text="${item}"></a>
+                        </span>
                 </span>
         </blockquote>
         <div class="control_div">
             <div class="layui-inline">
                 <form class="layui-form">
-                    <div class="layui-inline">
+                    <div class="layui-inline search_margin">
                         <label class="search_label">用户标识：</label>
                         <div class="layui-input-inline">
                             <input type="text" value="" class="layui-input search_input" id="search_userId">
